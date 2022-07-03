@@ -4,13 +4,14 @@ version = "0.1.0"
 description = ""
 authors = ["Vitaliy Malyshev <vitatomchyk@gmail.com>"]
 packages = [
-  { include = "ships-list" },
+  { include = "ships_list" },
 ]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
