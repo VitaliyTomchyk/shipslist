@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+from ships_list.ships_list.ships_list import ships_list
+
 
 def main():
-    print('hello world')
+    ships_list()
 
 
 if __name__ == '__main__':
