@@ -10,8 +10,9 @@ class Task():
 
 
 class Ship():
-    name = ''
-    IMO = ''
+    def __init__(self, name, IMO):
+        self.name = name
+        self.IMO = IMO
 
 
 class Ships_list():
