@@ -9,6 +9,11 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
+flake8 = "^4.0.1"
+pytest = "^7.1.2"
+
+[tool.poetry.scripts]
+ships_list = "ships_list.scripts.ships_list:main"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
