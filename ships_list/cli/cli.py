@@ -16,5 +16,4 @@ def parcer():
               'ships_name': ships_name,
               'IMO': IMO,
               'tasks_name': task}
-    print(result)
     return result

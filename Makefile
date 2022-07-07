@@ -23,7 +23,7 @@ pytest:
 
 push:
 	make lint
-	maket pytest
+	make pytest
 	git add .
 	git commit -m '$M'
 	git push
