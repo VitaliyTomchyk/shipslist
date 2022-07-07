@@ -4,8 +4,9 @@ from ships_list.cli.cli import parcer
 
 
 def main():
-    ships_list()
+    parced_result = parcer()
+    ships_list(parced_result)
 
 
 if __name__ == '__main__':
-    main(*parcer())
+    main()

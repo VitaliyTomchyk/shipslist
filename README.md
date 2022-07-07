@@ -3,7 +3,7 @@
 
 This progrma makes lists of tasks for ship operator.
 
-List of functions
+List of functions:
 <ul>
  <li>add_task</li>
  <li>add_ship</li>
