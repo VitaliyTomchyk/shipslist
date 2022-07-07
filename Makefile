@@ -18,8 +18,12 @@ update:
 	make publish
 	make package-reinstall	
 
+pytest:
+	poetry run pytest
+
 push:
 	make lint
+	maket pytest
 	git add .
 	git commit -m '$M'
 	git push
