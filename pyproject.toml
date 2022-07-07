@@ -2,7 +2,8 @@
 name = "ships-list"
 version = "0.1.0"
 description = ""
-authors = ["Vitaliy Malyshev <vitatomchyk@gmail.com>"]
+authors = ["Vitaliy Malyshev <vitatomchyk@gmail.com>", 
+           "Dmitriy Chebruchan <chebruchan2707@gmail.com>"]
 packages = [
   { include = "ships_list" },
 ]

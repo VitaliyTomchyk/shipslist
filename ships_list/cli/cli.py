@@ -3,9 +3,9 @@ import argparse
 
 def parcer():
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
-    parser.add_argument('--add_ship')
-    parser.add_argument('--IMO')
-    parser.add_argument('--add_task')
+    parser.add_argument('--add_ship', help='enter name of ship to be added')
+    parser.add_argument('--IMO', help='put IMO number')
+    parser.add_argument('--add_task', help='put name of task')
 
     ships_name = parser.parse_args().add_ship
     task = parser.parse_args().add_task
