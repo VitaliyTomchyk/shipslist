@@ -1,10 +1,29 @@
 import json
 
 
+def remove_ship(name):
+    name = name.upper()
+    with open('ships_list/lists/ships.json', 'r') as f:
+        list_of_ships = json.load(f)
+
+    for ship in list_of_ships:
+        if ship['name'] == name:
+            list_of_ships.remove(ship)
+            print('Ship ' + name + ' was removed')
+            break 
+        
+    print('Ship ' + name + ' was not found')
+
+    with open('ships_list/lists/ships.json', 'w') as f:
+        json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
+
+
+
 def add_ship(name, IMO):
     ships_details = {"name": name,
                      "IMO": int(IMO),
-                     "has_list": False}
+                     "has_list": False,
+                     "ships_list": None}
 
     with open('ships_list/lists/ships.json', 'r') as f:
         list_of_ships = json.load(f)
@@ -27,7 +46,7 @@ def write_task_in_list(task):
         json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
 
 
-def add_task(name, IMO, task):
+def add_task(name, IMO, task, task_party, task_stage):
     print('task planned to be added is ' + task +
           ' for ship {} with IMO {}'.format(name, IMO))
     the_task = {}

@@ -1,0 +1,210 @@
+[
+    {
+        "task_name": "1. Study recap and CP with Owners and Time / Voyage Charterers. Save both recaps and CPs in the \"Recaps & Documents folder\" in the Cash flow program. Make a copy to the same folder on your Memory Stick",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Check in cp the option for on-hire bunker/condition survey, where is better to arrange - delivery port or first load port? __________________ name of co __________",
+        "serial_number": 2,
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Obtain all up to date main certificates of the vessel via Master/owners",
+        "serial_number": 3,
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "4. Check the preliminary Bunker program for the voyage. Is it necessary to supply prior delivery",
+        "serial_number": 4,
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "5. Update cash flow 2 times a week",
+        "serial_number": 5,
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Send greeting message asking broker in charge full contact details of vessel; check the vessel's email attachment limit",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Owners",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Obtain details of agents at the delivery port (if available)",
+        "serial_number": 2,
+        "stage": "Prior delivery",
+        "party": "Owners",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Agree with owners of the on-hire surveyor company and cost share",
+        "serial_number": 3,
+        "stage": "Prior delivery",
+        "party": "Owners",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "4. Study when Redelivery notices to be tendered and save the schedule in your records",
+        "serial_number": 4,
+        "stage": "Prior delivery",
+        "party": "Owners",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Greeting message with Company \u00abN\u00bb quest-re, BROB table and initial voyage instructions",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Ensure Master & Owners are giving regular daily estimated time of delivery notices to Company \u00abN\u00bb",
+        "serial_number": 2,
+        "stage": "Prior delivery",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Send a greeting message asking the broker in charge of full contact details",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Charterers",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Check in recap lay can and if best operational speed suits",
+        "serial_number": 2,
+        "stage": "Prior delivery",
+        "party": "Charterers",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Give initial ETA load port notice to Voyage Charterers",
+        "serial_number": 3,
+        "stage": "Prior delivery",
+        "party": "Charterers",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "4. Ask for final Load port and Agents' details if not stated in recap. Keep asking until received",
+        "serial_number": 4,
+        "stage": "Prior delivery",
+        "party": "Charterers",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Check vessel's prospects via owners' agents at delivery place",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Agents",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Check if there are Canals on the route to load port",
+        "serial_number": 2,
+        "stage": "Prior delivery",
+        "party": "Agents",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Nominate agents at load port in advance",
+        "serial_number": 3,
+        "stage": "Prior delivery",
+        "party": "Agents",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "4. Check if there are any specific schedule, convoys and restrictions for passage",
+        "serial_number": 4,
+        "stage": "Prior delivery",
+        "party": "Agents",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Nominate surveyors for on-hire bunker / + condition survey (compulsory for period vessels including detailed photo report of holds' condition). Inform Master about arrangements",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Surveyor",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Add line in cash flow for payment to surveyor",
+        "serial_number": 2,
+        "stage": "Prior delivery",
+        "party": "Surveyor",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Check the routing clause in cp. Appoint a routing company for ballast trip",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "Routing company",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Declare vessel in P and ",
+        "serial_number": 1,
+        "stage": "Prior delivery",
+        "party": "P and I",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Calculate first hire and pay timely w/I recap/cp agreed time bar (_____ days)",
+        "serial_number": 1,
+        "stage": "After delivery",
+        "party": "Owners",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Bank details to be verified with the owners' broker verbally prior payment. Beneficiary should be in accordance with agreed recap terms",
+        "serial_number": 2,
+        "stage": "After delivery",
+        "party": "Owners",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Check delivery notice from Master (BROB, position, time)",
+        "serial_number": 1,
+        "stage": "After delivery",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    }
+]

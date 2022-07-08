@@ -1,0 +1,1 @@
+1. Check delivery notice from Master (BROB, position, time). 
