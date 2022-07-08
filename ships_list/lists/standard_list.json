@@ -206,5 +206,101 @@
         "party": "Master",
         "status": "Pending",
         "voyage": null
+    },
+    {
+        "task_name": "1. Calculate Optimal bunkering program taking into account Weather conditions and Seca areas on the route, port consumption",
+        "serial_number": 1,
+        "stage": "Prior arrival at load port ",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Request and check Master's Pre stowage plan. If needed discuss to minimize: fresh water, unpumpable ballast (as per last draft survey), constant and maximize cargo intake",
+        "serial_number": 2,
+        "stage": "Prior arrival at load port ",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Update cash flow 2 times a week. On ________ and _______",
+        "serial_number": 3,
+        "stage": "Prior arrival at load port ",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "4. Check if it is reasonable to sail at ECO or full speed due to lay can, congestion. ________",
+        "serial_number": 4,
+        "stage": "Prior arrival at load port ",
+        "party": "Operator",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Check with Master your bunker plan figures. Discuss ways to increase the max intake if possible",
+        "serial_number": 1,
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Request Pre Stowage plan & give full cargo, bunker, load port, discharge port details & restrictions",
+        "serial_number": 2,
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Timely in advance give Master particular LP NOR instructions for your voyage",
+        "serial_number": 3,
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Check with Master your bunker plan figures. Discuss ways to increase the max intake if possible",
+        "serial_number": 1,
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Request Pre Stowage plan & give full cargo, bunker, load port, discharge port details & restrictions",
+        "serial_number": 2,
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "3. Timely in advance give Master particular LP NOR instructions for your voyage",
+        "serial_number": 3,
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "1. Agreed pre-stow plan with maximum intake to be passed timely to Charterers for info / approval with Company \u00abN\u00bb standard remark (whatever appropriate)",
+        "serial_number": 1,
+        "stage": "Prior arrival at load port",
+        "party": "Charterers ",
+        "status": "Pending",
+        "voyage": null
+    },
+    {
+        "task_name": "2. Daily eta notices to be tendered to all required parties as per recap/cp/Voyage charterers' request",
+        "serial_number": 2,
+        "stage": "Prior arrival at load port",
+        "party": "Charterers ",
+        "status": "Pending",
+        "voyage": null
     }
 ]

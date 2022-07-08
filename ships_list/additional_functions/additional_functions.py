@@ -10,13 +10,12 @@ def remove_ship(name):
         if ship['name'] == name:
             list_of_ships.remove(ship)
             print('Ship ' + name + ' was removed')
-            break 
-        
+            break
+
     print('Ship ' + name + ' was not found')
 
     with open('ships_list/lists/ships.json', 'w') as f:
         json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
-
 
 
 def add_ship(name, IMO):

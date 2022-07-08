@@ -1,7 +1,8 @@
 import json
 
+
 def add_list(stage):
-    party = 'Master'
+    party = 'Charterers '
     voyage = None
 
     with open('ships_list/lists/standard_list.txt', 'r') as f:
@@ -20,8 +21,9 @@ def add_list(stage):
 
     with open('ships_list/lists/standard_list.json', 'r') as f:
         existing_list = json.load(f)
-    
+
     updated_list = existing_list + result
     with open('ships_list/lists/standard_list.json', 'w') as f:
         json.dump(updated_list, f, indent=4, separators=(',', ': '))
-    print(updated_list)
+    print('\n\nTasks for ' + party + ' at stage "' + stage + '" were added')
+    print('Tasks are \n' + str(lines) + '\n\n')

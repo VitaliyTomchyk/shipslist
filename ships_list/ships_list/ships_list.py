@@ -20,9 +20,9 @@ def ships_list(parced_result):
 
     if parced_result['add_task']:
         add_task(ships_name, IMO, task)
-    
+
     if parced_result['remove_ship']:
         remove_ship(parced_result['ship_to_remove'])
-    
+
     if parced_result['add_list']:
         add_list(parced_result['add_list'])

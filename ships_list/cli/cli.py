@@ -1,5 +1,4 @@
 import argparse
-from os import remove
 
 
 def parcer():
@@ -24,18 +23,17 @@ def parcer():
                                             6. Master
                                             7. Other role
                                             add only number of party''')
-    parser.add_argument('--remove_ship', help= 'removes ship from list based ' +
-    'on name of the ship')
+    parser.add_argument('--remove_ship', help='removes ship from list based' +
+                        ' on name of the ship')
     parser.add_argument('--add_list')
 
     ships_name = parser.parse_args().add_ship
     task = parser.parse_args().add_task
     IMO = parser.parse_args().IMO
     task_stage = parser.parse_args().task_stage
-    task_party  = parser.parse_args().task_party
+    task_party = parser.parse_args().task_party
     ship_to_remove = parser.parse_args().remove_ship
     stage = parser.parse_args().add_list
-
 
     result = {'add_ship': bool(ships_name),
               'add_task': bool(task),

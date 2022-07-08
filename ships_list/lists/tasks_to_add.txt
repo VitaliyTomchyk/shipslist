@@ -1,17 +1,3 @@
-III. Prior arrival at load port 
-Operator
-1. Calculate Optimal bunkering program taking into account Weather conditions and Seca areas on the route, port consumption.
-2. Request and check Master's Pre stowage plan. If needed discuss to minimize:
-fresh water, unpumpable ballast (as per last draft survey), constant and maximize cargo intake.
-3. Update cash flow 2 times a week. On ________ and _______.
-4. Check if it is reasonable to sail at ECO or full speed due to lay can, congestion. _________
-Master 
-1. Check with Master your bunker plan figures. Discuss ways to increase the max intake if possible. 
-2. Request Pre Stowage plan & give full cargo, bunker, load port, discharge port details & restrictions.
-3. Timely in advance give Master particular LP NOR instructions for your voyage. 
-Charterers 
-1. Agreed pre-stow plan with maximum intake to be passed timely to Charterers for info / approval with Company «N» standard remark (whatever appropriate).
-2. Daily eta notices to be tendered to all required parties as per recap/cp/Voyage charterers' request. 
 Agents 
 1. Check thoroughly PDA for compliance with official rates/tariffs/reasonable sense. Minimize agency fee.
 2. Remove all non compulsory items. Minimize port /anchorage stay basis best case scenario.
@@ -43,6 +29,7 @@ Agents
 2. Check draft SOF two working days prior loading completion. Ensure that NOR is marked "Accepted as per relevant Charter Party terms",  all shore delays are properly marked; berthing delays are duly mentioned by agents or Master (in which case give separate instructions to him in advance) ; weather delay timings are verified by log book records / info from protective agents / surveyors / previous vessel's SOFs. 
 Routing company
 1. Nominate routing company for the laden leg.
+
 V. Prior arrival Discharge port
 Operator
 1. Request and check middle voyage performance report from routing company if required prior next hire payment.
@@ -74,6 +61,7 @@ Check Owners expenses at load port.
 Surveyor
 1. Nominate surveyors in accordance with requirements of each particular cargo shipment / special case and for on-hire bunker and condition survey.
 2. Inform Master/agents about surveyors nominated.
+
 VI. Discharge port 
 Operator
 1. Check performance report from routing company for laden leg . Insert speed claim in next hire soa if required. Monitor daily working reports from Master and agents and ensure that discharge is going smoothly as per agreed discharge sequence.
