@@ -7,8 +7,8 @@ from ships_list.additional_functions.import_tasks import add_list
 
 
 def ships_list(parced_result):
-    print(parced_result)
-    ships_name, IMO = parced_result['ships_name'], parced_result['IMO']
+    added_ship, IMO = parced_result['add_ship'], parced_result['IMO']
+    ship = parced_result['ship']
     task = parced_result['tasks_name']
 
     if IMO_checker(IMO) is False:
@@ -16,10 +16,10 @@ def ships_list(parced_result):
         return
 
     if parced_result['add_ship']:
-        add_ship(ships_name.upper(), IMO)
+        add_ship(added_ship, IMO)
 
     if parced_result['add_task']:
-        add_task(ships_name, IMO, task)
+        add_task(ship, task)
 
     if parced_result['remove_ship']:
         remove_ship(parced_result['ship_to_remove'])

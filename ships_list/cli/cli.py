@@ -3,10 +3,11 @@ import argparse
 
 def parcer():
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
-    parser.add_argument('--add_ship', help='enter name of ship to be added')
-    parser.add_argument('--IMO', help='put IMO number')
-    parser.add_argument('--add_task', help='put name of task')
-    parser.add_argument('--task_stage', help='''task stage: 1. Prior delivery
+    parser.add_argument('-add_ship', help='enter name of ship to be added')
+    parser.add_argument('-ship', help='enter name of ship to work with')
+    parser.add_argument('-IMO', help='put IMO number')
+    parser.add_argument('-add_task', help='put name of task')
+    parser.add_argument('-task_stage', help='''task stage: 1. Prior delivery
                                             2. After delivery
                                             3. Prior arrival at load port
                                             4. Load port
@@ -14,7 +15,7 @@ def parcer():
                                             6. Discharge port
                                             7. After redelivery
                                             add only number of stage''')
-    parser.add_argument('--task_party', help='''name or role task is related to
+    parser.add_argument('-task_party', help='''name or role task is related to
                                             1. Operator
                                             2. Owner
                                             3. Charterer
@@ -23,11 +24,12 @@ def parcer():
                                             6. Master
                                             7. Other role
                                             add only number of party''')
-    parser.add_argument('--remove_ship', help='removes ship from list based' +
+    parser.add_argument('-remove_ship', help='removes ship from list based' +
                         ' on name of the ship')
-    parser.add_argument('--add_list')
+    parser.add_argument('-add_list')
 
-    ships_name = parser.parse_args().add_ship
+    added_ships = parser.parse_args().add_ship
+    ships_name = parser.parse_args().ship
     task = parser.parse_args().add_task
     IMO = parser.parse_args().IMO
     task_stage = parser.parse_args().task_stage
@@ -39,7 +41,8 @@ def parcer():
               'add_task': bool(task),
               'remove_ship': bool(ship_to_remove),
               'add_list': stage,
-              'ships_name': ships_name,
+              'added_ships': added_ships,
+              'ship': ships_name,
               'ship_to_remove': ship_to_remove,
               'IMO': IMO,
               'tasks_name': task,

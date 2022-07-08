@@ -19,7 +19,7 @@ def remove_ship(name):
 
 
 def add_ship(name, IMO):
-    ships_details = {"name": name,
+    ships_details = {"name": name.upper(),
                      "IMO": int(IMO),
                      "has_list": False,
                      "ships_list": None}
@@ -45,9 +45,10 @@ def write_task_in_list(task):
         json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
 
 
-def add_task(name, IMO, task, task_party, task_stage):
+def add_task(ship, task):
+    ship = ship.upper()
     print('task planned to be added is ' + task +
-          ' for ship {} with IMO {}'.format(name, IMO))
+          ' for ship {}'.format(ship))
     the_task = {}
     # Place for Vitaliy to put the code
     # Below functions writs the_task in list of tasks

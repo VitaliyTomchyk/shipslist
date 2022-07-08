@@ -7,16 +7,16 @@ build:
 publish:
 	poetry publish --dry-run -u ' ' -p ' '
 
-package-install:
+install:
 	python3 -m pip install --user dist/*.whl
 
-package-reinstall:
-	python3 -m pip install --force-reinstall --user dist/*.whl 
+package-install:
+	python3 -m pip install --force-reinstall --user dist/*.whl
 
 update:
 	make build
 	make publish
-	make package-reinstall	
+	make package-install
 
 pytest:
 	poetry run pytest
