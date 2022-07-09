@@ -19,7 +19,16 @@ def remove_ship(name):
 
 
 def add_ship(name, IMO):
-    ships_details = {"name": name.upper(),
+    if IMO is None:
+        print('You are adding ship without IMO. Plase add IMO as well.')
+        return
+
+    try:
+        int(IMO)
+    except ValueError:
+        print('IMO is not a number')
+
+    ships_details = {"name": name,
                      "IMO": int(IMO),
                      "has_list": False,
                      "ships_list": None}

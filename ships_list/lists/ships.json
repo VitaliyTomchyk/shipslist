@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "name": "BEDA",
+        "IMO": 9999999,
+        "has_list": false,
+        "ships_list": null
+    }
+]

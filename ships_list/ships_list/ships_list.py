@@ -1,4 +1,3 @@
-
 from ships_list.additional_functions.additional_functions import add_ship,\
                                                                  add_task,\
                                                                  IMO_checker,\
@@ -7,7 +6,7 @@ from ships_list.additional_functions.import_tasks import add_list
 
 
 def ships_list(parced_result):
-    added_ship, IMO = parced_result['add_ship'], parced_result['IMO']
+    added_ship, IMO = parced_result['added_ship'], parced_result['IMO']
     ship = parced_result['ship']
     task = parced_result['tasks_name']
 

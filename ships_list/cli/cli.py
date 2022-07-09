@@ -28,7 +28,7 @@ def parcer():
                         ' on name of the ship')
     parser.add_argument('-add_list')
 
-    added_ships = parser.parse_args().add_ship
+    added_ship = parser.parse_args().add_ship
     ships_name = parser.parse_args().ship
     task = parser.parse_args().add_task
     IMO = parser.parse_args().IMO
@@ -37,15 +37,16 @@ def parcer():
     ship_to_remove = parser.parse_args().remove_ship
     stage = parser.parse_args().add_list
 
-    result = {'add_ship': bool(ships_name),
+    result = {'add_ship': bool(added_ship),
               'add_task': bool(task),
               'remove_ship': bool(ship_to_remove),
               'add_list': stage,
-              'added_ships': added_ships,
+              'added_ship': added_ship,
               'ship': ships_name,
               'ship_to_remove': ship_to_remove,
               'IMO': IMO,
               'tasks_name': task,
               'task_stage': task_stage,
               'task_party': task_party}
+    print(result)
     return result

@@ -1,23 +1,21 @@
 [tool.poetry]
 name = "ships-list"
 version = "0.1.0"
-description = ""
-authors = ["Vitaliy Malyshev <vitatomchyk@gmail.com>", 
-           "Dmitriy Chebruchan <chebruchan2707@gmail.com>"]
+description = "program to work with list of tasks"
+authors = ["Vitaliy Malyshev <vitatomchyk@gmail.com>"]
 packages = [
   { include = "ships_list" },
 ]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-flake8 = "^4.0.1"
-pytest = "^7.1.2"
-
 [tool.poetry.scripts]
 ships_list = "ships_list.scripts.ships_list:main"
 
+[tool.poetry.dependencies]
+python = "^3.10"
+flake8 = "4.0.1"
+pytest = "7.1.2"
+
 [tool.poetry.dev-dependencies]
-flake8 = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
