@@ -64,9 +64,6 @@ def add_task(ship, task, stage, party):
                 'stage': stage,
                 'party': party,
                 'id': 1}
-    # Place for Vitaliy to put the code
-    # Below functions writs the_task in list of tasks
-    # (ships_list/lists/tasks.json)
     write_task_in_list(the_task)
 
 
