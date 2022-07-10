@@ -40,7 +40,7 @@ class Ships_list():
         self.name_of_list = title_of_voyage
         self.name_of_ship = name_of_ship
 
-        with open('ships_list/lists/standrard_list.json', 'r') as f:
+        with open('ships_list/lists/standard/standrard_list.json', 'r') as f:
             standard_list = json.load(f)
 
         for task in standard_list:

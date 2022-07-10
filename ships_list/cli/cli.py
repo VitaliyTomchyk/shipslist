@@ -5,7 +5,7 @@ from ships_list.additional_functions.additional_functions import list_to_string
 
 def parcer():
     # grepping options for choise arguments
-    with open('ships_list/lists/supporting_info.json', 'r') as f:
+    with open('ships_list/lists/standard/supporting_info.json', 'r') as f:
         file = json.load(f)
         stages = file['stages']
         parties = file['parties']
@@ -15,6 +15,7 @@ def parcer():
 
     # creating parser
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
+    parser.add_argument('--add_voyage', help='add voyage')
     parser.add_argument('-add_ship', help='enter name of ship to be added')
     parser.add_argument('-ship', help='enter name of ship to work with',
                         choices=ships)

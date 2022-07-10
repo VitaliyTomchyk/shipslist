@@ -97,4 +97,4 @@ def list_to_string(the_list):
     result = ''
     for line in the_list:
         result = result + '- ' + str(line) + '\n'
-    return result[:-1]
+    return result
