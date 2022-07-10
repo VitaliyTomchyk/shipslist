@@ -42,9 +42,7 @@ def parcer():
     stage = parser.parse_args().add_list
 
     # generating resul
-    result = {'add_ship': bool(added_ship),
-              'add_task': bool(task),
-              'remove_ship': bool(ship_to_remove),
+    result = {'remove_ship': bool(ship_to_remove),
               'add_list': stage,
               'added_ship': added_ship,
               'ship': ships_name,

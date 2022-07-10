@@ -3,18 +3,18 @@ import json
 
 class Task():
     def __init__(self, title, stage, ship):
+        self.ID = 1
         self.title = title
         self.stage = stage
-        self.ship = ship.upper()
-        self.status = 'Open'
+        self.ship = ship
+        self.status = 'Pending'
 
     def close_task(self):
-        self.status = 'Closed'
+        self.status = 'Done'
 
     def read_task(self):
-        print('Task is \n{}\n\nShip is \n{}'.format(self.title, self.ship) +
-              '\n\nStage is \n{}\n\nStatus is:{}').format(self.stage,
-                                                          self.status)
+        print('Task is \n{}\nShip is \n{}\n'.format(self.title, self.ship) +
+              'Stage is \n{}\nStatus is {}').format(self.stage, self.status)
 
 
 class Ship():
@@ -42,6 +42,10 @@ class Ships_list():
 
         with open('ships_list/lists/standrard_list.json', 'r') as f:
             standard_list = json.load(f)
+
+        for task in standard_list:
+            task["ship"] = name_of_ship
+
         self.task_list = standard_list
 
     def read_ships_list(self):

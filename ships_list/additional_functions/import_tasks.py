@@ -11,12 +11,13 @@ def add_list(stage, party):
 
     result = []
     for line in lines:
-        dictionary = {'task_name': str(line[:-1]),
+        dictionary = {'task_title': str(line[:-1]),
                       'serial_number': int(line[0]),
                       'stage': stage,
                       'party': party,
                       'status': 'Pending',
-                      'voyage': voyage}
+                      'voyage': voyage,
+                      'ship': None}
         result.append(dictionary)
 
     with open('ships_list/lists/standard_list.json', 'r') as f:

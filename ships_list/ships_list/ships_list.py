@@ -6,20 +6,16 @@ from ships_list.additional_functions.import_tasks import add_list
 
 
 def ships_list(parced_result):
-    added_ship, IMO = parced_result['added_ship'], parced_result['IMO']
+    IMO = parced_result['IMO']
     ship = parced_result['ship']
     task = parced_result['tasks_name']
     stage = parced_result['task_stage']
     party = parced_result['task_party']
 
-    if IMO_checker(IMO) is False:
-        print('IMO is not correct')
-        return
+    if parced_result['added_ship']:
+        add_ship(parced_result['added_ship'], IMO)
 
-    if parced_result['add_ship']:
-        add_ship(added_ship, IMO)
-
-    if parced_result['add_task']:
+    if task:
         add_task(ship, task, stage, party)
 
     if parced_result['remove_ship']:

@@ -19,13 +19,8 @@ def remove_ship(name):
 
 
 def add_ship(name, IMO):
-    if IMO is None:
-        print('You are adding ship without IMO. Plase add IMO as well.')
+    if IMO_checker(IMO) is False:
         return
-    try:
-        int(IMO)
-    except ValueError:
-        print('IMO is not a number')
 
     ships_details = {"name": name,
                      "IMO": int(IMO),
@@ -43,16 +38,6 @@ def add_ship(name, IMO):
     print('Ship {} has been added.'.format(name))
 
 
-def write_task_in_list(task):
-    with open('ships_list/lists/tasks.json', 'r') as f:
-        list_of_ships = json.load(f)
-
-    list_of_ships.append(task)
-
-    with open('ships_list/lists/tasks.json', 'w') as f:
-        json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
-
-
 def add_task(ship, task, stage, party):
     ship = ship.upper()
     print('task planned to be added is ' + task +
@@ -66,8 +51,28 @@ def add_task(ship, task, stage, party):
     write_task_in_list(the_task)
 
 
+def write_task_in_list(task):
+    with open('ships_list/lists/tasks.json', 'r') as f:
+        list_of_ships = json.load(f)
+
+    list_of_ships.append(task)
+
+    with open('ships_list/lists/tasks.json', 'w') as f:
+        json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
+
+
 def IMO_checker(IMO):
     # bloking function for easier testing
+    try:
+        int(IMO)
+    except ValueError:
+        print('IMO is not correct')
+        print('IMO is not a number')
+        return False
+
+    if IMO is None:
+        print('IMO is missing.')
+        return False
     return True
     IMO = str(IMO)
 
