@@ -63,21 +63,22 @@ def write_task_in_list(task):
 
 def IMO_checker(IMO):
     # bloking function for easier testing
+    result = True
     try:
         int(IMO)
     except ValueError:
         print('IMO is not correct')
         print('IMO is not a number')
-        return False
+        result = False
 
     if IMO is None:
         print('IMO is missing.')
-        return False
-    return True
+        result = False
+    return result
     IMO = str(IMO)
 
     if len(IMO) != 7:
-        return False
+        result = False
 
     result = 0
     i = 7
