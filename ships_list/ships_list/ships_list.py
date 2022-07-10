@@ -1,8 +1,8 @@
 from ships_list.additional_functions.ships_functions import add_ship,\
                                                             remove_ship
 from ships_list.additional_functions.tasks_functions import add_task,\
-                                                            read_ships_list, \
                                                             add_list
+
 
 def ships_list(parced_result):
     IMO = parced_result['IMO']

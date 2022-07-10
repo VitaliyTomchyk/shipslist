@@ -1,6 +1,7 @@
 from ships_list.additional_functions.additional_functions \
     import write_task_in_list
 
+
 def add_task(ship, task, stage, party):
     ship = ship.upper()
     print('task planned to be added is ' + task +
@@ -18,3 +19,7 @@ def read_ships_list(the_list):
     result = ''
     for task in the_list:
         print(result)
+
+
+def add_list():
+    pass

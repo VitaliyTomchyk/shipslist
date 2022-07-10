@@ -33,7 +33,6 @@ def parcer():
 
     parser.add_argument('-read_list')
     parser.add_argument('-add_list')
-    
 
     # creating varuables
     added_ship = parser.parse_args().add_ship
@@ -46,10 +45,10 @@ def parcer():
     add_list = parser.parse_args().add_list
     read_list = parser.parse_args().read_list
 
-
     # generating resul
     result = {'remove_ship': bool(ship_to_remove),
-              'add_list': stage,
+              'add_list': add_list,
+              'read_list': read_list,
               'added_ship': added_ship,
               'ship': ships_name,
               'ship_to_remove': ship_to_remove,
