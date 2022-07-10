@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "task_title": "Win",
+        "ships_name": "BEDA",
+        "status": "pending",
+        "stage": "Start",
+        "party": "Player",
+        "id": 1
+    }
+]

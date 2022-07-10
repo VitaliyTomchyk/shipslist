@@ -65,6 +65,16 @@ def add_task(ship, task):
     # Place for Vitaliy to put the code
     # Below functions writs the_task in list of tasks
     # (ships_list/lists/tasks.json)
+def add_task(ship, task, stage, party):
+    ship = ship.upper()
+    print('task planned to be added is ' + task +
+          ' for ship {}'.format(ship))
+    the_task = {'task_title': task,
+                'ships_name': ship,
+                'status': 'pending',
+                'stage': stage,
+                'party': party,
+                'id': 1}
     write_task_in_list(the_task)
 
 
