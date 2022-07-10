@@ -1,2 +1,6 @@
 [{"id": 2,
-  "ship": "Beda"}]
+  "ship": "BEDA",
+  "load_ports": ["Algejiras, Spain"],
+  "discharge_ports": ["Odessa, Ukraine"],
+  "canals": ["Dardanellas", "Bosporus"],
+  "type": "TC - VC"}]

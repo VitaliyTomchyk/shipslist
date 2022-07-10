@@ -1,8 +1,8 @@
-from ships_list.additional_functions.additional_functions import add_ship,\
-                                                                 add_task,\
-                                                                 remove_ship
-from ships_list.additional_functions.import_tasks import add_list
-
+from ships_list.additional_functions.ships_functions import add_ship,\
+                                                            remove_ship
+from ships_list.additional_functions.tasks_functions import add_task,\
+                                                            read_ships_list, \
+                                                            add_list
 
 def ships_list(parced_result):
     IMO = parced_result['IMO']
@@ -14,11 +14,11 @@ def ships_list(parced_result):
     if parced_result['added_ship']:
         add_ship(parced_result['added_ship'], IMO)
 
+    if parced_result['ship_to_remove']:
+        remove_ship(parced_result['ship_to_remove'])
+
     if task:
         add_task(ship, task, stage, party)
-
-    if parced_result['remove_ship']:
-        remove_ship(parced_result['ship_to_remove'])
 
     if parced_result['add_list']:
         add_list(parced_result['add_list'], parced_result['task_party'])

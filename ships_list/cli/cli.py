@@ -30,7 +30,10 @@ def parcer():
                         choices=parties)
     parser.add_argument('-remove_ship', help='removes ship from list based' +
                         ' on name of the ship', choices=ships)
+
+    parser.add_argument('-read_list')
     parser.add_argument('-add_list')
+    
 
     # creating varuables
     added_ship = parser.parse_args().add_ship
@@ -40,7 +43,9 @@ def parcer():
     task_stage = parser.parse_args().task_stage
     task_party = parser.parse_args().task_party
     ship_to_remove = parser.parse_args().remove_ship
-    stage = parser.parse_args().add_list
+    add_list = parser.parse_args().add_list
+    read_list = parser.parse_args().read_list
+
 
     # generating resul
     result = {'remove_ship': bool(ship_to_remove),

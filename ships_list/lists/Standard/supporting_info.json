@@ -6,4 +6,5 @@
     "Discharge port",
     "After redelivery"],
 "parties": ["Operator", "Owner", "Charterer", "Agent", "Surveyor",
-    "Master", "Routing company","Broker", "P and I","Other party"]}
+    "Master", "Routing company","Broker", "P and I","Other party"],
+"voyage_types": ["TC - VC", "TC - TC", "VC - VC"]}
