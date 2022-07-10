@@ -30,7 +30,6 @@ def parcer():
                         choices=parties)
     parser.add_argument('-remove_ship', help='removes ship from list based' +
                         ' on name of the ship', choices=ships)
-
     parser.add_argument('-read_list')
     parser.add_argument('-add_list')
 
