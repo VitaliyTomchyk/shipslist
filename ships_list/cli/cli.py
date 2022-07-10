@@ -48,5 +48,4 @@ def parcer():
               'tasks_name': task,
               'task_stage': task_stage,
               'task_party': task_party}
-    print(result)
     return result

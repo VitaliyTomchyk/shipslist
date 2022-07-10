@@ -55,9 +55,12 @@ def write_task_in_list(task):
 
 
 def add_task(ship, task):
+    if ship is None:
+        print('-ship is missing')
+        return
     ship = ship.upper()
-    print('task planned to be added is ' + task +
-          ' for ship {}'.format(ship))
+    print('task planned to be added is "' + task +
+          '" for ship {}'.format(ship))
     the_task = {}
     # Place for Vitaliy to put the code
     # Below functions writs the_task in list of tasks
