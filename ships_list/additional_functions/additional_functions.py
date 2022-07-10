@@ -79,3 +79,9 @@ def IMO_checker(IMO):
         result = result + i * int(IMO[-i])
         i = i - 1
     return True if str(result)[-1] == IMO[-1] else False
+
+
+def read_ships_list(the_list):
+    result = ''
+    for task in the_list:
+        print(result)
