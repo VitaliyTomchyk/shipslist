@@ -65,6 +65,8 @@ def add_task(ship, task):
     # Place for Vitaliy to put the code
     # Below functions writs the_task in list of tasks
     # (ships_list/lists/tasks.json)
+
+
 def add_task(ship, task, stage, party):
     ship = ship.upper()
     print('task planned to be added is ' + task +
@@ -85,6 +87,7 @@ def IMO_checker(IMO):
 
     if len(IMO) != 7:
         return False
+
     result = 0
     i = 7
     while i != 1:

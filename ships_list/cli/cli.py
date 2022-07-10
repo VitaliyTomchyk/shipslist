@@ -1,20 +1,33 @@
 import argparse
+import json
 
 
 def parcer():
+    # grepping options for choise arguments
+    with open('ships_list/lists/supporting_info.json', 'r') as f:
+        file =json.load(f)
+        stages = file['stages']
+        parties = file['parties']
+    with open('ships_list/lists/ships.json', 'r') as f:
+        file =json.load(f)
+        ships = list(map(lambda x: x['name'], file))
+    
+    # creating parser
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
     parser.add_argument('-add_ship', help='enter name of ship to be added')
-    parser.add_argument('-ship', help='enter name of ship to work with')
+    parser.add_argument('-ship', help='enter name of ship to work with',
+                        choices=ships)
     parser.add_argument('-IMO', help='put IMO number')
     parser.add_argument('-add_task', help='put name of task')
-    parser.add_argument('-task_stage', help='''task stage: 1. Prior delivery
-                                            2. After delivery
-                                            3. Prior arrival at load port
-                                            4. Load port
-                                            5. Prior arrival Discharge port
-                                            6. Discharge port
-                                            7. After redelivery
-                                            add only number of stage''')
+    parser.add_argument('-task_stage', help='''task stage:
+                                            - Prior delivery
+                                            - After delivery
+                                            - Prior arrival at load port
+                                            - Load port
+                                            - Prior arrival Discharge port
+                                            - Discharge port
+                                            - After redelivery''',
+                        choices=stages)
     parser.add_argument('-task_party', help='''name or role task is related to
                                             1. Operator
                                             2. Owner
@@ -23,11 +36,13 @@ def parcer():
                                             5. Surveyor
                                             6. Master
                                             7. Other role
-                                            add only number of party''')
+                                            add only number of party''',
+                        choices=parties)
     parser.add_argument('-remove_ship', help='removes ship from list based' +
                         ' on name of the ship')
     parser.add_argument('-add_list')
 
+    # creating varuables
     added_ship = parser.parse_args().add_ship
     ships_name = parser.parse_args().ship
     task = parser.parse_args().add_task
@@ -37,6 +52,7 @@ def parcer():
     ship_to_remove = parser.parse_args().remove_ship
     stage = parser.parse_args().add_list
 
+    # generating resul
     result = {'add_ship': bool(added_ship),
               'add_task': bool(task),
               'remove_ship': bool(ship_to_remove),

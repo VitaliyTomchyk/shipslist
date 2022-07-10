@@ -4,4 +4,6 @@
     "Load port",
     "Prior arrival Discharge port",
     "Discharge port",
-    "After redelivery"]}
+    "After redelivery"],
+"parties": ["Operator", "Owner", "Charterer", "Port agent", "Surveyor",
+    "Master", "Other party"]}
