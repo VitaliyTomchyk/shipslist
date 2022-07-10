@@ -87,3 +87,10 @@ def read_ships_list(the_list):
     result = ''
     for task in the_list:
         print(result)
+
+
+def list_to_string(the_list):
+    result = ''
+    for line in the_list:
+        result = result + '- ' + str(line) + '\n'
+    return result[:-1]

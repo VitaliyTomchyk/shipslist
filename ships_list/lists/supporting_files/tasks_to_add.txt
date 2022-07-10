@@ -11,6 +11,7 @@ Agents
 9. Check how cargo quantity in OBL to be ascertained: Draft survey or Shore scale figures.
 10. Check who is to sign OBL Master or Agents? Obtain, check draft Mater receipt (if agents' to sign OBL) & OBL.
 11. Check the Towage Company at the load port.
+
 Surveyor 
 1. Nominate surveyors in accordance with requirements of each particular cargo shipment / special case. 
 2. Inform Master/agents about surveyors nominated. 
@@ -21,6 +22,7 @@ Operator
 2. Monitor daily working reports from Master and agents and ensure that loading is going smoothly as per agreed loading sequence. Check vessel's daily consumption to be in accordance with CP description.
 3. Update cash flow 2 times a week.
 4. Check if it is reasonable to sail at ECO speed due to lay can or congestion.
+
 Master
 1. If agents should sign OBL, give or agree with Master two days prior loading completion the Letter of Authorization format to sign OBL on Masters' behalf by the agents. Following remark is the MUST:
 "No OBL to be issued without prior written approval of the draft by Company «N» International Ltd." 
@@ -31,6 +33,7 @@ Routing company
 1. Nominate routing company for the laden leg.
 
 V. Prior arrival Discharge port
+
 Operator
 1. Request and check middle voyage performance report from routing company if required prior next hire payment.
 2. Update cash flow 2 times a week. 
@@ -53,11 +56,12 @@ Agents
 1. Check thoroughly PDA for compliance with official rates/tariffs/reasonable sense. Minimize agency fee. Remove all non compulsory items. Minimize port /anchorage stay basis best case scenario.
 Arrange payment of Agreed PDA 3 working days prior arrival. Bank details to be verified with agents verbally prior payment.
 2. Check OBLs readiness
-Arrange payment of Agreed PDA for Canals passage 2 working days prior arrival (if required) Bank details to be verified with agents verbally prior payment.
+3. Arrange payment of Agreed PDA for Canals passage 2 working days prior arrival (if required) Bank details to be verified with agents verbally prior payment.
 Nominate discharge port agents immediately once available and ask for daily berthing schedule updates. Check in advance if duly endorsed OBL is going to be available at discharge port prior vessel's arrival.
-If berthing is scheduled not on arrival get written reply from agents with reason of delay
-Check for the towage company at the discharge port.
-Check Owners expenses at load port.
+4. If berthing is scheduled not on arrival get written reply from agents with reason of delay
+5. Check for the towage company at the discharge port.
+6. Check Owners expenses at load port.
+
 Surveyor
 1. Nominate surveyors in accordance with requirements of each particular cargo shipment / special case and for on-hire bunker and condition survey.
 2. Inform Master/agents about surveyors nominated.
@@ -69,18 +73,21 @@ Operator
 Owners
 1. Tender estimated and actual redelivery notice to owners as per agreed CP/Recap terms.
 Agents
-Check draft SOF two working days prior discharge completion.
-Ensure that NOR is marked "Accepted as per relevant Charter Party terms",
-all shore delays are properly marked;
+1. Check draft SOF two working days prior discharge completion.
+2. Ensure that NOR is marked "Accepted as per relevant Charter Party terms", all shore delays are properly marked;
 berthing delays are duly mentioned by agents or Master (in which case give separate instructions to him in advance) ; weather delay timings are verified by log book records / info from protective agents / surveyors / previous vessel's SOFs. Monitor for rate of discharge, delays.
-Check Owners expenses at discharge port.
+3. Check Owners expenses at discharge port.
+
 VII. After redelivery 
+
 Operator
 1. Within one working day after sailing from discharge port Calculate laytime for Load and Discharge ports.
 2. Prepare VSOA. Verify calculations / VSOA with an Authorized person in Company «N».
 3. Update cash flow 2 times a week. 
+
 Owners
 1. Prepare Pre-final hire SOA (with Owners' Expenses deducted) and Remit balance due to owners.
+
 Charterers
 1. Send Voyage statement of accounts to Voyage charterers supported by L/T calculations and discharge port documents latest within 7 days after completion of voyage cc to claims department.
 2. Ensure that the final balance due to Company «N» as per VSOA issued is collected as per CP agreed time bar.

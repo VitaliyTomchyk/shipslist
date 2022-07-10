@@ -21,9 +21,18 @@ update:
 pytest:
 	poetry run pytest
 
+run:
+	poetry run ships_list -h
+
+com:
+	make lint
+	make pytest
+	git add .
+	git commit -m '$m'
+
 push:
 	make lint
 	make pytest
 	git add .
-	git commit -m '$M'
+	git commit -m '$m'
 	git push
