@@ -22,7 +22,6 @@ def add_ship(name, IMO):
     if IMO is None:
         print('You are adding ship without IMO. Plase add IMO as well.')
         return
-
     try:
         int(IMO)
     except ValueError:

@@ -26,4 +26,4 @@ def ships_list(parced_result):
         remove_ship(parced_result['ship_to_remove'])
 
     if parced_result['add_list']:
-        add_list(parced_result['add_list'])
+        add_list(parced_result['add_list'], parced_result['task_party'])
