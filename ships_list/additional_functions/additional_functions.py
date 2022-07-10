@@ -85,7 +85,6 @@ def IMO_checker(IMO):
 
     if len(IMO) != 7:
         return False
-
     result = 0
     i = 7
     while i != 1:
