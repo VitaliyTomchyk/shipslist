@@ -1,5 +1,5 @@
 from ships_list.additional_functions.additional_functions \
-    import write_task_in_JSON
+    import append_JSON_file
 
 
 def add_task(ship, task, stage, party):
@@ -13,15 +13,11 @@ def add_task(ship, task, stage, party):
                 'party': party,
                 'id': 1}
     file = 'ships_list/lists/tasks.json'
-    write_task_in_JSON(the_task, file)
+    append_JSON_file(the_task, file)
 
 
 def read_ships_list(ship, voyage):
     # result = ''
     # for task in the_list:
     #     print(result)
-    pass
-
-
-def add_list():
     pass

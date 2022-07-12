@@ -21,6 +21,7 @@ def add_ship(name, IMO):
     print('Ship {} has been added.'.format(name))
 
 
+# removes function from bata base
 def remove_ship(name):
     name = name.upper()
     with open('ships_list/lists/ships.json', 'r') as f:

@@ -8,6 +8,7 @@ def parcer():
         file = json.load(f)
         stages = file['stages']
         parties = file['parties']
+        voyage_types = file['voyage_types']
     with open('ships_list/lists/ships.json', 'r') as f:
         file = json.load(f)
         ships = list(map(lambda x: x['name'], file))
@@ -32,6 +33,11 @@ def parcer():
                         choices=parties)
     parser.add_argument('-read_list', help='read list of stated ship')
     parser.add_argument('-add_list')
+    parser.add_argument('-add_voyage', help='',)
+    parser.add_argument('-l_ports', help='', type=list)
+    parser.add_argument('-d_ports', help='', type=list)
+    parser.add_argument('-restr_points', help='', type=list)
+    parser.add_argument('-voy_type', help='', choices=voyage_types)
 
     # creating varuables
     added_ship = parser.parse_args().add_ship
@@ -41,8 +47,13 @@ def parcer():
     task_stage = parser.parse_args().task_stage
     task_party = parser.parse_args().task_party
     ship_to_remove = parser.parse_args().remove_ship
-    add_list = parser.parse_args().add_list
     read_list = parser.parse_args().read_list
+    add_list = parser.parse_args().add_list
+    add_voyage = parser.parse_args().add_voyage
+    l_ports = parser.parse_args().l_ports
+    d_ports = parser.parse_args().d_ports
+    restr_points = parser.parse_args().rest_points
+    voyage_type = parser.parse_args().voyage_type
 
     # generating resul
     result = {'remove_ship': bool(ship_to_remove),
@@ -54,5 +65,10 @@ def parcer():
               'IMO': IMO,
               'tasks_name': task,
               'task_stage': task_stage,
-              'task_party': task_party}
+              'task_party': task_party,
+              'add_voyage': add_voyage,
+              'l_ports': l_ports,
+              'd_ports': d_ports,
+              'restr_points': restr_points,
+              'voyage_type': voyage_type}
     return result

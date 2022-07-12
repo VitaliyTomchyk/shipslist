@@ -1,14 +1,14 @@
 import json
 
 
-def write_task_in_JSON(information, file):
+def append_JSON_file(information, file):
     with open(file, 'r') as f:
-        list_of_ships = json.load(f)
+        list_of_el = json.load(f)
 
-    list_of_ships.append(information)
+    list_of_el.append(information)
 
     with open(file, 'w') as f:
-        json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
+        json.dump(list_of_el, f, indent=4, separators=(',', ': '))
 
 
 def IMO_checker(IMO):
@@ -43,3 +43,7 @@ def list_to_string(the_list):
     for line in the_list:
         result = result + '- ' + str(line) + '\n'
     return result
+
+
+def id_generator():
+    return 2
