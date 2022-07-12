@@ -16,7 +16,6 @@ def parcer():
     # creating parser
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
 
-    parser.add_argument('-add_voyage', help='add voyage')
     parser.add_argument('-add_ship', help='enter name of ship to be added',
                         type=str)
     parser.add_argument('-remove_ship', help='removes ship from list based' +
@@ -33,11 +32,13 @@ def parcer():
                         choices=parties)
     parser.add_argument('-read_list', help='read list of stated ship')
     parser.add_argument('-add_list')
-    parser.add_argument('-add_voyage', help='',)
-    parser.add_argument('-l_ports', help='', type=list)
-    parser.add_argument('-d_ports', help='', type=list)
-    parser.add_argument('-restr_points', help='', type=list)
-    parser.add_argument('-voy_type', help='', choices=voyage_types)
+    parser.add_argument('-add_voyage', help='add voyage', nargs=1)
+    parser.add_argument('-l_ports', help='load ports', nargs="*")
+    parser.add_argument('-d_ports', help='discharge ports', nargs="*")
+    parser.add_argument('-restr_points', help='restriction points on the way',
+                        nargs="*", default=None)
+    parser.add_argument('-voy_type', help='choose type of voyage',
+                        choices=voyage_types)
 
     # creating varuables
     added_ship = parser.parse_args().add_ship
@@ -52,8 +53,8 @@ def parcer():
     add_voyage = parser.parse_args().add_voyage
     l_ports = parser.parse_args().l_ports
     d_ports = parser.parse_args().d_ports
-    restr_points = parser.parse_args().rest_points
-    voyage_type = parser.parse_args().voyage_type
+    restr_points = parser.parse_args().restr_points
+    voy_type = parser.parse_args().voy_type
 
     # generating resul
     result = {'remove_ship': bool(ship_to_remove),
@@ -70,5 +71,5 @@ def parcer():
               'l_ports': l_ports,
               'd_ports': d_ports,
               'restr_points': restr_points,
-              'voyage_type': voyage_type}
+              'voy_type': voy_type}
     return result

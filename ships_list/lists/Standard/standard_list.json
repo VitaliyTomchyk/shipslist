@@ -5,7 +5,8 @@
         "stage": "Prior delivery",
         "party": "Operator",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null,
+        "ship": null
     },
     {
         "task_title": "2. Check in cp the option for on-hire bunker/condition survey, where is better to arrange - delivery port or first load port? __________________ name of co __________",
@@ -13,7 +14,8 @@
         "stage": "Prior delivery",
         "party": "Operator",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null,
+        "ship": null
     },
     {
         "task_title": "3. Obtain all up to date main certificates of the vessel via Master/owners",
@@ -21,7 +23,8 @@
         "stage": "Prior delivery",
         "party": "Operator",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "4. Check the preliminary Bunker program for the voyage. Is it necessary to supply prior delivery",
@@ -29,7 +32,8 @@
         "stage": "Prior delivery",
         "party": "Operator",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "5. Update cash flow 2 times a week",
@@ -37,7 +41,8 @@
         "stage": "Prior delivery",
         "party": "Operator",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "1. Send greeting message asking broker in charge full contact details of vessel; check the vessel's email attachment limit",
@@ -45,7 +50,8 @@
         "stage": "Prior delivery",
         "party": "Owners",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "2. Obtain details of agents at the delivery port (if available)",
@@ -93,7 +99,8 @@
         "stage": "Prior delivery",
         "party": "Charterers",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "2. Check in recap lay can and if best operational speed suits",
@@ -101,7 +108,8 @@
         "stage": "Prior delivery",
         "party": "Charterers",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "3. Give initial ETA load port notice to Voyage Charterers",
@@ -109,7 +117,8 @@
         "stage": "Prior delivery",
         "party": "Charterers",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "4. Ask for final Load port and Agents' details if not stated in recap. Keep asking until received",
@@ -117,7 +126,8 @@
         "stage": "Prior delivery",
         "party": "Charterers",
         "status": "Pending",
-        "voyage": null, "ship": null
+        "voyage": null, 
+        "ship": null
     },
     {
         "task_title": "1. Check vessel's prospects via owners' agents at delivery place",

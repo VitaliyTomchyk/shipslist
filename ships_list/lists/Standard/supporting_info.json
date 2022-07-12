@@ -1,10 +1,29 @@
-{"stages": ["Prior delivery",
-    "After delivery",
-    "Prior arrival at load port",
-    "Load port",
-    "Prior arrival Discharge port",
-    "Discharge port",
-    "After redelivery"],
-"parties": ["Operator", "Owner", "Charterer", "Agent", "Surveyor",
-    "Master", "Routing company","Broker", "P and I","Other party"],
-"voyage_types": ["TC - VC", "TC - TC", "VC - VC"]}
+{
+    "stages": [
+        "Prior delivery",
+        "After delivery",
+        "Prior arrival at load port",
+        "Load port",
+        "Prior arrival Discharge port",
+        "Discharge port",
+        "After redelivery"
+    ],
+    "parties": [
+        "Operator",
+        "Owner",
+        "Charterer",
+        "Agent",
+        "Surveyor",
+        "Master",
+        "Routing company",
+        "Broker",
+        "P and I",
+        "Other party"
+    ],
+    "voyage_types": [
+        "TC - VC",
+        "TC - TC",
+        "VC - VC"
+    ],
+    "id": 8
+}

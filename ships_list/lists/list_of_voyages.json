@@ -1,6 +1,17 @@
-[{"id": 2,
-  "ship": "BEDA",
-  "load_ports": ["Algejiras, Spain"],
-  "discharge_ports": ["Odessa, Ukraine"],
-  "canals": ["Dardanellas", "Bosporus"],
-  "type": "TC - VC"}]
+[
+    {
+        "id": 8,
+        "ship": "BEDA",
+        "l_ports": [
+            "Odessa,",
+            "Ukraine"
+        ],
+        "d_ports": [
+            "Algeciras"
+        ],
+        "restr_points": [
+            "Bosphorus"
+        ],
+        "voy_type": "TC - TC"
+    }
+]

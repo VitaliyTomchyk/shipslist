@@ -1,14 +1,37 @@
 import json
 
 
+def missing_arguments_checker(dictionary):
+    result = []
+    for key in dictionary:
+        if dictionary[key] is None:
+            result.append(key)
+    if result != []:
+        result = list(map(lambda x: '-' + x, result))
+        print('Following arguments are missing:\n' + list_to_string(result))
+        return False
+    return True
+
+
 def append_JSON_file(information, file):
     with open(file, 'r') as f:
         list_of_el = json.load(f)
+        if list_of_el == '':
+            list_of_el = []
 
     list_of_el.append(information)
 
     with open(file, 'w') as f:
         json.dump(list_of_el, f, indent=4, separators=(',', ': '))
+
+
+def amend_JSON_dict(information, file):
+    with open(file, 'r') as f:
+        dictionary = json.load(f)
+        for key in information:
+            dictionary[key] = information[key]
+    with open(file, 'w') as f:
+        json.dump(dictionary, f, indent=4, separators=(',', ': '))
 
 
 def IMO_checker(IMO):
@@ -46,4 +69,9 @@ def list_to_string(the_list):
 
 
 def id_generator():
-    return 2
+    i = 0
+    with open('ships_list/lists/standard/supporting_info.json', 'r') as f:
+        i = json.load(f)['id'] + 1
+    amend_JSON_dict({"id": i},
+                    'ships_list/lists/standard/supporting_info.json')
+    return i

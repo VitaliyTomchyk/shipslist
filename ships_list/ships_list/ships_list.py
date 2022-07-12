@@ -23,4 +23,4 @@ def ships_list(parced_result):
     if parced_result['add_voyage']:
         add_voyage(parced_result['ship'], parced_result['l_ports'],
                    parced_result['d_ports'], parced_result['restr_points'],
-                   parced_result['voyage_type'])
+                   parced_result['voy_type'])
