@@ -1,6 +1,5 @@
 import argparse
 import json
-from ships_list.additional_functions.additional_functions import list_to_string
 
 
 def parcer():
@@ -11,26 +10,27 @@ def parcer():
         parties = file['parties']
     with open('ships_list/lists/ships.json', 'r') as f:
         file = json.load(f)
-        ships = list_to_string(list(map(lambda x: x['name'], file)))
+        ships = list(map(lambda x: x['name'], file))
 
     # creating parser
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
-    parser.add_argument('--add_voyage', help='add voyage')
-    parser.add_argument('-add_ship', help='enter name of ship to be added')
-    parser.add_argument('-ship', help='enter name of ship to work with',
-                        choices=ships)
-    parser.add_argument('-IMO', help='put IMO number')
-    parser.add_argument('-add_task', help='put name of task')
-    parser.add_argument('-task_stage', help='task stage:\n' +
-                                            list_to_string(stages),
-                        choices=stages)
-    parser.add_argument('-task_party', help='name or role ' +
-                                            'task is related to \n' +
-                                            list_to_string(parties),
-                        choices=parties)
+
+    parser.add_argument('-add_voyage', help='add voyage')
+    parser.add_argument('-add_ship', help='enter name of ship to be added',
+                        type=str)
     parser.add_argument('-remove_ship', help='removes ship from list based' +
                         ' on name of the ship', choices=ships)
-    parser.add_argument('-read_list')
+    parser.add_argument('-ship', help='enter name of ship to work with',
+                        choices=ships)
+    parser.add_argument('-IMO', help='put IMO number',
+                        type=int)
+    parser.add_argument('-add_task', help='put name of task',
+                        type=str)
+    parser.add_argument('-task_stage', help='task stage',
+                        choices=stages)
+    parser.add_argument('-task_party', help='name or role task is related to',
+                        choices=parties)
+    parser.add_argument('-read_list', help='read list of stated ship')
     parser.add_argument('-add_list')
 
     # creating varuables

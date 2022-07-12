@@ -1,13 +1,13 @@
 import json
 
 
-def write_task_in_list(task):
-    with open('ships_list/lists/tasks.json', 'r') as f:
+def write_task_in_JSON(information, file):
+    with open(file, 'r') as f:
         list_of_ships = json.load(f)
 
-    list_of_ships.append(task)
+    list_of_ships.append(information)
 
-    with open('ships_list/lists/tasks.json', 'w') as f:
+    with open(file, 'w') as f:
         json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
 
 

@@ -16,7 +16,7 @@ package-install:
 update:
 	make build
 	make publish
-	make package-install
+	make install
 
 pytest:
 	poetry run pytest
