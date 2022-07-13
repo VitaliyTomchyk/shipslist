@@ -25,5 +25,11 @@
         "TC - TC",
         "VC - VC"
     ],
+    "links": {
+        "ships_file": "ships_list/lists/ships.json",
+        "list_of_voyages_file": "ships_list/lists/list_of_voyages.json",
+        "tasks_file": "hips_list/lists/tasks.json"
+
+    }, 
     "id": 16
 }
