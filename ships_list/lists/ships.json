@@ -2,6 +2,12 @@
     {
         "name": "BEDA",
         "IMO": 7,
-        "ships_list_id": null
+        "has_tasks": null
+    },
+    {
+        "name": "fiufiu",
+        "IMO": 13,
+        "has_list": false,
+        "ships_list": null
     }
 ]

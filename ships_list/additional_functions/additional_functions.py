@@ -70,8 +70,8 @@ def list_to_string(the_list):
 
 def id_generator():
     i = 0
-    with open('ships_list/lists/standard/supporting_info.json', 'r') as f:
+    with open('ships_list/lists/Standard/supporting_info.json', 'r') as f:
         i = json.load(f)['id'] + 1
     amend_JSON_dict({"id": i},
-                    'ships_list/lists/standard/supporting_info.json')
+                    'ships_list/lists/Standard/supporting_info.json')
     return i

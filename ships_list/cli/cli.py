@@ -4,7 +4,7 @@ import json
 
 def parcer():
     # grepping options for choise arguments
-    with open('ships_list/lists/standard/supporting_info.json', 'r') as f:
+    with open('ships_list/lists/Standard/supporting_info.json', 'r') as f:
         file = json.load(f)
         stages = file['stages']
         parties = file['parties']

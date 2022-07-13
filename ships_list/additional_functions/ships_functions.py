@@ -8,7 +8,7 @@ def add_ship(name, IMO):
 
     ships_details = {"name": name,
                      "IMO": int(IMO),
-                     "has_list": False,
+                     "has_tasks": False,
                      "ships_list": None}
     with open('ships_list/lists/ships.json', 'r') as f:
         list_of_ships = json.load(f)

@@ -10,10 +10,10 @@ def add_voyage(ship, list_of_l_ports, list_of_d_ports, list_of_canals, type):
               "restr_points": list_of_canals,
               "voy_type": type}
 
-    checked_reasuls = result.copy()
-    del checked_reasuls['restr_points']
+    checked_results = result.copy()
+    del checked_results['restr_points']
 
-    if missing_arguments_checker(checked_reasuls) is False:
+    if missing_arguments_checker(checked_results) is False:
         print('Voyage has not been added.')
         return
     else:
