@@ -16,7 +16,6 @@ package-install:
 update:
 	make build
 	make publish
-	make install
 	make package-install
 
 pytest:
