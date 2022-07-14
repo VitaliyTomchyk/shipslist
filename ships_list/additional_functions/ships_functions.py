@@ -6,7 +6,7 @@ def add_ship(name, IMO):
     if IMO_checker(IMO) is False:
         return
 
-    ships_details = {"name": name,
+    ships_details = {"name": name.upper(),
                      "IMO": int(IMO),
                      "has_tasks": False,
                      "ships_list": None}

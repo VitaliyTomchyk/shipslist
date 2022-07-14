@@ -1,42 +1,18 @@
 [
     {
-        "ID": 1,
-        "task_title": "Win",
-        "ships_name": "BEDA",
+        "task_title": "Make a party",
+        "ships_name": "GRANDBLUE",
         "status": "pending",
-        "stage": "Start",
-        "party": "Player"
+        "stage": "After delivery",
+        "party": "Owner",
+        "id": 61
     },
     {
-        "task_title": "Arrive to Odessa",
-        "ships_name": "BEDA",
+        "task_title": "Make a party",
+        "ships_name": "SOVA",
         "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 1
-    },
-    {
-        "task_title": "Arrive to Odessa",
-        "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 1
-    },
-    {
-        "task_title": "Arrive to Odessa",
-        "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 9
-    },
-    {
-        "task_title": "Arrive to Odessa",
-        "ships_name": "FIUFIU",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 15
+        "stage": "After delivery",
+        "party": "Owner",
+        "id": 62
     }
 ]
