@@ -1,6 +1,6 @@
 [
     {
-        "task_title": "the task has changed",
+        "task_title": "Come to palamos",
         "ships_name": "BEDA",
         "status": "pending",
         "stage": "Prior delivery",
@@ -8,7 +8,7 @@
         "id": 66
     },
     {
-        "task_title": "With this task, make number_of_tasks = 2",
+        "task_title": "Go out from palamos",
         "ships_name": "BEDA",
         "status": "pending",
         "stage": "Prior delivery",

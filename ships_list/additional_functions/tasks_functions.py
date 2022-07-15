@@ -46,9 +46,8 @@ def read_tasks_list(ship):
     print(f'This are the tasks you have for ship {ship}:')
 
     for task in list_of_tasks_dictionaries:
-        if task == list(filter(lambda x: True if x['ships_name'] == ship else False,
-                        list_of_tasks_dictionaries))[0]:
-            print(f'-{task["task_title"]}')
+        if task['ship_name'] == ship:
+           print(f'-{task["task_title"]}')        
 
     with open("ships_list/lists/tasks.json", "w") as a_file:
             json.dump(list_of_tasks_dictionaries, a_file, indent=4,
