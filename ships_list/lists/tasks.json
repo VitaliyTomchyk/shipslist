@@ -1,42 +1,26 @@
 [
     {
-        "task_title": "Make a party",
-        "ships_name": "GRANDBLUE",
-        "status": "pending",
-        "stage": "After delivery",
-        "party": "Owner",
-        "id": 61
-    },
-    {
-        "task_title": "Make a party",
-        "ships_name": "SOVA",
-        "status": "pending",
-        "stage": "After delivery",
-        "party": "Owner",
-        "id": 62
-    },
-    {
-        "task_title": "Make number_of_tasks = 1",
+        "task_title": "the task has changed",
         "ships_name": "BEDA",
         "status": "pending",
         "stage": "Prior delivery",
         "party": "Owner",
-        "id": 63
+        "id": 66
     },
     {
-        "task_title": "Make number_of_tasks = 1",
+        "task_title": "With this task, make number_of_tasks = 2",
+        "ships_name": "BEDA",
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Owner",
+        "id": 67
+    },
+    {
+        "task_title": "This task is to make the file have more variables",
         "ships_name": "GRANDBLUE",
         "status": "pending",
         "stage": "Prior delivery",
         "party": "Owner",
-        "id": 64
-    },
-    {
-        "task_title": "Make number_of_tasks = 2",
-        "ships_name": "GRANDBLUE",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Owner",
-        "id": 65
+        "id": 68
     }
 ]

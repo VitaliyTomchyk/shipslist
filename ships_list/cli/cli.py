@@ -11,7 +11,7 @@ def parcer():
         voyage_types = file['voyage_types']
     with open('ships_list/lists/ships.json', 'r') as f:
         file = json.load(f)
-        ships = list(map(lambda x: x['name'], file))
+        ships = list(map(lambda x: x['ships_name'], file))
 
     # creating parser
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
