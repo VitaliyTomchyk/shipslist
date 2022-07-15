@@ -33,6 +33,10 @@ def parcer():
     parser.add_argument('-read_list', help='read list of stated ship')
     parser.add_argument('-add_list')
     parser.add_argument('-add_voyage', help='add voyage', nargs=1)
+    parser.add_argument('-read_voyage', help='read details of voyage from id',
+                        nargs=1)
+    parser.add_argument('-remove_voyage', help='remove voyage by id',
+                        nargs=1)
     parser.add_argument('-l_ports', help='load ports', nargs="*")
     parser.add_argument('-d_ports', help='discharge ports', nargs="*")
     parser.add_argument('-restr_points', help='restriction points on the way',
@@ -55,8 +59,10 @@ def parcer():
     d_ports = parser.parse_args().d_ports
     restr_points = parser.parse_args().restr_points
     voy_type = parser.parse_args().voy_type
+    voyage_id = parser.parse_args().read_voyage
+    rm_voyage_id = parser.parse_args().remove_voyage 
 
-    # generating resul
+    # generating result
     result = {'remove_ship': bool(ship_to_remove),
               'add_list': add_list,
               'read_list': read_list,
@@ -71,5 +77,7 @@ def parcer():
               'l_ports': l_ports,
               'd_ports': d_ports,
               'restr_points': restr_points,
-              'voy_type': voy_type}
+              'voy_type': voy_type,
+              'read_voyage': voyage_id[0],
+              'remove_voyage': rm_voyage_id[0]}
     return result

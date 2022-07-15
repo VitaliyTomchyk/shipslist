@@ -1,7 +1,8 @@
 from ships_list.additional_functions.ships_functions import add_ship,\
                                                             remove_ship
 from ships_list.additional_functions.tasks_functions import add_task
-from ships_list.additional_functions.voyage_functions import add_voyage
+from ships_list.additional_functions.voyage_functions import add_voyage, \
+    read_voyage
 
 
 def ships_list(parced_result):
@@ -24,3 +25,6 @@ def ships_list(parced_result):
         add_voyage(parced_result['ship'], parced_result['l_ports'],
                    parced_result['d_ports'], parced_result['restr_points'],
                    parced_result['voy_type'])
+    
+    if parced_result['read_voyage']:
+        read_voyage(parced_result['read_voyage'])

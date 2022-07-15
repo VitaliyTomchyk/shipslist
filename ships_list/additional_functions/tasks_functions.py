@@ -28,11 +28,13 @@ def add_task(ship, task, stage, party):
         with open("ships_list/lists/ships.json", "r") as a_file:
             list_of_ships_dictionaries = json.load(a_file)
 
-        the_ship = list(filter(lambda x: True if x['name'] == ship else False, list_of_ships_dictionaries))[0]
+        the_ship = list(filter(lambda x: True if x['name'] == ship else False,
+                        list_of_ships_dictionaries))[0]
         the_ship["has_tasks"] = True
 
         with open("ships_list/lists/ships.json", "w") as a_file:
-            json.dump(list_of_ships_dictionaries, a_file, indent=4, separators=(',', ': '))
+            json.dump(list_of_ships_dictionaries, a_file, indent=4,
+                      separators=(',', ': '))
 
 
 def read_ships_list(ship, voyage):

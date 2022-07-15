@@ -25,6 +25,16 @@ def append_JSON_file(information, file):
         json.dump(list_of_el, f, indent=4, separators=(',', ': '))
 
 
+def read_JSON_file(file):
+     with open(file, 'r') as f:
+        return json.load(f)
+
+
+def write_JSON_file(information, file):
+    with open(file, 'w') as f:
+        json.dump(information, f, indent=4, separators=(',', ': '))
+
+
 def amend_JSON_dict(information, file):
     with open(file, 'r') as f:
         dictionary = json.load(f)
