@@ -1,20 +1,16 @@
 [
     {
-        "name": "GRANDBLUE",
-        "IMO": 17,
-        "has_tasks": true,
-        "ships_list": null
-    },
-    {
         "name": "BEDA",
-        "IMO": 3,
-        "has_tasks": false,
-        "ships_list": null
+        "IMO": 986298573558,
+        "has_tasks": true,
+        "ships_list": null,
+        "number_of_tasks": 1
     },
     {
-        "name": "SOVA",
-        "IMO": 2039,
-        "has_tasks": true,
-        "ships_list": null
+        "name": "GRANDBLUE",
+        "IMO": 986298573558,
+        "has_tasks": false,
+        "ships_list": null,
+        "number_of_tasks": 0
     }
 ]

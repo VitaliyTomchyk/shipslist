@@ -31,6 +31,7 @@ def add_task(ship, task, stage, party):
         the_ship = list(filter(lambda x: True if x['name'] == ship else False,
                         list_of_ships_dictionaries))[0]
         the_ship["has_tasks"] = True
+        the_ship["number_of_tasks"] += 1
 
         with open("ships_list/lists/ships.json", "w") as a_file:
             json.dump(list_of_ships_dictionaries, a_file, indent=4,
