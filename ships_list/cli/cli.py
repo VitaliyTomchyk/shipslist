@@ -43,6 +43,7 @@ def parcer():
                         nargs="*", default=None)
     parser.add_argument('-voy_type', help='choose type of voyage',
                         choices=voyage_types)
+    parser.add_argument('-read_tasks_list', help='read the tasks')
 
     # creating varuables
     added_ship = parser.parse_args().add_ship
@@ -60,7 +61,8 @@ def parcer():
     restr_points = parser.parse_args().restr_points
     voy_type = parser.parse_args().voy_type
     voyage_id = parser.parse_args().read_voyage
-    rm_voyage_id = parser.parse_args().remove_voyage 
+    rm_voyage_id = parser.parse_args().remove_voyage
+    read_tasks_list = parser.parse_args().read_tasks_list
 
     # generating result
     result = {'remove_ship': bool(ship_to_remove),
@@ -79,5 +81,7 @@ def parcer():
               'restr_points': restr_points,
               'voy_type': voy_type,
               'read_voyage': voyage_id,
-              'remove_voyage': rm_voyage_id}
+              'remove_voyage': rm_voyage_id,
+              'read_tasks_list': read_tasks_list
+              }
     return result

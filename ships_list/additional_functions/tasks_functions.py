@@ -38,8 +38,17 @@ def add_task(ship, task, stage, party):
                       separators=(',', ': '))
 
 
-def read_ships_list(ship, voyage):
-    # result = ''
-    # for task in the_list:
-    #     print(result)
-    pass
+def read_tasks_list(ship):
+
+    with open("ships_list/lists/tasks.json", "r") as a_file:
+            list_of_tasks_dictionaries = json.load(a_file)
+ 
+    the_task = list(filter(lambda x: True if x['ships_name'] == ship else False,
+                        list_of_tasks_dictionaries))[0]
+    the_task["task_title"] = "Task name has been changed"
+
+    with open("ships_list/lists/ships.json", "w") as a_file:
+            json.dump(list_of_tasks_dictionaries, a_file, indent=4,
+                      separators=(',', ': '))
+
+    
