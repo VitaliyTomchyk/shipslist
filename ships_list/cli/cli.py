@@ -78,6 +78,6 @@ def parcer():
               'd_ports': d_ports,
               'restr_points': restr_points,
               'voy_type': voy_type,
-              'read_voyage': voyage_id[0],
-              'remove_voyage': rm_voyage_id[0]}
+              'read_voyage': voyage_id,
+              'remove_voyage': rm_voyage_id}
     return result

@@ -9,8 +9,8 @@
     {
         "name": "GRANDBLUE",
         "IMO": 986298573558,
-        "has_tasks": false,
+        "has_tasks": true,
         "ships_list": null,
-        "number_of_tasks": 0
+        "number_of_tasks": 1
     }
 ]
