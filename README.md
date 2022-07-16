@@ -8,4 +8,5 @@ List of functions:
  <li>add_task</li>
  <li>add_ship</li>
  <li>add_list</li>
+ <li>-h, --help</li>         
 </ul>

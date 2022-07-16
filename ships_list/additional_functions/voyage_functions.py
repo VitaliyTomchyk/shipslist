@@ -27,7 +27,6 @@ def read_voyage(id):
     the_voyage = list(filter(lambda x: True if x['id'] == int(id) else False,
                              voyages))[0]
     print_voyage_details(the_voyage)
-    return
 
 
 def print_voyage_details(the_voyage):
@@ -39,7 +38,13 @@ def print_voyage_details(the_voyage):
 
 def remove_voyage(id):
     voyages = read_JSON_file('ships_list/lists/list_of_voyages.json')
+    
     the_voyage = list(filter(lambda x: True if x['id'] == int(id) else False,
                              voyages))[0]
+    
     voyages.remove(the_voyage)
+    print("Following voyage will be removed.")
+    read_voyage(id)
+    
     write_JSON_file(voyages, 'ships_list/lists/list_of_voyages.json')
+    print('Voyage is removed.')
