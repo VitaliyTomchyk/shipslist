@@ -32,5 +32,6 @@ def ships_list(parced_result):
     
     if parced_result['remove_voyage']:
         remove_voyage(parced_result['remove_voyage'])
+
     if parced_result['read_tasks_list']:
         read_tasks_list(parced_result['read_tasks_list'])

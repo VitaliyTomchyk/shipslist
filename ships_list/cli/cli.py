@@ -26,12 +26,13 @@ def parcer():
                         type=int)
     parser.add_argument('-add_task', help='put name of task',
                         type=str)
+    parser.add_argument('-remove_task', help='put name of task',
+                        type=str)
     parser.add_argument('-task_stage', help='task stage',
                         choices=stages)
     parser.add_argument('-task_party', help='name or role task is related to',
                         choices=parties)
     parser.add_argument('-read_list', help='read list of stated ship')
-    parser.add_argument('-add_list')
     parser.add_argument('-add_voyage', help='add voyage', nargs=1)
     parser.add_argument('-read_voyage', help='read details of voyage from id',
                         nargs=1)
@@ -47,13 +48,13 @@ def parcer():
     # creating varuables
     added_ship = parser.parse_args().add_ship
     ships_name = parser.parse_args().ship
-    task = parser.parse_args().add_task
     IMO = parser.parse_args().IMO
+    add_task = parser.parse_args().add_task
+    rm_task = parser.parse_args().remove_task
     task_stage = parser.parse_args().task_stage
     task_party = parser.parse_args().task_party
     ship_to_remove = parser.parse_args().remove_ship
     read_list = parser.parse_args().read_list
-    add_list = parser.parse_args().add_list
     add_voyage = parser.parse_args().add_voyage
     l_ports = parser.parse_args().l_ports
     d_ports = parser.parse_args().d_ports
@@ -65,13 +66,13 @@ def parcer():
 
     # generating result
     result = {'remove_ship': bool(ship_to_remove),
-              'add_list': add_list,
               'read_list': read_list,
               'added_ship': added_ship,
               'ship': ships_name,
               'ship_to_remove': ship_to_remove,
               'IMO': IMO,
-              'tasks_name': task,
+              'tasks_name': add_task,
+              'rm_task_name': rm_task,
               'task_stage': task_stage,
               'task_party': task_party,
               'add_voyage': add_voyage,

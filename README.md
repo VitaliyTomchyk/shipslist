@@ -5,8 +5,13 @@ This progrma makes lists of tasks for ship operator.
 
 List of functions:
 <ul>
- <li>add_task</li>
  <li>add_ship</li>
- <li>add_list</li>
- <li>-h, --help</li>         
+ <li>remove_ship</li>
+ <li>read_ship</li>
+ <li>add_task</li>
+ <li>remove_task</li>
+ <li>read_task</li>
+ <li>add_voyage</li>
+ <li>remove_voyage</li>     
+ <li>read_voyage</li>
 </ul>
