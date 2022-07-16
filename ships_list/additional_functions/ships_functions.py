@@ -10,7 +10,7 @@ def add_ship(name, IMO):
                      "IMO": int(IMO),
                      "has_tasks": False,
                      "ships_list": None,
-                     "number_of_tasks":0}
+                     "number_of_tasks": 0}
     with open('ships_list/lists/ships.json', 'r') as f:
         list_of_ships = json.load(f)
 
@@ -38,6 +38,7 @@ def remove_ship(name):
 
     with open('ships_list/lists/ships.json', 'w') as f:
         json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
+
 
 def read_ship(name):
     return
