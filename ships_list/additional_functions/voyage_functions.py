@@ -26,10 +26,7 @@ def read_voyage(id):
     voyages = read_JSON_file('ships_list/lists/list_of_voyages.json')
     the_voyage = list(filter(lambda x: True if x['id'] == int(id) else False,
                              voyages))[0]
-    print_voyage_details(the_voyage)
-
-
-def print_voyage_details(the_voyage):
+    
     result = 'Voyage details are following\n'
     for key in the_voyage:
         result = result + "\n" + key + ':  ' + str(the_voyage[key])

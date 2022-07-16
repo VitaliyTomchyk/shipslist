@@ -53,4 +53,5 @@ def read_tasks_list(ship):
             json.dump(list_of_tasks_dictionaries, a_file, indent=4,
                       separators=(',', ': '))
 
-    
+def remove_task():
+    revert
