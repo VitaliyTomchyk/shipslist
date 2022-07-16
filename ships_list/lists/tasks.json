@@ -1,18 +1,26 @@
 [
     {
-        "task_title": "Make a party",
-        "ships_name": "GRANDBLUE",
+        "task_title": "Come to palamos",
+        "ships_name": "BEDA",
         "status": "pending",
-        "stage": "After delivery",
+        "stage": "Prior delivery",
         "party": "Owner",
-        "id": 61
+        "id": 66
     },
     {
-        "task_title": "Make a party",
-        "ships_name": "SOVA",
+        "task_title": "Go out from palamos",
+        "ships_name": "BEDA",
         "status": "pending",
-        "stage": "After delivery",
+        "stage": "Prior delivery",
         "party": "Owner",
-        "id": 62
+        "id": 67
+    },
+    {
+        "task_title": "This task is to make the file have more variables",
+        "ships_name": "GRANDBLUE",
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Owner",
+        "id": 68
     }
 ]

@@ -30,5 +30,8 @@
         "list_of_voyages_file": "ships_list/lists/list_of_voyages.json",
         "tasks_file": "hips_list/lists/tasks.json"
     },
-    "id": 62
+    "fast_command": {
+        "fast_add_task": "ships_list -ship 'BEDA' -add_task 'Make number_of_tasks = 1' -task_stage 'Prior delivery' -task_party 'Owner'"
+    },
+    "id": 68
 }

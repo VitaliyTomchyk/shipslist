@@ -6,10 +6,11 @@ def add_ship(name, IMO):
     if IMO_checker(IMO) is False:
         return
 
-    ships_details = {"name": name.upper(),
+    ships_details = {"ships_name": name.upper(),
                      "IMO": int(IMO),
                      "has_tasks": False,
-                     "ships_list": None}
+                     "ships_list": None,
+                     "number_of_tasks":0}
     with open('ships_list/lists/ships.json', 'r') as f:
         list_of_ships = json.load(f)
 
