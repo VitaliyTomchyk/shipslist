@@ -44,7 +44,7 @@ def parcer():
     parser.add_argument('-voy_type', help='choose type of voyage',
                         choices=voyage_types)
     parser.add_argument('-read_tasks_list', help='read the tasks')
-    parser.add_argument('-redact_task', help='radact a task')
+    parser.add_argument('-redact_task', help='radact a task element')
 
     # creating varuables
     added_ship = parser.parse_args().add_ship

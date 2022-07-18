@@ -15,4 +15,5 @@ List of functions:
  <li>add_voyage</li>
  <li>remove_voyage</li>     
  <li>read_voyage</li>
+ <li>redact_task</li>
 </ul>
