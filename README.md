@@ -1,7 +1,7 @@
 # Ships list
 <a href="https://codeclimate.com/github/VitaliyTomchyk/shipslist/maintainability"><img src="https://api.codeclimate.com/v1/badges/8c3645ee5c849170cc62/maintainability" /></a>
 
-This progrma makes lists of tasks for ship operator.
+This program makes lists of tasks for ship operator.
 
 List of functions:
 <ul>
@@ -11,6 +11,7 @@ List of functions:
  <li>add_task</li>
  <li>remove_task</li>
  <li>read_task</li>
+ <li>read_tasks_list</li>
  <li>add_voyage</li>
  <li>remove_voyage</li>     
  <li>read_voyage</li>

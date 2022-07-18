@@ -30,8 +30,8 @@ def read_JSON_file(file):
         return json.load(f)
 
 
-def write_JSON_file(information, file):
-    with open(file, 'w') as f:
+def write_JSON_file(file, information):
+    with open(file, "w") as f:
         json.dump(information, f, indent=4, separators=(',', ': '))
 
 
@@ -85,3 +85,9 @@ def id_generator():
     amend_JSON_dict({"id": i},
                     'ships_list/lists/Standard/supporting_info.json')
     return i
+
+
+def dictionary_finder(list_of_dictionaries, value, key):
+
+    return list(filter(lambda x: True if x[key] == value
+                else False, list_of_dictionaries))[0]

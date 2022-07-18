@@ -50,7 +50,7 @@ def parcer():
     ships_name = parser.parse_args().ship
     IMO = parser.parse_args().IMO
     add_task = parser.parse_args().add_task
-    rm_task = parser.parse_args().remove_task
+    remove_task = parser.parse_args().remove_task
     task_stage = parser.parse_args().task_stage
     task_party = parser.parse_args().task_party
     ship_to_remove = parser.parse_args().remove_ship
@@ -72,7 +72,6 @@ def parcer():
               'ship_to_remove': ship_to_remove,
               'IMO': IMO,
               'tasks_name': add_task,
-              'rm_task_name': rm_task,
               'task_stage': task_stage,
               'task_party': task_party,
               'add_voyage': add_voyage,
@@ -82,6 +81,7 @@ def parcer():
               'voy_type': voy_type,
               'read_voyage': voyage_id,
               'remove_voyage': rm_voyage_id,
-              'read_tasks_list': read_tasks_list
+              'read_tasks_list': read_tasks_list,
+              'remove_task': remove_task
               }
     return result
