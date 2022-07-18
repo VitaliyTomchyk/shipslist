@@ -91,15 +91,3 @@ def dictionary_finder(list_of_dictionaries, value, key):
 
     return list(filter(lambda x: True if x[key] == value
                 else False, list_of_dictionaries))[0]
-
-
-def json_read(file):
-
-    with open(file, "r") as a_file:
-        return json.load(a_file)
-
-
-def json_write(file, information):
-
-    with open(file, "w") as a_file:
-        json.dump(information, a_file, indent=4, separators=(',', ': '))
