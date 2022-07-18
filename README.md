@@ -11,7 +11,7 @@ List of functions:
  <li>add_task</li>
  <li>remove_task</li>
  <li>read_task</li>
- <li>read_tasks_list<li>
+ <li>read_tasks_list</li>
  <li>add_voyage</li>
  <li>remove_voyage</li>     
  <li>read_voyage</li>
