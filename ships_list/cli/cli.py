@@ -14,7 +14,8 @@ def parcer():
         ships = list(map(lambda x: x['ships_name'], file))
 
     # creating parser
-    parser = argparse.ArgumentParser(description='Working with ship\'s list.')
+    parser = argparse.ArgumentParser(description='Working with ship\'s list.',
+                                     prog='ships_list')
 
     parser.add_argument('-add_ship',
                         help='enter name of ship to be added', type=str)

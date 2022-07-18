@@ -3,7 +3,8 @@ from ships_list.additional_functions.additional_functions import id_generator,\
     write_JSON_file, dictionary_finder
 
 
-def add_voyage(ship, list_of_l_ports, list_of_d_ports, list_of_canals, type):
+def add_voyage(ship, ports, type):
+    list_of_l_ports, list_of_d_ports, list_of_canals = ports
     result = {"id": id_generator(),
               "ship": ship,
               "l_ports": list_of_l_ports,

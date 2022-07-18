@@ -31,8 +31,8 @@ com:
 	git commit -m '$m'
 
 push:
-	make pytest
 	make lint
+	make pytest
 	git add .
 	git commit -m '$m'
 	git push

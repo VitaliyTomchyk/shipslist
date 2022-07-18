@@ -23,8 +23,8 @@ def ships_list(parced_result):
         add_task(ship, task, stage, party)
 
     if parced_result['add_voyage']:
-        add_voyage(parced_result['ship'], parced_result['l_ports'],
-                   parced_result['d_ports'], parced_result['restr_points'],
+        add_voyage(parced_result['ship'], [parced_result['l_ports'],
+                   parced_result['d_ports'], parced_result['restr_points']],
                    parced_result['voy_type'])
 
     if parced_result['read_voyage']:

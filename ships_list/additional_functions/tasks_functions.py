@@ -84,6 +84,7 @@ def redact_task(id):
             print(f'Write the element you want to edit for \
 \'{task["task_title"]}\':\n-', end='')
             element = input()
+
             if element in task:
                 print(f'Write the new assingment for \
 \'{element}\':\n-', end='')
