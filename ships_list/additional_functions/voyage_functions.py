@@ -1,6 +1,6 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     append_JSON_file, missing_arguments_checker, read_JSON_file, \
-    write_JSON_file
+    write_JSON_file, dictionary_finder
 
 
 def add_voyage(ship, list_of_l_ports, list_of_d_ports, list_of_canals, type):
@@ -24,8 +24,7 @@ def add_voyage(ship, list_of_l_ports, list_of_d_ports, list_of_canals, type):
 
 def read_voyage(id):
     voyages = read_JSON_file('ships_list/lists/list_of_voyages.json')
-    the_voyage = list(filter(lambda x: True if x['id'] == int(id) else False,
-                             voyages))[0]
+    the_voyage = dictionary_finder(voyages, int(id), 'id')
 
     result = 'Voyage details are following\n'
     for key in the_voyage:
@@ -36,8 +35,7 @@ def read_voyage(id):
 def remove_voyage(id):
     voyages = read_JSON_file('ships_list/lists/list_of_voyages.json')
 
-    the_voyage = list(filter(lambda x: True if x['id'] == int(id) else False,
-                             voyages))[0]
+    the_voyage = dictionary_finder(voyages, int(id), 'id')
 
     voyages.remove(the_voyage)
     print("Following voyage will be removed.")

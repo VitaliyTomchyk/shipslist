@@ -44,6 +44,16 @@ def read_tasks_list(ship):
     write_JSON_file("ships_list/lists/tasks.json", tasks_list)
 
 
+def read_task(id):
+    tasks = read_JSON_file('ships_list/lists/tasks.json')
+    the_task = dictionary_finder(tasks, int(id), 'id')
+
+    result = 'Task details are following\n'
+    for key in the_task:
+        result = result + "\n" + key + ':  ' + str(the_task[key])
+    print(result + "\n")
+
+
 def remove_task(id):
 
     tasks_list = read_JSON_file("ships_list/lists/tasks.json")
@@ -52,6 +62,9 @@ def remove_task(id):
     while i < len(tasks_list):
         i += 1
         if str(tasks_list[i]["id"]) == str(id):
+            print(f"Following task will be removed:\
+            {tasks_list[i]['task_title']}")
+            read_task(id)
             ship = tasks_list[i]["ships_name"]
             the_ship = dictionary_finder(ships_list, ship, "ships_name")
             the_ship["number_of_tasks"] -= 1
