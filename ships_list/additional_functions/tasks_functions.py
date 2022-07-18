@@ -1,6 +1,6 @@
 from ships_list.additional_functions.additional_functions \
-    import append_JSON_file, id_generator, missing_arguments_checker
-import json
+    import append_JSON_file, id_generator, missing_arguments_checker,\
+    json_read, json_write, dictionary_finder
 
 
 def add_task(ship, task, stage, party):
@@ -22,37 +22,41 @@ def add_task(ship, task, stage, party):
 
     else:
         append_JSON_file(the_task, file)
-
         print('Task has been added.')
 
-        with open("ships_list/lists/ships.json", "r") as a_file:
-            list_of_ships_dictionaries = json.load(a_file)
-
-        the_ship = list(filter(lambda x: True if x['ships_name'] == ship
-                               else False, list_of_ships_dictionaries))[0]
+        ships_list = json_read("ships_list/lists/ships.json")
+        the_ship = dictionary_finder(ships_list, ship, "ships_name")
         the_ship["has_tasks"] = True
         the_ship["number_of_tasks"] += 1
-
-        with open("ships_list/lists/ships.json", "w") as a_file:
-            json.dump(list_of_ships_dictionaries, a_file, indent=4,
-                      separators=(',', ': '))
+        json_write("ships_list/lists/ships.json", ships_list)
 
 
 def read_tasks_list(ship):
 
-    with open("ships_list/lists/tasks.json", "r") as a_file:
-        list_of_tasks_dictionaries = json.load(a_file)
+    tasks_list = json_read("ships_list/lists/tasks.json")
 
     print(f'This are the tasks you have for ship {ship}:')
 
-    for task in list_of_tasks_dictionaries:
-        if task['ship_name'] == ship:
+    for task in tasks_list:
+        if task['ships_name'] == ship:
             print(f'-{task["task_title"]}')
 
-    with open("ships_list/lists/tasks.json", "w") as a_file:
-        json.dump(list_of_tasks_dictionaries, a_file, indent=4,
-                  separators=(',', ': '))
+    json_write("ships_list/lists/tasks.json", tasks_list)
 
 
-def remove_task():
-    return
+def remove_task(id):
+
+    tasks_list = json_read("ships_list/lists/tasks.json")
+    ships_list = json_read("ships_list/lists/ships.json")
+    i = 0
+    while i < len(tasks_list):
+        i += 1
+        if str(tasks_list[i]["id"]) == str(id):
+            ship = tasks_list[i]["ships_name"]
+            the_ship = dictionary_finder(ships_list, ship, "ships_name")
+            the_ship["number_of_tasks"] -= 1
+            break
+    del tasks_list[1]
+
+    json_write("ships_list/lists/tasks.json", tasks_list)
+    json_write("ships_list/lists/ships.json", ships_list)
