@@ -41,5 +41,5 @@ def remove_voyage(id):
     print("Following voyage will be removed.")
     read_voyage(id)
 
-    write_JSON_file(voyages, 'ships_list/lists/list_of_voyages.json')
+    write_JSON_file('ships_list/lists/list_of_voyages.json', voyages)
     print('Voyage is removed.')
