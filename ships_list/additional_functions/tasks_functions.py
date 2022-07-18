@@ -69,7 +69,7 @@ def remove_task(id):
             the_ship = dictionary_finder(ships_list, ship, "ships_name")
             the_ship["number_of_tasks"] -= 1
             break
-    del tasks_list[1]
+    del tasks_list[i]
 
     write_JSON_file("ships_list/lists/tasks.json", tasks_list)
     write_JSON_file("ships_list/lists/ships.json", ships_list)

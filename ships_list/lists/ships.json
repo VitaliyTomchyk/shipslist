@@ -4,11 +4,18 @@
         "IMO": 986298573558,
         "has_tasks": true,
         "ships_list": null,
-        "number_of_tasks": 2
+        "number_of_tasks": 1
     },
     {
         "ships_name": "GRANDBLUE",
         "IMO": 27438883472938327411,
+        "has_tasks": true,
+        "ships_list": null,
+        "number_of_tasks": 1
+    },
+    {
+        "ships_name": "TITAN",
+        "IMO": 1993820,
         "has_tasks": true,
         "ships_list": null,
         "number_of_tasks": 1
