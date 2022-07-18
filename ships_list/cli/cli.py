@@ -16,31 +16,31 @@ def parcer():
     # creating parser
     parser = argparse.ArgumentParser(description='Working with ship\'s list.')
 
-    parser.add_argument('-add_ship', help='enter name of ship to be added',
-                        type=str)
-    parser.add_argument('-remove_ship', help='removes ship from list based' +
+    parser.add_argument('-as', '-add_ship',
+                        help='enter name of ship to be added', type=str)
+    parser.add_argument('rs', '-remove_ship',
+                        help='removes ship from list based' +
                         ' on name of the ship', choices=ships)
-    parser.add_argument('-ship', help='enter name of ship to work with',
+    parser.add_argument('-s', '-ship', help='enter name of ship to work with',
                         choices=ships)
-    parser.add_argument('-IMO', help='put IMO number',
+    parser.add_argument('-I', '-IMO', help='put IMO number',
                         type=int)
-    parser.add_argument('-add_task', help='put name of task',
+    parser.add_argument('-at', '-add_task', help='put name of task',
                         type=str)
-    parser.add_argument('-remove_task', help='put name of task',
+    parser.add_argument('-rt', '-remove_task', help='put name of task',
                         type=str)
     parser.add_argument('-task_stage', help='task stage',
                         choices=stages)
     parser.add_argument('-task_party', help='name or role task is related to',
                         choices=parties)
-    parser.add_argument('-read_list', help='read list of stated ship')
-    parser.add_argument('-add_voyage', help='add voyage', nargs=1)
-    parser.add_argument('-read_voyage', help='read details of voyage from id',
-                        nargs=1)
-    parser.add_argument('-remove_voyage', help='remove voyage by id')
-    parser.add_argument('-l_ports', help='load ports', nargs="*")
-    parser.add_argument('-d_ports', help='discharge ports', nargs="*")
-    parser.add_argument('-restr_points', help='restriction points on the way',
-                        nargs="*", default=None)
+    parser.add_argument('-av', '-add_voyage', help='add voyage', nargs=1)
+    parser.add_argument('-rv', '-read_voyage', help='read details of ' +
+                        'voyage from id', nargs=1)
+    parser.add_argument('-rmv', '-remove_voyage', help='remove voyage by id')
+    parser.add_argument('-l', '-l_ports', help='load ports', nargs="*")
+    parser.add_argument('-d', '-d_ports', help='discharge ports', nargs="*")
+    parser.add_argument('rp', '-restr_points', help='restriction ' +
+                        'points on the way', nargs="*", default=None)
     parser.add_argument('-voy_type', help='choose type of voyage',
                         choices=voyage_types)
     parser.add_argument('-read_tasks_list', help='read the tasks')
