@@ -86,3 +86,7 @@ def id_generator():
 def dictionary_finder(list_of_dictionaries, value, key):
     return list(filter(lambda x: True if x[key] == value
                 else False, list_of_dictionaries))[0]
+
+
+def return_list_of_keys(the_list, key):
+    return list_to_string(list(map(lambda x: x[key], the_list)))

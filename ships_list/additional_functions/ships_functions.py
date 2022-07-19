@@ -1,8 +1,14 @@
-from ships_list.additional_functions.additional_functions import IMO_checker
-import json
+from ships_list.additional_functions.additional_functions import IMO_checker, \
+    read_JSON_file, write_JSON_file, return_list_of_keys
 
 
-def add_ship(name, IMO):
+def add_ship():
+    print('Ship adding function is activated')
+    print('Please enter name of the ship')
+    name = input()
+    print('Please enter IMO of the ship')
+    IMO = input()
+
     if IMO_checker(IMO) is False:
         return
 
@@ -11,34 +17,36 @@ def add_ship(name, IMO):
                      "has_tasks": False,
                      "ships_list": None,
                      "number_of_tasks": 0}
-    with open('ships_list/lists/ships.json', 'r') as f:
-        list_of_ships = json.load(f)
+    file = 'ships_list/lists/ships.json'
 
+    list_of_ships = read_JSON_file(file)
     list_of_ships.append(ships_details)
-
-    with open('ships_list/lists/ships.json', 'w') as f:
-        json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
+    write_JSON_file(file, list_of_ships)
 
     print('Ship {} has been added.'.format(name))
 
 
 # removes function from bata base
-def remove_ship(name):
-    name = name.upper()
-    with open('ships_list/lists/ships.json', 'r') as f:
-        list_of_ships = json.load(f)
+def remove_ship():
+    file = 'ships_list/lists/ships.json'
+
+    list_of_ships = read_JSON_file(file)
+    list_of_names = return_list_of_keys(list_of_ships, 'ships_name')
+    print('List of ships:\n' + list_of_names)
+
+    print('Please put ship\'s name')
+    name = input().upper()
 
     for ship in list_of_ships:
-        if ship['name'] == name:
+        if ship['ships_name'] == name:
             list_of_ships.remove(ship)
             print('Ship ' + name + ' was removed')
             break
 
     print('Ship ' + name + ' was not found')
 
-    with open('ships_list/lists/ships.json', 'w') as f:
-        json.dump(list_of_ships, f, indent=4, separators=(',', ': '))
+    write_JSON_file(file, list_of_ships)
 
 
 def read_ship(name):
-    return
+    return name

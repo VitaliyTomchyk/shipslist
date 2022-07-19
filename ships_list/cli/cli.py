@@ -18,10 +18,10 @@ def parcer():
                                      prog='ships_list')
 
     parser.add_argument('-add_ship',
-                        help='enter name of ship to be added', type=str)
+                        help='function will add the ship', action='store_true')
     parser.add_argument('-remove_ship',
                         help='removes ship from list based' +
-                        ' on name of the ship', choices=ships)
+                        ' on name of the ship', action='store_true')
     parser.add_argument('-ship', help='enter name of ship to work with',
                         choices=ships)
     parser.add_argument('-IMO', help='put IMO number',

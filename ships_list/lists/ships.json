@@ -19,5 +19,19 @@
         "has_tasks": true,
         "ships_list": null,
         "number_of_tasks": 1
+    },
+    {
+        "ships_name": "STORM",
+        "IMO": 8888888,
+        "has_tasks": false,
+        "ships_list": null,
+        "number_of_tasks": 0
+    },
+    {
+        "ships_name": "STAR",
+        "IMO": 111,
+        "has_tasks": false,
+        "ships_list": null,
+        "number_of_tasks": 0
     }
 ]
