@@ -3,12 +3,15 @@ import json
 
 def missing_arguments_checker(dictionary):
     result = []
+
     for key in dictionary:
         if dictionary[key] is None:
             result.append(key)
+
     if result != []:
         result = list(map(lambda x: '-' + x, result))
         print('Following arguments are missing:\n' + list_to_string(result))
+        print('Element has not been added.')
         return False
     return True
 

@@ -34,7 +34,7 @@ def parcer():
                         choices=stages)
     parser.add_argument('-task_party', help='name or role task is related to',
                         choices=parties)
-    parser.add_argument('-add_voyage', help='add voyage', nargs=1)
+    parser.add_argument('-add_voyage', help='add voyage', action='store_true')
     parser.add_argument('-read_voyage', help='read details of ' +
                         'voyage from id', nargs=1)
     parser.add_argument('-remove_voyage', help='remove voyage by id')
