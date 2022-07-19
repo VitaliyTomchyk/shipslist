@@ -35,7 +35,6 @@ def read_voyage(id):
 
 def remove_voyage(id):
     voyages = read_JSON_file('ships_list/lists/list_of_voyages.json')
-
     the_voyage = dictionary_finder(voyages, int(id), 'id')
 
     voyages.remove(the_voyage)

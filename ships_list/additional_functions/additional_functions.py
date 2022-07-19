@@ -14,15 +14,11 @@ def missing_arguments_checker(dictionary):
 
 
 def append_JSON_file(information, file):
-    with open(file, 'r') as f:
-        list_of_el = json.load(f)
-        if list_of_el == '':
-            list_of_el = []
-
+    list_of_el = read_JSON_file(file)
+    if list_of_el == '':
+        list_of_el = []
     list_of_el.append(information)
-
-    with open(file, 'w') as f:
-        json.dump(list_of_el, f, indent=4, separators=(',', ': '))
+    write_JSON_file(file, list_of_el)
 
 
 def read_JSON_file(file):
@@ -88,6 +84,5 @@ def id_generator():
 
 
 def dictionary_finder(list_of_dictionaries, value, key):
-
     return list(filter(lambda x: True if x[key] == value
                 else False, list_of_dictionaries))[0]
