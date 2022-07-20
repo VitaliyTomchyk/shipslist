@@ -1,13 +1,27 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     append_JSON_file, missing_arguments_checker, read_JSON_file, \
-    write_JSON_file, dictionary_finder, input_item, \
+    write_JSON_file, dictionary_finder, list_to_string, input_item, \
     input_option
+
+
+def input_ship():
+    ships = [x['ships_name'] for x in
+             read_JSON_file('ships_list/lists/ships.json')]
+    print('Please put ship\'s name from following list')
+    print(list_to_string(ships))
+
+    the_ship = input().upper()
+    if the_ship in ships:
+        return the_ship
+    else:
+        print('ship is not correct')
+        return None
 
 
 def add_voyage():
 
     result = {"id": id_generator(),
-              "ship": input_item('ship\'s name'),
+              "ship": input_ship(),
               "l_ports": input_item('load port(s)'),
               "d_ports": input_item('disch port(s)'),
               "restr_points": input_item('restricting points'),
@@ -20,7 +34,8 @@ def add_voyage():
         return
     else:
         append_JSON_file(result, 'ships_list/lists/list_of_voyages.json')
-        print('Voyage has been added.')
+        print('Following voyage has been added.')
+        print(result)
 
 
 def read_voyage(id):
@@ -33,9 +48,12 @@ def read_voyage(id):
     print(result + "\n")
 
 
-def remove_voyage(id):
+def remove_voyage():
+    print('Please put id of voyage you want to remove')
+    the_id = input()
+
     voyages = read_JSON_file('ships_list/lists/list_of_voyages.json')
-    the_voyage = dictionary_finder(voyages, int(id), 'id')
+    the_voyage = dictionary_finder(voyages, int(the_id), 'id')
 
     voyages.remove(the_voyage)
     print("Following voyage will be removed.")
