@@ -1,4 +1,5 @@
 lint:
+	poetry run autopep8 --in-place --recursive --aggressive --aggressive ships_list
 	poetry run flake8 ships_list
 
 build:

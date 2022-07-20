@@ -93,3 +93,20 @@ def dictionary_finder(list_of_dictionaries, value, key):
 
 def return_list_of_keys(the_list, key):
     return list_to_string(list(map(lambda x: x[key], the_list)))
+
+
+def input_item(item):
+    print('Please put {}'.format(item))
+    return input()
+
+
+def input_option(element):
+    file = 'ships_list/lists/Standard/supporting_info.json'
+    print('Please choose one of following options from {}'.format(element))
+    options = read_JSON_file(file)[element]
+    print(list_to_string(options))
+    the_option = input()
+    if the_option not in options:
+        print('Option is not found')
+        return
+    return the_option

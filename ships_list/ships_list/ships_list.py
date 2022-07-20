@@ -1,5 +1,5 @@
 from ships_list.additional_functions.ships_functions import add_ship,\
-                                                            remove_ship
+    remove_ship
 from ships_list.additional_functions.tasks_functions import add_task,\
     read_tasks_list, remove_task, redact_task
 from ships_list.additional_functions.voyage_functions import add_voyage, \

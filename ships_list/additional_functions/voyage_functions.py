@@ -1,23 +1,7 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     append_JSON_file, missing_arguments_checker, read_JSON_file, \
-    write_JSON_file, dictionary_finder, list_to_string
-
-
-def input_item(item):
-    print('Please put {}'.format(item))
-    return input()
-
-
-def input_option(element):
-    file = 'ships_list/lists/Standard/supporting_info.json'
-    print('Please choose one of following options from {}'.format(element))
-    options = read_JSON_file(file)[element]
-    print(list_to_string(options))
-    the_option = input()
-    if the_option not in options:
-        print('Option is not found')
-        return
-    return the_option
+    write_JSON_file, dictionary_finder, input_item, \
+    input_option
 
 
 def add_voyage():

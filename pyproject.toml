@@ -14,6 +14,7 @@ ships_list = "ships_list.scripts.ships_list:main"
 python = "^3.9.7"
 flake8 = "4.0.1"
 pytest = "7.1.2"
+autopep8 = "^1.6.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
