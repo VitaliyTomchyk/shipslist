@@ -13,5 +13,13 @@
             "Bosphorus"
         ],
         "voy_type": "TC - TC"
+    },
+    {
+        "id": 119,
+        "ship": "STAR",
+        "l_ports": "",
+        "d_ports": "",
+        "restr_points": "",
+        "voy_type": "TC - VC"
     }
 ]

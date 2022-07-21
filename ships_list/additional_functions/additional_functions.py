@@ -120,6 +120,22 @@ def input_option(file, key, el_name):
     return the_option
 
 
+def input_from_supporting_info(key):
+    file = 'ships_list/lists/Standard/supporting_info.json'
+    options = read_JSON_file(file)[key]
+
+    print('Choose one of following option of {}'.format(key))
+    print(list_to_string(options))
+
+    the_option = input()
+
+    if the_option in options:
+        return the_option
+    else:
+        print('Option chosed is not from list')
+        return
+
+
 def read_dict(the_dict):
     result = ''
     for key in the_dict:

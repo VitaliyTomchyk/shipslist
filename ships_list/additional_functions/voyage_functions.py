@@ -1,7 +1,7 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     append_JSON_file, missing_arguments_checker, read_JSON_file, \
     write_JSON_file, dictionary_finder, input_item, \
-    input_option, read_dict
+    input_option, read_dict, input_from_supporting_info
 
 
 def add_voyage():
@@ -14,7 +14,7 @@ def add_voyage():
               "l_ports": input_item('load port(s)'),
               "d_ports": input_item('disch port(s)'),
               "restr_points": input_item('restricting points'),
-              "voy_type": input_item('voyage type')}
+              "voy_type": input_from_supporting_info('voyage_types')}
 
     checked_results = result.copy()
     del checked_results['restr_points']
