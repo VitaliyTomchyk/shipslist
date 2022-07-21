@@ -1,5 +1,5 @@
 from ships_list.additional_functions.additional_functions import IMO_checker, \
-    read_JSON_file, write_JSON_file, return_list_of_keys
+    read_JSON_file, write_JSON_file, list_of_val_by_key
 
 
 def add_ship():
@@ -31,7 +31,7 @@ def remove_ship():
     file = 'ships_list/lists/ships.json'
 
     list_of_ships = read_JSON_file(file)
-    list_of_names = return_list_of_keys(list_of_ships, 'ships_name')
+    list_of_names = list_of_val_by_key(list_of_ships, 'ships_name')
     print('List of ships:\n' + list_of_names)
 
     print('Please put ship\'s name')

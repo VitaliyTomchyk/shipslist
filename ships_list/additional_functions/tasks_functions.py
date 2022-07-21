@@ -1,18 +1,24 @@
 from ships_list.additional_functions.additional_functions \
-    import append_JSON_file, id_generator, missing_arguments_checker,\
-    read_JSON_file, write_JSON_file, dictionary_finder
+    import append_JSON_file, id_generator, input_option, \
+    missing_arguments_checker, read_JSON_file, write_JSON_file, \
+    dictionary_finder, input_item
 
 
-def add_task(ship, task, stage, party):
-    print('task planned to be added is ' + task +
-          ' for ship {}'.format(ship))
-    the_task = {'task_title': task,
-                'ships_name': ship,
+def add_task():
+    file_with_ships = 'ships_list/lists/ships.json.json'
+    file_with_tasks = 'ships_list/lists/tasks.json'
+    file_with_info = 'ships_list/lists/Standard/supporting_info.json'
+
+    the_task = {'task_title': input_item('task title'),
+                'ships_name': input_option(file_with_ships, 'ships_name',
+                                           'ship\'s name'),
                 'status': 'pending',
-                'stage': stage,
-                'party': party,
+                'stage': input_option(file_with_info, 'stages', 'stage'),
+                'party': input_option(file_with_info, 'parties', 'party'),
                 'id': id_generator()}
-    file = 'ships_list/lists/tasks.json'
+
+    print('task planned to be added is ' + the_task['task_title'] +
+          ' for ship {}'.format(the_task['ships_name']))
 
     checked_results = the_task.copy()
 
@@ -21,11 +27,12 @@ def add_task(ship, task, stage, party):
         return
 
     else:
-        append_JSON_file(the_task, file)
+        append_JSON_file(the_task, file_with_tasks)
         print('Task has been added.')
 
         ships_list = read_JSON_file("ships_list/lists/ships.json")
-        the_ship = dictionary_finder(ships_list, ship, "ships_name")
+        the_ship = dictionary_finder(ships_list, the_task['ships_name'],
+                                     "ships_name")
         the_ship["has_tasks"] = True
         the_ship["number_of_tasks"] += 1
         write_JSON_file("ships_list/lists/ships.json", ships_list)

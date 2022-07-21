@@ -13,21 +13,5 @@
             "Bosphorus"
         ],
         "voy_type": "TC - TC"
-    },
-    {
-        "id": 84,
-        "ship": "STAR",
-        "l_ports": "odessa",
-        "d_ports": "kyiv",
-        "restr_points": "",
-        "voy_type": "TC - VC"
-    },
-    {
-        "id": 85,
-        "ship": "TITAN",
-        "l_ports": "d",
-        "d_ports": "d",
-        "restr_points": "d",
-        "voy_type": "TC - VC"
     }
 ]

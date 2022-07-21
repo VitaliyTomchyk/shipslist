@@ -38,7 +38,7 @@ def parcer():
     result = {'remove_ship': bool(ship_to_remove),
               'added_ship': added_ship,
               'ship_to_remove': ship_to_remove,
-              'tasks_name': add_task,
+              'add_task': add_task,
               'add_voyage': add_voyage,
               'remove_voyage': rm_voyage,
               'read_tasks_list': read_tasks_list,

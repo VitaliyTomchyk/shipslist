@@ -1,31 +1,20 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     append_JSON_file, missing_arguments_checker, read_JSON_file, \
-    write_JSON_file, dictionary_finder, list_to_string, input_item, \
-    input_option
-
-
-def input_ship():
-    ships = [x['ships_name'] for x in
-             read_JSON_file('ships_list/lists/ships.json')]
-    print('Please put ship\'s name from following list')
-    print(list_to_string(ships))
-
-    the_ship = input().upper()
-    if the_ship in ships:
-        return the_ship
-    else:
-        print('ship is not correct')
-        return None
+    write_JSON_file, dictionary_finder, input_item, \
+    input_option, read_dict
 
 
 def add_voyage():
+    # file = 'ships_list/lists/Standard/supporting_info.json'
+    file_with_ships = 'ships_list/lists/ships.json'
 
     result = {"id": id_generator(),
-              "ship": input_ship(),
+              "ship": input_option(file_with_ships, 'ships_name',
+                                   'ship\'s name'),
               "l_ports": input_item('load port(s)'),
               "d_ports": input_item('disch port(s)'),
               "restr_points": input_item('restricting points'),
-              "voy_type": input_option('voyage_types')}
+              "voy_type": input_item('voyage type')}
 
     checked_results = result.copy()
     del checked_results['restr_points']
@@ -35,7 +24,7 @@ def add_voyage():
     else:
         append_JSON_file(result, 'ships_list/lists/list_of_voyages.json')
         print('Following voyage has been added.')
-        print(result)
+        read_dict(result)
 
 
 def read_voyage(id):
