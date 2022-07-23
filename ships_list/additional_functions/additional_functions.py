@@ -1,5 +1,7 @@
 import json
 
+from ships_list.lists.Standard.constats import SUPPORTING_FILE
+
 
 def missing_arguments_checker(dictionary):
     result = []
@@ -44,8 +46,7 @@ def amend_JSON_dict(information, file):
 
 
 def local_variables():
-    supporting_info = 'ships_list/lists/Standard/supporting_info.json'
-    links = read_JSON_file(supporting_info)['links']
+    links = read_JSON_file(SUPPORTING_FILE)['links']
     return locals().update(links)
 
 
@@ -85,10 +86,9 @@ def list_to_string(the_list):
 
 def id_generator():
     i = 0
-    with open('ships_list/lists/Standard/supporting_info.json', 'r') as f:
+    with open(SUPPORTING_FILE, 'r') as f:
         i = json.load(f)['id'] + 1
-    amend_JSON_dict({"id": i},
-                    'ships_list/lists/Standard/supporting_info.json')
+    amend_JSON_dict({"id": i}, SUPPORTING_FILE)
     return i
 
 
@@ -127,8 +127,7 @@ def input_option(file, key, el_name):
 
 
 def input_from_supporting_info(key):
-    file = 'ships_list/lists/Standard/supporting_info.json'
-    options = read_JSON_file(file)[key]
+    options = read_JSON_file(SUPPORTING_FILE)[key]
 
     print('Choose one of following option of {}'.format(key))
     print(list_to_string(options))

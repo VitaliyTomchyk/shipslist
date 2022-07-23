@@ -1,5 +1,6 @@
 from ships_list.additional_functions.additional_functions import IMO_checker, \
     read_JSON_file, write_JSON_file, list_of_val_by_key
+from ships_list.lists.Standard.constats import SHIPS_FILE
 
 
 def add_ship():
@@ -17,7 +18,7 @@ def add_ship():
                      "has_tasks": False,
                      "ships_list": None,
                      "number_of_tasks": 0}
-    file = 'ships_list/lists/ships.json'
+    file = SHIPS_FILE
 
     list_of_ships = read_JSON_file(file)
     list_of_ships.append(ships_details)
@@ -28,7 +29,7 @@ def add_ship():
 
 # removes function from bata base
 def remove_ship():
-    file = 'ships_list/lists/ships.json'
+    file = SHIPS_FILE
 
     list_of_ships = read_JSON_file(file)
     list_of_names = list_of_val_by_key(list_of_ships, 'ships_name')

@@ -1,4 +1,5 @@
 import json
+from ships_list.lists.Standard.constats import SUPPORTING_FILE
 
 
 class Task():
@@ -40,7 +41,7 @@ class Ships_list():
         self.name_of_list = title_of_voyage
         self.name_of_ship = name_of_ship
 
-        with open('ships_list/lists/Standard/standrard_list.json', 'r') as f:
+        with open(SUPPORTING_FILE, 'r') as f:
             standard_list = json.load(f)
 
         for task in standard_list:

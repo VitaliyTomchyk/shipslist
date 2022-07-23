@@ -1,5 +1,7 @@
-lint:
+autopep8:
 	poetry run autopep8 --in-place --recursive --aggressive --aggressive ships_list
+
+lint:
 	poetry run flake8 ships_list
 
 build:
@@ -32,6 +34,7 @@ com:
 	git commit -m '$m'
 
 push:
+	make autopep8
 	make lint
 	make pytest
 	git add .

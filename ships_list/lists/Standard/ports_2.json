@@ -81,7 +81,7 @@
     },
     "Durres": {
         "name": "Durres",
-        "city": "Durr\u00ebs",
+        "city": "Durres",
         "country": "Albania"
     },
     "Bonaire": {
@@ -146,7 +146,7 @@
     },
     "Bahia Blanca": {
         "name": "Bahia Blanca",
-        "city": "Bah\u00eda Blanca",
+        "city": "Bahia Blanca",
         "country": "Argentina"
     },
     "Buenos Aires": {
@@ -216,7 +216,7 @@
     },
     "Rio Gallegos": {
         "name": "Rio Gallegos",
-        "city": "R\u00edo Gallegos",
+        "city": "Rio Gallegos",
         "country": "Argentina"
     },
     "Rio Cullen": {
@@ -246,7 +246,7 @@
     },
     "San Nicolas de los Arroyos": {
         "name": "San Nicolas de los Arroyos",
-        "city": "San Nicol\u00e1s de los Arroyos",
+        "city": "San Nicolas de los Arroyos",
         "country": "Argentina"
     },
     "San Pedro": {
@@ -261,7 +261,7 @@
     },
     "Zarate": {
         "name": "Zarate",
-        "city": "Z\u00e1rate",
+        "city": "Zarate",
         "country": "Argentina"
     },
     "Pago Pago": {
@@ -596,12 +596,12 @@
     },
     "Itaguai": {
         "name": "Itaguai",
-        "city": "Itagua\u00ed",
+        "city": "Itaguai",
         "country": "Brazil"
     },
     "Itapoa": {
         "name": "Itapoa",
-        "city": "Itapo\u00e1",
+        "city": "Itapoa",
         "country": "Brazil"
     },
     "Ilheus": {
@@ -636,7 +636,7 @@
     },
     "Maceio": {
         "name": "Maceio",
-        "city": "Macei\u00f3",
+        "city": "Maceio",
         "country": "Brazil"
     },
     "Natal": {
@@ -656,22 +656,22 @@
     },
     "Pecem": {
         "name": "Pecem",
-        "city": "Pec\u00e9m",
+        "city": "Pecem",
         "country": "Brazil"
     },
     "Paranagua": {
         "name": "Paranagua",
-        "city": "Paranagu\u00e1",
+        "city": "Paranagua",
         "country": "Brazil"
     },
-    "Paran\u00e3": {
-        "name": "Paran\u00e3",
-        "city": "Paran\u00e3",
+    "Parana": {
+        "name": "Parana",
+        "city": "Parana",
         "country": "Brazil"
     },
     "Porto Alegre": {
         "name": "Porto Alegre",
-        "city": "P\u00f4rto Alegre",
+        "city": "Parto Alegre",
         "country": "Brazil"
     },
     "Recife": {
@@ -691,12 +691,12 @@
     },
     "Sao Francisco do Sul": {
         "name": "Sao Francisco do Sul",
-        "city": "S\u00e3o Francisco do Sul",
+        "city": "Sao Francisco do Sul",
         "country": "Brazil"
     },
     "Porto de Itaguai": {
         "name": "Porto de Itaguai",
-        "city": "Porto de Itagua\u00ed",
+        "city": "Porto de Itaguai",
         "country": "Brazil"
     },
     "Salvador": {
@@ -706,7 +706,7 @@
     },
     "Sao Sebastiao": {
         "name": "Sao Sebastiao",
-        "city": "S\u00e3o Sebasti\u00e3o",
+        "city": "Sao Sebastiao",
         "country": "Brazil"
     },
     "Santos": {
@@ -726,7 +726,7 @@
     },
     "Vitoria da Conquista": {
         "name": "Vitoria da Conquista",
-        "city": "Vit\u00f3ria da Conquista",
+        "city": "Vitoria da Conquista",
         "country": "Brazil"
     },
     "Vila do Conde": {
@@ -771,12 +771,12 @@
     },
     "Baie d'Urfe": {
         "name": "Baie d'Urfe",
-        "city": "Baie d'Urf\u00e9",
+        "city": "Baie d'Urfe",
         "country": "Canada"
     },
     "Becancour": {
         "name": "Becancour",
-        "city": "B\u00e9cancour",
+        "city": "Becancour",
         "country": "Canada"
     },
     "Baie-Johan-Beetz": {
@@ -1037,12 +1037,12 @@
     "Abidjan": {
         "name": "Abidjan",
         "city": "Abidjan",
-        "country": "C\u00f4te d'Ivoire"
+        "country": "Cate d'Ivoire"
     },
     "San-Pedro": {
         "name": "San-Pedro",
-        "city": "San-P\u00e9dro",
-        "country": "C\u00f4te d'Ivoire"
+        "city": "San-Pedro",
+        "country": "Cate d'Ivoire"
     },
     "Antofagasta": {
         "name": "Antofagasta",
@@ -1056,7 +1056,7 @@
     },
     "Bahia San Gregorio": {
         "name": "Bahia San Gregorio",
-        "city": "Bah\u00eda San Gregorio",
+        "city": "Bahia San Gregorio",
         "country": "Chile"
     },
     "Barquito": {
@@ -1096,7 +1096,7 @@
     },
     "Chanaral": {
         "name": "Chanaral",
-        "city": "Cha\u00f1aral",
+        "city": "Chanaral",
         "country": "Chile"
     },
     "Cabo Negro": {
@@ -1121,7 +1121,7 @@
     },
     "Guayacan": {
         "name": "Guayacan",
-        "city": "Guayac\u00e1n",
+        "city": "Guayacan",
         "country": "Chile"
     },
     "Huasco": {
@@ -1151,7 +1151,7 @@
     },
     "Lirquen": {
         "name": "Lirquen",
-        "city": "Lirqu\u00e9n",
+        "city": "Lirquen",
         "country": "Chile"
     },
     "Las Ventanas": {
@@ -1211,7 +1211,7 @@
     },
     "Quellon (Puerto Quellon)": {
         "name": "Quellon (Puerto Quellon)",
-        "city": "Quell\u00f3n (Puerto Quell\u00f3n)",
+        "city": "Quellon (Puerto Quellon)",
         "country": "Chile"
     },
     "Patillos": {
@@ -1246,7 +1246,7 @@
     },
     "Tome": {
         "name": "Tome",
-        "city": "Tom\u00e9",
+        "city": "Tome",
         "country": "Chile"
     },
     "Tocopilla": {
@@ -1271,12 +1271,12 @@
     },
     "Chaiten": {
         "name": "Chaiten",
-        "city": "Chait\u00e9n",
+        "city": "Chaiten",
         "country": "Chile"
     },
     "Puerto Aisen": {
         "name": "Puerto Aisen",
-        "city": "Puerto Ais\u00e9n",
+        "city": "Puerto Aisen",
         "country": "Chile"
     },
     "Puerto Williams": {
@@ -1906,7 +1906,7 @@
     },
     "Puerto Bolivar": {
         "name": "Puerto Bolivar",
-        "city": "Puerto Bol\u00edvar",
+        "city": "Puerto Bolivar",
         "country": "Ecuador"
     },
     "Santa Marta": {
@@ -1926,12 +1926,12 @@
     },
     "Puerto Limon": {
         "name": "Puerto Limon",
-        "city": "Puerto Lim\u00f3n",
+        "city": "Puerto Limon",
         "country": "Costa Rica"
     },
     "Moin": {
         "name": "Moin",
-        "city": "Mo\u00edn",
+        "city": "Moin",
         "country": "Costa Rica"
     },
     "Puntarenas": {
@@ -1946,7 +1946,7 @@
     },
     "San Jose": {
         "name": "San Jose",
-        "city": "San Jos\u00e9",
+        "city": "San Jose",
         "country": "Costa Rica"
     },
     "La Habana": {
@@ -2026,7 +2026,7 @@
     },
     "Brunsbuttel": {
         "name": "Brunsbuttel",
-        "city": "Brunsb\u00fcttel",
+        "city": "Brunsbuttel",
         "country": "Germany"
     },
     "Bremen": {
@@ -2046,7 +2046,7 @@
     },
     "Koln": {
         "name": "Koln",
-        "city": "K\u00f6ln",
+        "city": "Koln",
         "country": "Germany"
     },
     "Cuxhaven": {
@@ -2056,7 +2056,7 @@
     },
     "Dusseldorf": {
         "name": "Dusseldorf",
-        "city": "D\u00fcsseldorf",
+        "city": "Dusseldorf",
         "country": "Germany"
     },
     "Elsfleth": {
@@ -2106,7 +2106,7 @@
     },
     "Lubeck": {
         "name": "Lubeck",
-        "city": "L\u00fcbeck",
+        "city": "Lubeck",
         "country": "Germany"
     },
     "Leer": {
@@ -2176,7 +2176,7 @@
     },
     "Kobenhavn": {
         "name": "Kobenhavn",
-        "city": "K\u00f8benhavn",
+        "city": "Kobenhavn",
         "country": "Denmark"
     },
     "Esbjerg": {
@@ -2196,7 +2196,7 @@
     },
     "Helsingor": {
         "name": "Helsingor",
-        "city": "Helsing\u00f8r",
+        "city": "Helsingor",
         "country": "Denmark"
     },
     "Holstebro": {
@@ -2271,7 +2271,7 @@
     },
     "San Pedro de Macoris": {
         "name": "San Pedro de Macoris",
-        "city": "San Pedro de Macor\u00eds",
+        "city": "San Pedro de Macoris",
         "country": "Dominican Republic"
     },
     "Annaba (ex Bone)": {
@@ -2291,7 +2291,7 @@
     },
     "Ghardaia": {
         "name": "Ghardaia",
-        "city": "Gharda\u00efa",
+        "city": "Ghardaia",
         "country": "Algeria"
     },
     "Mostaganem": {
@@ -2311,7 +2311,7 @@
     },
     "Bahia de Caraquez": {
         "name": "Bahia de Caraquez",
-        "city": "Bah\u00eda de Car\u00e1quez",
+        "city": "Bahia de Caraquez",
         "country": "Ecuador"
     },
     "Chanduy": {
@@ -2411,7 +2411,7 @@
     },
     "Malaga": {
         "name": "Malaga",
-        "city": "M\u00e1laga",
+        "city": "Malaga",
         "country": "Spain"
     },
     "Alicante": {
@@ -2451,7 +2451,7 @@
     },
     "Castellon de la Plana": {
         "name": "Castellon de la Plana",
-        "city": "Castell\u00f3n de la Plana",
+        "city": "Castellon de la Plana",
         "country": "Spain"
     },
     "Ceuta": {
@@ -2476,7 +2476,7 @@
     },
     "Gijon": {
         "name": "Gijon",
-        "city": "Gij\u00f3n",
+        "city": "Gijon",
         "country": "Spain"
     },
     "Huelva": {
@@ -2491,12 +2491,12 @@
     },
     "La Coruna (A Coruna)": {
         "name": "La Coruna (A Coruna)",
-        "city": "La Coru\u00f1a (A Coru\u00f1a)",
+        "city": "La Coruna (A Coruna)",
         "country": "Spain"
     },
     "Almeria": {
         "name": "Almeria",
-        "city": "Almer\u00eda",
+        "city": "Almeria",
         "country": "Spain"
     },
     "Las Palmas de Gran Canaria": {
@@ -2511,7 +2511,7 @@
     },
     "Mahon, Menorca": {
         "name": "Mahon, Menorca",
-        "city": "Mah\u00f3n, Menorca",
+        "city": "Mahon, Menorca",
         "country": "Spain"
     },
     "Melilla": {
@@ -2531,7 +2531,7 @@
     },
     "Palamos": {
         "name": "Palamos",
-        "city": "Palam\u00f3s",
+        "city": "Palamos",
         "country": "Spain"
     },
     "Pasajes": {
@@ -2611,7 +2611,7 @@
     },
     "Hango (Hanko)": {
         "name": "Hango (Hanko)",
-        "city": "Hang\u00f6 (Hanko)",
+        "city": "Hango (Hanko)",
         "country": "Finland"
     },
     "Fredrikshamn (Hamina)": {
@@ -2621,7 +2621,7 @@
     },
     "Kemi/Tornea (Kemi/Tornio)": {
         "name": "Kemi/Tornea (Kemi/Tornio)",
-        "city": "Kemi/Torne\u00e5 (Kemi/Tornio)",
+        "city": "Kemi/Torne (Kemi/Tornio)",
         "country": "Finland"
     },
     "Karleby (Kokkola)": {
@@ -2646,12 +2646,12 @@
     },
     "Oulu (Uleaborg)": {
         "name": "Oulu (Uleaborg)",
-        "city": "Oulu (Ule\u00e5borg)",
+        "city": "Oulu (Uleborg)",
         "country": "Finland"
     },
     "Bjorneborg (Pori)": {
         "name": "Bjorneborg (Pori)",
-        "city": "Bj\u00f6rneborg (Pori)",
+        "city": "Bjorneborg (Pori)",
         "country": "Finland"
     },
     "Rauma (Raumo)": {
@@ -2661,12 +2661,12 @@
     },
     "Abo (Turku)": {
         "name": "Abo (Turku)",
-        "city": "\u00c5bo (Turku)",
+        "city": "Abo (Turku)",
         "country": "Finland"
     },
     "Tornea (Tornio)": {
         "name": "Tornea (Tornio)",
-        "city": "Torne\u00e5 (Tornio)",
+        "city": "Torne (Tornio)",
         "country": "Finland"
     },
     "Lautoka": {
@@ -2786,7 +2786,7 @@
     },
     "Le Treport": {
         "name": "Le Treport",
-        "city": "Le Tr\u00e9port",
+        "city": "Le Treport",
         "country": "France"
     },
     "Le Verdon-sur-Mer": {
@@ -2841,7 +2841,7 @@
     },
     "Sete": {
         "name": "Sete",
-        "city": "S\u00e8te",
+        "city": "Sete",
         "country": "France"
     },
     "Saint-Nazaire": {
@@ -3316,7 +3316,7 @@
     },
     "Degrad des Cannes": {
         "name": "Degrad des Cannes",
-        "city": "D\u00e9grad des Cannes",
+        "city": "Degrad des Cannes",
         "country": "French Guiana"
     },
     "Tema": {
@@ -3356,7 +3356,7 @@
     },
     "Pointe-a-Pitre": {
         "name": "Pointe-a-Pitre",
-        "city": "Pointe-\u00e0-Pitre",
+        "city": "Pointe-a-Pitre",
         "country": "Guadeloupe"
     },
     "Saint Barthelemy": {
@@ -3376,7 +3376,7 @@
     },
     "Astakos": {
         "name": "Astakos",
-        "city": "Astak\u00f3s",
+        "city": "Astakos",
         "country": "Greece"
     },
     "Eleusina": {
@@ -3406,12 +3406,12 @@
     },
     "Thessaloniki": {
         "name": "Thessaloniki",
-        "city": "Thessalon\u00edki",
+        "city": "Thessaloniki",
         "country": "Greece"
     },
     "Volos": {
         "name": "Volos",
-        "city": "V\u00f3los",
+        "city": "Volos",
         "country": "Greece"
     },
     "Champerico": {
@@ -3436,7 +3436,7 @@
     },
     "Puerto Santo Tomas de Castilla": {
         "name": "Puerto Santo Tomas de Castilla",
-        "city": "Puerto Santo Tom\u00e1s de Castilla",
+        "city": "Puerto Santo Tomas de Castilla",
         "country": "Guatemala"
     },
     "Guam": {
@@ -3476,12 +3476,12 @@
     },
     "Puerto Cortes": {
         "name": "Puerto Cortes",
-        "city": "Puerto Cort\u00e9s",
+        "city": "Puerto Cortes",
         "country": "Honduras"
     },
     "Roatan": {
         "name": "Roatan",
-        "city": "Roat\u00e1n",
+        "city": "Roatan",
         "country": "Honduras"
     },
     "Tela": {
@@ -3521,7 +3521,7 @@
     },
     "Cap-Haitien": {
         "name": "Cap-Haitien",
-        "city": "Cap-Ha\u00eftien",
+        "city": "Cap-Haitien",
         "country": "Haiti"
     },
     "Port-au-Prince": {
@@ -3981,7 +3981,7 @@
     },
     "Eskifjordur - hofn": {
         "name": "Eskifjordur - hofn",
-        "city": "Eskifj\u00f8rdur - h\u00f8fn",
+        "city": "Eskifjordur - hofn",
         "country": "Iceland"
     },
     "Grundartangi": {
@@ -3991,7 +3991,7 @@
     },
     "Reykjavik": {
         "name": "Reykjavik",
-        "city": "Reykjav\u00edk",
+        "city": "Reykjavik",
         "country": "Iceland"
     },
     "Ancona": {
@@ -4671,7 +4671,7 @@
     },
     "Kampong Saom": {
         "name": "Kampong Saom",
-        "city": "K\u00e2mp\u00f3ng Sa\u00f4m",
+        "city": "Kampong Saam",
         "country": "Cambodia"
     },
     "Phnom Penh": {
@@ -5186,7 +5186,7 @@
     },
     "Ciudad de Mexico": {
         "name": "Ciudad de Mexico",
-        "city": "Ciudad de M\u00e9xico",
+        "city": "Ciudad de Mexico",
         "country": "Mexico"
     },
     "Progreso": {
@@ -5356,7 +5356,7 @@
     },
     "Luderitz": {
         "name": "Luderitz",
-        "city": "L\u00fcderitz",
+        "city": "Luderitz",
         "country": "Namibia"
     },
     "Walvis Bay": {
@@ -5366,7 +5366,7 @@
     },
     "Noumea": {
         "name": "Noumea",
-        "city": "Noum\u00e9a",
+        "city": "Noumea",
         "country": "New Caledonia"
     },
     "Apapa": {
@@ -5496,22 +5496,22 @@
     },
     "Alvik": {
         "name": "Alvik",
-        "city": "\u00c5lvik",
+        "city": "Alvik",
         "country": "Norway"
     },
     "Alesund": {
         "name": "Alesund",
-        "city": "\u00c5lesund",
+        "city": "Alesund",
         "country": "Norway"
     },
     "Agotnes": {
         "name": "Agotnes",
-        "city": "\u00c5gotnes",
+        "city": "Agotnes",
         "country": "Norway"
     },
     "Andalsnes": {
         "name": "Andalsnes",
-        "city": "\u00c5ndalsnes",
+        "city": "Andalsnes",
         "country": "Norway"
     },
     "Austevoll": {
@@ -5526,7 +5526,7 @@
     },
     "Bodo": {
         "name": "Bodo",
-        "city": "Bod\u00f8",
+        "city": "Bodo",
         "country": "Norway"
     },
     "Brevik": {
@@ -5556,7 +5556,7 @@
     },
     "Floro": {
         "name": "Floro",
-        "city": "Flor\u00f8",
+        "city": "Floro",
         "country": "Norway"
     },
     "Fusa": {
@@ -5591,12 +5591,12 @@
     },
     "Hogset": {
         "name": "Hogset",
-        "city": "H\u00f8gset",
+        "city": "Hogset",
         "country": "Norway"
     },
     "Husoy - Tonsberg": {
         "name": "Husoy - Tonsberg",
-        "city": "Hus\u00f8y - T\u00f8nsberg",
+        "city": "Husoy - Tonsberg",
         "country": "Norway"
     },
     "Hareid": {
@@ -5606,7 +5606,7 @@
     },
     "Heroya": {
         "name": "Heroya",
-        "city": "Her\u00f8ya",
+        "city": "Heroya",
         "country": "Norway"
     },
     "Husnes": {
@@ -5616,7 +5616,7 @@
     },
     "Havik": {
         "name": "Havik",
-        "city": "H\u00e5vik",
+        "city": "Hvik",
         "country": "Norway"
     },
     "Ikornnes": {
@@ -5626,7 +5626,7 @@
     },
     "Karmoy": {
         "name": "Karmoy",
-        "city": "Karm\u00f8y",
+        "city": "Karmoy",
         "country": "Norway"
     },
     "Kristiansand": {
@@ -5656,7 +5656,7 @@
     },
     "Maloy": {
         "name": "Maloy",
-        "city": "M\u00e5l\u00f8y",
+        "city": "Mloy",
         "country": "Norway"
     },
     "Molde": {
@@ -5741,7 +5741,7 @@
     },
     "Sunndalsora": {
         "name": "Sunndalsora",
-        "city": "Sunndals\u00f8ra",
+        "city": "Sunndalsora",
         "country": "Norway"
     },
     "Svelgen": {
@@ -5761,12 +5761,12 @@
     },
     "Tonsberg": {
         "name": "Tonsberg",
-        "city": "T\u00f8nsberg",
+        "city": "Tonsberg",
         "country": "Norway"
     },
     "Tromso": {
         "name": "Tromso",
-        "city": "Troms\u00f8",
+        "city": "Tromso",
         "country": "Norway"
     },
     "Trondheim": {
@@ -5891,7 +5891,7 @@
     },
     "Colon Free Zone": {
         "name": "Colon Free Zone",
-        "city": "Col\u00f3n Free Zone",
+        "city": "Colon Free Zone",
         "country": "Panama"
     },
     "Coco Solo": {
@@ -5901,7 +5901,7 @@
     },
     "Cristobal": {
         "name": "Cristobal",
-        "city": "Crist\u00f3bal",
+        "city": "Cristobal",
         "country": "Panama"
     },
     "Chitre": {
@@ -5911,12 +5911,12 @@
     },
     "Canazas": {
         "name": "Canazas",
-        "city": "Ca\u00f1azas",
+        "city": "Canazas",
         "country": "Panama"
     },
     "Colon": {
         "name": "Colon",
-        "city": "Col\u00f3n",
+        "city": "Colon",
         "country": "Panama"
     },
     "Rodman": {
@@ -5926,7 +5926,7 @@
     },
     "Panama, Ciudad de": {
         "name": "Panama, Ciudad de",
-        "city": "Panam\u00e1, Ciudad de",
+        "city": "Panama, Ciudad de",
         "country": "Panama"
     },
     "Atico": {
@@ -6151,7 +6151,7 @@
     },
     "Mayaguez": {
         "name": "Mayaguez",
-        "city": "Mayag\u00fcez",
+        "city": "Mayaguez",
         "country": "Puerto Rico"
     },
     "Puerto Nuevo": {
@@ -6171,12 +6171,12 @@
     },
     "Angra do Heroismo": {
         "name": "Angra do Heroismo",
-        "city": "Angra do Hero\u00edsmo",
+        "city": "Angra do Heroismo",
         "country": "Portugal"
     },
     "Canical": {
         "name": "Canical",
-        "city": "Cani\u00e7al",
+        "city": "Canical",
         "country": "Portugal"
     },
     "Entroncamento": {
@@ -6201,7 +6201,7 @@
     },
     "Leixoes": {
         "name": "Leixoes",
-        "city": "Leix\u00f5es",
+        "city": "Leixoes",
         "country": "Portugal"
     },
     "Lisboa": {
@@ -6221,12 +6221,12 @@
     },
     "Praia da Vitoria": {
         "name": "Praia da Vitoria",
-        "city": "Praia da Vit\u00f3ria",
+        "city": "Praia da Vitoria",
         "country": "Portugal"
     },
     "Setubal": {
         "name": "Setubal",
-        "city": "Set\u00fabal",
+        "city": "Setubal",
         "country": "Portugal"
     },
     "Sines": {
@@ -6246,12 +6246,12 @@
     },
     "Asuncion": {
         "name": "Asuncion",
-        "city": "Asunci\u00f3n",
+        "city": "Asuncion",
         "country": "Paraguay"
     },
     "Barrio Caacupe Mi": {
         "name": "Barrio Caacupe Mi",
-        "city": "Barrio Caacup\u00e9 M\u00ed",
+        "city": "Barrio Caacupe Mi",
         "country": "Paraguay"
     },
     "Fenix": {
@@ -6292,22 +6292,22 @@
     "Le Port": {
         "name": "Le Port",
         "city": "Le",
-        "country": "R\u00e9union"
+        "country": "Reunion"
     },
     "Port de Pointe des Galets": {
         "name": "Port de Pointe des Galets",
         "city": "Port de Pointe des Galets",
-        "country": "R\u00e9union"
+        "country": "Reunion"
     },
     "Reunion": {
         "name": "Reunion",
-        "city": "R\u00e9union",
-        "country": "R\u00e9union"
+        "city": "Reunion",
+        "country": "Reunion"
     },
     "Saint-Denis de la Reunion Apt": {
         "name": "Saint-Denis de la Reunion Apt",
-        "city": "Saint-Denis de la R\u00e9union Apt",
-        "country": "R\u00e9union"
+        "city": "Saint-Denis de la Reunion Apt",
+        "country": "Reunion"
     },
     "Agigea": {
         "name": "Agigea",
@@ -6476,7 +6476,7 @@
     },
     "Ahus": {
         "name": "Ahus",
-        "city": "\u00c5hus",
+        "city": "Ahus",
         "country": "Sweden"
     },
     "Falkenberg": {
@@ -6486,12 +6486,12 @@
     },
     "Goteborg": {
         "name": "Goteborg",
-        "city": "G\u00f6teborg",
+        "city": "Goteborg",
         "country": "Sweden"
     },
     "Gavle": {
         "name": "Gavle",
-        "city": "G\u00e4vle",
+        "city": "Gavle",
         "country": "Sweden"
     },
     "Halmstad": {
@@ -6521,12 +6521,12 @@
     },
     "Malmo": {
         "name": "Malmo",
-        "city": "Malm\u00f6",
+        "city": "Malmo",
         "country": "Sweden"
     },
     "Norrkoping": {
         "name": "Norrkoping",
-        "city": "Norrk\u00f6ping",
+        "city": "Norrkoping",
         "country": "Sweden"
     },
     "Oskarshamn": {
@@ -6536,7 +6536,7 @@
     },
     "Oxelosund": {
         "name": "Oxelosund",
-        "city": "Oxel\u00f6sund",
+        "city": "Oxelosund",
         "country": "Sweden"
     },
     "Sundsvall": {
@@ -6546,7 +6546,7 @@
     },
     "Skelleftea": {
         "name": "Skelleftea",
-        "city": "Skellefte\u00e5",
+        "city": "Skellefte",
         "country": "Sweden"
     },
     "Skelleftehamn": {
@@ -6556,7 +6556,7 @@
     },
     "Sodertalje": {
         "name": "Sodertalje",
-        "city": "S\u00f6dert\u00e4lje",
+        "city": "Sodertalje",
         "country": "Sweden"
     },
     "Stockholm": {
@@ -6576,12 +6576,12 @@
     },
     "Umea": {
         "name": "Umea",
-        "city": "Ume\u00e5",
+        "city": "Ume",
         "country": "Sweden"
     },
     "Vasteras": {
         "name": "Vasteras",
-        "city": "V\u00e4ster\u00e5s",
+        "city": "Vasters",
         "country": "Sweden"
     },
     "Jurong/Singapore": {
@@ -6756,7 +6756,7 @@
     },
     "Gabes": {
         "name": "Gabes",
-        "city": "Gab\u00e8s",
+        "city": "Gabes",
         "country": "Tunisia"
     },
     "Jarjis": {
@@ -6771,7 +6771,7 @@
     },
     "Rades": {
         "name": "Rades",
-        "city": "Rad\u00e8s",
+        "city": "Rades",
         "country": "Tunisia"
     },
     "Sfax": {
@@ -7741,7 +7741,7 @@
     },
     "Punta Cardon": {
         "name": "Punta Cardon",
-        "city": "Punta Card\u00f3n",
+        "city": "Punta Cardon",
         "country": "Venezuela"
     },
     "Puerto Sucre": {
@@ -7786,7 +7786,7 @@
     },
     "Cat Lai": {
         "name": "Cat Lai",
-        "city": "C\u00e1t L\u00e1i",
+        "city": "Cat Lai",
         "country": "Viet Nam"
     },
     "Cai Lan": {
@@ -7811,7 +7811,7 @@
     },
     "Phuoc Long": {
         "name": "Phuoc Long",
-        "city": "Phu\u00f3c Long",
+        "city": "Phuoc Long",
         "country": "Viet Nam"
     },
     "Ho Chi Minh City": {
@@ -7831,7 +7831,7 @@
     },
     "Tan Thuan Dong": {
         "name": "Tan Thuan Dong",
-        "city": "T\u00e2n Thuan D\u00f4ng",
+        "city": "Tan Thuan Dang",
         "country": "Viet Nam"
     },
     "Qui Nhon": {
