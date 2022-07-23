@@ -43,6 +43,12 @@ def amend_JSON_dict(information, file):
         json.dump(dictionary, f, indent=4, separators=(',', ': '))
 
 
+def local_variables():
+    supporting_info = 'ships_list/lists/Standard/supporting_info.json'
+    links = read_JSON_file(supporting_info)['links']
+    return locals().update(links)
+
+
 def IMO_checker(IMO):
     # bloking function for easier testing
     result = True
