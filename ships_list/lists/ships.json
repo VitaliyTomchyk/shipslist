@@ -21,15 +21,22 @@
         "number_of_tasks": 1
     },
     {
-        "ships_name": "STORM",
-        "IMO": 8888888,
+        "ships_name": "STAR",
+        "IMO": 111,
         "has_tasks": false,
         "ships_list": null,
         "number_of_tasks": 0
     },
     {
-        "ships_name": "STAR",
-        "IMO": 111,
+        "ships_name": "PANAMA MAX",
+        "IMO": 5,
+        "has_tasks": false,
+        "ships_list": null,
+        "number_of_tasks": 0
+    },
+    {
+        "ships_name": "PANAMA MIN",
+        "IMO": 4,
         "has_tasks": false,
         "ships_list": null,
         "number_of_tasks": 0

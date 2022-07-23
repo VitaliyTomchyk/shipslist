@@ -27,6 +27,7 @@ def append_JSON_file(information, file):
 
 
 def read_JSON_file(file):
+    print(file)
     with open(file, 'r') as f:
         return json.load(f)
 
