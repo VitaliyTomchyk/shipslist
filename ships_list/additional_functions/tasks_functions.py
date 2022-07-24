@@ -1,9 +1,10 @@
 from ships_list.additional_functions.additional_functions \
-    import append_JSON_file, id_generator, input_option, \
-    missing_arguments_checker, read_JSON_file, write_JSON_file, \
-    dictionary_finder, input_item
+    import id_generator, input_option, \
+    missing_arguments_checker, dictionary_finder, input_item
 from ships_list.lists.Standard.constats import TASKS_FILE, SUPPORTING_FILE, \
     SHIPS_FILE
+from ships_list.additional_functions.json_functions import append_JSON_file, \
+    read_JSON_file, write_JSON_file
 
 
 def add_task():

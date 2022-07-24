@@ -1,8 +1,9 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
-    append_JSON_file, missing_arguments_checker, read_JSON_file, \
-    write_JSON_file, dictionary_finder, input_item, \
+    missing_arguments_checker, dictionary_finder, input_item, \
     input_option, read_dict, input_from_supporting_info
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, SHIPS_FILE
+from ships_list.additional_functions.json_functions import write_JSON_file, \
+    append_JSON_file, read_JSON_file
 
 
 def add_voyage():
