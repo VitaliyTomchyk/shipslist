@@ -117,7 +117,7 @@ def input_from_supporting_info(key):
 
 
 def read_dict(the_dict):
-    result = ''
+    result = '\n'
     for key in the_dict:
         result = result + key + ": " + str(the_dict[key]) + '\n'
     print(result)

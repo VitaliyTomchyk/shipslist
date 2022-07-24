@@ -11,6 +11,9 @@ def parcer():
     parser.add_argument('-remove_ship',
                         help='removes ship from list based' +
                         ' on name of the ship', action='store_true')
+    parser.add_argument('-read_ship',
+                        help='reads ship\'s details from list based' +
+                        ' on name of the ship', action='store_true')
 
     parser.add_argument('-add_task', help='put name of task',
                         type=str)
@@ -37,6 +40,7 @@ def parcer():
     remove_voyage = parser.parse_args().remove_voyage
     read_tasks_list = parser.parse_args().read_tasks_list
     redact_task = parser.parse_args().redact_task
+    read_ship = parser.parse_args().read_ship
 
     # generating result
     result = {'remove_ship': remove_ship,
@@ -46,6 +50,7 @@ def parcer():
               'remove_voyage': remove_voyage,
               'read_tasks_list': read_tasks_list,
               'remove_task': remove_task,
-              'redact_task': redact_task
+              'redact_task': redact_task,
+              'read_ship': read_ship
               }
     return result

@@ -1,8 +1,19 @@
 from ships_list.additional_functions.additional_functions import IMO_checker, \
-    list_to_string, list_of_val_by_key
+    list_to_string, list_of_val_by_key, read_dict
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, SHIPS_FILE
 from ships_list.additional_functions.json_functions import read_JSON_file, \
     write_JSON_file
+
+
+def ship_in_list_checker(name):
+    list_of_ships = list(map(lambda x: x['ships_name'],
+                             read_JSON_file(SHIPS_FILE)))
+
+    if name in list_of_ships:
+        print('Ship with this name and IMO is already in list, therefore, ' +
+              'it will not be added again.')
+        return True
+    return False
 
 
 def add_ship():
@@ -11,6 +22,9 @@ def add_ship():
     IMO = input('Please enter IMO of the ship\n')
 
     if IMO_checker(IMO) is False:
+        return
+
+    if ship_in_list_checker(name):
         return
 
     ships_details = {"ships_name": name.upper(),
@@ -27,7 +41,7 @@ def add_ship():
     print('Ship {} has been added.\n'.format(name.upper()))
 
 
-def voyages_assigned(ship):
+def voyages_assigned_checker(ship):
     list_of_dicts = read_JSON_file(LIST_OF_VOYAGES_FILE)
     ships_with_voyages = list(map(lambda x: x['ship'], list_of_dicts))
     if ship not in ships_with_voyages:
@@ -40,25 +54,32 @@ def remove_ship():
 
     list_of_ships = read_JSON_file(SHIPS_FILE)
     list_of_names = list_to_string(list_of_val_by_key('ships_name',
-                                                      list_of_ships))
+                                                      list_of_ships).sort())
     print('\nList of ships:\n' + list_of_names)
 
     print('Please put ship\'s name.')
-    name = input().upper()
+    ships_name = input().upper()
 
-    if voyages_assigned(name):
-        print('\nShip {} can not be removed due to voyage(s) '.format(name) +
-              'assigned.')
+    if voyages_assigned_checker(ships_name):
+        print('\nShip {} can not be removed due to voyage(s) '.format(
+            ships_name) + 'assigned.')
         return
 
     for ship in list_of_ships:
-        if ship['ships_name'] == name:
+        if ship['ships_name'] == ships_name:
             list_of_ships.remove(ship)
             write_JSON_file(SHIPS_FILE, list_of_ships)
-            print('\nShip ' + name + ' was removed.\n')
+            print('\nShip ' + ships_name + ' was removed.\n')
         else:
-            print('\nShip ' + name + ' was not found')
+            print('\nShip ' + ships_name + ' was not found')
 
 
-def read_ship(name):
-    return name
+def read_ship():
+    ships_name = input('\nPlease add ship\'s name\n').upper()
+    try:
+        the_dict = list(filter(lambda x: x if x['ships_name'] == ships_name
+                               else False, read_JSON_file(SHIPS_FILE)))[0]
+    except IndexError:
+        print('Ship {} is missing in list of ships.'.format(ships_name))
+        return
+    read_dict(the_dict)

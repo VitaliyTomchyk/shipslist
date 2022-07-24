@@ -26,47 +26,5 @@
         "has_tasks": false,
         "ships_list": null,
         "number_of_tasks": 0
-    },
-    {
-        "ships_name": "PANAMA MAX",
-        "IMO": 5,
-        "has_tasks": false,
-        "ships_list": null,
-        "number_of_tasks": 0
-    },
-    {
-        "ships_name": "PANAMA MIN",
-        "IMO": 4,
-        "has_tasks": false,
-        "ships_list": null,
-        "number_of_tasks": 0
-    },
-    {
-        "ships_name": "PONY",
-        "IMO": 777,
-        "has_tasks": false,
-        "ships_list": null,
-        "number_of_tasks": 0
-    },
-    {
-        "ships_name": "PTE",
-        "IMO": 3,
-        "has_tasks": false,
-        "ships_list": null,
-        "number_of_tasks": 0
-    },
-    {
-        "ships_name": "POPY",
-        "IMO": 4,
-        "has_tasks": false,
-        "ships_list": null,
-        "number_of_tasks": 0
-    },
-    {
-        "ships_name": "POPY",
-        "IMO": 4,
-        "has_tasks": false,
-        "ships_list": null,
-        "number_of_tasks": 0
     }
 ]
