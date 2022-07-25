@@ -101,3 +101,23 @@ in this task you have this list of elements:\n {list(task)}')
             break
 
     write_JSON_file(TASKS_FILE, tasks_list)
+
+
+def amend_task():
+
+    id = input('Please put id of task you want to amend')
+
+    tasks_list = read_JSON_file(TASKS_FILE)
+
+    the_task = list(filter(lambda x: x['id'] == id, tasks_list))[0]
+
+    key = input('Write the key you want to edit for ' +
+                str(the_task["task_title"]))
+
+    if key in the_task:
+        the_task[f'{key}'] = input('Write the new assingment for ' + key)
+        write_JSON_file(TASKS_FILE, tasks_list)
+    else:
+        print('There is no such element in this task, \
+              in this task you have this list of elements:\n {}' +
+              list(the_task))

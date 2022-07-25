@@ -22,7 +22,7 @@ update:
 	make package-install
 
 pytest:
-	poetry run pytest
+	poetry run pytest -vv
 
 run:
 	poetry run ships_list -h

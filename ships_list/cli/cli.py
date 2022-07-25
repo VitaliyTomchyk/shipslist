@@ -21,7 +21,8 @@ def parcer():
                         type=str)
     parser.add_argument('-redact_task', help='radact a task element',
                         action='store_true')
-
+    parser.add_argument('-amend_task', help='amend a task\' value by key',
+                        action='store_true')
     parser.add_argument('-add_voyage', help='add voyage', action='store_true')
     parser.add_argument('-remove_voyage', help='remove voyage by id',
                         action='store_true')
@@ -40,17 +41,22 @@ def parcer():
     remove_voyage = parser.parse_args().remove_voyage
     read_tasks_list = parser.parse_args().read_tasks_list
     redact_task = parser.parse_args().redact_task
+    amend_task = parser.parse_args().amend_task
     read_ship = parser.parse_args().read_ship
 
     # generating result
-    result = {'remove_ship': remove_ship,
-              'add_ship': add_ship,
-              'add_task': add_task,
-              'add_voyage': add_voyage,
-              'remove_voyage': remove_voyage,
-              'read_tasks_list': read_tasks_list,
-              'remove_task': remove_task,
-              'redact_task': redact_task,
-              'read_ship': read_ship
-              }
+    result = {
+        'add_ship': add_ship,
+        'read_ship': read_ship,
+        'remove_ship': remove_ship,
+
+        'add_task': add_task,
+        'remove_task': remove_task,
+        'redact_task': redact_task,
+        'amend_taks': amend_task,
+        'read_tasks_list': read_tasks_list,
+
+        'add_voyage': add_voyage,
+        'remove_voyage': remove_voyage
+    }
     return result

@@ -1,4 +1,4 @@
-from ships_list.additional_functions.ships_functions import add_ship
+from ships_list.additional_functions.ships_functions import add_ship, read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
 from ships_list.lists.Standard.constats import SHIPS_FILE
 from ships_list.additional_functions.json_functions \
@@ -68,3 +68,34 @@ def test_add_existing_ship():
     # checkng result against expectations
     assert output == expected_output
     assert diff == expected_diff
+
+
+def test_read_existing_ship():
+
+    # running function and collecting result
+    set_keyboard_input(['BEDA'])
+    read_ship()
+    output = get_display_output()
+
+    expected_output = ['\nPlease add ship\'s name\n',
+                       '\nships_name: BEDA\nIMO: 2743888347293827411\n' + \
+                       'has_tasks: True\nships_list: None\n' + \
+                       'number_of_tasks: 1\n']
+    
+    # checkng result against expectations
+    assert output == expected_output
+
+
+def test_read_not_existing_ship():
+
+    # running function and collecting result
+    set_keyboard_input(['B'])
+    read_ship()
+    output = get_display_output()
+
+    expected_output = ['\nPlease add ship\'s name\n',
+                       'Ship B is missing in list of ships.']
+    
+    # checkng result against expectations
+    assert output == expected_output
+     
