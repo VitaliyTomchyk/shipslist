@@ -9,11 +9,17 @@ from ships_list.additional_functions.json_functions import write_JSON_file, \
 def add_voyage():
 
     result = {"id": id_generator(),
+              "charterer": input('Put name of Charterers company'),
+              "cargo": input("Put name of cargo"),
+              "weight_of_cargo": input("put eight of cargo in tonns"),
               "ship": input_option(SHIPS_FILE, 'ships_name',
                                    'ship\'s name'),
+              "delivery_point": input_item('delivery point'),
               "l_ports": input_item('load port(s)'),
               "d_ports": input_item('disch port(s)'),
               "restr_points": input_item('restricting points'),
+              "redelivery_point": input_item('redelivery point'),
+              "stage_of_voyage": "Prior delivery",
               "voy_type": input_from_supporting_info('voyage_types')}
 
     checked_results = result.copy()
@@ -50,3 +56,15 @@ def remove_voyage():
 
     write_JSON_file(LIST_OF_VOYAGES_FILE, voyages)
     print('Voyage is removed.')
+
+
+def short_voyage_info(voyage):
+    ship, charterer = voyage['ship'], voyage['charterer']
+    weight, cargo = voyage['weight_of_cargo'], voyage['cargo']
+    load_ports, discharge_ports = voyage['l_ports'], voyage['d_ports']
+
+    result = '{} acc {} - {} mt of {}\n from {} to {} '.format(ship, charterer,
+                                                               weight, cargo,
+                                                               load_ports,
+                                                               discharge_ports)
+    return result

@@ -5,7 +5,8 @@
         "status": "pending",
         "stage": "Prior delivery",
         "party": "Master",
-        "id": 66
+        "id": 66,
+        "voyage_id": 1 
     },
     {
         "task_title": "Come to Barcelona",
@@ -13,7 +14,8 @@
         "status": "pending",
         "stage": "Prior delivery",
         "party": "Owner",
-        "id": 68
+        "id": 68,
+        "voyage_id": 2
     },
     {
         "task_title": "Not sink in the Ocean",
@@ -21,6 +23,7 @@
         "status": "pending",
         "stage": "After delivery",
         "party": "Agent",
-        "id": 73
+        "id": 73,
+        "voyage_id": 1
     }
 ]

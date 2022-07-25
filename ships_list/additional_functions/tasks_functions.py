@@ -2,9 +2,10 @@ from ships_list.additional_functions.additional_functions \
     import id_generator, input_option, \
     missing_arguments_checker, dictionary_finder, input_item
 from ships_list.lists.Standard.constats import TASKS_FILE, SUPPORTING_FILE, \
-    SHIPS_FILE
+    SHIPS_FILE, LIST_OF_VOYAGES_FILE
 from ships_list.additional_functions.json_functions import append_JSON_file, \
     read_JSON_file, write_JSON_file
+from datetime import datetime
 
 
 def add_task():
@@ -15,7 +16,11 @@ def add_task():
                 'status': 'pending',
                 'stage': input_option(SUPPORTING_FILE, 'stages', 'stage'),
                 'party': input_option(SUPPORTING_FILE, 'parties', 'party'),
-                'id': id_generator()}
+                'id': id_generator(),
+                'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
+                                          'voyage id'),
+                'time_mark_created': datetime.now(),
+                'time_mark_closed': None}
 
     print('task planned to be added is ' + the_task['task_title'] +
           ' for ship {}'.format(the_task['ships_name']))
@@ -108,16 +113,29 @@ def amend_task():
     id = input('Please put id of task you want to amend')
 
     tasks_list = read_JSON_file(TASKS_FILE)
-
     the_task = list(filter(lambda x: x['id'] == id, tasks_list))[0]
 
     key = input('Write the key you want to edit for ' +
                 str(the_task["task_title"]))
 
     if key in the_task:
-        the_task[f'{key}'] = input('Write the new assingment for ' + key)
+        the_task[key] = input('Write the new assingment for ' + key)
         write_JSON_file(TASKS_FILE, tasks_list)
     else:
         print('There is no such element in this task, \
               in this task you have this list of elements:\n {}' +
               list(the_task))
+
+# not working yet
+
+
+def close_task():
+    # ship = input_option(SHIPS_FILE, 'ships_name', 'name of ship')
+    # voyage = input_option(LIST_OF_VOYAGES_FILE, 'id', 'id of voyage')
+    task_id = input_option(LIST_OF_VOYAGES_FILE, 'id', 'id of task')
+    time_mark = datetime.now()
+
+    list_of_tasks = read_JSON_file(TASKS_FILE)
+    task = dictionary_finder(list_of_tasks, task_id, '')
+    task['time_mark_closed'] = time_mark
+    write_JSON_file(TASKS_FILE, list_of_tasks)

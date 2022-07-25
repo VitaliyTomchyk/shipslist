@@ -5,21 +5,6 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
     amend_JSON_dict
 
 
-def missing_arguments_checker(dictionary):
-    result = []
-
-    for key in dictionary:
-        if dictionary[key] is None:
-            result.append(key)
-
-    if result != []:
-        result = list(map(lambda x: '-' + x, result))
-        print('Following arguments are missing:\n' + list_to_string(result))
-        print('Element has not been added.')
-        return False
-    return True
-
-
 def local_variables():
     links = read_JSON_file(SUPPORTING_FILE)['links']
     return locals().update(links)
@@ -59,6 +44,14 @@ def list_to_string(the_list):
     return result
 
 
+def list_to_ol_string(the_list):
+    result = ''
+    i = 1
+    while i < len(the_list) + 1:
+        result = result + str(i) + '. ' + str(the_list[i - 1]) + '\n'
+    return result
+
+
 def id_generator():
     i = 0
     with open(SUPPORTING_FILE, 'r') as f:
@@ -83,7 +76,7 @@ def input_item(item):
 
 
 def input_option(file, key, el_name):
-    print('Please put ' + el_name + ' from following list')
+    print('Please put {} from following list'.format(el_name))
     print('Please choose one of following options from {}'.format(key))
 
     options = list_of_val_by_key(key, read_JSON_file(file))
@@ -92,7 +85,7 @@ def input_option(file, key, el_name):
     if key == 'ships_name':
         the_option = input().upper()
     else:
-        the_option = input().upper()
+        the_option = input()
 
     if the_option not in options:
         print('Option {} is not found.'.format(the_option))
@@ -104,16 +97,13 @@ def input_option(file, key, el_name):
 def input_from_supporting_info(key):
     options = read_JSON_file(SUPPORTING_FILE)[key]
 
-    print('Choose one of following option of {}'.format(key))
-    print(list_to_string(options))
-
-    the_option = input()
-
-    if the_option in options:
+    text = 'Choose number of option you need' + \
+        ' {}\n{}\n'.format(key, list_to_ol_string(options))
+    try:
+        the_option = options[input(text) - 1]
         return the_option
-    else:
-        print('Option chosed is not from list')
-        return
+    except IndexError:
+        print('Number of option chosen is out of range.')
 
 
 def read_dict(the_dict):

@@ -6,7 +6,8 @@
         "Load port",
         "Prior arrival Discharge port",
         "Discharge port",
-        "After redelivery"
+        "After redelivery",
+        "Redelivered"
     ],
     "parties": [
         "Operator",
