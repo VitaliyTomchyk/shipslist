@@ -5,7 +5,6 @@ from ships_list.additional_functions.json_functions \
     import read_JSON_file, write_JSON_file
 
 
-
 def test_add_not_existing_ship():
     # copy old list
     old_version = read_JSON_file(SHIPS_FILE)
