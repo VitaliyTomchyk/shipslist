@@ -1,7 +1,7 @@
 from ships_list.additional_functions.ships_functions import add_ship,\
     remove_ship, read_ship
 from ships_list.additional_functions.tasks_functions import add_task,\
-    remove_task, redact_task, amend_task, read_tasks_list
+    remove_task, redact_task, amend_task, read_tasks_list, close_task
 from ships_list.additional_functions.voyage_functions import add_voyage, \
     remove_voyage
 
@@ -18,6 +18,7 @@ def ships_list(parced_result):
         'redact_task': redact_task,
         'remove_task': remove_task,
         "read_tasks_list": read_tasks_list,
+        "close_task": close_task,
 
         'add_voyage': add_voyage,
         'remove_voyage': remove_voyage

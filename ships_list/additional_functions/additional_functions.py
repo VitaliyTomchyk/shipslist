@@ -60,6 +60,18 @@ def id_generator():
     return i
 
 
+def missing_arguments_checker(the_dict):
+    list_of_keys = []
+    for key, value in the_dict.items():
+        if value is None:
+            list_of_keys.append(key)
+    if list_of_keys:
+        print('Missing arguments are \n' + str(list_of_keys))
+        return False
+    else:
+        return True
+
+
 def dictionary_finder(list_of_dictionaries, value, key):
     return list(filter(lambda x: True if x[key] == value
                 else False, list_of_dictionaries))[0]
