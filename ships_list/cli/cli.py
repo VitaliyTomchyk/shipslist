@@ -6,6 +6,7 @@ def parcer():
     parser = argparse.ArgumentParser(description='Working with ship\'s list.',
                                      prog='ships_list')
 
+    # adding arguments
     parser.add_argument('-add_ship',
                         help='function will add the ship', action='store_true')
     parser.add_argument('-remove_ship',
@@ -35,33 +36,19 @@ def parcer():
     parser.add_argument('-read_tasks_list', help='read the tasks',
                         action='store_true')
 
-    # creating varuables
-    add_ship = parser.parse_args().add_ship
-    add_task = parser.parse_args().add_task
-    remove_task = parser.parse_args().remove_task
-    remove_ship = parser.parse_args().remove_ship
-    add_voyage = parser.parse_args().add_voyage
-    remove_voyage = parser.parse_args().remove_voyage
-    read_tasks_list = parser.parse_args().read_tasks_list
-    redact_task = parser.parse_args().redact_task
-    amend_task = parser.parse_args().amend_task
-    read_ship = parser.parse_args().read_ship
-    close_task = parser.parse_args().close_task
-
     # generating result
-    result = {
-        'add_ship': add_ship,
-        'read_ship': read_ship,
-        'remove_ship': remove_ship,
+    return {
+        'add_ship': parser.parse_args().add_ship,
+        'read_ship': parser.parse_args().read_ship,
+        'remove_ship': parser.parse_args().remove_ship,
 
-        'add_task': add_task,
-        'remove_task': remove_task,
-        'redact_task': redact_task,
-        'amend_taks': amend_task,
-        'read_tasks_list': read_tasks_list,
+        'add_task': parser.parse_args().add_task,
+        'remove_task': parser.parse_args().remove_task,
+        'redact_task': parser.parse_args().redact_task,
+        'amend_taks': parser.parse_args().amend_task,
+        'read_tasks_list': parser.parse_args().read_tasks_list,
 
-        'add_voyage': add_voyage,
-        'remove_voyage': remove_voyage,
-        "close_task": close_task
+        'add_voyage': parser.parse_args().add_voyage,
+        'remove_voyage': parser.parse_args().remove_voyage,
+        "close_task": parser.parse_args().close_task
     }
-    return result

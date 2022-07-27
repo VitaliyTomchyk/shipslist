@@ -66,7 +66,7 @@ def missing_arguments_checker(the_dict):
         if value is None:
             list_of_keys.append(key)
     if list_of_keys:
-        print('Missing arguments are \n' + str(list_of_keys))
+        print('Missing arguments are \n' + list_to_string(list_of_keys))
         return False
     else:
         return True
