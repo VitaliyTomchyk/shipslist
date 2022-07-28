@@ -35,6 +35,8 @@ def parcer():
 
     parser.add_argument('-read_tasks_list', help='read the tasks',
                         action='store_true')
+    parser.add_argument('-print_ship', help='prints details of ship',
+                        action='store_true')
 
     # generating result
     return {
@@ -50,5 +52,6 @@ def parcer():
 
         'add_voyage': parser.parse_args().add_voyage,
         'remove_voyage': parser.parse_args().remove_voyage,
-        "close_task": parser.parse_args().close_task
+        "close_task": parser.parse_args().close_task,
+        "print_ship": parser.parse_args().print_ship
     }

@@ -15,6 +15,9 @@ python = "^3.9.7"
 flake8 = "4.0.1"
 pytest = "7.1.2"
 autopep8 = "^1.6.0"
+tk-tools = "^0.16.0"
+Tcl = "^0.2"
+tk = "^0.1.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
