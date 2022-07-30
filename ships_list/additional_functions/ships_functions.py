@@ -6,7 +6,8 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
 # from tkinter import Tk, Canvas, Label, Frame
 
 
-# def print_ship():
+def print_ship():
+    return
 #     root = Tk()
 
 #     root['bg'] = '#fafafa'
