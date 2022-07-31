@@ -3,30 +3,30 @@ from ships_list.additional_functions.additional_functions import IMO_checker, \
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, SHIPS_FILE
 from ships_list.additional_functions.json_functions import read_JSON_file, \
     write_JSON_file
-# from tkinter import Tk, Canvas, Label, Frame
+from tkinter import Tk, Canvas, Label, Frame
+# Button
 
 
 def print_ship():
+    root = Tk()
+
+    root['bg'] = '#fafafa'
+    root.title('Printing ship\'s details')
+    root.wm_attributes('-alpha', 0.8)
+    root.geometry('400x400')
+
+    canvas = Canvas(root)
+    canvas.pack()
+
+    frame = Frame(root)
+    frame.place(relx=0.1, rely=0.1, relwidth=1, relheight=1)
+    title = Label(frame, text='Please put name of ship')
+    title.pack()
+
+    # find_button = Button(frame, text='Find', font=20, bg='yellow')
+
+    root.mainloop()
     return
-#     root = Tk()
-
-#     root['bg'] = '#fafafa'
-#     root.title('Printing ship\'s details')
-#     root.wm_attributes('-alpha', 0.8)
-#     root.geometry('400x400')
-
-#     canvas = Canvas(root)
-#     canvas.pack()
-
-#     frame = Frame(root)
-#     frame.place(relx=0.1, rely=0.1, relwidth=1, relheight=1)
-#     title = Label(frame, text='Please put name of ship')
-#     title.pack()
-
-#     # find_button = Button(frame, text='Find', font=20, bg='yellow')
-
-#     root.mainloop()
-#     return
 
 
 def ship_in_list_checker(name):

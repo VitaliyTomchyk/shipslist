@@ -18,6 +18,7 @@ def test_add_not_existing_ship():
     # finding difference
     diff =  [x for x in updated_version if x not in old_version]
 
+    # expected values
     expected_diff = [
     {
         "ships_name": "POPY",
@@ -54,6 +55,7 @@ def test_add_existing_ship():
     # finding difference
     diff =  [x for x in updated_version if x not in old_version]
 
+    # expected values
     expected_diff = []
     expected_output = ['\nShip adding function is activated\n' + \
                       'Please enter name of the ship\n',
@@ -97,4 +99,3 @@ def test_read_not_existing_ship():
     
     # checkng result against expectations
     assert output == expected_output
-     
