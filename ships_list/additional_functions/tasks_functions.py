@@ -17,12 +17,14 @@ def add_task():
                 'stage': input_option(SUPPORTING_FILE, 'stages', 'stage'),
                 'party': input_option(SUPPORTING_FILE, 'parties', 'party'),
                 'id': id_generator(),
+                # VVV ERROR HERE VVV
                 'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
                                           'voyage id'),
+                # -------------------------------------------------------
                 'time_mark_created': datetime.now(),
                 'time_mark_closed': None}
 
-    print('task planned to be added is ' + the_task['task_title'] +
+    print('Task planned to be added is ' + the_task['task_title'] +
           ' for ship {}'.format(the_task['ships_name']))
 
     checked_results = the_task.copy()
