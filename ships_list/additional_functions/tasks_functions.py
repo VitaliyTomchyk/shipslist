@@ -18,8 +18,8 @@ def add_task():
                 'party': input_option(SUPPORTING_FILE, 'parties', 'party'),
                 'id': id_generator(),
                 # VVV ERROR HERE VVV
-                'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
-                                          'voyage id'),
+                # 'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
+                #                           'voyage id'),
                 # -------------------------------------------------------
                 'time_mark_created': datetime.now(),
                 'time_mark_closed': None}
