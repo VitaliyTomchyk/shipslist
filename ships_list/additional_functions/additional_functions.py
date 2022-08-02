@@ -107,15 +107,7 @@ def input_option(file, key, el_name):
 
 
 def input_from_supporting_info(key):
-    options = read_JSON_file(SUPPORTING_FILE)[key]
-
-    text = 'Choose number of option you need' + \
-        ' {}\n{}\n'.format(key, list_to_ol_string(options))
-    try:
-        the_option = options[input(text) - 1]
-        return the_option
-    except IndexError:
-        print('Number of option chosen is out of range.')
+    return 1
 
 
 def read_dict(the_dict):

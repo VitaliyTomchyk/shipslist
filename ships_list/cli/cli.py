@@ -17,11 +17,11 @@ def parcer():
                         ' on name of the ship', action='store_true')
 
     parser.add_argument('-add_task', help='put name of task',
-                        type=str)
+                        action='store_true')
     parser.add_argument('-close_task', help='put id of task to close',
-                        type=str)
+                        action='store_true')
     parser.add_argument('-remove_task', help='put name of task',
-                        type=str)
+                        action='store_true')
     parser.add_argument('-redact_task', help='radact a task element',
                         action='store_true')
     parser.add_argument('-amend_task', help='amend a task\' value by key',

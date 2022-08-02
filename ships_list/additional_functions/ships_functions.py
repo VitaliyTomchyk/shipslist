@@ -7,7 +7,7 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
 # # Button
 
 
-# def print_ship():
+def print_ship():
 #     root = Tk()
 
 #     root['bg'] = '#fafafa'
@@ -26,7 +26,7 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
 #     # find_button = Button(frame, text='Find', font=20, bg='yellow')
 
 #     root.mainloop()
-#     return
+    return
 
 
 def ship_in_list_checker(name):

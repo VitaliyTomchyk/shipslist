@@ -1,5 +1,5 @@
 from ships_list.additional_functions.additional_functions \
-    import id_generator, input_option, \
+    import id_generator, input_option, input_from_supporting_info,\
     missing_arguments_checker, dictionary_finder, input_item
 from ships_list.lists.Standard.constats import TASKS_FILE, SUPPORTING_FILE, \
     SHIPS_FILE, LIST_OF_VOYAGES_FILE
@@ -14,13 +14,11 @@ def add_task():
                 'ships_name': input_option(SHIPS_FILE, 'ships_name',
                                            'ship\'s name'),
                 'status': 'pending',
-                'stage': input_option(SUPPORTING_FILE, 'stages', 'stage'),
-                'party': input_option(SUPPORTING_FILE, 'parties', 'party'),
+                'stage': input_from_supporting_info('stages'),
+                'party': input_from_supporting_info('parties'),
                 'id': id_generator(),
-                # VVV ERROR HERE VVV
-                # 'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
-                #                           'voyage id'),
-                # -------------------------------------------------------
+                'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
+                                          'voyage id'),
                 'time_mark_created': datetime.now(),
                 'time_mark_closed': None}
 
