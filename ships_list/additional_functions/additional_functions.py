@@ -5,11 +5,6 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
     amend_JSON_dict
 
 
-def local_variables():
-    links = read_JSON_file(SUPPORTING_FILE)['links']
-    return locals().update(links)
-
-
 def IMO_checker(IMO):
     # bloking function for easier testing
     result = True
@@ -49,6 +44,7 @@ def list_to_ol_string(the_list):
     i = 1
     while i < len(the_list) + 1:
         result = result + str(i) + '. ' + str(the_list[i - 1]) + '\n'
+        i = i + 1
     return result
 
 
@@ -106,8 +102,31 @@ def input_option(file, key, el_name):
     return the_option
 
 
-def input_from_supporting_info(key):
-    return 1
+def options_generator(key, document):
+    if document == SUPPORTING_FILE:
+        return read_JSON_file(document)[key]
+
+    list_of_dicts = read_JSON_file(document)
+    return [x[key] for x in list_of_dicts]
+
+
+def input_with_num(key, value, document=SUPPORTING_FILE):
+    options = options_generator(key, document)
+    print(f'Please choose number from following list to select {value}.')
+    print(list_to_ol_string(options))
+
+    try:
+        the_option = options[int(input()) - 1]
+        return the_option
+
+    except IndexError or TypeError:
+        choise = input('The option is out of range. ' +
+                       'Do you want to try again? (y/n)')
+
+        if choise == 'y':
+            input_with_num(key, value, document)
+        else:
+            return
 
 
 def read_dict(the_dict):

@@ -1,7 +1,7 @@
 from ships_list.additional_functions.additional_functions \
-    import id_generator, input_option, input_from_supporting_info,\
+    import id_generator, input_option, input_with_num,\
     missing_arguments_checker, dictionary_finder, input_item
-from ships_list.lists.Standard.constats import TASKS_FILE, SUPPORTING_FILE, \
+from ships_list.lists.Standard.constats import TASKS_FILE, \
     SHIPS_FILE, LIST_OF_VOYAGES_FILE
 from ships_list.additional_functions.json_functions import append_JSON_file, \
     read_JSON_file, write_JSON_file
@@ -14,33 +14,33 @@ def add_task():
                 'ships_name': input_option(SHIPS_FILE, 'ships_name',
                                            'ship\'s name'),
                 'status': 'pending',
-                'stage': input_from_supporting_info('stages'),
-                'party': input_from_supporting_info('parties'),
+                'stage': input_with_num('stages', 'stage'),
+                'party': input_with_num('parties', 'party'),
                 'id': id_generator(),
-                'voyage_id': input_option(LIST_OF_VOYAGES_FILE, 'id',
-                                          'voyage id'),
-                'time_mark_created': datetime.now(),
-                'time_mark_closed': None}
+                'voyage_id': input_with_num('id', 'id', LIST_OF_VOYAGES_FILE),
+                'time_mark_created': datetime.now().strftime("%Y-%m-%d " +
+                                                             "%H:%M:%S"),
+                'time_mark_closed': None
+                }
 
     print('Task planned to be added is ' + the_task['task_title'] +
           ' for ship {}'.format(the_task['ships_name']))
 
     checked_results = the_task.copy()
+    del checked_results['time_mark_closed']
 
     if missing_arguments_checker(checked_results) is False:
         print('Task has not been added.')
         return
+    append_JSON_file(the_task, TASKS_FILE)
+    print('Task has been added.')
 
-    else:
-        append_JSON_file(the_task, TASKS_FILE)
-        print('Task has been added.')
-
-        ships_list = read_JSON_file(SHIPS_FILE)
-        the_ship = dictionary_finder(ships_list, the_task['ships_name'],
-                                     "ships_name")
-        the_ship["has_tasks"] = True
-        the_ship["number_of_tasks"] += 1
-        write_JSON_file(SHIPS_FILE, ships_list)
+    ships_list = read_JSON_file(SHIPS_FILE)
+    the_ship = dictionary_finder(ships_list, the_task['ships_name'],
+                                 "ships_name")
+    the_ship["has_tasks"] = True
+    the_ship["number_of_tasks"] += 1
+    write_JSON_file(SHIPS_FILE, ships_list)
 
 
 def read_tasks_list(ship):

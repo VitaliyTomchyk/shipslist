@@ -8,24 +8,24 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
 
 
 def print_ship():
-#     root = Tk()
+    #     root = Tk()
 
-#     root['bg'] = '#fafafa'
-#     root.title('Printing ship\'s details')
-#     root.wm_attributes('-alpha', 0.8)
-#     root.geometry('400x400')
+    #     root['bg'] = '#fafafa'
+    #     root.title('Printing ship\'s details')
+    #     root.wm_attributes('-alpha', 0.8)
+    #     root.geometry('400x400')
 
-#     canvas = Canvas(root)
-#     canvas.pack()
+    #     canvas = Canvas(root)
+    #     canvas.pack()
 
-#     frame = Frame(root)
-#     frame.place(relx=0.1, rely=0.1, relwidth=1, relheight=1)
-#     title = Label(frame, text='Please put name of ship')
-#     title.pack()
+    #     frame = Frame(root)
+    #     frame.place(relx=0.1, rely=0.1, relwidth=1, relheight=1)
+    #     title = Label(frame, text='Please put name of ship')
+    #     title.pack()
 
-#     # find_button = Button(frame, text='Find', font=20, bg='yellow')
+    #     # find_button = Button(frame, text='Find', font=20, bg='yellow')
 
-#     root.mainloop()
+    #     root.mainloop()
     return
 
 

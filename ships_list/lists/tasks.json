@@ -6,7 +6,7 @@
         "stage": "Prior delivery",
         "party": "Master",
         "id": 66,
-        "voyage_id": 1 
+        "voyage_id": 1
     },
     {
         "task_title": "Come to Barcelona",
@@ -25,5 +25,31 @@
         "party": "Agent",
         "id": 73,
         "voyage_id": 1
+    },
+    {
+        "task_title": "t",
+        "ships_name": "STAR",
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "id": 125,
+        "voyage_id": 8,
+        "time_mark_created": 1
+    },
+    {
+        "task_title": "2",
+        "ships_name": "STAR",
+        "time_mark_closed": null
+    },
+    {
+        "task_title": "test",
+        "ships_name": "STAR",
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "id": 130,
+        "voyage_id": 8,
+        "time_mark_created": "2022-08-03 10:11:57",
+        "time_mark_closed": null
     }
 ]

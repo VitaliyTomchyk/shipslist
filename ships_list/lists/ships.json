@@ -23,8 +23,8 @@
     {
         "ships_name": "STAR",
         "IMO": 111,
-        "has_tasks": false,
+        "has_tasks": true,
         "ships_list": null,
-        "number_of_tasks": 0
+        "number_of_tasks": 2
     }
 ]

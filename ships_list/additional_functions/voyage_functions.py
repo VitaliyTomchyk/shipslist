@@ -1,6 +1,6 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     missing_arguments_checker, dictionary_finder, input_item, \
-    input_option, read_dict, input_from_supporting_info
+    input_option, read_dict, input_with_num
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, SHIPS_FILE
 from ships_list.additional_functions.json_functions import write_JSON_file, \
     append_JSON_file, read_JSON_file
@@ -20,7 +20,7 @@ def add_voyage():
               "restr_points": input_item('restricting points'),
               "redelivery_point": input_item('redelivery point'),
               "stage_of_voyage": "Prior delivery",
-              "voy_type": input_from_supporting_info('voyage_types')}
+              "voy_type": input_with_num('voyage_types', 'type of voyage')}
 
     checked_results = result.copy()
     del checked_results['restr_points']
