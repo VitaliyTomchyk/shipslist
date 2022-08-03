@@ -57,15 +57,13 @@ def id_generator():
 
 
 def missing_arguments_checker(the_dict):
-    list_of_keys = []
-    for key, value in the_dict.items():
-        if value is None:
-            list_of_keys.append(key)
+    list_of_keys = list(filter(lambda x: x if the_dict[x] is None else False,
+                               the_dict))
+
     if list_of_keys:
         print('Missing arguments are \n' + list_to_string(list_of_keys))
         return False
-    else:
-        return True
+    return True
 
 
 def dictionary_finder(list_of_dictionaries, value, key):
@@ -84,8 +82,8 @@ def input_item(item):
 
 
 def input_option(file, key, el_name):
-    print('Please put {} from following list'.format(el_name))
-    print('Please choose one of following options from {}'.format(key))
+    print('\nPlease put {} from following list.'.format(el_name))
+    print('Choose one of following options from {}.'.format(key))
 
     options = list_of_val_by_key(key, read_JSON_file(file))
     print(list_to_string(options))
@@ -111,8 +109,9 @@ def options_generator(key, document):
 
 
 def input_with_num(key, value, document=SUPPORTING_FILE):
+    print(f'\nPlease choose number from following list to select {value}.')
+
     options = options_generator(key, document)
-    print(f'Please choose number from following list to select {value}.')
     print(list_to_ol_string(options))
 
     try:
@@ -125,8 +124,7 @@ def input_with_num(key, value, document=SUPPORTING_FILE):
 
         if choise == 'y':
             input_with_num(key, value, document)
-        else:
-            return
+        return
 
 
 def read_dict(the_dict):
