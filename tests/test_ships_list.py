@@ -22,10 +22,7 @@ def test_add_not_existing_ship():
     expected_diff = [
     {
         "ships_name": "POPY",
-        "IMO": 4,
-        "has_tasks": False,
-        "ships_list": None,
-        "number_of_tasks": 0
+        "IMO": 4
     }]
     expected_output = ['\nShip adding function is activated\n' + \
                       'Please enter name of the ship\n',
@@ -79,9 +76,7 @@ def test_read_existing_ship():
     output = get_display_output()
 
     expected_output = ['\nPlease add ship\'s name\n',
-                       '\nships_name: BEDA\nIMO: 2743888347293827411\n' + \
-                       'has_tasks: True\nships_list: None\n' + \
-                       'number_of_tasks: 1\n']
+                       '\nships_name: BEDA\nIMO: 2743888347293827411\n']
     
     # checkng result against expectations
     assert output == expected_output

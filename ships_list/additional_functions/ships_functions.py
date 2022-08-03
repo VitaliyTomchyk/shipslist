@@ -52,10 +52,7 @@ def add_ship():
         return
 
     ships_details = {"ships_name": name.upper(),
-                     "IMO": int(IMO),
-                     "has_tasks": False,
-                     "ships_list": None,
-                     "number_of_tasks": 0}
+                     "IMO": int(IMO)}
 
     list_of_ships = read_JSON_file(SHIPS_FILE)
     list_of_ships.append(ships_details)

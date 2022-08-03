@@ -1,30 +1,18 @@
 [
     {
         "ships_name": "BEDA",
-        "IMO": 2743888347293827411,
-        "has_tasks": true,
-        "ships_list": null,
-        "number_of_tasks": 1
+        "IMO": 2743888347293827411
     },
     {
         "ships_name": "GRANDBLUE",
-        "IMO": 27438883472938327411,
-        "has_tasks": true,
-        "ships_list": null,
-        "number_of_tasks": 1
+        "IMO": 27438883472938327411
     },
     {
         "ships_name": "TITAN",
-        "IMO": 1993820,
-        "has_tasks": true,
-        "ships_list": null,
-        "number_of_tasks": 1
+        "IMO": 1993820
     },
     {
         "ships_name": "STAR",
-        "IMO": 111,
-        "has_tasks": true,
-        "ships_list": null,
-        "number_of_tasks": 2
+        "IMO": 111
     }
 ]
