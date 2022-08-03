@@ -51,5 +51,27 @@
         "voyage_id": 8,
         "time_mark_created": "2022-08-03 10:11:57",
         "time_mark_closed": null
+    },
+    {
+        "task_title": "r",
+        "ships_name": "BEDA",
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "id": 131,
+        "voyage_id": 8,
+        "time_mark_created": "2022-08-03 10:37:24",
+        "time_mark_closed": null
+    },
+    {
+        "task_title": "Clean toilet",
+        "ships_name": "BEDA",
+        "status": "pending",
+        "stage": "Prior arrival at load port",
+        "party": "Master",
+        "id": 132,
+        "voyage_id": 8,
+        "time_mark_created": "2022-08-03 10:39:39",
+        "time_mark_closed": null
     }
 ]

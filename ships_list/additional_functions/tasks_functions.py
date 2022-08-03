@@ -11,8 +11,8 @@ from datetime import datetime
 def add_task():
 
     the_task = {'task_title': input_item('task title'),
-                'ships_name': input_option(SHIPS_FILE, 'ships_name',
-                                           'ship\'s name'),
+                'ships_name': input_with_num('ships_name', 'ship\'s name',
+                                             SHIPS_FILE,),
                 'status': 'pending',
                 'stage': input_with_num('stages', 'stage'),
                 'party': input_with_num('parties', 'party'),
@@ -32,19 +32,26 @@ def add_task():
     if missing_arguments_checker(checked_results) is False:
         print('Task has not been added.')
         return
+
     append_JSON_file(the_task, TASKS_FILE)
     print('Task has been added.')
 
+    # amending details of ship to include added task
+    update_ship(the_task)
+
+
+def update_ship(the_task):
     ships_list = read_JSON_file(SHIPS_FILE)
+
     the_ship = dictionary_finder(ships_list, the_task['ships_name'],
                                  "ships_name")
     the_ship["has_tasks"] = True
     the_ship["number_of_tasks"] += 1
+
     write_JSON_file(SHIPS_FILE, ships_list)
 
 
 def read_tasks_list(ship):
-
     tasks_list = read_JSON_file(TASKS_FILE)
 
     print(f'This are the tasks you have for ship {ship}:')
@@ -132,8 +139,8 @@ def amend_task():
 def close_task():
     # ship = input_option(SHIPS_FILE, 'ships_name', 'name of ship')
     # voyage = input_option(LIST_OF_VOYAGES_FILE, 'id', 'id of voyage')
-    task_id = input_option(LIST_OF_VOYAGES_FILE, 'id', 'id of task')
-    time_mark = datetime.now()
+    task_id = input_option(TASKS_FILE, 'id', 'id of task')
+    time_mark = datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
 
     list_of_tasks = read_JSON_file(TASKS_FILE)
     task = dictionary_finder(list_of_tasks, task_id, '')
