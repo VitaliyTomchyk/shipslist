@@ -67,5 +67,58 @@
             "After redelivery",
             "Redelivered"
         ]
+    },
+    {
+        "id": 155,
+        "charterer": "e",
+        "cargo": "e",
+        "weight_of_cargo": "e",
+        "ship": "STAR",
+        "delivery_point": [
+            "e"
+        ],
+        "del_point": [
+            "g"
+        ],
+        "l_ports": [
+            "a"
+        ],
+        "d_ports": [
+            "a"
+        ],
+        "restr_points": [
+            "a"
+        ],
+        "bunkering_point": [
+            "a"
+        ],
+        "redel_point": [
+            "1"
+        ],
+        "stage_of_voyage": "Prior delivery",
+        "voy_type": "TC - VC",
+        "voyage_stages": [
+            "Prior delivery",
+            "After delivery",
+            [
+                "Prior arrival at load port a"
+            ],
+            [
+                "At load port a"
+            ],
+            [
+                "Prior arrival at discharge port a"
+            ],
+            [
+                "At discharge port a"
+            ],
+            [
+                "Prior arrival at load port a"
+            ],
+            [
+                "At load port a"
+            ],
+            "After redelivery"
+        ]
     }
 ]

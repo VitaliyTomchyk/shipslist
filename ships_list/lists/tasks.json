@@ -161,5 +161,16 @@
         "party": "Operator",
         "time_mark_created": "2022-08-04 22:58:15",
         "time_mark_closed": null
+    },
+    {
+        "id": 151,
+        "task_title": "d",
+        "ships_name": "BEDA",
+        "voyage_id": 8,
+        "status": "pending",
+        "stage": "After delivery",
+        "party": "Charterer",
+        "time_mark_created": "2022-08-04 23:12:02",
+        "time_mark_closed": null
     }
 ]

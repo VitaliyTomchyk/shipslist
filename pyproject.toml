@@ -18,6 +18,7 @@ autopep8 = "^1.6.0"
 tk-tools = "^0.16.0"
 Tcl = "^0.2"
 tk = "^0.1.0"
+coverage = "^6.4.2"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
