@@ -4,7 +4,7 @@
         "After delivery",
         "Prior arrival at load port",
         "Load port",
-        "Prior arrival Discharge port",
+        "Prior arrival discharge port",
         "Discharge port",
         "After redelivery",
         "Redelivered"
@@ -26,5 +26,5 @@
         "TC - TC",
         "VC - VC"
     ],
-    "id": 132
+    "id": 137
 }

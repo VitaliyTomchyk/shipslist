@@ -1,9 +1,25 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
     missing_arguments_checker, dictionary_finder, input_item, \
     input_option, read_dict, input_with_num
-from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, SHIPS_FILE
+from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, \
+    SHIPS_FILE, SUPPORTING_FILE
 from ships_list.additional_functions.json_functions import write_JSON_file, \
     append_JSON_file, read_JSON_file
+
+
+def voyage_stages_generator(voyage):
+    standard_stages = read_JSON_file(SUPPORTING_FILE)['stages']
+    # result = ['Prior delivery at ' + voyage['delivery_point'],
+    #           'After delivery at ' + voyage['delivery_point']]
+    result = standard_stages
+    return result
+
+
+def input_bunkering_point():
+    result = {'bunkering_point': input('Put name of point for bunkering'),
+              'bunkering_position': input('Put position of bunkering' +
+                                          ' (OPL/berthed/anchorage)')}
+    return result
 
 
 def add_voyage():
@@ -15,12 +31,15 @@ def add_voyage():
               "ship": input_option(SHIPS_FILE, 'ships_name',
                                    'ship\'s name'),
               "delivery_point": input_item('delivery point'),
+              "del_point": input_item('delivery point'),
               "l_ports": input_item('load port(s)'),
               "d_ports": input_item('disch port(s)'),
               "restr_points": input_item('restricting points'),
+              "bunkering_point": input_bunkering_point(),
               "redelivery_point": input_item('redelivery point'),
               "stage_of_voyage": "Prior delivery",
               "voy_type": input_with_num('voyage_types', 'type of voyage')}
+    result['voyage_stages'] = voyage_stages_generator(result)
 
     checked_results = result.copy()
     del checked_results['restr_points']

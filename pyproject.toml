@@ -11,7 +11,7 @@ packages = [
 ships_list = "ships_list.scripts.ships_list:main"
 
 [tool.poetry.dependencies]
-python = "^3.9.7"
+python = "^3.8.7"
 flake8 = "^5.0.3"
 pytest = "7.1.2"
 autopep8 = "^1.6.0"

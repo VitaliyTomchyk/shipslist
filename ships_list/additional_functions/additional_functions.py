@@ -100,18 +100,46 @@ def input_option(file, key, el_name):
     return the_option
 
 
-def options_generator(key, document):
+def options_generator(key, document, key2=None, value2=None):
     if document == SUPPORTING_FILE:
         return read_JSON_file(document)[key]
 
     list_of_dicts = read_JSON_file(document)
-    return [x[key] for x in list_of_dicts]
+
+    if key2 is None:
+        return [x[key] for x in list_of_dicts]
+
+    return [x[key] for x in list_of_dicts if x[key2] == value2]
 
 
 def input_with_num(key, value, document=SUPPORTING_FILE):
     print(f'\nPlease choose number from following list to select {value}.')
 
     options = options_generator(key, document)
+    print(list_to_ol_string(options))
+
+    try:
+        the_option = options[int(input()) - 1]
+        return the_option
+
+    except IndexError or TypeError:
+        choise = input('The option is out of range. ' +
+                       'Do you want to try again? (y/n)')
+
+        if choise == 'y':
+            input_with_num(key, value, document)
+        return
+
+
+def input_filtered_with_num(
+        key,
+        value,
+        key2,
+        value2,
+        document=SUPPORTING_FILE):
+    print(f'\nPlease choose number from following list to select {value}.')
+
+    options = options_generator(key, document, key2, value2)
     print(list_to_ol_string(options))
 
     try:

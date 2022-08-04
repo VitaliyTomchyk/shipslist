@@ -484,7 +484,7 @@
     {
         "task_title": "1. Request and check middle voyage performance report from routing company if required prior next hire payment",
         "serial_number": 1,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Operator",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -492,7 +492,7 @@
     {
         "task_title": "2. Update cash flow 2 times a week",
         "serial_number": 2,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Operator",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -500,7 +500,7 @@
     {
         "task_title": "1. Agree with owners on the off-hire surveyor company and cost share",
         "serial_number": 1,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Owner",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -508,7 +508,7 @@
     {
         "task_title": "2. Tender timely estimated redelivery notices to owners as per agreed CP/Recap terms",
         "serial_number": 2,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Owner",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -516,7 +516,7 @@
     {
         "task_title": "1. Give to Master DP agents' details immediately once available with instruction abt daily eta notices to agents cc to our office",
         "serial_number": 1,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Master",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -524,7 +524,7 @@
     {
         "task_title": "2. Timely in advance give Master particular DP NOR instructions for your voyage",
         "serial_number": 2,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Master",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -532,7 +532,7 @@
     {
         "task_title": "1. Prepare initial freight invoice in accordance with signed Mates receipt or OBL (whatever available) and Voyage Recap + CP terms same day after sailing from Load port",
         "serial_number": 1,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -540,7 +540,7 @@
     {
         "task_title": "2. Check if dispatch should be deducted from freight",
         "serial_number": 2,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -548,7 +548,7 @@
     {
         "task_title": "3. After verified by the Authorized person send Initial Freight Invoice to Voyage Charterers along with cargo documents from load port",
         "serial_number": 3,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -556,7 +556,7 @@
     {
         "task_title": "4. Ask for final Discharge port and Agents' details if not stated in recap after sailing load port. Keep asking until received",
         "serial_number": 4,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -564,7 +564,7 @@
     {
         "task_title": "5. Provide Charterers in advance with draft LOI for cargo delivery/discharge w/o OBL. Find out 7 working days prior arrival at DP if OBL should be available prior vessel's arrival or not. If not Press Voyage charterers to prepare Timely LOI enabling to agree it beforehand with Owners. There might be many parties in both Voyage and Time Charter CP chains so LOI arrangement the sooner the better",
         "serial_number": 5,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -572,7 +572,7 @@
     {
         "task_title": "6. Daily ETA notices to be tendered to all required parties as per recap/cp/Voyage charterers' request",
         "serial_number": 6,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -580,7 +580,7 @@
     {
         "task_title": "7. Ensure that Initial Freight is collected as per Company \u00abN\u00bb's Invoice within CP agreed time bar",
         "serial_number": 7,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Charterer",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -588,7 +588,7 @@
     {
         "task_title": "1. Nominate discharge port agents immediately once available and ask for daily berthing schedule updates. Check in advance if duly endorsed OBL is going to be available at discharge port prior vessel's arrival",
         "serial_number": 1,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -596,7 +596,7 @@
     {
         "task_title": "2. Check thoroughly PDA for compliance with official rates/tariffs/reasonable sense. Minimize agency fee. Remove all non compulsory items. Minimize port /anchorage stay basis best case scenario. Arrange payment of Agreed PDA 3 working days prior arrival. Bank details to be verified with agents verbally prior payment",
         "serial_number": 2,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -604,7 +604,7 @@
     {
         "task_title": "3. Check OBLs readines",
         "serial_number": 3,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -612,7 +612,7 @@
     {
         "task_title": "4. Arrange payment of Agreed PDA for Canals passage 2 working days prior arrival (if required) Bank details to be verified with agents verbally prior payment",
         "serial_number": 4,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -620,7 +620,7 @@
     {
         "task_title": "5. If berthing is scheduled not on arrival get written reply from agents with reason of dela",
         "serial_number": 5,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -628,7 +628,7 @@
     {
         "task_title": "6. Check for the towage company at the discharge port",
         "serial_number": 6,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -636,7 +636,7 @@
     {
         "task_title": "7. Check Owners expenses at load port",
         "serial_number": 7,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Agent",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -644,7 +644,7 @@
     {
         "task_title": "1. Nominate surveyors in accordance with requirements of each particular cargo shipment / special case and for on-hire bunker and condition survey",
         "serial_number": 1,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Surveyor",
         "status": "Pending",
         "voyage": null, "ship": null
@@ -652,7 +652,7 @@
     {
         "task_title": "2. Inform Master/agents about surveyors nominated",
         "serial_number": 2,
-        "stage": "Prior arrival Discharge port",
+        "stage": "Prior arrival discharge port",
         "party": "Surveyor",
         "status": "Pending",
         "voyage": null, "ship": null

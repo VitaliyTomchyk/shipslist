@@ -1,6 +1,7 @@
 from ships_list.additional_functions.additional_functions \
-    import id_generator, input_option, input_with_num,\
-    missing_arguments_checker, dictionary_finder, input_item
+    import id_generator, input_option, input_with_num, \
+    input_filtered_with_num, missing_arguments_checker, \
+    dictionary_finder, input_item
 from ships_list.lists.Standard.constats import TASKS_FILE, \
     SHIPS_FILE, LIST_OF_VOYAGES_FILE
 from ships_list.additional_functions.json_functions import append_JSON_file, \
@@ -10,31 +11,36 @@ from datetime import datetime
 
 def add_task():
 
-    the_task = {'task_title': input_item('task title'),
-                'ships_name': input_with_num('ships_name', 'ship\'s name',
-                                             SHIPS_FILE),
+    title = input_item('task title')
+    ship = input_with_num('ships_name', 'ship\'s name', SHIPS_FILE)
+    voyage_id = input_filtered_with_num('id', 'id', 'ship', ship,
+                                        LIST_OF_VOYAGES_FILE)
+
+    the_task = {'id': id_generator(),
+                'task_title': title,
+                'ships_name': ship,
+                'voyage_id': voyage_id,
                 'status': 'pending',
                 'stage': input_with_num('stages', 'stage'),
                 'party': input_with_num('parties', 'party'),
-                'id': id_generator(),
-                'voyage_id': input_with_num('id', 'id', LIST_OF_VOYAGES_FILE),
                 'time_mark_created': datetime.now().strftime("%Y-%m-%d " +
                                                              "%H:%M:%S"),
                 'time_mark_closed': None
                 }
 
-    print('Task planned to be added is ' + the_task['task_title'] +
-          ' for ship {}'.format(the_task['ships_name']))
+    print('\nTask planned to be added is \n"' + the_task['task_title'] +
+          '" for ship {} under voyage {}.'.format(the_task['ships_name'],
+                                                  the_task['voyage_id']))
 
     checked_results = the_task.copy()
     del checked_results['time_mark_closed']
 
     if missing_arguments_checker(checked_results) is False:
-        print('Task has not been added.')
+        print('\nTask has not been added.')
         return
 
     append_JSON_file(the_task, TASKS_FILE)
-    print('Task has been added.')
+    print('\nTask has been sucsessfullt added.')
 
 
 def read_tasks_list(ship):
