@@ -21,5 +21,51 @@
         "d_ports": "",
         "restr_points": "",
         "voy_type": "TC - VC"
+    },
+    {
+        "id": 144,
+        "ship": "STAR",
+        "charterer": "f",
+        "cargo": "f",
+        "weight_of_cargo": "f",
+        "delivery_point": [
+            ""
+        ],
+        "del_point": [
+            "3"
+        ],
+        "l_ports": [
+            "3",
+            "3",
+            "3"
+        ],
+        "d_ports": [
+            "1",
+            "2"
+        ],
+        "restr_points": [
+            "4",
+            "4",
+            "4",
+            "4"
+        ],
+        "bunkering_point": [
+            "2"
+        ],
+        "redel_point": [
+            "1"
+        ],
+        "stage_of_voyage": "Prior delivery",
+        "voy_type": "TC - VC",
+        "voyage_stages": [
+            "Prior delivery",
+            "After delivery",
+            "Prior arrival at load port",
+            "Load port",
+            "Prior arrival discharge port",
+            "Discharge port",
+            "After redelivery",
+            "Redelivered"
+        ]
     }
 ]

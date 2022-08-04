@@ -119,15 +119,35 @@ def input_with_num(key, value, document=SUPPORTING_FILE):
     print(list_to_ol_string(options))
 
     try:
-        the_option = options[int(input()) - 1]
+        number_chosen = input()
+        the_option = options[int(number_chosen) - 1]
         return the_option
 
-    except IndexError or TypeError:
+    except IndexError or ValueError:
         choise = input('The option is out of range. ' +
                        'Do you want to try again? (y/n)')
 
         if choise == 'y':
             input_with_num(key, value, document)
+        return
+
+
+def input_from_list(value, options_list):
+    print(f'\nPlease choose number from following list to select {value}.')
+
+    print(list_to_ol_string(options_list))
+
+    try:
+        number_chosen = input()
+        the_option = options_list[int(number_chosen) - 1]
+        return the_option
+
+    except IndexError or ValueError:
+        choise = input('The option is out of range. ' +
+                       'Do you want to try again? (y/n)')
+
+        if choise == 'y':
+            input_from_list(value, options_list)
         return
 
 

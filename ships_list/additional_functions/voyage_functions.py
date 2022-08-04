@@ -1,5 +1,5 @@
 from ships_list.additional_functions.additional_functions import id_generator,\
-    missing_arguments_checker, dictionary_finder, input_item, \
+    missing_arguments_checker, dictionary_finder, \
     input_option, read_dict, input_with_num
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE, SUPPORTING_FILE
@@ -17,14 +17,15 @@ def voyage_stages_generator(voyage):
     return result
 
 
-def input_point(type):
+def input_point(type, quantity_of_ports=None):
 
     result = []
-    quantity = int(input('Please put quantity of {}'.format(type)))
+    if quantity_of_ports is None:
+        quantity = int(input('Please put quantity of {}\n'.format(type)))
 
     i = 0
     while i < quantity:
-        text = 'Please put name of point number {}'.format(i + 1)
+        text = 'Please put name of point number {}\n'.format(i + 1)
         result.append[input(text)]
         i = i + 1
 
@@ -34,19 +35,19 @@ def input_point(type):
 def add_voyage():
 
     result = {"id": id_generator(),
-              "charterer": input('Put name of Charterers company'),
-              "cargo": input("Put name of cargo"),
-              "weight_of_cargo": input("put eight of cargo in tonns"),
+              "charterer": input('\nPut name of Charterers company\n'),
+              "cargo": input("\nPut name of cargo\n"),
+              "weight_of_cargo": input("\nPut eight of cargo in tonns\n"),
               "ship": input_option(SHIPS_FILE, 'ships_name',
                                    'ship\'s name'),
-              "delivery_point": input_item('delivery point'),
+              "delivery_point": input_point('delivery point', 1),
 
-              "del_point": input_point('delivery point'),
+              "del_point": input_point('delivery point', 1),
               "l_ports": input_point('load port(s)'),
               "d_ports": input_point('disch port(s)'),
               "restr_points": input_point('restricting points'),
               "bunkering_point": input_point('bunkering point'),
-              "redel_point": input_point('redelivery point'),
+              "redel_point": input_point('redelivery point', 1),
 
               "stage_of_voyage": "Prior delivery",
               "voy_type": input_with_num('voyage_types', 'type of voyage')}

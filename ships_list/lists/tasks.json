@@ -117,5 +117,49 @@
         "party": "Operator",
         "time_mark_created": "2022-08-04 10:39:07",
         "time_mark_closed": null
+    },
+    {
+        "id": 146,
+        "task_title": "f",
+        "ships_name": "STAR",
+        "voyage_id": 119,
+        "status": "pending",
+        "stage": "After delivery",
+        "party": "Charterer",
+        "time_mark_created": "2022-08-04 22:55:42",
+        "time_mark_closed": null
+    },
+    {
+        "id": 148,
+        "task_title": "g",
+        "ships_name": "STAR",
+        "voyage_id": 119,
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "time_mark_created": "2022-08-04 22:57:28",
+        "time_mark_closed": null
+    },
+    {
+        "id": 149,
+        "task_title": "2",
+        "ships_name": "STAR",
+        "voyage_id": 144,
+        "status": "pending",
+        "stage": "After delivery",
+        "party": "Owner",
+        "time_mark_created": "2022-08-04 22:57:37",
+        "time_mark_closed": null
+    },
+    {
+        "id": 150,
+        "task_title": "e",
+        "ships_name": "BEDA",
+        "voyage_id": 8,
+        "status": "pending",
+        "stage": "Prior delivery",
+        "party": "Operator",
+        "time_mark_created": "2022-08-04 22:58:15",
+        "time_mark_closed": null
     }
 ]

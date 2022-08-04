@@ -1,5 +1,5 @@
 from ships_list.additional_functions.additional_functions \
-    import id_generator, input_option, input_with_num, \
+    import id_generator, input_from_list, input_option, input_with_num, \
     input_filtered_with_num, missing_arguments_checker, \
     dictionary_finder, input_item
 from ships_list.lists.Standard.constats import TASKS_FILE, \
@@ -10,9 +10,10 @@ from datetime import datetime
 
 
 def add_task():
-
+    ships_with_voyages = list(
+        set(x['ship'] for x in read_JSON_file(LIST_OF_VOYAGES_FILE)))
     title = input_item('task title')
-    ship = input_with_num('ships_name', 'ship\'s name', SHIPS_FILE)
+    ship = input_from_list('ship', ships_with_voyages)
     voyage_id = input_filtered_with_num(('id', 'id'), ('ship', ship),
                                         LIST_OF_VOYAGES_FILE)
 
