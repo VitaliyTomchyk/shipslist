@@ -2,10 +2,10 @@ autopep8:
 	poetry run autopep8 --in-place --recursive --aggressive --aggressive ships_list
 
 lint:
-	poetry run flake8 ships_list
+	@poetry run flake8 ships_list
 
 build:
-	poetry build
+	@poetry build
 
 publish:
 	poetry publish --dry-run -u ' ' -p ' '

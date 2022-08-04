@@ -13,7 +13,7 @@ def add_task():
 
     title = input_item('task title')
     ship = input_with_num('ships_name', 'ship\'s name', SHIPS_FILE)
-    voyage_id = input_filtered_with_num('id', 'id', 'ship', ship,
+    voyage_id = input_filtered_with_num(('id', 'id'), ('ship', ship),
                                         LIST_OF_VOYAGES_FILE)
 
     the_task = {'id': id_generator(),
@@ -43,14 +43,22 @@ def add_task():
     print('\nTask has been sucsessfullt added.')
 
 
-def read_tasks_list(ship):
+def read_tasks_list():
+    ship = input_with_num('ships_name', 'ship\'s name', SHIPS_FILE)
+    voyage_id = input_filtered_with_num(('id', 'id'), ('ship', ship),
+                                        LIST_OF_VOYAGES_FILE)
+
     tasks_list = read_JSON_file(TASKS_FILE)
 
-    print(f'This are the tasks you have for ship {ship}:')
+    print(f'This are the tasks you have for ship {ship} ' +
+          'and voyage {voyage_id}:')
 
-    for task in tasks_list:
-        if task['ships_name'] == ship:
-            print(f'-{task["task_title"]}')
+    tasks = list(filter(lambda x:
+                        x['ships_name'] == ship and
+                        x['voyage_id'] == voyage_id,
+                        tasks_list))
+
+    list(map(lambda x: print(f'\n-{x["task_title"]}'), tasks))
 
     write_JSON_file(TASKS_FILE, tasks_list)
 
