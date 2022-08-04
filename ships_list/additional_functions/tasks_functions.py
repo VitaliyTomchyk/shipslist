@@ -12,7 +12,7 @@ def add_task():
 
     the_task = {'task_title': input_item('task title'),
                 'ships_name': input_with_num('ships_name', 'ship\'s name',
-                                             SHIPS_FILE,),
+                                             SHIPS_FILE),
                 'status': 'pending',
                 'stage': input_with_num('stages', 'stage'),
                 'party': input_with_num('parties', 'party'),
@@ -36,20 +36,6 @@ def add_task():
     append_JSON_file(the_task, TASKS_FILE)
     print('Task has been added.')
 
-    # amending details of ship to include added task
-    update_ship(the_task)
-
-
-def update_ship(the_task):
-    ships_list = read_JSON_file(SHIPS_FILE)
-
-    the_ship = dictionary_finder(ships_list, the_task['ships_name'],
-                                 "ships_name")
-    the_ship["has_tasks"] = True
-    the_ship["number_of_tasks"] += 1
-
-    write_JSON_file(SHIPS_FILE, ships_list)
-
 
 def read_tasks_list(ship):
     tasks_list = read_JSON_file(TASKS_FILE)
@@ -64,6 +50,7 @@ def read_tasks_list(ship):
 
 
 def read_task(id):
+
     the_task = dictionary_finder(TASKS_FILE, int(id), 'id')
 
     result = 'Task details are following\n'
@@ -76,17 +63,24 @@ def remove_task(id):
 
     tasks_list = read_JSON_file(TASKS_FILE)
     ships_list = read_JSON_file(SHIPS_FILE)
-    i = 0
+
+    i = 1
     while i < len(tasks_list):
-        i += 1
-        if str(tasks_list[i]["id"]) == str(id):
-            print(f"Following task will be removed:\
-            {tasks_list[i]['task_title']}")
-            read_task(id)
-            ship = tasks_list[i]["ships_name"]
-            the_ship = dictionary_finder(ships_list, ship, "ships_name")
-            the_ship["number_of_tasks"] -= 1
-            break
+        if str(tasks_list[i]["id"]) != str(id):
+            i += 1
+            continue
+
+        print(f"Following task will be removed:\
+        {tasks_list[i]['task_title']}")
+
+        read_task(id)
+
+        ship = tasks_list[i]["ships_name"]
+
+        the_ship = dictionary_finder(ships_list, ship, "ships_name")
+        the_ship["number_of_tasks"] -= 1
+
+        break
     del tasks_list[i]
 
     write_JSON_file(TASKS_FILE, tasks_list)
