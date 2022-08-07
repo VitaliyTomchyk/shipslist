@@ -9,18 +9,39 @@ from ships_list.additional_functions.json_functions import write_JSON_file, \
 
 def appender_of_stages(voyage, result):
 
-    for load_port in voyage['l_ports']:
-        result.append(['Prior arrival at load port {}'.format(load_port)])
-        result.append(['At load port {}'.format(load_port)])
+    pairs = []
 
-    for discharge_port in voyage['d_ports']:
-        result.append(['Prior arrival at discharge ' +
-                       'port {}'.format(discharge_port)])
-        result.append(['At discharge port {}'.format(discharge_port)])
+    for port in voyage['l_ports']:
+        pairs.append(tuple(port, 'load port'))
 
-    for restr_point in voyage['restr_point']:
-        result.append(['Prior arrival at load port {}'.format(restr_point)])
-        result.append(['At load port {}'.format(restr_point)])
+    for port in voyage['d_ports']:
+        pairs.append(tuple(port, 'discharge port'))
+
+    for port in voyage['l_ports']:
+        pairs.append(tuple(port, 'restriction point'))
+
+    pairs = tuple(filter(lambda x: x if x[1] is not None else False,
+                         pairs))
+    lines = ('Prior arrival at ', 'At ')
+
+    for value in pairs:
+        for line in lines:
+            print(value)
+            result.append(line + str(str(value[1]) + ' ' + value[0][0]))
+
+    # for load_port in voyage['l_ports']:
+    #     result.append(['Prior arrival at load port {}'.format(load_port)])
+    #     result.append(['At load port {}'.format(load_port)])
+
+    # for discharge_port in voyage['d_ports']:
+    #     result.append(['Prior arrival at discharge ' +
+    #                    'port {}'.format(discharge_port)])
+    #     result.append(['At discharge port {}'.format(discharge_port)])
+
+    # for restr_point in voyage['restr_point']:
+    #     result.append(['Prior arrival at restriction ' + \
+    #         'point {}'.format(restr_point)])
+    #     result.append(['At load port {}'.format(restr_point)])
 
     return result
 
@@ -55,19 +76,19 @@ def input_point(type, quantity_of_ports=None):
 def add_voyage():
 
     result = {"id": id_generator(),
+
               "charterer": input('\nPut name of Charterers company\n'),
               "cargo": input("\nPut name of cargo\n"),
               "weight_of_cargo": input("\nPut weight of cargo in tonns\n"),
               "ship": input_option(SHIPS_FILE, 'ships_name',
                                    'ship\'s name'),
 
-              "delivery_point": input_point('delivery point', 1),
-              "del_point": input_point('delivery point', 1),
+              "delivery_point": input('\nPut delivery point\n'),
               "l_ports": input_point('load port(s)'),
               "d_ports": input_point('disch port(s)'),
               "restr_points": input_point('restricting points'),
               "bunkering_point": input_point('bunkering point'),
-              "redel_point": input_point('redelivery point', 1),
+              "redel_point": input('\nPut redelivery point\n'),
 
               "stage_of_voyage": "Prior delivery",
               "voy_type": input_with_num('voyage_types', 'type of voyage')}

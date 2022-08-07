@@ -83,19 +83,12 @@ def input_item(item):
 
 def input_option(file, key, el_name):
     print('\nPlease put {} from following list.'.format(el_name))
-    print('Choose one of following options from {}.'.format(key))
+    print('Choose number from options of {}.'.format(key))
 
     options = list_of_val_by_key(key, read_JSON_file(file))
-    print(list_to_string(options))
+    print(list_to_ol_string(options))
 
-    if key == 'ships_name':
-        the_option = input().upper()
-    else:
-        the_option = input()
-
-    if the_option not in options:
-        print('Option {} is not found.'.format(the_option))
-        return
+    the_option = options[int(input()) - 1]
 
     return the_option
 

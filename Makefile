@@ -39,4 +39,4 @@ push:
 	git push
 
 run:
-	poetry run ships_list -add_task
+	poetry run ships_list -add_voyage
