@@ -1,7 +1,7 @@
 from ships_list.additional_functions.additional_functions \
     import id_generator, list_to_ol_string,\
     missing_arguments_checker, dictionary_finder, \
-    read_dict
+    read_dict, appender
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE, SUPPORTING_FILE
 from ships_list.additional_functions.json_functions import write_JSON_file, \
@@ -13,7 +13,7 @@ from ships_list.additional_functions.input_functions import input_point, \
 def appender_of_stages(voyage, result):
 
     pairs = []
-
+    # TODO refactor this code to use list comprehension
     for port in voyage['l_ports']:
         pairs.append(tuple(port, 'load port'))
 
@@ -96,15 +96,10 @@ def points_reorderer(list_of_points):
 def points_sequence_generator(voyage):
     result = []
 
-    def appender(result, key):
-        for point in voyage[key]:
-            result.append(point)
-        return result
-
     for key in ['delivery_point', 'l_ports', 'd_ports',
                 'restr_points', 'bunkering_point',
                 'redel_point']:
-        result = appender(result, key)
+        result = appender(result, key, voyage)
 
     reordered_result = points_reorderer(result)
     return reordered_result

@@ -93,3 +93,9 @@ def read_dict(the_dict):
     for key in the_dict:
         result = result + key + ": " + str(the_dict[key]) + '\n'
     print(result)
+
+
+def appender(result, key, voyage):
+    for point in voyage[key]:
+        result.append(point)
+    return result
