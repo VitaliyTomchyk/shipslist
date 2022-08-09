@@ -1,10 +1,13 @@
-from ships_list.additional_functions.additional_functions import id_generator,\
+from ships_list.additional_functions.additional_functions \
+    import id_generator, list_to_ol_string,\
     missing_arguments_checker, dictionary_finder, \
-    input_option, read_dict, input_with_num
+    read_dict
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE, SUPPORTING_FILE
 from ships_list.additional_functions.json_functions import write_JSON_file, \
     append_JSON_file, read_JSON_file
+from ships_list.additional_functions.input_functions import input_point, \
+    input_with_num, input_option
 
 
 def appender_of_stages(voyage, result):
@@ -55,22 +58,56 @@ def voyage_stages_generator(voyage):
 
     return result
 
+# list index switcher based on values
 
-def input_point(type, quantity_of_ports=None):
 
+def points_switcher(the_list, instruction):
+    index_from, index_to = instruction
+    first_value, second_value = the_list[int(index_from)], \
+        the_list[int(index_to)]
+    ind_first, ind_second = the_list.index(first_value), \
+        the_list.index(second_value)
+    the_list[ind_first], the_list[ind_second] = the_list[ind_second], \
+        the_list[ind_first]
+    return the_list
+
+
+def points_reorderer(list_of_points):
+    change_requred = True
+    while change_requred:
+        print('Please note, following order of points is used:')
+        print(list_to_ol_string(list_of_points))
+
+        print('\nDo you want to change order of points? (y/n)')
+        if input() == 'y':
+            print('\nPlease put new order of points.\n')
+            print('If you want to put 1st point on the 2ns place, put "1-2".')
+            instruction_for_change = '-'.split(input_point('Put switch ' +
+                                                           'instruction'))
+
+            list_of_points = points_switcher(list_of_points,
+                                             instruction_for_change)
+        else:
+            change_requred = False
+
+    return list_of_points
+
+
+def points_sequence_generator(voyage):
     result = []
-    if quantity_of_ports is None:
-        quantity = int(input('Please put quantity of {}\n'.format(type)))
-    else:
-        quantity = quantity_of_ports
 
-    i = 0
-    while i < quantity:
-        text = 'Please put name of {} number {}\n'.format(type, i + 1)
-        result.append(str(input(text)))
-        i = i + 1
+    def appender(result, key):
+        for point in voyage[key]:
+            result.append(point)
+        return result
 
-    return result
+    for key in ['delivery_point', 'l_ports', 'd_ports',
+                'restr_points', 'bunkering_point',
+                'redel_point']:
+        result = appender(result, key)
+
+    reordered_result = points_reorderer(result)
+    return reordered_result
 
 
 def add_voyage():
@@ -89,11 +126,13 @@ def add_voyage():
               "restr_points": input_point('restricting points'),
               "bunkering_point": input_point('bunkering point'),
               "redel_point": input('\nPut redelivery point\n'),
+              "points_sequence": [],
 
               "stage_of_voyage": "Prior delivery",
               "voy_type": input_with_num('voyage_types', 'type of voyage')}
 
     result['voyage_stages'] = voyage_stages_generator(result)
+    result['points_sequence'] = points_sequence_generator(result)
 
     checked_results = result.copy()
     del checked_results['restr_points']
