@@ -22,7 +22,7 @@ update:
 	make package-install
 
 pytest:
-	poetry run pytest -vv
+	poetry run pytest -vv -s
 
 com:
 	make lint

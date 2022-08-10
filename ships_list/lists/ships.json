@@ -14,5 +14,9 @@
     {
         "ships_name": "STAR",
         "IMO": 111
+    },
+    {
+        "ships_name": "DISCOVERY",
+        "IMO": 1
     }
 ]

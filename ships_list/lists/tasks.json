@@ -1,176 +1,22 @@
 [
     {
-        "task_title": "Come to palamos",
         "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Master",
-        "id": 66,
-        "voyage_id": 1
+        "IMO": 2743888347293827411
     },
     {
-        "task_title": "Come to Barcelona",
         "ships_name": "GRANDBLUE",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Owner",
-        "id": 68,
-        "voyage_id": 2
+        "IMO": 27438883472938327411
     },
     {
-        "task_title": "Not sink in the Ocean",
         "ships_name": "TITAN",
-        "status": "pending",
-        "stage": "After delivery",
-        "party": "Agent",
-        "id": 73,
-        "voyage_id": 1
+        "IMO": 1993820
     },
     {
-        "task_title": "t",
         "ships_name": "STAR",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 125,
-        "voyage_id": 8,
-        "time_mark_created": 1
+        "IMO": 111
     },
     {
-        "task_title": "2",
-        "ships_name": "STAR",
-        "time_mark_closed": null
-    },
-    {
-        "task_title": "test",
-        "ships_name": "STAR",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 130,
-        "voyage_id": 8,
-        "time_mark_created": "2022-08-03 10:11:57",
-        "time_mark_closed": null
-    },
-    {
-        "task_title": "r",
-        "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 131,
-        "voyage_id": 8,
-        "time_mark_created": "2022-08-03 10:37:24",
-        "time_mark_closed": null
-    },
-    {
-        "task_title": "Clean toilet",
-        "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior arrival at load port",
-        "party": "Master",
-        "id": 132,
-        "voyage_id": 8,
-        "time_mark_created": "2022-08-03 10:39:39",
-        "time_mark_closed": null
-    },
-    {
-        "task_title": "t",
-        "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 133,
-        "voyage_id": 8,
-        "time_mark_created": "2022-08-04 10:18:43",
-        "time_mark_closed": null
-    },
-    {
-        "task_title": "d",
-        "ships_name": "BEDA",
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "id": 134,
-        "voyage_id": 8,
-        "time_mark_created": "2022-08-04 10:35:25",
-        "time_mark_closed": null
-    },
-    {
-        "id": 135,
-        "task_title": "r",
-        "ships_name": "BEDA",
-        "voyage_id": 8,
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "time_mark_created": "2022-08-04 10:36:01",
-        "time_mark_closed": null
-    },
-    {
-        "id": 137,
-        "task_title": "t",
-        "ships_name": "STAR",
-        "voyage_id": 119,
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "time_mark_created": "2022-08-04 10:39:07",
-        "time_mark_closed": null
-    },
-    {
-        "id": 146,
-        "task_title": "f",
-        "ships_name": "STAR",
-        "voyage_id": 119,
-        "status": "pending",
-        "stage": "After delivery",
-        "party": "Charterer",
-        "time_mark_created": "2022-08-04 22:55:42",
-        "time_mark_closed": null
-    },
-    {
-        "id": 148,
-        "task_title": "g",
-        "ships_name": "STAR",
-        "voyage_id": 119,
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "time_mark_created": "2022-08-04 22:57:28",
-        "time_mark_closed": null
-    },
-    {
-        "id": 149,
-        "task_title": "2",
-        "ships_name": "STAR",
-        "voyage_id": 144,
-        "status": "pending",
-        "stage": "After delivery",
-        "party": "Owner",
-        "time_mark_created": "2022-08-04 22:57:37",
-        "time_mark_closed": null
-    },
-    {
-        "id": 150,
-        "task_title": "e",
-        "ships_name": "BEDA",
-        "voyage_id": 8,
-        "status": "pending",
-        "stage": "Prior delivery",
-        "party": "Operator",
-        "time_mark_created": "2022-08-04 22:58:15",
-        "time_mark_closed": null
-    },
-    {
-        "id": 151,
-        "task_title": "d",
-        "ships_name": "BEDA",
-        "voyage_id": 8,
-        "status": "pending",
-        "stage": "After delivery",
-        "party": "Charterer",
-        "time_mark_created": "2022-08-04 23:12:02",
-        "time_mark_closed": null
+        "ships_name": "DISCOVERY",
+        "IMO": 1
     }
 ]

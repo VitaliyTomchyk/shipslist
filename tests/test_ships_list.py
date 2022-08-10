@@ -1,9 +1,18 @@
 from ships_list.additional_functions.ships_functions import add_ship, read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
 from ships_list.lists.Standard.constats import SHIPS_FILE
-from ships_list.additional_functions.json_functions \
-    import read_JSON_file, write_JSON_file
+from ships_list.additional_functions.json_functions import read_JSON_file, write_JSON_file
+# from tests.file import proforma_input
 
+
+# def test_add_ship():
+#     proforma_input(add_ship,
+#                 ['DISCOVERY', '1'],
+#                 ['Ship adding function is activated\nPlease enter name of the ship',
+#                 'Please enter IMO of the ship',
+#                 'Ship DISCOVERY has been added.\n'],
+#                 '',
+#                 SHIPS_FILE)
 
 def test_add_not_existing_ship():
     # copy old list

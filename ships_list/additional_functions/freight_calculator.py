@@ -1,3 +1,7 @@
+def add_voyage_details(result):
+    return result
+
+
 def freight_calculator():
 
     input_information = {
@@ -9,6 +13,7 @@ def freight_calculator():
         "commition_on_hire": int(input('Commition on hire, %\n')) / 100,
         "duration": int(input('Duration of voyage, days\n'))
     }
+    input_information = add_voyage_details(input_information)
 
     total_freight = total_calculator(input_information['freight_rate'],
                                      input_information['cargo_quantity'],

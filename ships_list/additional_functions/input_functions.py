@@ -6,7 +6,7 @@ from ships_list.additional_functions.json_functions import read_JSON_file
 
 def input_item(item):
     print('Please put {}'.format(item))
-    return input()
+    return input('')
 
 
 def input_option(file, key, el_name):
@@ -16,7 +16,7 @@ def input_option(file, key, el_name):
     options = list_of_val_by_key(key, read_JSON_file(file))
     print(list_to_ol_string(options))
 
-    the_option = options[int(input()) - 1]
+    the_option = options[int(input('')) - 1]
 
     return the_option
 
@@ -44,7 +44,7 @@ def input_from_list(value, options_list):
     print(list_to_ol_string(options_list))
 
     try:
-        number_chosen = input()
+        number_chosen = input('')
         the_option = options_list[int(number_chosen) - 1]
         return the_option
 
@@ -71,7 +71,7 @@ def input_filtered_with_num(
     print(list_to_ol_string(options))
 
     try:
-        the_option = options[int(input()) - 1]
+        the_option = options[int(input('')) - 1]
         return the_option
 
     except IndexError or TypeError:
@@ -91,7 +91,7 @@ def input_with_num(key, value, document=SUPPORTING_FILE):
     print(list_to_ol_string(options))
 
     try:
-        number_chosen = input()
+        number_chosen = input('')
         the_option = options[int(number_chosen) - 1]
         return the_option
 
