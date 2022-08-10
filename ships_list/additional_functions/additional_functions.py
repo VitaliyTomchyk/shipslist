@@ -56,9 +56,17 @@ def id_generator():
     return i
 
 
-def missing_arguments_checker(the_dict):
-    list_of_keys = list(filter(lambda x: x if the_dict[x] is None else False,
-                               the_dict))
+def missing_arguments_checker(the_dict, excluded_keys=None):
+    # creating updated dictionary without excluded keys
+    updated_dict = the_dict.copy()
+    if excluded_keys is not None:
+        for key in excluded_keys:
+            updated_dict.pop(key)
+
+    # creates a list of keys that are missing in the_dict
+    list_of_keys = list(filter(lambda x: x if updated_dict[x] is None
+                               else False,
+                               updated_dict))
 
     if list_of_keys:
         print('Missing arguments are \n' + list_to_string(list_of_keys))

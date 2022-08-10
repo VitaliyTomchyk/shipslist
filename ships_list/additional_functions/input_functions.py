@@ -25,7 +25,17 @@ def input_point(type, quantity_of_ports=None):
 
     result = []
     if quantity_of_ports is None:
-        quantity = int(input('Please put quantity of {}\n'.format(type)))
+
+        input_required = True
+        while input_required:
+            try:
+                quantity = int(
+                    input(
+                        'Please put quantity of {}\n'.format(type)))
+                input_required = False
+            except ValueError:
+                print('Quantity is not a number, please put number.\n')
+
     else:
         quantity = quantity_of_ports
 

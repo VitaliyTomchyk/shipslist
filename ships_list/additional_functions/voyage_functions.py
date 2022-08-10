@@ -3,7 +3,7 @@ from ships_list.additional_functions.additional_functions \
     missing_arguments_checker, dictionary_finder, \
     read_dict, appender
 from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, \
-    SHIPS_FILE, SUPPORTING_FILE
+    SHIPS_FILE
 from ships_list.additional_functions.json_functions import write_JSON_file, \
     append_JSON_file, read_JSON_file
 from ships_list.additional_functions.input_functions import input_point, \
@@ -15,13 +15,13 @@ def appender_of_stages(voyage, result):
     pairs = []
     # TODO refactor this code to use list comprehension
     for port in voyage['l_ports']:
-        pairs.append(tuple(port, 'load port'))
+        pairs.append(tuple([port, 'load port']))
 
     for port in voyage['d_ports']:
-        pairs.append(tuple(port, 'discharge port'))
+        pairs.append(tuple([port, 'discharge port']))
 
-    for port in voyage['l_ports']:
-        pairs.append(tuple(port, 'restriction point'))
+    for port in voyage['restr_points']:
+        pairs.append(tuple([port, 'restriction point']))
 
     pairs = tuple(filter(lambda x: x if x[1] is not None else False,
                          pairs))
@@ -51,9 +51,7 @@ def appender_of_stages(voyage, result):
 
 def voyage_stages_generator(voyage):
 
-    standard_stages = read_JSON_file(SUPPORTING_FILE)['stages']
-    result = [standard_stages[0], standard_stages[1]]
-    result = appender_of_stages(voyage, result)
+    result = appender_of_stages(voyage, [])
     result.append('After redelivery')
 
     return result
@@ -81,9 +79,9 @@ def points_reorderer(list_of_points):
         print('\nDo you want to change order of points? (y/n)')
         if input() == 'y':
             print('\nPlease put new order of points.\n')
-            print('If you want to put 1st point on the 2ns place, put "1-2".')
-            instruction_for_change = '-'.split(input_point('Put switch ' +
-                                                           'instruction'))
+            print('If you want to put 1st point on the 2nd place, put "1-2".')
+            instruction_for_change = input('Put switch instruction').split('-')
+            print(instruction_for_change)
 
             list_of_points = points_switcher(list_of_points,
                                              instruction_for_change)
@@ -105,39 +103,47 @@ def points_sequence_generator(voyage):
     return reordered_result
 
 
+def voyage_details_collector():
+    return {
+        "id": id_generator(),
+        "charterer": input('\nPut name of Charterers company\n'),
+        "cargo": input("\nPut name of cargo\n"),
+        "weight_of_cargo": input("\nPut weight of cargo in tonns\n"),
+        "ship": input_option(
+            SHIPS_FILE,
+            'ships_name',
+            'ship\'s name'),
+        "delivery_point": input('\nPut delivery point\n'),
+        "l_ports": input_point('load port(s)'),
+        "d_ports": input_point('disch port(s)'),
+        "restr_points": input_point('restricting points'),
+        "bunkering_point": input_point('bunkering point'),
+        "redel_point": input('\nPut redelivery point\n'),
+        "points_sequence": [],
+        "stage_of_voyage": "Prior delivery",
+        "voy_type": input_with_num(
+            'voyage_types',
+            'type of voyage')}
+
+
 def add_voyage():
+    # collect voyage details
+    voyage_details = voyage_details_collector()
 
-    result = {"id": id_generator(),
+    # generate voyage stages
+    voyage_details['voyage_stages'] = voyage_stages_generator(voyage_details)
 
-              "charterer": input('\nPut name of Charterers company\n'),
-              "cargo": input("\nPut name of cargo\n"),
-              "weight_of_cargo": input("\nPut weight of cargo in tonns\n"),
-              "ship": input_option(SHIPS_FILE, 'ships_name',
-                                   'ship\'s name'),
+    # generate voyage points sequence
+    voyage_details['points_sequence'] = points_sequence_generator(
+        voyage_details)
 
-              "delivery_point": input('\nPut delivery point\n'),
-              "l_ports": input_point('load port(s)'),
-              "d_ports": input_point('disch port(s)'),
-              "restr_points": input_point('restricting points'),
-              "bunkering_point": input_point('bunkering point'),
-              "redel_point": input('\nPut redelivery point\n'),
-              "points_sequence": [],
-
-              "stage_of_voyage": "Prior delivery",
-              "voy_type": input_with_num('voyage_types', 'type of voyage')}
-
-    result['voyage_stages'] = voyage_stages_generator(result)
-    result['points_sequence'] = points_sequence_generator(result)
-
-    checked_results = result.copy()
-    del checked_results['restr_points']
-
-    if missing_arguments_checker(checked_results) is False:
+    # if all arguments on place append voyage to list of voyages
+    if missing_arguments_checker(voyage_details, ['restr_points']) is False:
         return
     else:
-        append_JSON_file(result, LIST_OF_VOYAGES_FILE)
+        append_JSON_file(voyage_details, LIST_OF_VOYAGES_FILE)
         print('Following voyage has been added.')
-        read_dict(result)
+        read_dict(voyage_details)
 
 
 def read_voyage(id):
