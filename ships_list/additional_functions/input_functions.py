@@ -21,10 +21,10 @@ def input_option(file, key, el_name):
     return the_option
 
 
-def input_point(type, quantity_of_ports=None):
+def input_point(type, quantity_of_points=None):
 
     result = []
-    if quantity_of_ports is None:
+    if quantity_of_points is None:
 
         input_required = True
         while input_required:
@@ -37,14 +37,18 @@ def input_point(type, quantity_of_ports=None):
                 print('Quantity is not a number, please put number.\n')
 
     else:
-        quantity = quantity_of_ports
+        quantity = quantity_of_points
+    result = specifier_of_points(result, quantity)
 
+    return result
+
+
+def specifier_of_points(result, quantity):
     i = 0
     while i < quantity:
         text = 'Please put name of {} number {}\n'.format(type, i + 1)
         result.append(str(input(text)))
         i = i + 1
-
     return result
 
 
