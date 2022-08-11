@@ -6,6 +6,8 @@ from ships_list.additional_functions.voyage_functions import add_voyage, \
     remove_voyage
 from ships_list.additional_functions.freight_calculator \
     import freight_calculator
+from ships_list.additional_functions.booking_functions \
+    import create_booking, read_booking, remove_booking
 
 
 def ships_list(parced_result):
@@ -26,6 +28,10 @@ def ships_list(parced_result):
         'add_voyage': add_voyage,
         'remove_voyage': remove_voyage,
         'freight_calculator': freight_calculator,
+
+        'create_booking': create_booking,
+        'read_booking': read_booking,
+        'remove_booking': remove_booking
     }
 
     function = list(filter(lambda x: parced_result[x], parced_result))[0]

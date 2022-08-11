@@ -1,5 +1,5 @@
 import json
-from ships_list.lists.Standard.constats import SUPPORTING_FILE
+from ships_list.lists.Standard.constants import SUPPORTING_FILE
 
 
 class Task():

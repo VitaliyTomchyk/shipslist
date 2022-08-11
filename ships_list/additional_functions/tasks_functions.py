@@ -2,7 +2,7 @@ from ships_list.additional_functions.additional_functions \
     import id_generator, missing_arguments_checker, dictionary_finder
 from ships_list.additional_functions.input_functions import \
     input_option
-from ships_list.lists.Standard.constats import TASKS_FILE, \
+from ships_list.lists.Standard.constants import TASKS_FILE, \
     SHIPS_FILE, LIST_OF_VOYAGES_FILE
 from ships_list.additional_functions.input_functions import input_with_num, \
     input_filtered_with_num, input_from_list

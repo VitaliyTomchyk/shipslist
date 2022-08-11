@@ -2,7 +2,7 @@ from ships_list.additional_functions.additional_functions \
     import id_generator, list_to_ol_string,\
     missing_arguments_checker, dictionary_finder, \
     read_dict, appender
-from ships_list.lists.Standard.constats import LIST_OF_VOYAGES_FILE, \
+from ships_list.lists.Standard.constants import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE
 from ships_list.additional_functions.json_functions import write_JSON_file, \
     append_JSON_file, read_JSON_file

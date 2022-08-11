@@ -1,6 +1,6 @@
 from ships_list.additional_functions.json_functions import read_JSON_file, \
     write_JSON_file
-from ships_list.lists.Standard.constats import TASKS_FILE, SHIPS_FILE
+from ships_list.lists.Standard.constants import TASKS_FILE, SHIPS_FILE
 from tests.tug_test_base import set_keyboard_input, get_display_output
 
 
