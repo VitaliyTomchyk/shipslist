@@ -2,6 +2,7 @@ from ships_list.additional_functions.ships_functions import add_ship, read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
 from ships_list.lists.Standard.constants import SHIPS_FILE
 from ships_list.additional_functions.json_functions import read_JSON_file, write_JSON_file
+from datetime import datetime
 # from tests.file import proforma_input
 
 
@@ -34,7 +35,7 @@ def test_add_not_existing_ship():
         'ships_name': 'POPY',
         'speed': {'ballast_eco_speed': 1,
                   'ballast_full_speed': 1,
-                  'date_of_update': '2022-08-11',
+                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now()),
                   'laden_eco_speed': 1,
                   'laden_full_speed': 14}}]
     expected_output = ['\nShip adding function is activated\n' + \
