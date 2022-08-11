@@ -11,27 +11,22 @@ from ships_list.additional_functions.input_functions import input_point, \
 
 
 def appender_of_stages(voyage, result):
+    points = ['l_ports', 'd_ports', 'restr_points', 'bunkering_point']
 
     pairs = []
-    # TODO refactor this code to use list comprehension
-    for port in voyage['l_ports']:
-        pairs.append(tuple([port, 'load port']))
-
-    for port in voyage['d_ports']:
-        pairs.append(tuple([port, 'discharge port']))
-
-    for port in voyage['restr_points']:
-        pairs.append(tuple([port, 'restriction point']))
+    for point in points:
+        for value in voyage[point]:
+            pairs.append((point, value))
 
     pairs = tuple(filter(lambda x: x if x[1] is not None else False,
                          pairs))
-    lines = ('Prior arrival at ', 'At ')
 
     for value in pairs:
-        for line in lines:
+        for line in ('Prior arrival at ', 'At '):
             print(value)
             result.append(line + str(str(value[1]) + ' ' + value[0][0]))
 
+    return result
     # for load_port in voyage['l_ports']:
     #     result.append(['Prior arrival at load port {}'.format(load_port)])
     #     result.append(['At load port {}'.format(load_port)])
@@ -45,8 +40,6 @@ def appender_of_stages(voyage, result):
     #     result.append(['Prior arrival at restriction ' + \
     #         'point {}'.format(restr_point)])
     #     result.append(['At load port {}'.format(restr_point)])
-
-    return result
 
 
 def voyage_stages_generator(voyage):
@@ -70,25 +63,31 @@ def points_switcher(the_list, instruction):
     return the_list
 
 
-def points_reorderer(list_of_points):
+def order_change_scripts(list_of_points):
+    text_line = '\nPlease put new order of points.\n' + \
+                'If you want to put 1st point on the 2nd place, ' + \
+                'put "1-2".\nPut switch instruction\n'
+    instruction_for_change = list(map(int, input(
+        text_line).split('-')))
+    updated_instruction = [x - 1 for x in instruction_for_change]
+
+    list_of_points = points_switcher(list_of_points, updated_instruction)
+    return list_of_points
+
+
+def points_reorderer(old_list_of_points):
     change_requred = True
     while change_requred:
-        print('Please note, following order of points is used:')
-        print(list_to_ol_string(list_of_points))
+        print('Please note, following order of points is used:\n' +
+              list_to_ol_string(old_list_of_points))
 
         print('\nDo you want to change order of points? (y/n)')
         if input() == 'y':
-            print('\nPlease put new order of points.\n')
-            print('If you want to put 1st point on the 2nd place, put "1-2".')
-            instruction_for_change = input('Put switch instruction').split('-')
-            print(instruction_for_change)
-
-            list_of_points = points_switcher(list_of_points,
-                                             instruction_for_change)
+            updated_list_of_points = order_change_scripts(old_list_of_points)
         else:
             change_requred = False
 
-    return list_of_points
+    return updated_list_of_points
 
 
 def points_sequence_generator(voyage):

@@ -112,5 +112,8 @@ def read_dict(the_dict):
 
 def appender(result, key, voyage):
     for point in voyage[key]:
-        result.append(point)
+        if isinstance(voyage[key], list):
+            result.append(point)
+        else:
+            result.append(voyage[key])
     return result

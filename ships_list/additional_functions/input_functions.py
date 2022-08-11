@@ -21,29 +21,26 @@ def input_option(file, key, el_name):
     return the_option
 
 
-def input_point(type, quantity_of_points=None):
+def quantity_collector(type):
+    input_required = True
+    while input_required:
+        try:
+            quantity = int(
+                input('Please put quantity of {}\n'.format(type)))
+            input_required = False
+        except ValueError:
+            print('Quantity is not a number, please put number.\n')
+    return quantity
 
-    result = []
-    if quantity_of_points is None:
 
-        input_required = True
-        while input_required:
-            try:
-                quantity = int(
-                    input(
-                        'Please put quantity of {}\n'.format(type)))
-                input_required = False
-            except ValueError:
-                print('Quantity is not a number, please put number.\n')
-
-    else:
-        quantity = quantity_of_points
-    result = specifier_of_points(result, quantity)
-
+def input_point(type_of_point):
+    quantity = quantity_collector(type_of_point)
+    result = specifier_of_points(quantity, type_of_point)
     return result
 
 
-def specifier_of_points(result, quantity):
+def specifier_of_points(quantity, type='point'):
+    result = []
     i = 0
     while i < quantity:
         text = 'Please put name of {} number {}\n'.format(type, i + 1)
@@ -57,18 +54,17 @@ def input_from_list(value, options_list):
 
     print(list_to_ol_string(options_list))
 
+    number_chosen = input('')
     try:
-        number_chosen = input('')
         the_option = options_list[int(number_chosen) - 1]
-        return the_option
 
     except IndexError or ValueError:
         choise = input('The option is out of range. ' +
                        'Do you want to try again? (y/n)')
-
         if choise == 'y':
             input_from_list(value, options_list)
         return
+    return the_option
 
 
 def input_filtered_with_num(
