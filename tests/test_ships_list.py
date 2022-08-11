@@ -19,7 +19,7 @@ def test_add_not_existing_ship():
     old_version = read_JSON_file(SHIPS_FILE)
 
     # running function and collecting result
-    set_keyboard_input(['POpy', '4'])
+    set_keyboard_input(['POpy', '4', '14', '1', '1', '1'])
     add_ship()
     output = get_display_output()
     updated_version = read_JSON_file(SHIPS_FILE)
@@ -28,14 +28,23 @@ def test_add_not_existing_ship():
     diff =  [x for x in updated_version if x not in old_version]
 
     # expected values
-    expected_diff = [
-    {
-        "ships_name": "POPY",
-        "IMO": 4
-    }]
+    expected_diff = [{
+        'ships_name': "POPY",
+        'IMO': 4,
+        'ships_name': 'POPY',
+        'speed': {'ballast_eco_speed': 1,
+                  'ballast_full_speed': 1,
+                  'date_of_update': '2022-08-11',
+                  'laden_eco_speed': 1,
+                  'laden_full_speed': 14}}]
     expected_output = ['\nShip adding function is activated\n' + \
                       'Please enter name of the ship\n',
                       'Please enter IMO of the ship\n',
+                      '\n'
+                      'Please add full laden speed of the ship, kn\n',
+                      'Please add eco ballast speed of the ship, kn\n',
+                      'Please add full ballast speed of the ship, kn\n',
+                      'Please add eco ballast speed of the ship, kn\n',
                       'Ship POPY has been added.\n']
     
     # writing back prev version of information

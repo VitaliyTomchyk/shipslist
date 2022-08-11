@@ -1,3 +1,7 @@
+from ships_list.additional_functions.bunker_consumption \
+    import calculate_bunkers_consumption
+
+
 def add_voyage_details(result):
     return result
 
@@ -22,8 +26,9 @@ def freight_calculator():
     total_hire = total_calculator(input_information['hire_rate'],
                                   input_information['duration'],
                                   input_information['commition_on_hire'])
+    total_price_of_bunkers = calculate_bunkers_consumption()
 
-    profit = round(total_freight - total_hire, 2)
+    profit = round(total_freight - total_hire - total_price_of_bunkers, 2)
     daily_profit = round(profit / input_information['duration'], 2)
 
     print('Voyage profit is expected to be USD {}.\n'.format(profit))

@@ -4,8 +4,23 @@ from ships_list.lists.Standard.constants import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE
 from ships_list.additional_functions.json_functions import read_JSON_file, \
     write_JSON_file
-# from tkinter import Tk, Canvas, Label, Frame
-# # Button
+from datetime import datetime
+
+
+def add_speed(ship):
+
+    laden_full_speed = input('\nPlease add full laden speed of the ship, kn\n')
+    laden_eco_speed = input('Please add eco ballast speed of the ship, kn\n')
+    ballast_full_speed = input(
+        'Please add full ballast speed of the ship, kn\n')
+    ballast_eco_speed = input('Please add eco ballast speed of the ship, kn\n')
+
+    ship['speed'] = {'laden_full_speed': int(laden_full_speed),
+                     'laden_eco_speed': int(laden_eco_speed),
+                     'ballast_full_speed': int(ballast_full_speed),
+                     'ballast_eco_speed': int(ballast_eco_speed),
+                     'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())}
+    return ship
 
 
 def print_ship():
@@ -54,6 +69,7 @@ def add_ship():
 
     ships_details = {"ships_name": name.upper(),
                      "IMO": int(IMO)}
+    add_speed(ships_details)
 
     list_of_ships = read_JSON_file(SHIPS_FILE)
     list_of_ships.append(ships_details)

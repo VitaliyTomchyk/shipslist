@@ -4,6 +4,7 @@ LIST_OF_VOYAGES_FILE = "ships_list/lists/list_of_voyages.json"
 TASKS_FILE = "ships_list/lists/tasks.json"
 SUPPORTING_FILE = "ships_list/lists/Standard/supporting_info.json"
 BOOKINGS_FILE = "ships_list/lists/bookings.json"
+BUNKERING_FILE = "ships_list/lists/bunkerings.json"
 
 ADDITIONAL_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "additional_functions.py"

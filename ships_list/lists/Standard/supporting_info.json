@@ -26,5 +26,18 @@
         "TC - TC",
         "VC - VC"
     ],
+    "voyage_statuses": [
+        "Not started",
+        "In progress",
+        "Completed",
+        "Cancelled"
+    ],
+    "point_types": [
+        "Delivery point",
+        "Load port",
+        "Discharge port",
+        "Bunkering point",
+        "Redelivery port"
+    ],
     "id": 209
 }
