@@ -22,6 +22,29 @@ def add_speed(ship):
                      'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())}
     return ship
 
+# add consumption function to store consumption of the ship for each speed
+# category
+
+
+def add_consumption(ship):
+    laden_full_consumption = input(
+        '\nPlease add full laden speed of the ship, kn\n')
+    laden_eco_consumption = input(
+        'Please add eco ballast speed of the ship, kn\n')
+    ballast_full_consumption = input(
+        'Please add full ballast speed of the ship, kn\n')
+    ballast_eco_consumption = input(
+        'Please add eco ballast speed of the ship, kn\n')
+
+    ship['consumption'] = {
+        'laden_full_consumption': int(laden_full_consumption),
+        'laden_eco_consumption': int(laden_eco_consumption),
+        'ballast_full_consumption': int(ballast_full_consumption),
+        'ballast_eco_consumption': int(ballast_eco_consumption),
+        'date_of_update': '{:%Y-%m-%d}'.format(
+            datetime.now())}
+    return ship
+
 
 def print_ship():
     #     root = Tk()
@@ -69,10 +92,11 @@ def add_ship():
 
     ships_details = {"ships_name": name.upper(),
                      "IMO": int(IMO)}
-    add_speed(ships_details)
 
-    list_of_ships = read_JSON_file(SHIPS_FILE)
-    list_of_ships.append(ships_details)
+    ships_details = add_speed(ships_details)
+    ships_details = add_consumption(ships_details)
+
+    list_of_ships = read_JSON_file(SHIPS_FILE).append(ships_details)
 
     write_JSON_file(SHIPS_FILE, list_of_ships)
 

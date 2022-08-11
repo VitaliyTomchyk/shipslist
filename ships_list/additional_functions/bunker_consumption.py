@@ -5,6 +5,40 @@ from ships_list.additional_functions.ships_functions import add_speed
 from ships_list.additional_functions.json_functions import append_JSON_file
 
 
+def optimal_speed_calculation(ship, bunker_prices, hire_rate):
+    optimal_speed = {}
+    # # calculating price for any distance
+    # duration = 1 / (ship['speed']['laden_full_speed'] * 24)
+    # price_FULL_laden_bunkers = duration * \
+    #     ship['consumption']['laden_full_speed'] * bunker_prices['IFO']
+    # price_FULL_laden_hire = duration * hire_rate
+    # total_price_FULL_laden = price_FULL_laden_bunkers \
+    #     + price_FULL_laden_hire
+
+    # duration = 1 / (ship['speed']['ballast_full_speed'] * 24)
+    # price_FULL_ballast_bunkers = duration * \
+    #     ship['consumption']['ballast_full_speed'] * bunker_prices['IFO']
+    # price_FULL_ballast_hire = duration * hire_rate
+    # total_price_FULL_ballast = price_FULL_ballast_bunkers + \
+    #     price_FULL_ballast_hire
+
+    # duration = 1 / (ship['speed']['laden_eco_speed'] * 24)
+    # price_ECO_laden_bunkers = duration * \
+    #     ship['consumption']['laden_eco_speed'] * bunker_prices['IFO']
+    # price_ECO_laden_hire = duration * hire_rate
+    # total_price_ECO_laden = price_ECO_laden_bunkers + \
+    #     price_ECO_laden_hire
+
+    # duration = 1 / (ship['speed']['ballast_eco_speed'] * 24)
+    # price_ECO_ballast_bunkers = duration * \
+    #     ship['consumption']['ballast_eco_speed'] * bunker_prices['IFO']
+    # price_ECO_ballast_hire = duration * hire_rate
+    # total_price_ECO_ballast = price_ECO_ballast_bunkers + \
+    #     price_ECO_ballast_hire
+
+    return optimal_speed
+
+
 def calculate_bunkers_consumption():
     calculations = {}
     ship = input_option(SHIPS_FILE, 'ships_name', 'ship')
@@ -90,6 +124,13 @@ def calculate_bunkers_consumption():
             input(
                 request.format(
                     points[i]['point_name'], points[i + 1]['point_name'])))
+
+    # calculating optimal speed for any distance
+    # bunker_prices = {
+    #     'IFO': ifo_price,
+    #     'MGO': mgo_price
+    # }
+    # optimal_speed = optimal_speed_calculation(ship, bunker_prices, hire_rate)
 
     # adding collected information to calculations dictionary
     calculations['ship'] = ship

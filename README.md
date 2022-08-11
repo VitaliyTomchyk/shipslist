@@ -26,6 +26,7 @@ List of functions:
   <li>read_voyage</li>
   </ul>
 <li>Freight calculator</li>
+  <li>calculate_freight</li>
 </ul>
 
 All functions are called with below syntax
