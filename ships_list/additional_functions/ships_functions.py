@@ -2,8 +2,8 @@ from ships_list.additional_functions.additional_functions import IMO_checker, \
     list_to_string, list_of_val_by_key, read_dict
 from ships_list.lists.Standard.constants import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE
-from ships_list.additional_functions.json_functions import read_JSON_file, \
-    write_JSON_file
+from ships_list.additional_functions.json_functions import append_JSON_file, \
+    read_JSON_file, write_JSON_file
 from datetime import datetime
 
 
@@ -28,13 +28,13 @@ def add_speed(ship):
 
 def add_consumption(ship):
     laden_full_consumption = input(
-        '\nPlease add full laden speed of the ship, kn\n')
+        '\nPlease add full laden consumption of the ship, mt/day\n')
     laden_eco_consumption = input(
-        'Please add eco ballast speed of the ship, kn\n')
+        'Please add eco ballast consumption of the ship, mt/day\n')
     ballast_full_consumption = input(
-        'Please add full ballast speed of the ship, kn\n')
+        'Please add full ballast consumption of the ship, mt/day\n')
     ballast_eco_consumption = input(
-        'Please add eco ballast speed of the ship, kn\n')
+        'Please add eco ballast consumption of the ship, mt/day\n')
 
     ship['consumption'] = {
         'laden_full_consumption': int(laden_full_consumption),
@@ -69,13 +69,14 @@ def print_ship():
 
 
 def ship_in_list_checker(name):
-    list_of_ships = list(map(lambda x: x['ships_name'],
-                             read_JSON_file(SHIPS_FILE)))
-
-    if name in list_of_ships:
-        print('Ship with this name and IMO is already in list, therefore, ' +
-              'it will not be added again.')
-        return True
+    list_of_ships = read_JSON_file(SHIPS_FILE)
+    if list_of_ships == []:
+        return False
+    for ship in list_of_ships:
+        if ship['ships_name'] == name:
+            print('Ship with this name and IMO is already in list, ' +
+                  'therefore, it will not be added again.')
+            return True
     return False
 
 
@@ -96,9 +97,7 @@ def add_ship():
     ships_details = add_speed(ships_details)
     ships_details = add_consumption(ships_details)
 
-    list_of_ships = read_JSON_file(SHIPS_FILE).append(ships_details)
-
-    write_JSON_file(SHIPS_FILE, list_of_ships)
+    append_JSON_file(ships_details, SHIPS_FILE)
 
     print('Ship {} has been added.\n'.format(name.upper()))
 

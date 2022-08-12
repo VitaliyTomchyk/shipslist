@@ -1,22 +1,23 @@
 [
     {
-        "ships_name": "BEDA",
-        "IMO": 2743888347293827411
+        "ships_name": "Samson"
     },
     {
-        "ships_name": "GRANDBLUE",
-        "IMO": 27438883472938327411
-    },
-    {
-        "ships_name": "TITAN",
-        "IMO": 1993820
-    },
-    {
-        "ships_name": "STAR",
-        "IMO": 111
-    },
-    {
-        "ships_name": "DISCOVERY",
-        "IMO": 1
+        "ships_name": "TEST",
+        "IMO": 1,
+        "speed": {
+            "laden_full_speed": 1,
+            "laden_eco_speed": 1,
+            "ballast_full_speed": 1,
+            "ballast_eco_speed": 1,
+            "date_of_update": "2022-08-12"
+        },
+        "consumption": {
+            "laden_full_consumption": 1,
+            "laden_eco_consumption": 1,
+            "ballast_full_consumption": 1,
+            "ballast_eco_consumption": 1,
+            "date_of_update": "2022-08-12"
+        }
     }
 ]
