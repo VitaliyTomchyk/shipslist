@@ -10,9 +10,17 @@ from ships_list.additional_functions.input_functions import input_point, \
     input_with_num, input_option
 
 
+def assign_stage_to_point(point, voyage):
+    pairs = []
+    for value in voyage[point]:
+        pairs.append((point, value))
+    return pairs
+
+
 def appender_of_stages(voyage, result):
     points = ['l_ports', 'd_ports', 'restr_points', 'bunkering_point']
 
+    # pairs = list(map(lambda x: assign_stage_to_point(x, voyage), points))
     pairs = []
     for point in points:
         for value in voyage[point]:

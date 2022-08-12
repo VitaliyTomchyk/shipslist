@@ -106,18 +106,20 @@ def calculate_bunkers_consumption():
     return result
 
 
+# adding weather factor to distances
 def add_weather_factor(distances):
     for distance in distances:
         if distance['distance_in_SECA'] != 0:
-            distance['wf_in_SECA'] = int(input(
-                'Please put weather factor for {} in SECA zone\n'.format(
-                    distance['point_name'])))
+            text = 'Please put weather factor for {} in SECA zone\n'.format(
+                distance['point_name'])
+            distance['wf_in_SECA'] = int(input(text))
 
-        if isinstance(distance['distance_in_SECA'], int) and \
-                distance['distance_total'] > distance['distance_in_SECA']:
-            distance['wf_total'] = int(input(
-                'Please put weather factor for {} in total\n'.format(
-                    distance['point_name'])))
+        if distance['distance_total'] > distance['distance_in_SECA']:
+            text = 'Please put weather factor for {} excluding SECA\n'.format(
+                distance['point_name'])
+            distance['wf_excluding_SECA'] = int(input(text))
+        else:
+            distance['wf_excluding_SECA'] = 0
     return distances
 
 
@@ -131,9 +133,8 @@ def add_distance(points):
                 marker_SECA,
                 points[i]['point_name'],
                 points[i + 1]['point_name'])
-            distances[i]['distance_' + port_of_key] = int(input(request))
 
-            distances[i]['description'] = '{} to {}'.format(
-                points[i]['point_name'],
-                points[i + 1]['point_name'])
+            distances[i]['distance_' + port_of_key] = int(input(request))
+            distances[i]['description']['from'] = points[i]['point_name']
+            distances[i]['description']['to'] = points[i + 1]['point_name']
     return distances
