@@ -3,54 +3,12 @@ from ships_list.lists.Standard.constants import SHIPS_FILE, SUPPORTING_FILE, \
     BUNKERING_FILE
 from ships_list.additional_functions.ships_functions import add_speed
 from ships_list.additional_functions.json_functions import append_JSON_file
+from ships_list.additional_functions.optimal_speed \
+    import optimal_speed_calculation
 
 
-def optimal_speed_calculation(ship, bunker_prices, hire_rate):
-    optimal_speed = {}
-    # # calculating price for any distance
-    # duration = 1 / (ship['speed']['laden_full_speed'] * 24)
-    # price_FULL_laden_bunkers = duration * \
-    #     ship['consumption']['laden_full_speed'] * bunker_prices['IFO']
-    # price_FULL_laden_hire = duration * hire_rate
-    # total_price_FULL_laden = price_FULL_laden_bunkers \
-    #     + price_FULL_laden_hire
-
-    # duration = 1 / (ship['speed']['ballast_full_speed'] * 24)
-    # price_FULL_ballast_bunkers = duration * \
-    #     ship['consumption']['ballast_full_speed'] * bunker_prices['IFO']
-    # price_FULL_ballast_hire = duration * hire_rate
-    # total_price_FULL_ballast = price_FULL_ballast_bunkers + \
-    #     price_FULL_ballast_hire
-
-    # duration = 1 / (ship['speed']['laden_eco_speed'] * 24)
-    # price_ECO_laden_bunkers = duration * \
-    #     ship['consumption']['laden_eco_speed'] * bunker_prices['IFO']
-    # price_ECO_laden_hire = duration * hire_rate
-    # total_price_ECO_laden = price_ECO_laden_bunkers + \
-    #     price_ECO_laden_hire
-
-    # duration = 1 / (ship['speed']['ballast_eco_speed'] * 24)
-    # price_ECO_ballast_bunkers = duration * \
-    #     ship['consumption']['ballast_eco_speed'] * bunker_prices['IFO']
-    # price_ECO_ballast_hire = duration * hire_rate
-    # total_price_ECO_ballast = price_ECO_ballast_bunkers + \
-    #     price_ECO_ballast_hire
-
-    return optimal_speed
-
-
-def calculate_bunkers_consumption():
-    calculations = {}
-    ship = input_option(SHIPS_FILE, 'ships_name', 'ship')
-
-    if 'speed' not in ship:
-        ship = add_speed(ship)
-
-    # input prices of IFO, MGO, hire rate
-    ifo_price = int(input('Please put price of IFO, USD\n'))
-    mgo_price = int(input('Please put price of MGO, USD\n'))
-    # hire_rate = int(input('Please put hire rate, USD per day\n'))
-
+# input points of route
+def input_points():
     # input points
     points = []
     point_input_required = True
@@ -70,55 +28,63 @@ def calculate_bunkers_consumption():
                                            'point type')
 
         # adding point parameter 'weather_factor_in_SECA'
-        reply_SECA = input(
+        in_SECA = input(
             'Is point {} in SECA zone? (y/n)'.format(point['point_name']))
-        point['in_SECA'] = True if reply_SECA == 'y' else False
+        point['in_SECA'] = True if in_SECA == 'y' else False
 
         points.append(point)
 
-    # input if point is working
-    for point in points:
         if point['point_type'] == 'loading' \
                 or point['point_type'] == 'discharging':
             question = 'Is point {} working with ship\'s cranes? (y/n)'
             reply_working = input(
                 question.format(point['point_name']))
-            point['working'] = True if reply_working == 'y' else False
-
-            # input quantity of working days
-            point['working_days'] = int(
-                input(
-                    'Please put quantity of working days at {}\n'.format(
-                        point['point_name'])))
-
-    # input quantity of idle days at each point
-    for point in points:
+            if reply_working == 'y':
+                # input quantity of working days
+                point['working_days'] = int(
+                    input(
+                        'Please put quantity of working days at {}\n'.format(
+                            point['point_name'])))
         point['idle_days'] = int(
             input(
                 'Please put quantity of idle days at {}\n'.format(
                     point['point_name'])))
+    return points
 
-    distances = []
-    # input distance including SECA zone from each between points
-    distances = add_distance(distances, points)
 
-    # # input weather_factor in percent for each distance not in SECA
-    # distances_with_wf = add_weather_factor(distances)
+def calculate_bunkers_consumption():
+    calculations = {}
+    ship = input_option(SHIPS_FILE, 'ships_name', 'ship')
 
-    # calculating optimal speed for any distance
-    # bunker_prices = {
-    #     'IFO': ifo_price,
-    #     'MGO': mgo_price
-    # }
-    # optimal_speed = optimal_speed_calculation(ship, bunker_prices, hire_rate)
-
-    # adding collected information to calculations dictionary
+    if 'speed' not in ship:
+        ship = add_speed(ship)
     calculations['ship'] = ship
-    print('points:' + str(points))
+
+    # input prices of IFO, MGO, hire rate
+    bunker_prices = {
+        'IFO': int(input('Please put price of IFO, USD\n')),
+        'MGO': int(input('Please put price of MGO, USD\n'))
+    }
+    calculations['bunker_prices'] = bunker_prices
+
+    # input hire rate
+    hire_rate = int(input('Please put hire rate, USD per day\n'))
+    calculations['hire_rate'] = hire_rate
+
+    # input points of route
+    points = input_points()
     calculations['points'] = points
-    # calculations['distances'] = distances
-    calculations['bunker_prices']['ifo_price'] = ifo_price
-    calculations['bunker_prices']['mgo_price'] = mgo_price
+
+    # input distance including SECA zone from each between points
+    distances = add_distance(points)
+
+    # input weather factor for each distance
+    distances_with_WF = add_weather_factor(distances)
+    calculations['distances_with_WF'] = distances_with_WF
+
+    # finding optimal speed
+    optimal_speed = optimal_speed_calculation((ship, hire_rate), bunker_prices)
+    print('optimal speed is \n' + str(optimal_speed))
 
     # save data to JSON file BUNKERING_FILE
     append_JSON_file(BUNKERING_FILE, calculations)
@@ -127,18 +93,24 @@ def calculate_bunkers_consumption():
     return result
 
 
-# def add_weather_factor(distances):
-#     for distance in distances:
-#         for seca_option in distance['SECA']:
-#             weather_factor = int(input(
-#                 'Please put weather factor for {}\n'.format(
-#                     seca_option['distance'])))
-#             seca_option['weather_factor'] = weather_factor
-#     return distances
+def add_weather_factor(distances):
+    for distance in distances:
+        if distance['distance_in_SECA'] != 0:
+            distance['wf_in_SECA'] = int(input(
+                'Please put weather factor for {} in SECA zone\n'.format(
+                    distance['point_name'])))
+
+        if isinstance(distance['distance_in_SECA'], int) and \
+                distance['distance_total'] > distance['distance_in_SECA']:
+            distance['wf_total'] = int(input(
+                'Please put weather factor for {} in total\n'.format(
+                    distance['point_name'])))
+    return distances
 
 
 # add distance to points for in_SECA = False or True
-def add_distance(distances, points):
+def add_distance(points):
+    distances = []
     for marker_SECA, port_of_key in [('total', 'only SECA',),
                                      ('in_total', 'in_SECA')]:
         for i in range(len(points) - 1):
