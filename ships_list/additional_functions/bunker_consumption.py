@@ -32,24 +32,37 @@ def input_points():
             'Is point {} in SECA zone? (y/n)'.format(point['point_name']))
         point['in_SECA'] = True if in_SECA == 'y' else False
 
+        # adding point parameter duration of stay
+        point = adding_duration_of_stay(point)
+
+        # adding points with point
         points.append(point)
 
-        if point['point_type'] == 'loading' \
-                or point['point_type'] == 'discharging':
-            question = 'Is point {} working with ship\'s cranes? (y/n)'
-            reply_working = input(
-                question.format(point['point_name']))
-            if reply_working == 'y':
-                # input quantity of working days
-                point['working_days'] = int(
-                    input(
-                        'Please put quantity of working days at {}\n'.format(
-                            point['point_name'])))
-        point['idle_days'] = int(
-            input(
-                'Please put quantity of idle days at {}\n'.format(
-                    point['point_name'])))
     return points
+
+
+def adding_duration_of_stay(point):
+
+    # input quantity of working days
+    if point['point_type'] == 'loading' \
+            or point['point_type'] == 'discharging':
+        question = 'Is point {} working with ship\'s cranes? (y/n)'
+        reply_working = input(
+            question.format(point['point_name']))
+        if reply_working == 'y':
+            # input quantity of working days
+            point['working_days'] = int(
+                input(
+                    'Please put quantity of working days at {}\n'.format(
+                        point['point_name'])))
+
+    # input quantity of idle days
+    point['idle_days'] = int(
+        input(
+            'Please put quantity of idle days at {}\n'.format(
+                point['point_name'])))
+
+    return point
 
 
 def calculate_bunkers_consumption():
