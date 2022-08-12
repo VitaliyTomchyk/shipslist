@@ -98,18 +98,12 @@ def calculate_bunkers_consumption():
                 'Please put quantity of idle days at {}\n'.format(
                     point['point_name'])))
 
-    # distances = []
-    # # input distance including SECA zone from each between points
-    # points = add_distance(points, False)
-
-    # # input distance in SECA zone only from each between points
-    # points = add_distance(points, True)
+    distances = []
+    # input distance including SECA zone from each between points
+    distances = add_distance(distances, points)
 
     # # input weather_factor in percent for each distance not in SECA
-    # points = add_weather_factor(points, in_SECA=False)
-
-    # # input weather_factor in percent for each distance in SECA
-    # points = add_weather_factor(points, in_SECA=True)
+    # distances_with_wf = add_weather_factor(distances)
 
     # calculating optimal speed for any distance
     # bunker_prices = {
@@ -133,29 +127,28 @@ def calculate_bunkers_consumption():
     return result
 
 
-def add_weather_factor(points, in_SECA=False):
-    marker_SECA = '' if in_SECA else 'not '
-    for i in range(len(points) - 1):
-        request = 'Please put weather factor for distance ' + \
-            'from {} to {} {} in SECA\n'
-        points[i]['weather_factor_in_SECA'] = int(
-            input(
-                request.format(
-                    points[i]['point_name'],
-                    points[i + 1]['point_name'],
-                    marker_SECA)))
-    return points
+# def add_weather_factor(distances):
+#     for distance in distances:
+#         for seca_option in distance['SECA']:
+#             weather_factor = int(input(
+#                 'Please put weather factor for {}\n'.format(
+#                     seca_option['distance'])))
+#             seca_option['weather_factor'] = weather_factor
+#     return distances
 
 
 # add distance to points for in_SECA = False or True
-def add_distance(points, in_SECA=False):
-    marker_SECA = '' if in_SECA else 'not '
-    for i in range(len(points) - 1):
-        request = 'Please put distance from {} to {} {} in SECA\n'
-        points[i]['leg_distance'] = int(
-            input(
-                request.format(
-                    points[i]['point_name'],
-                    points[i + 1]['point_name'],
-                    marker_SECA)))
-    return points
+def add_distance(distances, points):
+    for marker_SECA, port_of_key in [('total', 'only SECA',),
+                                     ('in_total', 'in_SECA')]:
+        for i in range(len(points) - 1):
+            request = 'Please put {} distance from {} to {} in SECA\n'.format(
+                marker_SECA,
+                points[i]['point_name'],
+                points[i + 1]['point_name'])
+            distances[i]['distance_' + port_of_key] = int(input(request))
+
+            distances[i]['description'] = '{} to {}'.format(
+                points[i]['point_name'],
+                points[i + 1]['point_name'])
+    return distances
