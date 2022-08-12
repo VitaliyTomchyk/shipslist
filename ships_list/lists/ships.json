@@ -19,5 +19,43 @@
             "ballast_eco_consumption": 1,
             "date_of_update": "2022-08-12"
         }
+    },
+    {
+        "ships_name": "F",
+        "IMO": 1,
+        "speed": {
+            "date_of_update": "2022-08-12"
+        },
+        "consumption": {
+            "date_of_update": "2022-08-12"
+        }
+    },
+    {
+        "ships_name": "D",
+        "IMO": 1,
+        "speed": {
+            "date_of_update": "2022-08-12"
+        },
+        "consumption": {
+            "date_of_update": "2022-08-12"
+        }
+    },
+    {
+        "ships_name": "D",
+        "IMO": 3,
+        "speed": {
+            "laden_full_speed": 1,
+            "laden_eco_speed": 1,
+            "ballast_full_speed": 1,
+            "ballast_eco_speed": 1,
+            "date_of_update": "2022-08-12"
+        },
+        "consumption": {
+            "laden_full_consumption": 2,
+            "laden_eco_consumption": 2,
+            "ballast_full_consumption": 2,
+            "ballast_eco_consumption": 2,
+            "date_of_update": "2022-08-12"
+        }
     }
 ]

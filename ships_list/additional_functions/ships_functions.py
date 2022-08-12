@@ -9,39 +9,36 @@ from datetime import datetime
 
 def add_speed(ship):
 
-    laden_full_speed = input('\nPlease add full laden speed of the ship, kn\n')
-    laden_eco_speed = input('Please add eco ballast speed of the ship, kn\n')
+    laden_full_speed = input("\nPlease add full laden speed of the ship, kn\n")
+    laden_eco_speed = input("Please add eco ballast speed of the ship, kn\n")
     ballast_full_speed = input(
-        'Please add full ballast speed of the ship, kn\n')
-    ballast_eco_speed = input('Please add eco ballast speed of the ship, kn\n')
+        "Please add full ballast speed of the ship, kn\n")
+    ballast_eco_speed = input("Please add eco ballast speed of the ship, kn\n")
 
-    ship['speed'] = {'laden_full_speed': int(laden_full_speed),
-                     'laden_eco_speed': int(laden_eco_speed),
-                     'ballast_full_speed': int(ballast_full_speed),
-                     'ballast_eco_speed': int(ballast_eco_speed),
-                     'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())}
+    ship["speed"] = {"laden_full_speed": int(laden_full_speed),
+                     "laden_eco_speed": int(laden_eco_speed),
+                     "ballast_full_speed": int(ballast_full_speed),
+                     "ballast_eco_speed": int(ballast_eco_speed),
+                     "date_of_update": "{:%Y-%m-%d}".format(datetime.now())}
     return ship
-
-# add consumption function to store consumption of the ship for each speed
-# category
 
 
 def add_consumption(ship):
     laden_full_consumption = input(
-        '\nPlease add full laden consumption of the ship, mt/day\n')
+        "\nPlease add full laden consumption of the ship, mt/day\n")
     laden_eco_consumption = input(
-        'Please add eco ballast consumption of the ship, mt/day\n')
+        "Please add eco ballast consumption of the ship, mt/day\n")
     ballast_full_consumption = input(
-        'Please add full ballast consumption of the ship, mt/day\n')
+        "Please add full ballast consumption of the ship, mt/day\n")
     ballast_eco_consumption = input(
-        'Please add eco ballast consumption of the ship, mt/day\n')
+        "Please add eco ballast consumption of the ship, mt/day\n")
 
-    ship['consumption'] = {
-        'laden_full_consumption': int(laden_full_consumption),
-        'laden_eco_consumption': int(laden_eco_consumption),
-        'ballast_full_consumption': int(ballast_full_consumption),
-        'ballast_eco_consumption': int(ballast_eco_consumption),
-        'date_of_update': '{:%Y-%m-%d}'.format(
+    ship["consumption"] = {
+        "laden_full_consumption": int(laden_full_consumption),
+        "laden_eco_consumption": int(laden_eco_consumption),
+        "ballast_full_consumption": int(ballast_full_consumption),
+        "ballast_eco_consumption": int(ballast_eco_consumption),
+        "date_of_update": "{:%Y-%m-%d}".format(
             datetime.now())}
     return ship
 
