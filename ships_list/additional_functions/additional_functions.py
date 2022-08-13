@@ -5,33 +5,6 @@ from ships_list.additional_functions.json_functions import read_JSON_file, \
     amend_JSON_dict
 
 
-def IMO_checker(IMO):
-    # bloking function for easier testing
-    result = True
-    try:
-        int(IMO)
-    except ValueError:
-        print('IMO is not correct')
-        print('IMO is not a number')
-        result = False
-
-    if IMO is None:
-        print('IMO is missing.')
-        result = False
-    return result
-    IMO = str(IMO)
-
-    if len(IMO) != 7:
-        result = False
-
-    result = 0
-    i = 7
-    while i != 1:
-        result = result + i * int(IMO[-i])
-        i = i - 1
-    return True if str(result)[-1] == IMO[-1] else False
-
-
 def list_to_string(the_list):
     result = ''
     for line in the_list:

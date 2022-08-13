@@ -1,10 +1,12 @@
-from ships_list.additional_functions.additional_functions import IMO_checker, \
+from ships_list.additional_functions.additional_functions import \
     list_to_string, list_of_val_by_key, read_dict
 from ships_list.lists.Standard.constants import LIST_OF_VOYAGES_FILE, \
     SHIPS_FILE
 from ships_list.additional_functions.json_functions import append_JSON_file, \
     read_JSON_file, write_JSON_file
 from datetime import datetime
+from ships_list.additional_functions.ship.additional_ship_functions import \
+    IMO_checker
 
 
 def options_generator(types_of_leg, types_of_speed, parameter):
