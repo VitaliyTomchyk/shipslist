@@ -60,20 +60,29 @@ def adding_duration_of_stay(point):
     return point
 
 
+def wf_setter(distance, text):
+
+    if distance['distance_in_SECA'] != 0:
+        distance['wf_in_SECA'] = int(input(text + ' in SECA, %\n'))
+    else:
+        distance['wf_in_SECA'] = 0
+
+    if distance['distance_total'] > distance['distance_in_SECA']:
+        distance['wf_excluding_SECA'] = int(input(text +
+                                                  'excluding SECA, %\n'))
+    else:
+        distance['wf_excluding_SECA'] = 0
+
+    return distance
+
 # adding weather factor to distances
+
+
 def add_weather_factor(distances):
     for distance in distances:
-        if distance['distance_in_SECA'] != 0:
-            text = 'Please put weather factor for {} in SECA zone\n'.format(
-                distance['point_name'])
-            distance['wf_in_SECA'] = int(input(text))
-
-        if distance['distance_total'] > distance['distance_in_SECA']:
-            text = 'Please put weather factor for {} excluding SECA\n'.format(
-                distance['point_name'])
-            distance['wf_excluding_SECA'] = int(input(text))
-        else:
-            distance['wf_excluding_SECA'] = 0
+        text = 'Please put weather factor for leg' + \
+            ' from {} to {}'.format(distance['from'], distance['to'])
+        distance = wf_setter(distance, text)
     return distances
 
 
