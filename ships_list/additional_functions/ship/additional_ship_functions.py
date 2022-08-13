@@ -8,27 +8,20 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 def IMO_checker(IMO):
     # bloking function for easier testing
     result = True
-    try:
-        int(IMO)
-    except ValueError:
-        print('IMO is not correct')
-        print('IMO is not a number')
+    if isinstance(IMO, int) is False:
+        print('IMO is not should be a number.')
         return False
 
     if IMO in [x['IMO'] for x in read_JSON_file(SHIPS_FILE)]:
         print('IMO is already in list')
         return False
 
-    if IMO is None:
-        print('IMO is missing.')
-        result = False
     return result
     IMO = str(IMO)
 
-    if len(IMO) != 7:
+    if len(str(IMO)) != 7:
         result = False
 
-    result = 0
     i = 7
     while i != 1:
         result = result + i * int(IMO[-i])
