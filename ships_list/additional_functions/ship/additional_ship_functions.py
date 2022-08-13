@@ -12,7 +12,11 @@ def IMO_checker(IMO):
     except ValueError:
         print('IMO is not correct')
         print('IMO is not a number')
-        result = False
+        return False
+
+    if IMO in [x['IMO'] for x in read_JSON_file(SHIPS_FILE)]:
+        print('IMO is already in list')
+        return False
 
     if IMO is None:
         print('IMO is missing.')

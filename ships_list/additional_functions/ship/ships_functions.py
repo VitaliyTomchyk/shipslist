@@ -5,7 +5,7 @@ from ships_list.additional_functions.json_functions import append_JSON_file, \
     read_JSON_file, write_JSON_file
 from ships_list.additional_functions.ship.additional_ship_functions import \
     add_parameter, voyages_assigned_checker, add_additional_consumption, \
-    IMO_checker, ship_in_list_checker
+    IMO_checker
 
 
 def print_ship():
@@ -33,8 +33,6 @@ def print_ship():
 def add_ship():
 
     name = input('Please enter ship\'s name\n').upper()
-    if not ship_in_list_checker(name):
-        return
 
     IMO = input('Please enter IMO of the ship\n')
     if IMO_checker(IMO) is False:

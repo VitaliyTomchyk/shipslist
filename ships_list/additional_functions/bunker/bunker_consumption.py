@@ -1,7 +1,8 @@
 from ships_list.additional_functions.input_functions import input_option
 from ships_list.lists.Standard.constants import SHIPS_FILE, \
     BUNKERING_FILE
-from ships_list.additional_functions.ships_functions import add_parameter
+from ships_list.additional_functions.ship.additional_ship_functions import \
+    add_parameter
 from ships_list.additional_functions.json_functions import append_JSON_file
 from ships_list.additional_functions.optimal_speed \
     import optimal_speed_calculation

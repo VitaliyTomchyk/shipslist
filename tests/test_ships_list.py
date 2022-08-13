@@ -1,4 +1,5 @@
-from ships_list.additional_functions.ships_functions import add_ship, read_ship
+from ships_list.additional_functions.ship.ships_functions import add_ship, \
+    read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
 from ships_list.lists.Standard.constants import SHIPS_FILE
 from ships_list.additional_functions.json_functions import read_JSON_file, write_JSON_file
@@ -20,7 +21,7 @@ def test_add_not_existing_ship():
 
 
     # running function and collecting result
-    set_keyboard_input(['POpy', '4', '14', '1', '1', '1', '14', '1', '1', '1'])
+    set_keyboard_input(['POpy'] + list(range(1, 12)))
     add_ship()
     output = get_display_output()
     updated_version = read_JSON_file(SHIPS_FILE)
@@ -31,20 +32,22 @@ def test_add_not_existing_ship():
     # expected values
     expected_diff = [{
         'ships_name': "POPY",
-        'IMO': 4,
-        'consumption': {'ballast_eco_consumption': 1,
-                  'ballast_full_consumption': 1,
-                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now()),
-                  'laden_eco_consumption': 1,
-                  'laden_full_consumption': 14},
-        'ships_name': 'POPY',
-        'speed': {'ballast_eco_speed': 1,
-                  'ballast_full_speed': 1,
-                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now()),
-                  'laden_eco_speed': 1,
-                  'laden_full_speed': 14}}]
+        'IMO': 1,
+        'additional_consumption': {'port_stay': 10,
+                                   'steaming': 11},
+        'speed': {'laden_full_speed': 2,
+                  'laden_eco_speed': 3,
+                  'ballast_full_speed': 4,
+                  'ballast_eco_speed': 5,
+                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())},
+        'consumption': {
+                  'laden_full_consumption': 6,
+                  'laden_eco_consumption': 7,
+                  'ballast_full_consumption': 8,
+                  'ballast_eco_consumption': 9,
+                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())}}]
     
-    expected_output = ['Please enter name of the ship\n',
+    expected_output = ['Please enter ship\'s name\n',
                       'Please enter IMO of the ship\n',
 
                       '\nPlease add full laden speed of the ship, kn\n',
@@ -56,6 +59,9 @@ def test_add_not_existing_ship():
                       '\nPlease add eco laden consumption of the ship, mt/day\n',
                       '\nPlease add full ballast consumption of the ship, mt/day\n',
                       '\nPlease add eco ballast consumption of the ship, mt/day\n',
+
+                      '\nPlease add additional consumption during port_stay, mt of MGO\n',
+                      '\nPlease add additional consumption during steaming, mt of MGO\n',
 
                       'Ship POPY has been added.\n']
     
@@ -71,10 +77,11 @@ def test_add_existing_ship():
     # copy old list
     old_version = read_JSON_file(SHIPS_FILE)
     
-    existing_ship = old_version[0]['ships_name']
+    existing_ships_name = old_version[0]['ships_name']
+    existing_IMO = old_version[0]['IMO']
 
     # running function and collecting result
-    set_keyboard_input([existing_ship, '4'])
+    set_keyboard_input([existing_ships_name, existing_IMO])
     add_ship()
     output = get_display_output()
     updated_version = read_JSON_file(SHIPS_FILE)
@@ -84,10 +91,9 @@ def test_add_existing_ship():
 
     # expected values
     expected_diff = []
-    expected_output = ['Please enter name of the ship\n',
+    expected_output = ['Please enter ship\'s name\n',
                       'Please enter IMO of the ship\n',
-                      'Ship with this name and IMO is already in list, ' + \
-                      'therefore, it will not be added again.']
+                      'IMO is already in list']
     
     # writing back prev version of information
     write_JSON_file(SHIPS_FILE, old_version)
@@ -103,7 +109,7 @@ def test_read_existing_ship():
 
     # running function and collecting result
     name = 'TESTO'
-    set_keyboard_input([name] + list(range(0, 9)))
+    set_keyboard_input([name] + list(range(0, 11)))
     add_ship() 
 
     # running function and collecting result
@@ -127,7 +133,8 @@ def test_read_existing_ship():
                                      "'ballast_eco_consumption': 8, " + \
                                      "'date_of_update': '" + \
                                      "{:%Y-%m-%d}".format(datetime.now()) + \
-                                        "'}\n"]
+                                        "'}\n" + \
+                       "additional_consumption: {'port_stay': 9, 'steaming': 10}\n",]
     # writing back prev version of information
     write_JSON_file(SHIPS_FILE, old_version)
 

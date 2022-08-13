@@ -1,7 +1,7 @@
 [
     {
         "ships_name": "TEST",
-        "IMO": 1,
+        "IMO": 1000,
         "speed": {
             "laden_full_speed": 1,
             "laden_eco_speed": 1,
@@ -15,6 +15,50 @@
             "ballast_full_consumption": 1,
             "ballast_eco_consumption": 1,
             "date_of_update": "2022-08-12"
+        }
+    },
+    {
+        "ships_name": "SON",
+        "IMO": 500000,
+        "speed": {
+            "laden_full_speed": 1,
+            "laden_eco_speed": 2,
+            "ballast_full_speed": 3,
+            "ballast_eco_speed": 4,
+            "date_of_update": "2022-08-13"
+        },
+        "consumption": {
+            "laden_full_consumption": 1,
+            "laden_eco_consumption": 2,
+            "ballast_full_consumption": 3,
+            "ballast_eco_consumption": 4,
+            "date_of_update": "2022-08-13"
+        },
+        "additional_consumption": {
+            "port_stay": 1,
+            "steaming": 1
+        }
+    },
+    {
+        "ships_name": "1",
+        "IMO": 10000000,
+        "speed": {
+            "laden_full_speed": 2,
+            "laden_eco_speed": 3,
+            "ballast_full_speed": 4,
+            "ballast_eco_speed": 5,
+            "date_of_update": "2022-08-13"
+        },
+        "consumption": {
+            "laden_full_consumption": 6,
+            "laden_eco_consumption": 7,
+            "ballast_full_consumption": 8,
+            "ballast_eco_consumption": 9,
+            "date_of_update": "2022-08-13"
+        },
+        "additional_consumption": {
+            "port_stay": 10,
+            "steaming": 11
         }
     }
 ]

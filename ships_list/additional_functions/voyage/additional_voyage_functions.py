@@ -1,8 +1,8 @@
 from ships_list.additional_functions.input_functions import input_point, \
-    input_with_num, input_option, appender, id_generator
+    input_with_num, input_option
+from ships_list.additional_functions.additional_functions import \
+    id_generator, appender, list_to_ol_string
 from ships_list.lists.Standard.constants import SHIPS_FILE
-from ships_list.additional_functions.additional_functions \
-    import list_to_ol_string
 
 
 def assign_type_to_point(point, voyage):
