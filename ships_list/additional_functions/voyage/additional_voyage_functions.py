@@ -1,16 +1,11 @@
-from ships_list.additional_functions.additional_functions \
-    import id_generator, list_to_ol_string,\
-    missing_arguments_checker, dictionary_finder, \
-    read_dict, appender
-from ships_list.lists.Standard.constants import LIST_OF_VOYAGES_FILE, \
-    SHIPS_FILE
-from ships_list.additional_functions.json_functions import write_JSON_file, \
-    append_JSON_file, read_JSON_file
 from ships_list.additional_functions.input_functions import input_point, \
-    input_with_num, input_option
+    input_with_num, input_option, appender, id_generator
+from ships_list.lists.Standard.constants import SHIPS_FILE
+from ships_list.additional_functions.additional_functions \
+    import list_to_ol_string
 
 
-def assign_stage_to_point(point, voyage):
+def assign_type_to_point(point, voyage):
     pairs = []
     for value in voyage[point]:
         pairs.append((point, value))
@@ -27,36 +22,17 @@ def stage_assigner(pairs, result):
 
 def appender_of_stages(voyage, result):
     points = ['l_ports', 'd_ports', 'restr_points', 'bunkering_point']
-
-    pairs = list(map(lambda x: assign_stage_to_point(x, voyage), points))
+    pairs = list(map(lambda x: assign_type_to_point(x, voyage), points))
     pairs = tuple(filter(lambda x: x if x[1] is not None else False,
                          pairs))
     result = stage_assigner(pairs, result)
-
     return result
-    # for load_port in voyage['l_ports']:
-    #     result.append(['Prior arrival at load port {}'.format(load_port)])
-    #     result.append(['At load port {}'.format(load_port)])
-
-    # for discharge_port in voyage['d_ports']:
-    #     result.append(['Prior arrival at discharge ' +
-    #                    'port {}'.format(discharge_port)])
-    #     result.append(['At discharge port {}'.format(discharge_port)])
-
-    # for restr_point in voyage['restr_point']:
-    #     result.append(['Prior arrival at restriction ' + \
-    #         'point {}'.format(restr_point)])
-    #     result.append(['At load port {}'.format(restr_point)])
 
 
 def voyage_stages_generator(voyage):
-
     result = appender_of_stages(voyage, [])
     result.append('After redelivery')
-
     return result
-
-# list index switcher based on values
 
 
 def points_switcher(the_list, instruction):
@@ -93,7 +69,6 @@ def points_reorderer(old_list_of_points):
             updated_list_of_points = order_change_scripts(old_list_of_points)
         else:
             change_requred = False
-
     return updated_list_of_points
 
 
@@ -130,63 +105,3 @@ def voyage_details_collector():
         "voy_type": input_with_num(
             'voyage_types',
             'type of voyage')}
-
-
-def add_voyage():
-    # collect voyage details
-    voyage_details = voyage_details_collector()
-
-    # generate voyage stages
-    voyage_details['voyage_stages'] = voyage_stages_generator(voyage_details)
-
-    # generate voyage points sequence
-    voyage_details['points_sequence'] = points_sequence_generator(
-        voyage_details)
-
-    # if all arguments on place append voyage to list of voyages
-    if missing_arguments_checker(voyage_details, ['restr_points']) is False:
-        return
-    else:
-        append_JSON_file(voyage_details, LIST_OF_VOYAGES_FILE)
-        print('Following voyage has been added.')
-        read_dict(voyage_details)
-
-
-def read_voyage(id):
-
-    voyages = read_JSON_file(LIST_OF_VOYAGES_FILE)
-    the_voyage = dictionary_finder(voyages, int(id), 'id')
-
-    result = 'Voyage details are following\n'
-    for key in the_voyage:
-        result = result + "\n" + key + ':  ' + str(the_voyage[key])
-    print(result + "\n")
-
-
-def remove_voyage():
-
-    print('Please put id of voyage you want to remove')
-    the_id = input()
-
-    voyages = read_JSON_file(LIST_OF_VOYAGES_FILE)
-    the_voyage = dictionary_finder(voyages, int(the_id), 'id')
-
-    voyages.remove(the_voyage)
-    print("Following voyage will be removed.")
-    read_voyage(id)
-
-    write_JSON_file(LIST_OF_VOYAGES_FILE, voyages)
-    print('Voyage is removed.')
-
-
-def short_voyage_info(voyage):
-
-    ship, charterer = voyage['ship'], voyage['charterer']
-    weight, cargo = voyage['weight_of_cargo'], voyage['cargo']
-    load_ports, discharge_ports = voyage['l_ports'], voyage['d_ports']
-
-    result = '{} acc {} - {} mt of {}\n from {} to {} '.format(ship, charterer,
-                                                               weight, cargo,
-                                                               load_ports,
-                                                               discharge_ports)
-    return result

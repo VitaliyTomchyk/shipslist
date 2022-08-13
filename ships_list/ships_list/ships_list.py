@@ -2,8 +2,8 @@ from ships_list.additional_functions.ships_functions import add_ship,\
     remove_ship, read_ship, print_ship
 from ships_list.additional_functions.tasks_functions import add_task,\
     remove_task, redact_task, amend_task, read_tasks_list, close_task
-from ships_list.additional_functions.voyage_functions import add_voyage, \
-    remove_voyage
+from ships_list.additional_functions.voyage.voyage_functions \
+    import add_voyage, remove_voyage
 from ships_list.additional_functions.freight_calculator \
     import freight_calculator
 from ships_list.additional_functions.booking_functions \
