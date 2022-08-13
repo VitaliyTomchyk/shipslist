@@ -3,6 +3,32 @@ from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option, input_option_from_dict
 
 
+def add_consuption_calculations(calculations):
+    points = calculations['points']
+    distances = calculations['distances']
+
+    consumption_at_points = {}
+    for point in points:
+        consumption_at_points[point['point_name']] = {
+            'IFO': 1,
+            'MGO': 1
+        }
+    calculations['consumption_at_points'] = consumption_at_points
+
+    # calculating consumption during steaming
+    # TODO refactor below
+    consumption_during_leg = []
+    i = 0
+    while i < len(distances):
+        consumption_during_leg[i] = {
+            'IFO': 1,
+            'MGO': 1
+        }
+        i = i + 1
+    calculations['consumption_during_leg'] = consumption_during_leg
+    return calculations
+
+
 # input points of route
 def input_points():
 

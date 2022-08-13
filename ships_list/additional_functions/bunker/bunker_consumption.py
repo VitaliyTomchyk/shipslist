@@ -2,27 +2,18 @@ from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option
 from ships_list.lists.Standard.constants import SHIPS_FILE, \
     BUNKERING_FILE
-from ships_list.additional_functions.ship.additional_ship_functions import \
-    add_parameter
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file
 from ships_list.additional_functions.optimal_speed \
     import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
-    import input_points, add_distance, add_weather_factor
+    import input_points, add_distance, add_weather_factor, \
+    add_consuption_calculations
 
 
 def calculate_bunkers_consumption():
     calculations = {}
     ship = input_option(SHIPS_FILE, 'ships_name', 'ship')
-
-    # check if speed is already in ship's details
-    if 'speed' not in ship:
-        ship = add_parameter(ship, 'speed')
-
-    # check if consumption is already in ship's details
-    if 'consumption' not in ship:
-        ship = add_parameter(ship, 'consumption')
 
     calculations['ship'] = ship
 
@@ -58,27 +49,9 @@ def calculate_bunkers_consumption():
         'MGO': int(input('Please put MGO delivery, mt\n'))
     }
 
-    # calculating consumption at points
+    # calculating consumption at points and steaming leg
     # TODO refactor below
-    consumption_at_points = {}
-    for point in points:
-        consumption_at_points[point['point_name']] = {
-            'IFO': 1,
-            'MGO': 1
-        }
-    calculations['consumption_at_points'] = consumption_at_points
-
-    # calculating consumption during steaming
-    # TODO refactor below
-    consumption_during_leg = []
-    i = 0
-    while i < len(distances):
-        consumption_during_leg[i] = {
-            'IFO': 1,
-            'MGO': 1
-        }
-        i = i + 1
-    calculations['consumption_during_leg'] = consumption_during_leg
+    calculations = add_consuption_calculations(calculations, points)
 
     # adding expected quantity of bunkers on each key point
 
