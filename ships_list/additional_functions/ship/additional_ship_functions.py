@@ -68,7 +68,6 @@ def add_parameter(ship, parameter):
             the_type_of_speed, the_type_of_leg, the_parameter, units)
 
         ship[parameter][option] = int(input(text))
-
     ship[parameter]["date_of_update"] = "{:%Y-%m-%d}".format(datetime.now())
     return ship
 
