@@ -7,39 +7,32 @@ from ships_list.additional_functions.json_functions import append_JSON_file, \
 from datetime import datetime
 
 
-def add_speed(ship):
-
-    laden_full_speed = input("\nPlease add full laden speed of the ship, kn\n")
-    laden_eco_speed = input("Please add eco ballast speed of the ship, kn\n")
-    ballast_full_speed = input(
-        "Please add full ballast speed of the ship, kn\n")
-    ballast_eco_speed = input("Please add eco ballast speed of the ship, kn\n")
-
-    ship["speed"] = {"laden_full_speed": int(laden_full_speed),
-                     "laden_eco_speed": int(laden_eco_speed),
-                     "ballast_full_speed": int(ballast_full_speed),
-                     "ballast_eco_speed": int(ballast_eco_speed),
-                     "date_of_update": "{:%Y-%m-%d}".format(datetime.now())}
-    return ship
+def options_generator(types_of_leg, types_of_speed, parameter):
+    options = []
+    for leg in types_of_leg:
+        for speed in types_of_speed:
+            options.append(leg + '_' + speed + '_' + parameter)
+    return options
 
 
-def add_consumption(ship):
-    laden_full_consumption = input(
-        "\nPlease add full laden consumption of the ship, mt/day\n")
-    laden_eco_consumption = input(
-        "Please add eco ballast consumption of the ship, mt/day\n")
-    ballast_full_consumption = input(
-        "Please add full ballast consumption of the ship, mt/day\n")
-    ballast_eco_consumption = input(
-        "Please add eco ballast consumption of the ship, mt/day\n")
+def add_parameter(ship, parameter):
 
-    ship["consumption"] = {
-        "laden_full_consumption": int(laden_full_consumption),
-        "laden_eco_consumption": int(laden_eco_consumption),
-        "ballast_full_consumption": int(ballast_full_consumption),
-        "ballast_eco_consumption": int(ballast_eco_consumption),
-        "date_of_update": "{:%Y-%m-%d}".format(
-            datetime.now())}
+    ship[parameter] = {}
+
+    types_of_leg = ['laden', 'ballast']
+    types_of_speed = ['full', 'eco']
+
+    options = options_generator(types_of_leg, types_of_speed, parameter)
+    for option in options:
+        the_type_of_leg, the_type_of_speed, the_parameter = option.split('_')
+        units = 'kn' if the_parameter == 'speed' else 'mt/day'
+
+        text = "\nPlease add {} {} {} of the ship, {}\n".format(
+            the_type_of_speed, the_type_of_leg, the_parameter, units)
+
+        ship[parameter][option] = int(input(text))
+
+    ship[parameter]["date_of_update"] = "{:%Y-%m-%d}".format(datetime.now())
     return ship
 
 
@@ -78,8 +71,7 @@ def ship_in_list_checker(name):
 
 
 def add_ship():
-    name = input('\nShip adding function is activated\n' +
-                 'Please enter name of the ship\n')
+    name = input('Please enter name of the ship\n')
     IMO = input('Please enter IMO of the ship\n')
 
     if IMO_checker(IMO) is False:
@@ -91,11 +83,10 @@ def add_ship():
     ships_details = {"ships_name": name.upper(),
                      "IMO": int(IMO)}
 
-    ships_details = add_speed(ships_details)
-    ships_details = add_consumption(ships_details)
+    ships_details = add_parameter(ships_details, 'speed')
+    ships_details = add_parameter(ships_details, 'consumption')
 
     append_JSON_file(ships_details, SHIPS_FILE)
-
     print('Ship {} has been added.\n'.format(name.upper()))
 
 

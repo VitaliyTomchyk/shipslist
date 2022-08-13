@@ -17,6 +17,7 @@ package-install:
 	python3 -m pip install --force-reinstall --user dist/*.whl
 
 update:
+	export PATH="$PATH:/Users/dmitriychebruchan/Library/Python/3.9/bin"
 	make build
 	make publish
 	make package-install

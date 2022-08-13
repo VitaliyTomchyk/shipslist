@@ -1,4 +1,4 @@
-from ships_list.additional_functions.bunker_consumption \
+from ships_list.additional_functions.bunker.bunker_consumption \
     import calculate_bunkers_consumption
 
 

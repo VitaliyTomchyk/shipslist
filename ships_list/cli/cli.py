@@ -47,6 +47,10 @@ def parcer():
 
     parser.add_argument('-freight_calculator', help='calculate_freight',
                         action='store_true')
+    parser.add_argument(
+        '-calculate_bunkers_consumption',
+        help='calculate bunker',
+        action='store_true')
 
     # generating result
     return {
@@ -58,11 +62,13 @@ def parcer():
         'remove_task': parser.parse_args().remove_task,
         'redact_task': parser.parse_args().redact_task,
         'amend_taks': parser.parse_args().amend_task,
+        "close_task": parser.parse_args().close_task,
+
         'read_tasks_list': parser.parse_args().read_tasks_list,
 
         'add_voyage': parser.parse_args().add_voyage,
         'remove_voyage': parser.parse_args().remove_voyage,
-        "close_task": parser.parse_args().close_task,
+
         "print_ship": parser.parse_args().print_ship,
 
         "create_booking": parser.parse_args().create_booking,
@@ -70,4 +76,5 @@ def parcer():
         "remove_booking": parser.parse_args().remove_booking,
 
         'freight_calculator': parser.parse_args().freight_calculator,
-    }
+        'calculate_bunkers_consumption':
+        parser.parse_args().calculate_bunkers_consumption}

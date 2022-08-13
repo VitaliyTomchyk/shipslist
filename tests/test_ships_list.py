@@ -9,8 +9,7 @@ from tests.file import proforma_input
 # def test_add_ship():
 #     proforma_input(add_ship,
 #                 ['DISCOVERY', '1', '1', '2', '3', '4', '5', '6', '7', '8'],
-#                 ['Ship adding function is activated\nPlease enter name of the ship',
-#                 'Please enter IMO of the ship',
+#                 ['Please enter IMO of the ship',
 #                 'Ship DISCOVERY has been added.\n'],
 #                 '',
 #                 SHIPS_FILE)
@@ -45,17 +44,19 @@ def test_add_not_existing_ship():
                   'laden_eco_speed': 1,
                   'laden_full_speed': 14}}]
     
-    expected_output = ['\nShip adding function is activated\n' + \
-                      'Please enter name of the ship\n',
+    expected_output = ['Please enter name of the ship\n',
                       'Please enter IMO of the ship\n',
+
                       '\nPlease add full laden speed of the ship, kn\n',
-                      'Please add eco ballast speed of the ship, kn\n',
-                      'Please add full ballast speed of the ship, kn\n',
-                      'Please add eco ballast speed of the ship, kn\n',
+                      '\nPlease add eco laden speed of the ship, kn\n',
+                      '\nPlease add full ballast speed of the ship, kn\n',
+                      '\nPlease add eco ballast speed of the ship, kn\n',
+
                       '\nPlease add full laden consumption of the ship, mt/day\n',
-                      'Please add eco ballast consumption of the ship, mt/day\n',
-                      'Please add full ballast consumption of the ship, mt/day\n',
-                      'Please add eco ballast consumption of the ship, mt/day\n',
+                      '\nPlease add eco laden consumption of the ship, mt/day\n',
+                      '\nPlease add full ballast consumption of the ship, mt/day\n',
+                      '\nPlease add eco ballast consumption of the ship, mt/day\n',
+
                       'Ship POPY has been added.\n']
     
     # writing back prev version of information
@@ -83,8 +84,7 @@ def test_add_existing_ship():
 
     # expected values
     expected_diff = []
-    expected_output = ['\nShip adding function is activated\n' + \
-                      'Please enter name of the ship\n',
+    expected_output = ['Please enter name of the ship\n',
                       'Please enter IMO of the ship\n',
                       'Ship with this name and IMO is already in list, ' + \
                       'therefore, it will not be added again.']
@@ -96,8 +96,16 @@ def test_add_existing_ship():
     assert output == expected_output
     assert diff == expected_diff
 
+
 def test_read_existing_ship():
-    name = 'TEST'
+    # copy old list
+    old_version = read_JSON_file(SHIPS_FILE)
+
+    # running function and collecting result
+    name = 'TESTO'
+    set_keyboard_input([name] + list(range(0, 9)))
+    add_ship() 
+
     # running function and collecting result
     set_keyboard_input([name])
     read_ship()
@@ -105,19 +113,24 @@ def test_read_existing_ship():
 
     expected_output = ["\nPlease add ship's name\n",
                        '\n'
-                       'ships_name: TEST\n'
-                       'IMO: 1\n'
-                       "speed: {'laden_full_speed': 1, 'laden_eco_speed':" + \
-                       " 1, 'ballast_full_speed': "
-                       "1, 'ballast_eco_speed': 1, 'date_of_update':" + \
-                       " '2022-08-12'}\n"
-                       "consumption: {'laden_full_consumption': 1," + \
-                       " 'laden_eco_consumption': 1, "
-                       "'ballast_full_consumption': 1," + \
-                       " 'ballast_eco_consumption': 1, "
-                       "'date_of_update': " + \
-                       "'{:%Y-%m-%d}'".format(datetime.now()) + "}\n"]
-    
+                       'ships_name: TESTO\n'
+                       'IMO: 0\n'
+                       "speed: {'laden_full_speed': 1, " + \
+                               "'laden_eco_speed': 2, " + \
+                               "'ballast_full_speed': 3, " + \
+                               "'ballast_eco_speed': 4, " + \
+                               "'date_of_update': '"+ \
+                               "{:%Y-%m-%d}".format(datetime.now()) +"'}\n" + \
+                       "consumption: {'laden_full_consumption': 5, " + \
+                                     "'laden_eco_consumption': 6, " + \
+                                     "'ballast_full_consumption': 7, " + \
+                                     "'ballast_eco_consumption': 8, " + \
+                                     "'date_of_update': '" + \
+                                     "{:%Y-%m-%d}".format(datetime.now()) + \
+                                        "'}\n"]
+    # writing back prev version of information
+    write_JSON_file(SHIPS_FILE, old_version)
+
     # checkng result against expectations
     assert output == expected_output
 
