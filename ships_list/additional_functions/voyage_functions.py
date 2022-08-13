@@ -17,22 +17,21 @@ def assign_stage_to_point(point, voyage):
     return pairs
 
 
-def appender_of_stages(voyage, result):
-    points = ['l_ports', 'd_ports', 'restr_points', 'bunkering_point']
-
-    # pairs = list(map(lambda x: assign_stage_to_point(x, voyage), points))
-    pairs = []
-    for point in points:
-        for value in voyage[point]:
-            pairs.append((point, value))
-
-    pairs = tuple(filter(lambda x: x if x[1] is not None else False,
-                         pairs))
-
+def stage_assigner(pairs, result):
     for value in pairs:
         for line in ('Prior arrival at ', 'At '):
             print(value)
             result.append(line + str(str(value[1]) + ' ' + value[0][0]))
+    return result
+
+
+def appender_of_stages(voyage, result):
+    points = ['l_ports', 'd_ports', 'restr_points', 'bunkering_point']
+
+    pairs = list(map(lambda x: assign_stage_to_point(x, voyage), points))
+    pairs = tuple(filter(lambda x: x if x[1] is not None else False,
+                         pairs))
+    result = stage_assigner(pairs, result)
 
     return result
     # for load_port in voyage['l_ports']:
