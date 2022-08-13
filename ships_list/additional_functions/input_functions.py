@@ -9,6 +9,21 @@ def input_item(item):
     return input('')
 
 
+def input_option_from_dict(file, key, el_name):
+
+    dict_of_standard = read_JSON_file(file)[key]
+    options = list(dict_of_standard)
+
+    print('\nPlease put {} from following list.'.format(el_name))
+    print('Choose number from options of {}.'.format(key))
+    print(list_to_ol_string(options))
+
+    the_key = options[int(input('')) - 1]
+    value = dict_of_standard[the_key]
+
+    return value
+
+
 def input_option(file, key, el_name):
     print('\nPlease put {} from following list.'.format(el_name))
     print('Choose number from options of {}.'.format(key))

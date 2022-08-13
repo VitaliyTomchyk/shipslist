@@ -39,5 +39,10 @@
         "Bunkering point",
         "Redelivery port"
     ],
-    "id": 209
+    "id": 209,
+    "laytime_port_terms": {
+        "shinc": 1,
+        "shex": 2,
+        "fex": 3
+    }
 }

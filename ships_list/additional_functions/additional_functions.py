@@ -91,6 +91,11 @@ def list_of_val_by_key(key, the_list):
     return result
 
 
+def list_of_val_by_key_from_dict(key, the_list):
+    result = list(map(lambda x: x[key], the_list))
+    return result
+
+
 def options_generator(key, document, key2=None, value2=None):
     if document == SUPPORTING_FILE:
         return read_JSON_file(document)[key]

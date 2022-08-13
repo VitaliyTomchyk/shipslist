@@ -49,6 +49,34 @@ def calculate_bunkers_consumption():
     optimal_speed = optimal_speed_calculation((ship, hire_rate), bunker_prices)
     print('optimal speed is \n' + str(optimal_speed))
 
+    # input of IFO and MGO on delivery in mt
+    calculations['ship']['bunkers_on_delivery'] = {
+        'IFO': int(input('Please put IFO delivery, mt\n')),
+        'MGO': int(input('Please put MGO delivery, mt\n'))
+    }
+
+    # calculating consumption at points
+    # TODO refactor below
+    consumption_at_points = {}
+    for point in points:
+        consumption_at_points[point['point_name']] = {
+            'IFO': 1,
+            'MGO': 1
+        }
+
+    # calculating consumption during steaming
+    # TODO refactor below
+    consumption_during_leg = {}
+    for distance in distances:
+        consumption_during_leg[distance['distance_name']] = {
+            'IFO': 1,
+            'MGO': 1
+        }
+
+    # adding expected quantity of bunkers on each key point
+
+    # adding expected date at each key point
+
     # save data to JSON file BUNKERING_FILE
     append_JSON_file(BUNKERING_FILE, calculations)
 
