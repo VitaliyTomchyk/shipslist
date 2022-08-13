@@ -1,6 +1,6 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
-from ships_list.additional_functions.input_functions import input_option, \
-    input_option_from_dict
+from ships_list.additional_functions.supporting_functions.input_functions \
+    import input_option, input_option_from_dict
 
 
 # input points of route

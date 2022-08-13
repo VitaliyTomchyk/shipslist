@@ -1,7 +1,7 @@
 from ships_list.lists.Standard.constants import BOOKINGS_FILE
-from ships_list.additional_functions.json_functions import amend_JSON_dict, \
-    read_JSON_file
-from ships_list.additional_functions.additional_functions \
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import amend_JSON_dict, read_JSON_file
+from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator, list_to_ol_string
 
 

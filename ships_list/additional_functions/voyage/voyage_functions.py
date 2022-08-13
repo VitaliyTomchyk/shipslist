@@ -1,9 +1,9 @@
-from ships_list.additional_functions.additional_functions \
+from ships_list.additional_functions.supporting_functions.additional_functions\
     import missing_arguments_checker, dictionary_finder, \
     read_dict
 from ships_list.lists.Standard.constants import LIST_OF_VOYAGES_FILE
-from ships_list.additional_functions.json_functions import write_JSON_file, \
-    append_JSON_file, read_JSON_file
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import write_JSON_file, append_JSON_file, read_JSON_file
 from ships_list.additional_functions.voyage.additional_voyage_functions \
     import voyage_details_collector, voyage_stages_generator, \
     points_sequence_generator

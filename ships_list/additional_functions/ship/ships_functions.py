@@ -1,8 +1,8 @@
-from ships_list.additional_functions.additional_functions import \
-    list_to_string, list_of_val_by_key, read_dict
+from ships_list.additional_functions.supporting_functions.additional_functions\
+    import list_to_string, list_of_val_by_key, read_dict
 from ships_list.lists.Standard.constants import SHIPS_FILE
-from ships_list.additional_functions.json_functions import append_JSON_file, \
-    read_JSON_file, write_JSON_file
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import append_JSON_file, read_JSON_file, write_JSON_file
 from ships_list.additional_functions.ship.additional_ship_functions import \
     add_parameter, voyages_assigned_checker, add_additional_consumption, \
     IMO_checker

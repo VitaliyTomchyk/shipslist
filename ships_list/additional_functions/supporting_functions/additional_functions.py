@@ -1,8 +1,8 @@
 import json
 
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
-from ships_list.additional_functions.json_functions import read_JSON_file, \
-    amend_JSON_dict
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import read_JSON_file, amend_JSON_dict
 
 
 def list_to_string(the_list):

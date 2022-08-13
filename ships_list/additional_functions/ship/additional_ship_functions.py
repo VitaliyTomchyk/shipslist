@@ -1,7 +1,8 @@
 from datetime import datetime
 from ships_list.lists.Standard.constants import SHIPS_FILE, \
     LIST_OF_VOYAGES_FILE
-from ships_list.additional_functions.json_functions import read_JSON_file
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import read_JSON_file
 
 
 def IMO_checker(IMO):

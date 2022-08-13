@@ -1,12 +1,12 @@
-from ships_list.additional_functions.additional_functions \
+from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator, missing_arguments_checker, dictionary_finder
-from ships_list.additional_functions.input_functions import \
-    input_option
 from ships_list.lists.Standard.constants import TASKS_FILE, \
     SHIPS_FILE, LIST_OF_VOYAGES_FILE
-from ships_list.additional_functions.input_functions import input_with_num, \
-    input_filtered_with_num, input_from_list
-from ships_list.additional_functions.json_functions import append_JSON_file, \
+from ships_list.additional_functions.supporting_functions.input_functions \
+    import input_with_num, input_filtered_with_num, input_from_list, \
+    input_option
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import append_JSON_file, \
     read_JSON_file, write_JSON_file
 from datetime import datetime
 

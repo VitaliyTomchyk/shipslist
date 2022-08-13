@@ -2,7 +2,8 @@ from ships_list.additional_functions.ship.ships_functions import add_ship, \
     read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
 from ships_list.lists.Standard.constants import SHIPS_FILE
-from ships_list.additional_functions.json_functions import read_JSON_file, write_JSON_file
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import read_JSON_file, write_JSON_file
 from datetime import datetime
 from tests.file import proforma_input
 
@@ -19,8 +20,7 @@ def test_add_not_existing_ship():
     # copy old list
     old_version = read_JSON_file(SHIPS_FILE)
 
-
-    # running function and collecting result
+    # running function and collecting result of function
     set_keyboard_input(['POpy'] + list(range(1, 12)))
     add_ship()
     output = get_display_output()
