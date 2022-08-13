@@ -63,15 +63,19 @@ def calculate_bunkers_consumption():
             'IFO': 1,
             'MGO': 1
         }
+    calculations['consumption_at_points'] = consumption_at_points
 
     # calculating consumption during steaming
     # TODO refactor below
-    consumption_during_leg = {}
-    for distance in distances:
-        consumption_during_leg[distance['distance_name']] = {
+    consumption_during_leg = []
+    i = 0
+    while i < len(distances):
+        consumption_during_leg[i] = {
             'IFO': 1,
             'MGO': 1
         }
+        i = i + 1
+    calculations['consumption_during_leg'] = consumption_during_leg
 
     # adding expected quantity of bunkers on each key point
 
