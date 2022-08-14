@@ -10,6 +10,8 @@ from ships_list.additional_functions.booking_functions \
     import create_booking, read_booking, remove_booking
 from ships_list.additional_functions.bunker.bunker_consumption \
     import calculate_bunkers_consumption
+from ships_list.additional_functions.templates.template_manager \
+    import fill_template
 
 
 def ships_list(parced_result):
@@ -35,7 +37,9 @@ def ships_list(parced_result):
         'remove_booking': remove_booking,
 
         'freight_calculator': freight_calculator,
-        'calculate_bunkers_consumption': calculate_bunkers_consumption
+        'calculate_bunkers_consumption': calculate_bunkers_consumption,
+
+        'fill_template': fill_template
     }
 
     function = list(filter(lambda x: parced_result[x], parced_result))[0]

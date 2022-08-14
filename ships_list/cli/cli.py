@@ -52,6 +52,10 @@ def parcer():
         help='calculate bunker',
         action='store_true')
 
+    parser.add_argument(
+        '-fill_template',
+        help='function will fill a template',
+        action='store_true')
     # generating result
     return {
         'add_ship': parser.parse_args().add_ship,
@@ -62,19 +66,22 @@ def parcer():
         'remove_task': parser.parse_args().remove_task,
         'redact_task': parser.parse_args().redact_task,
         'amend_taks': parser.parse_args().amend_task,
-        "close_task": parser.parse_args().close_task,
+        'close_task': parser.parse_args().close_task,
 
         'read_tasks_list': parser.parse_args().read_tasks_list,
 
         'add_voyage': parser.parse_args().add_voyage,
         'remove_voyage': parser.parse_args().remove_voyage,
 
-        "print_ship": parser.parse_args().print_ship,
+        'print_ship': parser.parse_args().print_ship,
 
-        "create_booking": parser.parse_args().create_booking,
-        "read_booking": parser.parse_args().read_booking,
-        "remove_booking": parser.parse_args().remove_booking,
+        'create_booking': parser.parse_args().create_booking,
+        'read_booking': parser.parse_args().read_booking,
+        'remove_booking': parser.parse_args().remove_booking,
 
         'freight_calculator': parser.parse_args().freight_calculator,
         'calculate_bunkers_consumption':
-        parser.parse_args().calculate_bunkers_consumption}
+        parser.parse_args().calculate_bunkers_consumption,
+
+        'fill_template': parser.parse_args().fill_template
+    }
