@@ -1,0 +1,7 @@
+[{  "proforma_type": "PDA_request",
+    "input_data": {"company_to": "Company_name",
+                 "name_of_vessel": "BEDA",
+                 "cargo_name": "grain",
+                 "cargo_quantity": 100,
+                 "terms": "Free"},
+    "output_data": {"text": "From company To Comapany name Please revert with price for port call for ship BEDA with 100 mt of grain on FREE terms and with below information"}}]
