@@ -1,5 +1,1 @@
-{
-    "template_name": "pda_request",
-    "parameters": ["cargo_quantity", "port_name", "cargo_name", "ships_name",
-                "port_type", "receiver", "cargo_operations_term"],
-    "link_to_template": ""}
+[]

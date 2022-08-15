@@ -44,5 +44,7 @@
         "shinc": 1,
         "shex": 2,
         "fex": 3
-    }
+    },
+    "template_files": {
+        "pda_requst": "template_files/template_file.xlsx"}
 }

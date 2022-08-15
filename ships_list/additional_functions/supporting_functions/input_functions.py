@@ -12,6 +12,7 @@ def input_item(item):
 
 def input_option_from_dict(file, key, el_name):
 
+    # reading element from dictonary and converting inner keys to list
     dict_of_standard = read_JSON_file(file)[key]
     options = list(dict_of_standard)
 
