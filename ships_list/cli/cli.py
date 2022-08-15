@@ -47,15 +47,11 @@ def parcer():
 
     parser.add_argument('-freight_calculator', help='calculate_freight',
                         action='store_true')
-    parser.add_argument(
-        '-calculate_bunkers_consumption',
-        help='calculate bunker',
-        action='store_true')
-
-    parser.add_argument(
-        '-fill_template',
-        help='function will fill a template',
-        action='store_true')
+    parser.add_argument('-calculate_bunkers_consumption',
+                        help='calculate bunker', action='store_true')
+    
+    parser.add_argument('-fill_template',help='function will fill a template',
+                        action='store_true')
     # generating result
     return {
         'add_ship': parser.parse_args().add_ship,
