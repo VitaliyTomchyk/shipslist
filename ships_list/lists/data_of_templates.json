@@ -1,0 +1,6 @@
+[{  "proforma_type": "PDA_request",
+    "input_data": {"company_to": "Company_name",
+                 "name_of_vessel": "BEDA",
+                 "cargo_name": "grain",
+                 "cargo_quantity": 100,
+                 "terms": "Free"} }]
