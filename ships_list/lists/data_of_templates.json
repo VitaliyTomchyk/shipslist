@@ -1,6 +1,23 @@
-[{  "proforma_type": "PDA_request",
-    "input_data": {"company_to": "Company_name",
-                 "name_of_vessel": "BEDA",
-                 "cargo_name": "grain",
-                 "cargo_quantity": 100,
-                 "terms": "Free"} }]
+[
+    {
+        "proforma_type": "PDA_request",
+        "input_data": {
+            "company_to": "Company_name",
+            "name_of_vessel": "BEDA",
+            "cargo_name": "grain",
+            "cargo_quantity": 100,
+            "terms": "Free"
+        }
+    },
+    {
+        "template_name": "pda_request",
+        "filled_template": "ships_list/files/filled_pda.txt"
+    },
+    {
+        "template_name": "pda_request",
+        "filled_template": "ships_list/files/filled_pda.txt"
+    },
+    {
+        "filled_template_address": "ships_list/files/filled_templates/TEST.txt"
+    }
+]

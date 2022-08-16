@@ -46,5 +46,10 @@
         "fex": 3
     },
     "template_files": {
-        "pda_requst": "template_files/template_file.xlsx"}
+        "pda_requst": {
+            "address_of_template": "ships_list.ships_list/files/pda_request_template.docx",
+            "keys_of_tmplt": ["company_to", "name_of_vessel",
+                              "cargo_name", "cargo_quantity",
+                              "terms"]
+                       }}
 }

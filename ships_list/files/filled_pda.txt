@@ -1,19 +1,19 @@
 From: Lion Maritime - Operations
-To: $receiver
+To: company receiver name
 
-Re: PDA Inquiry - $port_type of $cargo_quantity mt of $cargo_name at $port_name
+Re: PDA Inquiry - load port of 10 mt of grain at Odessa
 
 Dear Sirs,
 
 Please be advised we are negotiating below cargo for VAR as per below details.
-Cargo name: $cargo_name
-Cargo quantity: $cargo_quantity MT
-Port of $port_type: $port_name
-Terms: $cargo_operations_term out
+Cargo name: grain
+Cargo quantity: 10 MT
+Port of load port: Odessa
+Terms: free out
 
 Please kindly find below vessel's details as follows:
 m/v TBN
-$ships_name
+beda
 
 You are kindly requested to revert with following information ASAP:
 1.      max port/berth/draft restrictions for VAR of the cargo;
