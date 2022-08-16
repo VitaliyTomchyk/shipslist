@@ -49,8 +49,8 @@ def parcer():
                         action='store_true')
     parser.add_argument('-calculate_bunkers_consumption',
                         help='calculate bunker', action='store_true')
-    
-    parser.add_argument('-fill_template',help='function will fill a template',
+
+    parser.add_argument('-fill_template', help='function will fill a template',
                         action='store_true')
     # generating result
     return {
