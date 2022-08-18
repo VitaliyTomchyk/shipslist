@@ -11,7 +11,8 @@ from ships_list.additional_functions.bunker.additional_bunker_functions \
     add_consuption_calculations
 
 
-def calculate_bunkers_consumption():
+def calculate_bunkers_consumption(input_information):
+
     calculations = {}
     ship = input_option(SHIPS_FILE, 'ships_name', 'ship')
 
@@ -23,10 +24,6 @@ def calculate_bunkers_consumption():
         'MGO': int(input('Please put price of MGO, USD\n'))
     }
     calculations['bunker_prices'] = bunker_prices
-
-    # input hire rate
-    hire_rate = int(input('Please put hire rate, USD per day\n'))
-    calculations['hire_rate'] = hire_rate
 
     # input points of route
     points = input_points()
@@ -40,8 +37,10 @@ def calculate_bunkers_consumption():
     calculations['distances_with_WF'] = distances_with_WF
 
     # finding optimal speed
-    optimal_speed = optimal_speed_calculation((ship, hire_rate), bunker_prices)
-    print('optimal speed is \n' + str(optimal_speed))
+    optimal_speed = optimal_speed_calculation((ship,
+                                               calculations['hire_rate']),
+                                              bunker_prices)
+    print('Optimal speed is \n' + str(optimal_speed))
 
     # input of IFO and MGO on delivery in mt
     calculations['ship']['bunkers_on_delivery'] = {
@@ -50,7 +49,6 @@ def calculate_bunkers_consumption():
     }
 
     # calculating consumption at points and steaming leg
-    # TODO refactor below
     calculations = add_consuption_calculations(calculations, points)
 
     # adding expected quantity of bunkers on each key point
@@ -59,6 +57,6 @@ def calculate_bunkers_consumption():
 
     # save data to JSON file BUNKERING_FILE
     append_JSON_file(BUNKERING_FILE, calculations)
+    input_information['bunker_consumption'] = calculations
 
-    result = 10
-    return result
+    return input_information

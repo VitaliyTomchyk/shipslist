@@ -3,29 +3,66 @@ from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option, input_option_from_dict
 
 
-def add_consuption_calculations(calculations):
-    points = calculations['points']
-    distances = calculations['distances']
+# calculator of IFO and MGO consupmtion in point returns dict
+def point_consumption_calculator(point, ship):
+    if point['in_SECA']:
+        # calculating IFO consumption in point
+        IFO_consumption_total = 0
 
-    consumption_at_points = {}
-    for point in points:
-        consumption_at_points[point['point_name']] = {
-            'IFO': 1,
-            'MGO': 1
-        }
-    calculations['consumption_at_points'] = consumption_at_points
+        # MGO consumption during working days
+        MGO_consumption_working = point['working_days'] * \
+            ship['working_main_bunker']
+        # MGO consumption during idle days
+        MGO_consumption_idle = point['idle_days'] * ship['idle_main_bunker']
 
-    # calculating consumption during steaming
-    # TODO refactor below
-    consumption_during_leg = []
-    i = 0
-    while i < len(distances):
-        consumption_during_leg[i] = {
-            'IFO': 1,
-            'MGO': 1
-        }
-        i = i + 1
-    calculations['consumption_during_leg'] = consumption_during_leg
+        # additional MGO consumption
+        MGO_consumption_additional = \
+            point['working_days'] * ship['working_auxiliary_bunker'] + \
+            point['idle_days'] * ship['idle_auxiliary_bunker']
+
+        # total MGO consumption
+        MGO_consumption_total = MGO_consumption_working + \
+            MGO_consumption_idle + MGO_consumption_additional
+
+    else:
+        # IFO consumption during working days
+        IFO_consumption_working = point['working_days'] * \
+            ship['working_main_bunker']
+        # IFO consumption during idle days
+        IFO_consumption_idle = point['idle_days'] * ship['idle_main_bunker']
+        # total IFO consumption
+        IFO_consumption_total = IFO_consumption_working + IFO_consumption_idle
+
+        # MGO consumption during working days
+        MGO_additional_consumption_working = point['working_days'] * \
+            ship['working_auxiliary_bunker']
+        # MGO consumption during idle days
+        MGO_additional_consumption_idle = point['idle_days'] * \
+            ship['idle_auxiliary_bunker']
+        # total MGO consumption
+        MGO_consumption_total = MGO_additional_consumption_working + \
+            MGO_additional_consumption_idle
+
+    # calculating IFO and MGO consumption in point
+    consumption_at_point = {
+        'IFO': IFO_consumption_total,
+        'MGO': MGO_consumption_total
+    }
+
+    return consumption_at_point
+
+
+def add_consuption_calculations(calculations, points):
+
+    # consumption_at_points = {}
+    # for point in points:
+    #     consumption_at_points[point['point_name']] = \
+    #         point_consumption_calculator(point, calculations['ship'])
+
+    # # calculating consumption during steaming
+    # # TODO refactor below
+    # consumption_during_leg = []
+
     return calculations
 
 
@@ -34,15 +71,13 @@ def input_points():
 
     # input points
     points = []
-    point_input_required = True
-    while point_input_required:
+    while True:
 
         point = {}
         # adding point parameter 'point_name'
         point['point_name'] = input(
-            'Please put name of point, else push Enter\n')
+            'Please put name of point, or push Enter to stop adding points\n')
         if point['point_name'] == '':
-            point_input_required = False
             break
 
         # adding point parameter 'point_type'
@@ -50,7 +85,7 @@ def input_points():
                                            'point_type',
                                            'point type')
 
-        # adding point parameter 'weather_factor_in_SECA'
+        # adding point parameter 'in_SECA'
         in_SECA = input(
             'Is point {} in SECA zone? (y/n)'.format(point['point_name']))
         point['in_SECA'] = True if in_SECA == 'y' else False
