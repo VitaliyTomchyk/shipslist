@@ -1,4 +1,5 @@
 def price_for_mile(speed_type, hire, ship, bunker_prices):
+
     duration = 1 / (ship['speed'][speed_type] * 24)
     price_of_bunkers = duration * \
         ship['consumption'][speed_type] * bunker_prices

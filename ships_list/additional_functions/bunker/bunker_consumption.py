@@ -42,15 +42,10 @@ def calculate_bunkers_consumption(input_information):
                                               bunker_prices)
     print('Optimal speed is \n' + str(optimal_speed))
 
-    # input of IFO and MGO on delivery in mt
-    calculations['ship']['bunkers_on_delivery'] = {
-        'IFO': int(input('Please put IFO delivery, mt\n')),
-        'MGO': int(input('Please put MGO delivery, mt\n'))
-    }
-
     # calculating consumption at points and steaming leg
     calculations = add_consuption_calculations(calculations, points)
 
+    calculations['total_duration'] = 1
     # adding expected quantity of bunkers on each key point
 
     # adding expected date at each key point
