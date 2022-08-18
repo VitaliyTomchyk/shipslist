@@ -33,6 +33,7 @@ def details_generator():
         the_template["type_of_template"], the_template["keys_of_tmplt"]
 
 
+# collects data from user for filling template
 def data_collector(keys_of_tmplt, type_of_template):
     result = {key: input('\nPlease input {} \n'.format(key))
               for key in keys_of_tmplt}
@@ -40,6 +41,7 @@ def data_collector(keys_of_tmplt, type_of_template):
     return result
 
 
+# creator of address of filled template
 def creating_address_for_filled_template():
     address = 'ships_list/files/filled_templates/{}.txt'.format(
         input('\nPlease enter name of filled template\n').upper())
