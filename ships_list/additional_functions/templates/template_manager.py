@@ -4,20 +4,20 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 from ships_list.additional_functions.templates.additional_functions import \
     details_generator, data_collector, creating_address_for_filled_template
 
+
 # create function that returns text of fill text template taken from .txt file
 # with data taken from user with input function for each field
-
-
 def fill_template():
 
     # get address, type and keys of template
-    address_to_template, type_of_template, keys_of_tmplt = details_generator()
+    tmplt_details = details_generator()
 
     # get data from user
-    data = data_collector(keys_of_tmplt, type_of_template)
+    data = data_collector(tmplt_details["keys_of_tmpl"],
+                          tmplt_details["type_of_template"])
 
     # read and fill template from file
-    with open(address_to_template, 'r') as template_file:
+    with open(tmplt_details["address_to_template"], 'r') as template_file:
         temp_obj = Template(template_file.read())
     str_with_result = temp_obj.substitute(**data)
 
@@ -33,4 +33,4 @@ def fill_template():
     append_JSON_file(data, address_of_json_file)
 
     print('Template filled and saved.')
-    print('Filled template is {}'.format(str_with_result))
+    print('Filled template is \n\n{}'.format(str_with_result))

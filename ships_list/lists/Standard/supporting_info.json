@@ -45,11 +45,16 @@
         "shex": 2,
         "fex": 3
     },
-    "template_files": {
+    "templates": {
         "pda_requst": {
-            "address_of_template": "ships_list.ships_list/files/pda_request_template.docx",
-            "keys_of_tmplt": ["company_to", "name_of_vessel",
-                              "cargo_name", "cargo_quantity",
-                              "terms"]
+            "address_of_template": "ships_list/files/pda_request_template.txt",
+            "keys_of_tmplt": [
+                "receiver",
+                "port_name",
+                "port_type",
+                "ships_name",
+                "cargo_name",
+                "cargo_quantity",
+                "cargo_operations_term"]
                        }}
 }
