@@ -5,7 +5,8 @@ from ships_list.additional_functions.bunker.point_consumption import \
     point_consumption_calculator
 
 
-def add_consuption_calculations(calculations, points):
+def add_consuption_calculations(calculations):
+    points = calculations['points']
 
     consumption_at_points = {}
     for point in points:

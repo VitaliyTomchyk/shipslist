@@ -35,7 +35,10 @@ def freight_calculator():
 
     # calculating profit
     profit = round(total_freight - total_expanses, 2)
-    daily_profit = round(profit / input_information['duration'], 2)
+    daily_profit = round(
+        profit /
+        input_information['bunker_consumption']['total_duration'],
+        2)
 
     print('Voyage profit is expected to be USD {}.\n'.format(profit))
     print('Daily profit is expected to be USD {}.\n'.format(daily_profit))
