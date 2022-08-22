@@ -47,8 +47,6 @@ def parcer():
 
     parser.add_argument('-freight_calculator', help='calculate_freight',
                         action='store_true')
-    parser.add_argument('-calculate_bunkers_consumption',
-                        help='calculate bunker', action='store_true')
 
     parser.add_argument('-fill_template', help='function will fill a template',
                         action='store_true')
@@ -76,8 +74,6 @@ def parcer():
         'remove_booking': parser.parse_args().remove_booking,
 
         'freight_calculator': parser.parse_args().freight_calculator,
-        'calculate_bunkers_consumption':
-        parser.parse_args().calculate_bunkers_consumption,
 
         'fill_template': parser.parse_args().fill_template
     }

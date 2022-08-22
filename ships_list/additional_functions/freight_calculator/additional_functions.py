@@ -6,8 +6,7 @@ def add_voyage_details():
         "cargo_quantity": int(input('Quantity of cargo, mt\n')),
 
         "hire_rate": int(input('Hire rate, USD per day\n')),
-        "commition_on_hire": int(input('Commition on hire, %\n')) / 100,
-        "duration": int(input('Duration of voyage, days\n'))
+        "commition_on_hire": int(input('Commition on hire, %\n')) / 100
     }
     return input_information
 
