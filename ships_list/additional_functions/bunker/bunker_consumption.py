@@ -8,57 +8,65 @@ from ships_list.additional_functions.optimal_speed \
     import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
     import input_points, add_distance, add_weather_factor, \
-    add_consuption_calculations
+    add_consuption_calculation
 
 
-def calculate_bunkers_consumption():
-    calculations = {}
-    ship = input_option(SHIPS_FILE, 'ships_name', 'ship')
+def calculate_bunkers_consumption(voyage_info):
 
-    calculations['ship'] = ship
+    calculation = {}
 
-    # input prices of IFO, MGO, hire rate
+    # adding ship's details to input information
+    calculation['ship'] = input_option(SHIPS_FILE, 'ships_name', 'ship')
+
+    # input prices of IFO, MGO
     bunker_prices = {
         'IFO': int(input('Please put price of IFO, USD\n')),
         'MGO': int(input('Please put price of MGO, USD\n'))
     }
-    calculations['bunker_prices'] = bunker_prices
-
-    # input hire rate
-    hire_rate = int(input('Please put hire rate, USD per day\n'))
-    calculations['hire_rate'] = hire_rate
+    calculation['bunker_prices'] = bunker_prices
 
     # input points of route
     points = input_points()
-    calculations['points'] = points
+    calculation['points'] = points
 
     # input distance including SECA zone from each between points
     distances = add_distance(points)
 
     # input weather factor for each distance
-    distances_with_WF = add_weather_factor(distances)
-    calculations['distances_with_WF'] = distances_with_WF
+    calculation['distances_with_WF'] = add_weather_factor(distances)
 
     # finding optimal speed
-    optimal_speed = optimal_speed_calculation((ship, hire_rate), bunker_prices)
-    print('optimal speed is \n' + str(optimal_speed))
-
-    # input of IFO and MGO on delivery in mt
-    calculations['ship']['bunkers_on_delivery'] = {
-        'IFO': int(input('Please put IFO delivery, mt\n')),
-        'MGO': int(input('Please put MGO delivery, mt\n'))
-    }
+    optimal_speed = optimal_speed_calculation((calculation['ship'],
+                                               calculation['hire_rate']),
+                                              bunker_prices)
+    print('Optimal speed is \n' + str(optimal_speed))
 
     # calculating consumption at points and steaming leg
-    # TODO refactor below
-    calculations = add_consuption_calculations(calculations, points)
+    calculation = add_consuption_calculation(calculation)
 
-    # adding expected quantity of bunkers on each key point
+    # adding total duration of voyage
+    calculation['total_duration'] = calculate_total_duration(calculation)
 
-    # adding expected date at each key point
+    # print result of calculation
+    read_calculation(calculation)
 
     # save data to JSON file BUNKERING_FILE
-    append_JSON_file(BUNKERING_FILE, calculations)
+    append_JSON_file(BUNKERING_FILE, calculation)
+    voyage_info['bunker_consumption'] = calculation
 
-    result = 10
-    return result
+    return voyage_info
+
+
+def read_calculation(calculation):
+    print('Result of calculation:\n' + str(calculation))
+
+
+# calculates total duraration of voyage
+def calculate_total_duration(voyage_info):
+    calculation = voyage_info['bunker_consumption']
+
+    total_duration = 0
+    for point in calculation['points']:
+        total_duration += point['working_days'] + point['idle_days']
+    calculation['total_duration'] = total_duration
+    return calculation
