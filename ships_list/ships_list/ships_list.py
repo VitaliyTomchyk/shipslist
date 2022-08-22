@@ -6,7 +6,7 @@ from ships_list.additional_functions.voyage.voyage_functions \
     import add_voyage, remove_voyage
 from ships_list.additional_functions.freight_calculator \
     import freight_calculator
-from ships_list.additional_functions.booking_functions \
+from ships_list.additional_functions.booking.booking_functions \
     import create_booking, read_booking, remove_booking
 from ships_list.additional_functions.bunker.bunker_consumption \
     import calculate_bunkers_consumption
