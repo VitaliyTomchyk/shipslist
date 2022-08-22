@@ -64,8 +64,8 @@ def list_of_val_by_key(key, the_list):
     return result
 
 
-def list_of_val_by_key_from_dict(key, the_list):
-    result = list(map(lambda x: x[key], the_list))
+def list_of_val_by_key_from_dict(key, the_dict):
+    result = list(map(lambda x: x[key], the_dict))
     return result
 
 
