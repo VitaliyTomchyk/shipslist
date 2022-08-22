@@ -44,5 +44,17 @@
         "shinc": 1,
         "shex": 2,
         "fex": 3
-    }
+    },
+    "templates": {
+        "pda_requst": {
+            "address_of_template": "ships_list/files/pda_request_template.txt",
+            "keys_of_tmplt": [
+                "receiver",
+                "port_name",
+                "port_type",
+                "ships_name",
+                "cargo_name",
+                "cargo_quantity",
+                "cargo_operations_term"]
+                       }}
 }

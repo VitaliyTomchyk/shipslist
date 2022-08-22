@@ -66,6 +66,8 @@ def calculate_total_duration(voyage_info):
     calculation = voyage_info['bunker_consumption']
 
     total_duration = 0
+
+    # adding total duration of voyage
     for point in calculation['points']:
         total_duration += point['working_days'] + point['idle_days']
     calculation['total_duration'] = total_duration
