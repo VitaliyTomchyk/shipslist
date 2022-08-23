@@ -3,7 +3,7 @@ from ships_list.additional_functions.supporting_functions.json_functions \
     import amend_JSON_dict, read_JSON_file
 from ships_list.additional_functions.supporting_functions.additional_functions\
     import list_to_ol_string
-from ships_list.additional_functions.booking.additiona_functions \
+from ships_list.additional_functions.booking.additional_functions \
     import booking_details_collector
 
 
@@ -26,6 +26,6 @@ def remove_booking():
     print('Bookins are \n' + list_to_ol_string(bookings))
     booking_id = input('Please input booking id to remove from bookings list')
     del bookings[booking_id]
-    
+
     amend_JSON_dict(bookings, BOOKINGS_FILE)
     return
