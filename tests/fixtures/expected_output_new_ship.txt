@@ -1,0 +1,17 @@
+'Please enter ship\'s name\n',
+                      'Please enter IMO of the ship\n',
+
+                      '\nPlease add full laden speed of the ship, kn\n',
+                      '\nPlease add eco laden speed of the ship, kn\n',
+                      '\nPlease add full ballast speed of the ship, kn\n',
+                      '\nPlease add eco ballast speed of the ship, kn\n',
+
+                      '\nPlease add full laden consumption of the ship, mt/day\n',
+                      '\nPlease add eco laden consumption of the ship, mt/day\n',
+                      '\nPlease add full ballast consumption of the ship, mt/day\n',
+                      '\nPlease add eco ballast consumption of the ship, mt/day\n',
+
+                      '\nPlease add additional consumption during port_stay, mt of MGO\n',
+                      '\nPlease add additional consumption during steaming, mt of MGO\n',
+
+                      'Ship POPY has been added.\n'

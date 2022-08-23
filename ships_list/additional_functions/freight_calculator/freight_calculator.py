@@ -3,12 +3,17 @@ from ships_list.additional_functions.bunker.bunker_consumption \
 from ships_list.additional_functions.freight_calculator.additional_functions \
     import add_voyage_details, sum_bunkers_price, total_calculator, \
     additional_costs_collector
+from ships_list.lists.Standard.constants import \
+    FREIGHT_CALCULATIONS_FILE
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import append_JSON_file
 
 
-def freight_calculator():
+def freight_calculator(input_information=None):
     # TODO hire rate should be collected in one place
     # adding voyage details to input information
-    input_information = add_voyage_details()
+    if input_information is None:
+        input_information = add_voyage_details()
 
     # calculating total cost of bunker consumption
     input_information = calculate_bunkers_consumption(input_information)
@@ -42,3 +47,31 @@ def freight_calculator():
 
     print('Voyage profit is expected to be USD {}.\n'.format(profit))
     print('Daily profit is expected to be USD {}.\n'.format(daily_profit))
+
+    # appending JSON file FREIGHT_CALCULATIONS_FILE with input_information
+    append_JSON_file(FREIGHT_CALCULATIONS_FILE, input_information)
+
+
+# create a function to read freight calculation result
+def read_calculation(input_information):
+
+    print('Voyage details are:')
+    print('Ship: {}'.format(input_information['ship']))
+    print('Hire rate: {} USD'.format(input_information['hire_rate']))
+    print('Cargo quantity: {}'.format(input_information['cargo_quantity']))
+    print('Commition on freight: {}%'.format(
+        input_information['commition_on_freight']))
+    print('Commition on hire: {}%'.format(input_information['commition_on_hire']))
+    print('Freight rate: {} USD'.format(input_information['freight_rate']))
+    # print('Total duration: {} days'.format(
+    #     input_information['bunker_consumption']['total_duration']))
+    # print('Total cost of bunker consumption: {} USD'.format(
+    #     total_bunkers_price))
+    # print('Total cost of freight: {} USD'.format(total_freight))
+    # print('Total cost of additional costs: {} USD'.format(
+    #     total_additional_costs))
+    # print('Total cost of hire: {} USD'.format(total_hire))
+    # print('Total cost of voyage: {} USD'.format(total_expanses))
+    # print('Profit: {} USD'.format(profit))
+    # print('Daily profit: {} USD'.format(daily_profit))
+    print('\n')
