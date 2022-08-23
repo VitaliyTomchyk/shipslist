@@ -16,3 +16,4 @@ TASKS_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "tasks_functions.py"
 VOYAGE_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "voyage_functions.py"
+HELP_TEXT = "ships_list/tests/help_text.txt"

@@ -17,10 +17,10 @@ package-install:
 	python3 -m pip install --force-reinstall --user dist/*.whl
 
 update:
-	export PATH="/Users/dmitriychebruchan/Library/Python/3.9/bin:$PATH"
 	make build
 	make publish
 	make package-install
+	export PATH="/Users/dmitriychebruchan/Library/Python/3.9/bin:$PATH"
 
 pytest:
 	poetry run pytest -s -vv

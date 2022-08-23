@@ -2,10 +2,10 @@ from ships_list.additional_functions.ship.ships_functions import add_ship, \
     read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
 from ships_list.lists.Standard.constants import SHIPS_FILE
+# , HELP_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, write_JSON_file
 from datetime import datetime
-from tests.file import proforma_input
 
 
 # def test_add_ship():
@@ -154,6 +154,13 @@ def test_read_missing_ship():
     
     # checkng result against expectations
     assert output == expected_output
+
+
+# def test_h():
+#     with open(HELP_FILE, 'r') as f:
+#         expected_output = f.read()
+#     ouput = ships_list -h
+#     assert output == expected_output
 
 
 # def test_read_not_existing_ship():
