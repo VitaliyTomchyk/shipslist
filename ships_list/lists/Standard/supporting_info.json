@@ -39,10 +39,22 @@
         "Bunkering point",
         "Redelivery port"
     ],
-    "id": 209,
+    "id": 210,
     "laytime_port_terms": {
         "shinc": 1,
         "shex": 2,
         "fex": 3
-    }
+    },
+    "templates": {
+        "pda_request": {
+            "address_of_template": "ships_list/files/pda_request.txt",
+            "keys_of_tmplt": [
+                "company_name",
+                "company_to",
+                "quantity_of_cargo",
+                "port_name",
+                "cargo_name",
+                "load/discharge",
+                "terms"]
+                       }}
 }

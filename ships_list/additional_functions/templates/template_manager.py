@@ -1,28 +1,29 @@
-# template filler
-from ships_list.lists.Standard.constants import FILLED_TEMPLATES_FILE
+from string import Template
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file
-
-input_data = {
-    "company_name": input("Enter your name of the company: "),
-    "company_to":
-    input("Enter the name of the company you are sending the message to: ")
-}
+from ships_list.additional_functions.templates.additional_functions import \
+    details_generator, data_collector, creating_address_for_filled_template
 
 
 def fill_template():
-    input_data
 
-    template = (f'''
-From: {input_data["company_name"]}
-To: {input_data["company_to"]}
-''')
+    tmplt_details = details_generator()
 
-    template_info = {
-        'input_data': input_data,
-        'text': template
-    }
+    data = data_collector(tmplt_details["keys_of_tmpl"],
+                          tmplt_details["type_of_template"])
 
-    append_JSON_file(template_info, FILLED_TEMPLATES_FILE)
+    with open(tmplt_details["address_to_template"], 'r') as template_file:
+        temp_obj = Template(template_file.read())
+    str_with_result = temp_obj.substitute(**data)
 
-    return print(template)
+    filled_template_address = creating_address_for_filled_template()
+    with open(filled_template_address, 'w') as pda_file:
+        pda_file.write(str_with_result)
+
+    data = {'filled_template_address': filled_template_address}
+
+    address_of_json_file = 'ships_list/lists/data_of_templates.json'
+    append_JSON_file(data, address_of_json_file)
+
+    print('Template filled and saved.')
+    print('Filled template is \n\n{}'.format(str_with_result))
