@@ -14,5 +14,8 @@
     },
     {
         "filled_template_address": "ships_list/files/filled_templates/K.txt"
+    },
+    {
+        "filled_template_address": "ships_list/files/filled_templates/.txt"
     }
 ]

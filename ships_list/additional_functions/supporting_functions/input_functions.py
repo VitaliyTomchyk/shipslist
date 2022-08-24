@@ -1,6 +1,6 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import list_to_ol_string, options_generator, list_of_val_by_key
+    import list_to_ol_string, options_generator
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file
 
@@ -19,17 +19,16 @@ def input_option_from_dict(file, key, el_name):
     print('Choose number from options of {}.'.format(key))
     print(list_to_ol_string(options))
 
-    the_key = options[int(input('')) - 1]
-    value = dict_of_standard[the_key]
+    value = options[int(input('')) - 1]
 
     return value
 
 
 def input_option(file, key, el_name):
     print('\nPlease put {} from following list.'.format(el_name))
-    print('Choose number from options of {}.'.format(key))
+    print('Choose number from options of {}.'.format(el_name))
 
-    options = list_of_val_by_key(key, read_JSON_file(file))
+    options = list(map(lambda x: x[key], read_JSON_file(file)))
     print(list_to_ol_string(options))
 
     the_option = options[int(input('')) - 1]

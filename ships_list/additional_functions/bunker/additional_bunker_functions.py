@@ -1,6 +1,7 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
-    import input_option, input_option_from_dict
+    import input_option_from_dict
+
 from ships_list.additional_functions.bunker.point_consumption import \
     point_consumption_calculator
 
@@ -17,7 +18,7 @@ def add_consuption_calculation(calculations):
 
 
 # input points of route
-def input_points():
+def input_points_detailed():
 
     # input points
     points = []
@@ -31,13 +32,13 @@ def input_points():
             break
 
         # adding point parameter 'point_type'
-        point['point_type'] = input_option(SUPPORTING_FILE,
-                                           'point_type',
-                                           'point type')
+        point['point_type'] = input_option_from_dict(SUPPORTING_FILE,
+                                                     'point_types',
+                                                     'point type')
 
         # adding point parameter 'in_SECA'
         in_SECA = input(
-            'Is point {} in SECA zone? (y/n)'.format(point['point_name']))
+            'Is point {} in SECA zone? (y/n)\n'.format(point['point_name']))
         point['in_SECA'] = True if in_SECA == 'y' else False
 
         # adding point parameter duration of stay
@@ -91,7 +92,7 @@ def adding_duration_of_stay(point, laytime_port_terms):
     # input quantity of idle days
     point['idle_days'] = int(
         input(
-            'Please put quantity of idle days at {}\n'.format(
+            '\nPlease put quantity of idle days at {}\n'.format(
                 point['point_name'])))
 
     return point
@@ -125,6 +126,7 @@ def add_weather_factor(distances):
 
 # add distance to points for in_SECA = False or True
 def add_distance(points):
+    print(points)
     distances = []
     for marker_SECA, port_of_key in [('total', 'only SECA',),
                                      ('in_total', 'in_SECA')]:

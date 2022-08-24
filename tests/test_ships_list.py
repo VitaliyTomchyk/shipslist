@@ -1,8 +1,9 @@
+from ships_list.lists.Standard.constants import BUNKERING_FILE
 from ships_list.additional_functions.ship.ships_functions import add_ship, \
     read_ship
 from tests.tug_test_base import set_keyboard_input, get_display_output
-from ships_list.lists.Standard.constants import SHIPS_FILE
-# , HELP_FILE
+from ships_list.lists.Standard.constants import BUNKERING_FILE, \
+    EXPECTED_OUTPUT_NEW_SHIP_FILE, SHIPS_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, write_JSON_file
 from datetime import datetime
@@ -47,24 +48,8 @@ def test_add_not_existing_ship():
                   'ballast_eco_consumption': 9,
                   'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())}}]
     
-    expected_output = ['Please enter ship\'s name\n',
-                      'Please enter IMO of the ship\n',
-
-                      '\nPlease add full laden speed of the ship, kn\n',
-                      '\nPlease add eco laden speed of the ship, kn\n',
-                      '\nPlease add full ballast speed of the ship, kn\n',
-                      '\nPlease add eco ballast speed of the ship, kn\n',
-
-                      '\nPlease add full laden consumption of the ship, mt/day\n',
-                      '\nPlease add eco laden consumption of the ship, mt/day\n',
-                      '\nPlease add full ballast consumption of the ship, mt/day\n',
-                      '\nPlease add eco ballast consumption of the ship, mt/day\n',
-
-                      '\nPlease add additional consumption during port_stay, mt of MGO\n',
-                      '\nPlease add additional consumption during steaming, mt of MGO\n',
-
-                      'Ship POPY has been added.\n']
-    
+    expected_output = read_JSON_file(EXPECTED_OUTPUT_NEW_SHIP_FILE)
+   
     # writing back prev version of information
     write_JSON_file(SHIPS_FILE, old_version)
 
@@ -163,15 +148,15 @@ def test_read_missing_ship():
 #     assert output == expected_output
 
 
-# def test_read_not_existing_ship():
+def test_read_not_existing_ship():
 
-#     # running function and collecting result
-#     set_keyboard_input(['B'])
-#     read_ship()
-#     output = get_display_output()
+    # running function and collecting result
+    set_keyboard_input(['B'])
+    read_ship()
+    output = get_display_output()
 
-#     expected_output = ['\nPlease add ship\'s name\n',
-#                        'Ship B is missing in list of ships.']
+    expected_output = ['\nPlease add ship\'s name\n',
+                       'Ship B is missing in list of ships.']
     
-#     # checkng result against expectations
-#     assert output == expected_output
+    # checkng result against expectations
+    assert output == expected_output

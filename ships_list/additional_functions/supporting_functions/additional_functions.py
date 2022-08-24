@@ -105,3 +105,17 @@ def appender(result, key, voyage):
         else:
             result.append(voyage[key])
     return result
+
+# function checks if argument is number and if it is higher than 0 and
+# lower than 100
+
+
+def check_percentage(percentage):
+    try:
+        percentage = int(percentage)
+        if percentage < 0 or percentage > 100:
+            raise ValueError
+    except ValueError:
+        print('Percentage is not a number or is not in range 0-100')
+        return False
+    return True
