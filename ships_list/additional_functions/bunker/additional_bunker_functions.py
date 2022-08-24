@@ -1,6 +1,7 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
-    import input_option, input_option_from_dict
+    import input_option_from_dict
+
 from ships_list.additional_functions.bunker.point_consumption import \
     point_consumption_calculator
 
@@ -17,7 +18,7 @@ def add_consuption_calculation(calculations):
 
 
 # input points of route
-def input_points():
+def input_points_detailed():
 
     # input points
     points = []
@@ -140,4 +141,3 @@ def add_distance(points):
             the_distance['description']['from'] = points[i]['point_name']
             the_distance['description']['to'] = points[i + 1]['point_name']
     return distances
-

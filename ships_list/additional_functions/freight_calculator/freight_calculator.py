@@ -61,7 +61,8 @@ def read_calculation(input_information):
     print('Cargo quantity: {}'.format(input_information['cargo_quantity']))
     print('Commition on freight: {}%'.format(
         input_information['commition_on_freight']))
-    print('Commition on hire: {}%'.format(input_information['commition_on_hire']))
+    print('Commition on hire: {}%'.format(
+        input_information['commition_on_hire']))
     print('Freight rate: {} USD'.format(input_information['freight_rate']))
     # print('Total duration: {} days'.format(
     #     input_information['bunker_consumption']['total_duration']))

@@ -56,5 +56,8 @@
                 "cargo_name",
                 "cargo_quantity",
                 "cargo_operations_term"]
-                       }}
+                       }},
+    "commission_types": ["address commission",
+                         "broker's commission",
+                         "other commission"]
 }

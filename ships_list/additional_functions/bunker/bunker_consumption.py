@@ -1,4 +1,3 @@
-from ships_list.additional_functions.supporting_functions.additional_functions import id_generator
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option
 from ships_list.lists.Standard.constants import SHIPS_FILE, \
@@ -8,12 +7,10 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 from ships_list.additional_functions.optimal_speed \
     import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
-    import input_points, add_distance, add_weather_factor, \
+    import input_points_detailed, add_distance, add_weather_factor, \
     add_consuption_calculation
 from ships_list.additional_functions.supporting_functions.\
-    additional_functions \
-    import id_generator
-
+    additional_functions import id_generator
 
 
 def calculate_bunkers_consumption(voyage_info):
@@ -31,7 +28,7 @@ def calculate_bunkers_consumption(voyage_info):
     calculation['bunker_prices'] = bunker_prices
 
     # input points of route
-    calculation['points'] = input_points()
+    calculation['points'] = input_points_detailed()
 
     # input distance including SECA zone from each between points
     distances = add_distance(calculation['points'])

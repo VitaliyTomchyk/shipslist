@@ -10,7 +10,6 @@ from ships_list.additional_functions.booking.additional_functions \
 def create_booking():
     booking_details = booking_details_collector()
     amend_JSON_dict(booking_details, BOOKINGS_FILE)
-    return
 
 
 def read_booking():

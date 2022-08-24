@@ -1,6 +1,6 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import list_to_ol_string, options_generator, list_of_val_by_key
+    import list_to_ol_string, options_generator
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file
 
