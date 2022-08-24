@@ -21,6 +21,16 @@ def list_to_ol_string(the_list):
     return result
 
 
+def dict_to_ol_string(the_dict):
+    result = ''
+    the_list = list(set(the_dict))
+    i = 1
+    while i < len(the_list) + 1:
+        result = result + str(i) + '. ' + str(the_list[i - 1]) + '\n'
+        i = i + 1
+    return result
+
+
 def id_generator():
     i = 0
     with open(SUPPORTING_FILE, 'r') as f:

@@ -7,6 +7,9 @@ BOOKINGS_FILE = "ships_list/lists/bookings.json"
 BUNKERING_FILE = "ships_list/lists/bunkers_calculations.json"
 FREIGHT_CALCULATIONS_FILE = "ships_list/lists/freight_calculations.json"
 
+FILLED_TEMPLATES_FILE = "ships_list/lists/templates/filled_templates.json"
+TEMPLATE_FILLERS_FILE = "ships_list/lists/templates/template_fillers.json"
+
 ADDITIONAL_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "additional_functions.py"
 CLASSES_FILE = "ships_list/additional_functions/" + \
