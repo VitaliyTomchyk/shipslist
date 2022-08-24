@@ -1,10 +1,8 @@
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import id_generator
+    import id_generator, check_percentage
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
-from ships_list.additional_functions.supporting_functions \
-    import check_percentage
 
 
 def booking_details_collector():

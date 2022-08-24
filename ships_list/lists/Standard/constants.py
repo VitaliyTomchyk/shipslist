@@ -20,5 +20,7 @@ TASKS_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "tasks_functions.py"
 VOYAGE_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "voyage_functions.py"
-HELP_TEXT = "ships_list/tests/help_text.txt"
-EXPECTED_OUTPUT_NEW_SHIP_FILE = "ships_list/tests/expected_output_new_ship.txt"
+HELP_TEXT = "ships_list/tests/fixtures/" + \
+    "help_text.txt"
+EXPECTED_OUTPUT_NEW_SHIP_FILE = "tests/fixtures/" + \
+    "expected_output_new_ship.json"
