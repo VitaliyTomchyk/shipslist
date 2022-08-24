@@ -9,6 +9,7 @@ def fill_template():
 
     tmplt_details = details_generator()
 
+
     data = data_collector(tmplt_details["keys_of_tmpl"],
                           tmplt_details["type_of_template"])
 

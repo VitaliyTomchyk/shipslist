@@ -1,31 +1,18 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option, input_option_from_dict
+from ships_list.additional_functions.bunker.point_consumption import \
+    point_consumption_calculator
 
 
-def add_consuption_calculations(calculations):
+def add_consuption_calculation(calculations):
     points = calculations['points']
-    distances = calculations['distances']
 
     consumption_at_points = {}
     for point in points:
-        consumption_at_points[point['point_name']] = {
-            'IFO': 1,
-            'MGO': 1
-        }
-    calculations['consumption_at_points'] = consumption_at_points
+        consumption_at_points[point['point_name']] = \
+            point_consumption_calculator(point, calculations['ship'])
 
-    # calculating consumption during steaming
-    # TODO refactor below
-    consumption_during_leg = []
-    i = 0
-    while i < len(distances):
-        consumption_during_leg[i] = {
-            'IFO': 1,
-            'MGO': 1
-        }
-        i = i + 1
-    calculations['consumption_during_leg'] = consumption_during_leg
     return calculations
 
 
@@ -34,15 +21,13 @@ def input_points():
 
     # input points
     points = []
-    point_input_required = True
-    while point_input_required:
+    while True:
 
         point = {}
         # adding point parameter 'point_name'
         point['point_name'] = input(
-            'Please put name of point, else push Enter\n')
+            'Please put name of point, or push Enter to stop adding points\n')
         if point['point_name'] == '':
-            point_input_required = False
             break
 
         # adding point parameter 'point_type'
@@ -50,7 +35,7 @@ def input_points():
                                            'point_type',
                                            'point type')
 
-        # adding point parameter 'weather_factor_in_SECA'
+        # adding point parameter 'in_SECA'
         in_SECA = input(
             'Is point {} in SECA zone? (y/n)'.format(point['point_name']))
         point['in_SECA'] = True if in_SECA == 'y' else False

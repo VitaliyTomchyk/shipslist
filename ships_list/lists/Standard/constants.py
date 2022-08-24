@@ -1,6 +1,4 @@
 # LINKS
-
-
 SHIPS_FILE = "ships_list/lists/ships.json"
 LIST_OF_VOYAGES_FILE = "ships_list/lists/list_of_voyages.json"
 TASKS_FILE = "ships_list/lists/tasks.json"
@@ -20,3 +18,4 @@ TASKS_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "tasks_functions.py"
 VOYAGE_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "voyage_functions.py"
+HELP_TEXT = "ships_list/tests/help_text.txt"

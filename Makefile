@@ -1,4 +1,4 @@
-autopep8:
+8:
 	poetry run autopep8 --in-place --recursive --aggressive --aggressive ships_list
 
 lint:
@@ -17,10 +17,10 @@ package-install:
 	python3 -m pip install --force-reinstall --user dist/*.whl
 
 update:
-	export PATH="$PATH:/Users/dmitriychebruchan/Library/Python/3.9/bin"
 	make build
 	make publish
 	make package-install
+	export PATH="/Users/dmitriychebruchan/Library/Python/3.9/bin:$PATH"
 
 pytest:
 	poetry run pytest -s -vv
@@ -32,7 +32,7 @@ com:
 	git commit -m '$m'
 
 push:
-	make autopep8
+	make 8
 	make lint
 	make pytest
 	git add .
