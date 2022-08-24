@@ -54,7 +54,7 @@
                 "quantity_of_cargo",
                 "port_name",
                 "cargo_name",
-                "load/discharge",
+                "load_or_discharge",
                 "terms"]
                        }}
 }
