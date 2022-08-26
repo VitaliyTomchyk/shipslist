@@ -34,7 +34,7 @@ def add_ship():
 
     name = input('Please enter ship\'s name\n').upper()
 
-    IMO = input('Please enter IMO of the ship\n')
+    IMO = int(input('Please enter IMO of the ship\n'))
     if IMO_checker(IMO) is False:
         return
 
@@ -75,11 +75,20 @@ def remove_ship():
 
 
 def read_ship():
+    # input of ship's name
     ships_name = input('\nPlease add ship\'s name\n').upper()
-    try:
-        the_dict = list(filter(lambda x: x if x['ships_name'] == ships_name
-                               else False, read_JSON_file(SHIPS_FILE)))[0]
-    except IndexError:
-        print('Ship {} is missing in list of ships.'.format(ships_name))
+
+    # list of ships names
+    list_of_ships = list(map(lambda x: x['ships_name'],
+                             read_JSON_file(SHIPS_FILE)))
+    
+    # checker if ship exists
+    if ships_name not in list_of_ships:
+        print('\nShip ' + ships_name + ' is missing in list of ships.')
         return
-    read_dict(the_dict)
+    
+    # reading ships from JSON file
+    the_dict = list(filter(lambda x: x if x['ships_name'] == ships_name
+                               else False, read_JSON_file(SHIPS_FILE)))[0]
+    # printing ship's details
+    print(read_dict(the_dict))

@@ -39,7 +39,7 @@
         "Bunkering point",
         "Redelivery port"
     ],
-    "id": 210,
+    "id": 237,
     "laytime_port_terms": {
         "shinc": 1,
         "shex": 2,
@@ -55,10 +55,13 @@
                 "port_name",
                 "cargo_name",
                 "cargo_quantity",
-                "cargo_operations_term"]
-                       }},
-    "commission_types": ["address commission",
-                         "broker's commission",
-                         "other commission"]
-
+                "cargo_operations_term"
+            ]
+        }
+    },
+    "commission_types": [
+        "address commission",
+        "broker's commission",
+        "other commission"
+    ]
 }
