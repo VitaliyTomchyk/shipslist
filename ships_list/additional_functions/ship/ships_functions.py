@@ -81,14 +81,14 @@ def read_ship():
     # list of ships names
     list_of_ships = list(map(lambda x: x['ships_name'],
                              read_JSON_file(SHIPS_FILE)))
-    
+
     # checker if ship exists
     if ships_name not in list_of_ships:
         print('\nShip ' + ships_name + ' is missing in list of ships.')
         return
-    
+
     # reading ships from JSON file
     the_dict = list(filter(lambda x: x if x['ships_name'] == ships_name
-                               else False, read_JSON_file(SHIPS_FILE)))[0]
+                           else False, read_JSON_file(SHIPS_FILE)))[0]
     # printing ship's details
     print(read_dict(the_dict))
