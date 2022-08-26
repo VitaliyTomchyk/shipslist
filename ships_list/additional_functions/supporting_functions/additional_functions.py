@@ -5,7 +5,7 @@ from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, amend_JSON_dict
 
 
-def list_to_string(the_list):
+def list_to_string_with_breaks(the_list):
     result = ''
     for line in the_list:
         result = result + '- ' + str(line) + '\n'
@@ -56,12 +56,12 @@ def missing_arguments_checker(the_dict, excluded_keys=None):
     list_of_keys = list(filter(lambda x: x if updated_dict[x] is None
                                else False,
                                updated_dict))
-    result_of_check = True
     if list_of_keys:
-        print('Missing arguments are \n' + list_to_string(list_of_keys))
-        result_of_check = False
+        print('Missing arguments are')
+        print(list_to_string_with_breaks(list_of_keys))
+        return False
 
-    return result_of_check
+    return True
 
 
 def dictionary_finder(list_of_dictionaries, value, key):
@@ -91,11 +91,34 @@ def options_generator(key, document, key2=None, value2=None):
     return [x[key] for x in list_of_dicts if x[key2] == value2]
 
 
-def read_dict(the_dict):
-    result = '\n'
+# function takes list and returns string with list items separated by comma
+def list_to_string(the_list):
+    result = ''
+    for line in the_list:
+        result = result + str(line) + ', '
+    return result[:-2]
+
+
+# funcion takes dictionary and returns string with dictionary items
+# separated by comma
+def dict_to_string(the_dict):
+    result = ''
     for key in the_dict:
-        result = result + key + ": " + str(the_dict[key]) + '\n'
-    print(result)
+        if isinstance(the_dict[key], dict):
+            result = result + key + ": " + dict_to_string(the_dict[key]) + ', '
+        else:
+            result = result + key + ": " + str(the_dict[key]) + ', '
+    return result[:-2]
+
+
+def read_dict(the_dict):
+    result = ''
+    for key in the_dict:
+        if isinstance(the_dict[key], dict):
+            result = result + key + ":\n" + read_dict(the_dict[key])
+        else:
+            result = result + key + ": " + str(the_dict[key]) + '\n'
+    return result
 
 
 def appender(result, key, voyage):

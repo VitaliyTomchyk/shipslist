@@ -23,4 +23,4 @@ VOYAGE_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
 HELP_TEXT = "ships_list/tests/fixtures/" + \
     "help_text.txt"
 EXPECTED_OUTPUT_NEW_SHIP_FILE = "tests/fixtures/" + \
-    "expected_output_new_ship.json"
+    "expected_output_new_ship.txt"

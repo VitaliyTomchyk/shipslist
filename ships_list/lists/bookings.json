@@ -1,0 +1,27 @@
+[
+    {
+        "id": 237,
+        "name_of_cargo": "grain",
+        "cargo_quantity": "10",
+        "allowance_of_cargo": "1",
+        "points": {
+            "load": [
+                {
+                    "point_name": "Odessa"
+                }
+            ],
+            "discharge": [
+                {
+                    "point_name": "Nikolayev"
+                }
+            ]
+        },
+        "commission": [
+            {
+                "type": "1",
+                "value": "1"
+            }
+        ],
+        "lay_can": "2 september"
+    }
+]

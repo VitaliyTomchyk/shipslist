@@ -40,5 +40,4 @@ def ships_list(parced_result):
     }
 
     function = list(filter(lambda x: parced_result[x], parced_result))[0]
-    print('function: ' + str(function))
     options[function]()

@@ -40,25 +40,47 @@
         }
     },
     {
-        "ships_name": "1",
-        "IMO": 10000000,
+        "ships_name": "TESTO",
+        "IMO": 0,
         "speed": {
-            "laden_full_speed": 2,
-            "laden_eco_speed": 3,
-            "ballast_full_speed": 4,
-            "ballast_eco_speed": 5,
-            "date_of_update": "2022-08-13"
+            "laden_full_speed": 1,
+            "laden_eco_speed": 2,
+            "ballast_full_speed": 3,
+            "ballast_eco_speed": 4,
+            "date_of_update": "2022-08-25"
         },
         "consumption": {
-            "laden_full_consumption": 6,
-            "laden_eco_consumption": 7,
-            "ballast_full_consumption": 8,
-            "ballast_eco_consumption": 9,
-            "date_of_update": "2022-08-13"
+            "laden_full_consumption": 5,
+            "laden_eco_consumption": 6,
+            "ballast_full_consumption": 7,
+            "ballast_eco_consumption": 8,
+            "date_of_update": "2022-08-25"
         },
         "additional_consumption": {
-            "port_stay": 10,
-            "steaming": 11
+            "port_stay": 9,
+            "steaming": 10
+        }
+    },
+    {
+        "ships_name": "PPPPE",
+        "IMO": 223,
+        "speed": {
+            "laden_full_speed": 10,
+            "laden_eco_speed": 2,
+            "ballast_full_speed": 2,
+            "ballast_eco_speed": 2,
+            "date_of_update": "2022-08-25"
+        },
+        "consumption": {
+            "laden_full_consumption": 50,
+            "laden_eco_consumption": 20,
+            "ballast_full_consumption": 20,
+            "ballast_eco_consumption": 20,
+            "date_of_update": "2022-08-25"
+        },
+        "additional_consumption": {
+            "port_stay": 2,
+            "steaming": 2
         }
     }
 ]
