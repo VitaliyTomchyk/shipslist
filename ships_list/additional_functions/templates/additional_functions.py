@@ -18,7 +18,7 @@ def template_selector():
         ['address_of_template'],
         "keys_of_tmplt": list_of_templates[f'{template_name}']
         ['keys_of_tmplt'],
-        "type_of_template": list_of_templates[f'{template_name}']}
+        "type_of_template": template_name}
 
     return result
 
@@ -27,7 +27,7 @@ def details_generator():
 
     the_template = template_selector()
 
-    return the_template["template_address"], \
+    return the_template["template_address"],\
         the_template["type_of_template"], the_template["keys_of_tmplt"]
 
 

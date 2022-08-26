@@ -9,10 +9,10 @@ def fill_template():
 
     tmplt_details = details_generator()
 
-    data = data_collector(tmplt_details["keys_of_tmpl"],
-                          tmplt_details["type_of_template"])
+    data = data_collector(tmplt_details[2],
+                          tmplt_details[1])
 
-    with open(tmplt_details["address_to_template"], 'r') as template_file:
+    with open(tmplt_details[0], 'r') as template_file:
         temp_obj = Template(template_file.read())
     str_with_result = temp_obj.substitute(**data)
 

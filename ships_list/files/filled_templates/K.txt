@@ -1,14 +1,14 @@
-From: $company_name
-To: $company_to
-Re: PDA Inquiry - discharge of $quantity_of_cargo mt of wheat in bulk at $port_name.
+From: a
+To: s
+Re: PDA Inquiry - discharge of d mt of wheat in bulk at f.
 
 Dear Sirs,
 
 Please be advised we are negotiating below cargo for discharge as per below details.
-Cargo name: $cargo_name
-Cargo quantity: $quantity_of_cargo
-Port of $load_or_discharge: $port_name
-Terms: $terms
+Cargo name: g
+Cargo quantity: d
+Port of h: f
+Terms: j
 
 Please kindly find below vessel's details as follows:
 m/v TBN
