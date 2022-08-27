@@ -1,4 +1,4 @@
-usage: ships_list [-h] [-add_ship] [-remove_ship] [-read_ship] [-add_task] [-close_task] [-remove_task] [-redact_task] [-amend_task] [-add_voyage]
+usage: ships_list [-h] [-add_ship] [-remove_ship] [-read_ship] [-add_task] [-close_task] [-remove_task] [-amend_task] [-add_voyage]
                   [-remove_voyage] [-read_voyage READ_VOYAGE] [-read_tasks_list] [-print_ship] [-create_booking] [-read_booking] [-remove_booking]
                   [-freight_calculator] [-fill_template]
 
@@ -12,7 +12,6 @@ optional arguments:
   -add_task             put name of task
   -close_task           put id of task to close
   -remove_task          put name of task
-  -redact_task          radact a task element
   -amend_task           amend a task' value by key
   -add_voyage           add voyage
   -remove_voyage        remove voyage by id

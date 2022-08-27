@@ -17,7 +17,6 @@ List of functions:
   <li>remove_task</li>
   <li>read_task</li>
   <li>read_tasks_list</li>
-  <li>redact_task</li>
   </ul>
 <li>Voyage related functions</li>
   <ul>

@@ -22,8 +22,6 @@ def parcer():
                         action='store_true')
     parser.add_argument('-remove_task', help='put name of task',
                         action='store_true')
-    parser.add_argument('-redact_task', help='radact a task element',
-                        action='store_true')
     parser.add_argument('-amend_task', help='amend a task\' value by key',
                         action='store_true')
 
@@ -58,7 +56,6 @@ def parcer():
 
         'add_task': parser.parse_args().add_task,
         'remove_task': parser.parse_args().remove_task,
-        'redact_task': parser.parse_args().redact_task,
         'amend_taks': parser.parse_args().amend_task,
         'close_task': parser.parse_args().close_task,
 

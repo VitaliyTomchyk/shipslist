@@ -104,26 +104,26 @@ def remove_task(id):
     write_JSON_file(SHIPS_FILE, ships_list)
 
 
-def redact_task(id):
+# def redact_task(id):
 
-    tasks_list = read_JSON_file(TASKS_FILE)
+#     tasks_list = read_JSON_file(TASKS_FILE)
 
-    for task in tasks_list:
-        if str(task["id"]) == str(id):
-            print(f'Write the element you want to edit for \
-\'{task["task_title"]}\':\n-', end='')
-            element = input()
+#     for task in tasks_list:
+#         if str(task["id"]) == str(id):
+#             print(f'Write the element you want to edit for \
+# \'{task["task_title"]}\':\n-', end='')
+#             element = input()
 
-            if element in task:
-                print(f'Write the new assingment for \
-\'{element}\':\n-', end='')
-                task[f'{element}'] = input()
-            else:
-                print(f'The is no such element in this task, \
-in this task you have this list of elements:\n {list(task)}')
-            break
+#             if element in task:
+#                 print(f'Write the new assingment for \
+# \'{element}\':\n-', end='')
+#                 task[f'{element}'] = input()
+#             else:
+#                 print(f'The is no such element in this task, \
+# in this task you have this list of elements:\n {list(task)}')
+#             break
 
-    write_JSON_file(TASKS_FILE, tasks_list)
+#     write_JSON_file(TASKS_FILE, tasks_list)
 
 
 def amend_task():

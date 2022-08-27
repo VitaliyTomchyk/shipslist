@@ -65,16 +65,6 @@ def dictionary_finder(list_of_dictionaries, value, key):
                 else False, list_of_dictionaries))[0]
 
 
-def list_of_val_by_key(key, the_list):
-    result = list(map(lambda x: x[key], the_list))
-    return result
-
-
-def list_of_val_by_key_from_dict(key, the_dict):
-    result = list(map(lambda x: x[key], the_dict))
-    return result
-
-
 def options_generator(key, document, key2=None, value2=None):
     if document == SUPPORTING_FILE:
         return read_JSON_file(document)[key]
@@ -92,18 +82,6 @@ def list_to_string(the_list):
     result = ''
     for line in the_list:
         result = result + str(line) + ', '
-    return result[:-2]
-
-
-# funcion takes dictionary and returns string with dictionary items
-# separated by comma
-def dict_to_string(the_dict):
-    result = ''
-    for key in the_dict:
-        if isinstance(the_dict[key], dict):
-            result = result + key + ": " + dict_to_string(the_dict[key]) + ', '
-        else:
-            result = result + key + ": " + str(the_dict[key]) + ', '
     return result[:-2]
 
 
