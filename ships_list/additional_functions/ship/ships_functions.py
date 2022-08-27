@@ -1,5 +1,5 @@
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import list_to_string, list_of_val_by_key, read_dict
+    import list_to_string_with_breaks, read_dict
 from ships_list.lists.Standard.constants import SHIPS_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file, read_JSON_file, write_JSON_file
@@ -53,12 +53,12 @@ def add_ship():
 def remove_ship():
 
     list_of_ships = read_JSON_file(SHIPS_FILE)
-    list_of_names = list_to_string(list_of_val_by_key('ships_name',
-                                                      list_of_ships).sort())
+    list_of_ships_names = list(map(lambda x: x['ships_name'], list_of_ships))
+    list_of_names = list_to_string_with_breaks(list_of_ships_names)
+
     print('\nList of ships:\n' + list_of_names)
 
-    print('Please put ship\'s name.')
-    ships_name = input().upper()
+    ships_name = input('Please put ship\'s name you want to remove.').upper()
 
     if voyages_assigned_checker(ships_name):
         print('\nShip {} can not be removed due to voyage(s) '.format(
@@ -70,8 +70,8 @@ def remove_ship():
             list_of_ships.remove(ship)
             write_JSON_file(SHIPS_FILE, list_of_ships)
             print('\nShip ' + ships_name + ' was removed.\n')
-        else:
-            print('\nShip ' + ships_name + ' was not found')
+            return
+    print('\nShip ' + ships_name + ' was not found')
 
 
 def read_ship():
@@ -81,14 +81,14 @@ def read_ship():
     # list of ships names
     list_of_ships = list(map(lambda x: x['ships_name'],
                              read_JSON_file(SHIPS_FILE)))
-    
+
     # checker if ship exists
     if ships_name not in list_of_ships:
         print('\nShip ' + ships_name + ' is missing in list of ships.')
         return
-    
+
     # reading ships from JSON file
     the_dict = list(filter(lambda x: x if x['ships_name'] == ships_name
-                               else False, read_JSON_file(SHIPS_FILE)))[0]
+                           else False, read_JSON_file(SHIPS_FILE)))[0]
     # printing ship's details
     print(read_dict(the_dict))
