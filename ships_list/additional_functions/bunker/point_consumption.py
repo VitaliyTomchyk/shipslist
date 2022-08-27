@@ -23,11 +23,6 @@ def point_consumption_in_SECA(point, ship):
     # MGO consumption during idle days
     MGO_consumption_idle = point['idle_days'] * ship['idle_main_bunker']
 
-    # additional MGO consumption
-    MGO_consumption_additional = \
-        point['working_days'] * ship['working_auxiliary_bunker'] + \
-        point['idle_days'] * ship['idle_auxiliary_bunker']
-
     # total MGO consumption
     MGO_consumption_total = MGO_consumption_working + \
         MGO_consumption_idle + MGO_consumption_additional

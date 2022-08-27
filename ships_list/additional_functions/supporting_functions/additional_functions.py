@@ -22,12 +22,8 @@ def list_to_ol_string(the_list):
 
 
 def dict_to_ol_string(the_dict):
-    result = ''
-    the_list = list(set(the_dict))
-    i = 1
-    while i < len(the_list) + 1:
-        result = result + str(i) + '. ' + str(the_list[i - 1]) + '\n'
-        i = i + 1
+    the_list = list(the_dict)
+    result = list_to_ol_string(the_list)
     return result
 
 
@@ -121,7 +117,7 @@ def read_dict(the_dict):
     return result
 
 
-def appender(result, key, voyage):
+def point_appender_by_key(result, key, voyage):
     for point in voyage[key]:
         if isinstance(voyage[key], list):
             result.append(point)

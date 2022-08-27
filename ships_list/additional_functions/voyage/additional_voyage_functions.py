@@ -2,7 +2,7 @@ from ships_list.additional_functions.supporting_functions.input_functions \
     import input_point, \
     input_with_num, input_option
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import id_generator, appender, list_to_ol_string
+    import id_generator, point_appender_by_key, list_to_ol_string
 from ships_list.lists.Standard.constants import SHIPS_FILE
 
 
@@ -79,7 +79,7 @@ def points_sequence_generator(voyage):
     for key in ['delivery_point', 'l_ports', 'd_ports',
                 'restr_points', 'bunkering_point',
                 'redel_point']:
-        result = appender(result, key, voyage)
+        result = point_appender_by_key(result, key, voyage)
 
     reordered_result = points_reorderer(result)
     return reordered_result
