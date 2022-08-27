@@ -1,7 +1,6 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
-
 from ships_list.additional_functions.bunker.point_consumption import \
     point_consumption_calculator
 
@@ -16,28 +15,29 @@ def add_consuption_calculation(calculations):
 
     return calculations
 
+
+# function returns point details
+def iinheritance_of_point_details(point_details, point_type):
+    point = {}
+    point['point_name'] = point_details['point_name']
+    point['point_type'] = point_type
+    point['in_SECA'] = point_details['in_SECA']
+    point['laytime_port_terms'] = point_details['laytime_port_terms']
+    return point
+
+
 # input points of booking in voyage_info
-
-
 def input_points_from_booking(voyage_info):
     if voyage_info is None:
         return []
 
     points = []
-    for point_type in voyage_info['booking_info']['points']:
+    points_types = voyage_info['booking_info']['points']
+    for point_type in points_types:
         if point_type == 'Load port':
-            for point_details in point_type:
-                point = {}
-                point['point_name'] = point_details['point_name']
-                point['point_type'] = point_type
-
-                # adding point parameter 'in_SECA'
-                point['in_SECA'] = point_details['in_SECA']
-
-                # adding point parameter duration of stay
-                point['laytime_port_terms'] = input_option_from_dict(
-                    SUPPORTING_FILE, 'laytime_port_terms',
-                    'laytime port terms')
+            for point_details in [point_type]:
+                point = iinheritance_of_point_details(
+                    point_details, point_type)
 
                 # adding duration of port stay to load and disch point
                 point = adding_duration_of_stay(

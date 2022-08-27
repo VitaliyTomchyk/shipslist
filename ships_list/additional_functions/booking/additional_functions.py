@@ -1,5 +1,8 @@
 from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator, list_to_string
+from ships_list.lists.Standard.constants import SUPPORTING_FILE
+from ships_list.additional_functions.supporting_functions.input_functions \
+    import input_option_from_dict
 
 
 def booking_details_collector():
@@ -39,8 +42,8 @@ def input_commissions_short():
 
 def input_points_short():
     # input points
-    points = input_point_short(
-        'Load port') | input_point_short('Discharge port')
+    points = input_point_short('Load port') + \
+        input_point_short('Discharge port')
     return points
 
 
@@ -60,6 +63,11 @@ def input_point_short(point_type):
         in_SECA = input(
             'Is point {} in SECA zone? (y/n)\n'.format(point['point_name']))
         point['in_SECA'] = True if in_SECA == 'y' else False
+
+        # adding point laytime term
+        point['laytime_port_terms'] = input_option_from_dict(
+            SUPPORTING_FILE, 'laytime_port_terms',
+            'laytime port terms')
 
         points.append(point)
 
