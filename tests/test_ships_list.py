@@ -207,6 +207,27 @@ def test_delete_ship():
     assert output == expected_output
     assert old_version == new_version
 
+
+# testing deleting missing ship
+def test_delete_missing_ship():
+    # copy old list
+    old_version = read_JSON_file(SHIPS_FILE)
+
+    # running function and collecting result
+    set_keyboard_input(['KO'])
+    remove_ship()
+    output = get_display_output()
+    str_with_ships = str(list_to_string_with_breaks([x['ships_name']
+                                                    for x in old_version]))
+
+    expected_output = ['\nList of ships:\n' + str_with_ships,
+                       "Please put ship's name you want to remove.",
+                       '\nShip KO was not found']
+    
+    # checkng result against expectations
+    assert output == expected_output
+    assert old_version == read_JSON_file(SHIPS_FILE)
+
 # # def test_h():
 # #     with open(HELP_FILE, 'r') as f:
 # #         expected_output = f.read()
