@@ -23,5 +23,37 @@
             }
         ],
         "lay_can": "2 september"
+    },
+    {
+        "id": 238,
+        "name_of_cargo": "grain",
+        "cargo_quantity": "10000",
+        "allowance_of_cargo": "10",
+        "points": {
+            "load": [
+                {
+                    "point_name": "Odessa"
+                },
+                {
+                    "point_name": "Nikolayev"
+                }
+            ],
+            "discharge": [
+                {
+                    "point_name": "Alaxandria"
+                }
+            ]
+        },
+        "commission": [
+            {
+                "type": "2,5",
+                "value": "2,5"
+            },
+            {
+                "type": "1.25",
+                "value": "1.25"
+            }
+        ],
+        "lay_can": "10 September 2022"
     }
 ]

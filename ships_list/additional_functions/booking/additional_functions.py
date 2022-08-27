@@ -1,5 +1,5 @@
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import id_generator
+    import id_generator, list_to_string
 
 
 def booking_details_collector():
@@ -9,7 +9,8 @@ def booking_details_collector():
               'allowance_of_cargo': input('\nPlease input allowance, %\n'),
               'points': input_points_short(),
               'commission': input_commissions_short(),
-              'lay_can': input('\nPlease input lay can\n'),
+              'lay_can': input('\nPlease input lay can in following ' +
+                               'format: "20.12.22"\n'),
               }
     return result
 
@@ -38,21 +39,54 @@ def input_commissions_short():
 
 def input_points_short():
     # input points
-    points = input_point_short('load') | input_point_short('discharge')
+    points = input_point_short(
+        'Load port') | input_point_short('Discharge port')
     return points
 
 
 def input_point_short(point_type):
-    points = {point_type: []}
+    points = []
 
     quantity_of_points = input(
         'Please input quantity of {} ports\n'.format(point_type))
+
     for i in range(int(quantity_of_points)):
-        point = {}
+        point = {'point_type': point_type}
         # adding point parameter 'point_name'
         point['point_name'] = input(
             'Please put name of {} port number {}\n'.format(point_type, i + 1))
 
-        points[point_type].append(point)
+        # adding point parameter 'in_SECA'
+        in_SECA = input(
+            'Is point {} in SECA zone? (y/n)\n'.format(point['point_name']))
+        point['in_SECA'] = True if in_SECA == 'y' else False
+
+        points.append(point)
 
     return points
+
+
+def read_booking_details(the_booking):
+
+    cargo_line = '\nBooking for {} mt MOL {}% of {}'.format(
+        the_booking['cargo_quantity'],
+        the_booking['allowance_of_cargo'],
+        the_booking['name_of_cargo'])
+
+    load_ports = [x['point_name'] for x in the_booking['points']['load']]
+    discharge_ports = [x['point_name']
+                       for x in the_booking['points']['discharge']]
+
+    destination_line = 'From {} to {}'.format(list_to_string(load_ports),
+                                              list_to_string(discharge_ports))
+
+    lay_can_line = 'Lay can: {}'.format(the_booking['lay_can'])
+    commission_line = 'Commissions: {}'.format(
+        list_to_string(the_booking['commission']))
+    result = '{}\n{}\n{}\n{}\n'.format(
+        cargo_line,
+        destination_line,
+        lay_can_line,
+        commission_line)
+
+    return result

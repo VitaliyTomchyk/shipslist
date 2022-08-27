@@ -21,14 +21,13 @@ def calculate_bunkers_consumption(voyage_info):
     calculation['ship'] = input_option(SHIPS_FILE, 'ships_name', 'ship')
 
     # input prices of IFO, MGO
-    bunker_prices = {
+    calculation['bunker_prices'] = {
         'IFO': int(input('Please put price of IFO, USD\n')),
         'MGO': int(input('Please put price of MGO, USD\n'))
     }
-    calculation['bunker_prices'] = bunker_prices
 
     # input points of route
-    calculation['points'] = input_points_detailed()
+    calculation['points'] = input_points_detailed(voyage_info)
 
     # input distance including SECA zone from each between points
     distances = add_distance(calculation['points'])
@@ -39,7 +38,7 @@ def calculate_bunkers_consumption(voyage_info):
     # finding optimal speed
     optimal_speed = optimal_speed_calculation((calculation['ship'],
                                                calculation['hire_rate']),
-                                              bunker_prices)
+                                              calculation['bunker_prices'])
     print('Optimal speed is \n' + str(optimal_speed))
 
     # calculating consumption at points and steaming leg

@@ -16,12 +16,60 @@ def add_consuption_calculation(calculations):
 
     return calculations
 
+# input points of booking in voyage_info
+
+
+def input_points_from_booking(voyage_info):
+    if voyage_info is None:
+        return []
+
+    points = []
+    for point_type in voyage_info['booking_info']['points']:
+        if point_type == 'Load port':
+            for point_details in point_type:
+                point = {}
+                point['point_name'] = point_details['point_name']
+                point['point_type'] = point_type
+
+                # adding point parameter 'in_SECA'
+                point['in_SECA'] = point_details['in_SECA']
+
+                # adding point parameter duration of stay
+                point['laytime_port_terms'] = input_option_from_dict(
+                    SUPPORTING_FILE, 'laytime_port_terms',
+                    'laytime port terms')
+
+                # adding duration of port stay to load and disch point
+                point = adding_duration_of_stay(
+                    point, point['laytime_port_terms'])
+
+        else:
+            for point_name in point_type:
+                point = {}
+                point['point_name'] = point_name
+                point['point_type'] = "Discharge port"
+                # adding point parameter 'in_SECA'
+                in_SECA = input(
+                    'Is point {} in SECA zone? (y/n)\n'.format(
+                        point['point_name']))
+                point['in_SECA'] = True if in_SECA == 'y' else False
+
+                # adding point parameter duration of stay
+                point['laytime_port_terms'] = input_option_from_dict(
+                    SUPPORTING_FILE, 'laytime_port_terms',
+                    'laytime port terms')
+                # adding duration of port stay to load and disch point
+                point = adding_duration_of_stay(
+                    point, point['laytime_port_terms'])
+
+    return points
+
 
 # input points of route
-def input_points_detailed():
+def input_points_detailed(voyage_info):
 
     # input points
-    points = []
+    points = input_points_from_booking(voyage_info)
     while True:
 
         point = {}

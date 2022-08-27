@@ -7,7 +7,7 @@ from ships_list.additional_functions.voyage.voyage_functions \
 from ships_list.additional_functions.freight_calculator.freight_calculator \
     import freight_calculator
 from ships_list.additional_functions.booking.booking_functions \
-    import create_booking, read_booking, remove_booking
+    import add_booking, read_booking, remove_booking
 from ships_list.additional_functions.templates.template_manager \
     import fill_template
 
@@ -29,7 +29,7 @@ def ships_list(parced_result):
         'add_voyage': add_voyage,
         'remove_voyage': remove_voyage,
 
-        'create_booking': create_booking,
+        'add_booking': add_booking,
         'read_booking': read_booking,
         'remove_booking': remove_booking,
 

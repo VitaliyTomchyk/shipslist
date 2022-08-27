@@ -36,7 +36,7 @@ def parcer():
     parser.add_argument('-print_ship', help='prints details of ship',
                         action='store_true')
 
-    parser.add_argument('-create_booking', help='create booking',
+    parser.add_argument('-add_booking', help='create booking',
                         action='store_true')
     parser.add_argument('-read_booking', help='read booking',
                         action='store_true')
@@ -66,7 +66,7 @@ def parcer():
 
         'print_ship': parser.parse_args().print_ship,
 
-        'create_booking': parser.parse_args().create_booking,
+        'add_booking': parser.parse_args().add_booking,
         'read_booking': parser.parse_args().read_booking,
         'remove_booking': parser.parse_args().remove_booking,
 
