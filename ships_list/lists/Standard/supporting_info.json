@@ -39,11 +39,11 @@
         "Bunkering point",
         "Redelivery port"
     ],
-    "id": 241,
+    "id": 243,
     "laytime_port_terms": {
         "shinc": 1,
-        "shex": 2,
-        "fex": 3
+        "shex": 1.2,
+        "fshex": 1.5
     },
     "templates": {
         "pda_request": {

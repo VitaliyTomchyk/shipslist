@@ -8,12 +8,14 @@ from ships_list.additional_functions.supporting_functions.input_functions \
 def booking_details_collector():
     result = {'id': id_generator(),
               'name_of_cargo': input('\nPlease input cargo name\n'),
-              'cargo_quantity': input('\nPlease input quantity, mt\n'),
+              'cargo_quantity': input('\nPlease input cargo quantity, mt\n'),
               'allowance_of_cargo': input('\nPlease input allowance, %\n'),
               'points': input_points_short(),
               'commission': input_commissions_short(),
               'lay_can': input('\nPlease input lay can in following ' +
                                'format: "20.12.22"\n'),
+              'account': input('\nPlease input account\n'),
+              'comments': input('\nPlease input comments\n')
               }
     return result
 
@@ -26,10 +28,12 @@ def input_commissions_short():
 
     for i in range(int(quantity_of_points)):
         commission = {}
-        # adding point parameter 'point_name'
-        commission['type'] = input(
-            'Please put name of commission type number {} from {}\n'.format(
+        print(
+            'Please put type of commission type number {} from {}\n'.format(
                 i + 1, quantity_of_points))
+        commission['type'] = input_option_from_dict(SUPPORTING_FILE,
+                                                    'commission_types',
+                                                    'commission type')
 
         commission['value'] = input(
             'Please put % of {} '.format(commission['type']) +
@@ -51,13 +55,13 @@ def input_point_short(point_type):
     points = []
 
     quantity_of_points = input(
-        'Please input quantity of {} ports\n'.format(point_type))
+        'Please input quantity of {}s\n'.format(point_type))
 
     for i in range(int(quantity_of_points)):
         point = {'point_type': point_type}
         # adding point parameter 'point_name'
         point['point_name'] = input(
-            'Please put name of {} port number {}\n'.format(point_type, i + 1))
+            'Please put name of {} number {}\n'.format(point_type, i + 1))
 
         # adding point parameter 'in_SECA'
         in_SECA = input(
