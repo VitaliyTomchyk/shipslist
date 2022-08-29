@@ -1,8 +1,24 @@
 from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator, list_to_string
-from ships_list.lists.Standard.constants import SUPPORTING_FILE
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import read_JSON_file
+from ships_list.lists.Standard.constants import SUPPORTING_FILE, BOOKINGS_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
+
+# function input_booking shows short version of booking details for all
+# bookings
+
+
+def input_booking_short():
+    bookings = read_JSON_file(BOOKINGS_FILE)
+    for i, booking in enumerate(bookings):
+        print('\nBooking number {}\n'.format(i + 1))
+        print(read_booking_details(booking))
+    option = bookings[int(input('Please input booking number to read\n')) - 1]
+    print('You have chosen following booking:\n{}'.format(
+        read_booking_details(option)))
+    return option
 
 
 def booking_details_collector():
@@ -85,9 +101,10 @@ def read_booking_details(the_booking):
         the_booking['allowance_of_cargo'],
         the_booking['name_of_cargo'])
 
-    load_ports = [x['point_name'] for x in the_booking['points']['load']]
-    discharge_ports = [x['point_name']
-                       for x in the_booking['points']['discharge']]
+    # collecting ports
+    ports = [(x['point_name'], x['point_type']) for x in the_booking['points']]
+    load_ports = [x for x in ports if x[1] == 'Load port']
+    discharge_ports = [x for x in ports if x[1] == 'Discharge port']
 
     destination_line = 'From {} to {}'.format(list_to_string(load_ports),
                                               list_to_string(discharge_ports))

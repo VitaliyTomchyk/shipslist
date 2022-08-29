@@ -17,7 +17,7 @@ def add_consuption_calculation(calculations):
 
 
 # function returns point details
-def iinheritance_of_point_details(point_details, point_type):
+def inheritance_of_point_details(point_details, point_type):
     point = {}
     point['point_name'] = point_details['point_name']
     point['point_type'] = point_type
@@ -31,36 +31,10 @@ def input_points_from_booking(voyage_info):
     if voyage_info is None:
         return []
 
-    points = []
-    points_types = voyage_info['booking_info']['points']
-    for point_type in points_types:
-        if point_type == 'Load port':
-            for point_details in [point_type]:
-                point = iinheritance_of_point_details(
-                    point_details, point_type)
-
-                # adding duration of port stay to load and disch point
-                point = adding_duration_of_stay(
-                    point, point['laytime_port_terms'])
-
-        else:
-            for point_name in point_type:
-                point = {}
-                point['point_name'] = point_name
-                point['point_type'] = "Discharge port"
-                # adding point parameter 'in_SECA'
-                in_SECA = input(
-                    'Is point {} in SECA zone? (y/n)\n'.format(
-                        point['point_name']))
-                point['in_SECA'] = True if in_SECA == 'y' else False
-
-                # adding point parameter duration of stay
-                point['laytime_port_terms'] = input_option_from_dict(
-                    SUPPORTING_FILE, 'laytime_port_terms',
-                    'laytime port terms')
-                # adding duration of port stay to load and disch point
-                point = adding_duration_of_stay(
-                    point, point['laytime_port_terms'])
+    points = voyage_info['booking_info']['points']
+    # TODO refactoring of below
+    for point in points:
+        point = adding_duration_of_stay(point)
 
     return points
 
