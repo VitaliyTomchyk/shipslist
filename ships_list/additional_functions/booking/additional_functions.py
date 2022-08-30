@@ -6,10 +6,9 @@ from ships_list.lists.Standard.constants import SUPPORTING_FILE, BOOKINGS_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
 
-# function input_booking shows short version of booking details for all
+
+# function shows short version of booking details for all
 # bookings
-
-
 def input_booking_short():
     bookings = read_JSON_file(BOOKINGS_FILE)
     for i, booking in enumerate(bookings):
@@ -30,7 +29,7 @@ def booking_details_collector():
               'commission': input_commissions_short(),
               'lay_can': input('\nPlease input lay can in following ' +
                                'format: "20.12.22"\n'),
-              'account': input('\nPlease input account\n'),
+              'account': input('\nPlease input account name\n'),
               'comments': input('\nPlease input comments\n')
               }
     return result
@@ -100,15 +99,16 @@ def input_point_short(point_type):
 
 def read_booking_details(the_booking):
 
-    cargo_line = '\nBooking for {} mt MOL {}% of {}'.format(
+    account = 'Account: {}'.format(str(the_booking['account']))
+    cargo_line = 'Booking for {} mt MOL {}% of {}'.format(
         the_booking['cargo_quantity'],
         the_booking['allowance_of_cargo'],
         the_booking['name_of_cargo'])
 
     # collecting ports
     ports = [(x['point_name'], x['point_type']) for x in the_booking['points']]
-    load_ports = [x for x in ports if x[1] == 'Load port']
-    discharge_ports = [x for x in ports if x[1] == 'Discharge port']
+    load_ports = [x[0] for x in ports if x[1] == 'Load port']
+    discharge_ports = [x[0] for x in ports if x[1] == 'Discharge port']
 
     destination_line = 'From {} to {}'.format(list_to_string(load_ports),
                                               list_to_string(discharge_ports))
@@ -116,10 +116,20 @@ def read_booking_details(the_booking):
     lay_can_line = 'Lay can: {}'.format(the_booking['lay_can'])
     commission_line = 'Commissions: {}'.format(
         list_to_string(the_booking['commission']))
-    result = '{}\n{}\n{}\n{}\n'.format(
+
+    result = '{}\n{}\n{}\n{}\n{}\n'.format(
+        account,
         cargo_line,
         destination_line,
         lay_can_line,
         commission_line)
 
+    return result
+
+
+# function returns short booking details for list of bookings
+def read_booking_details_list(bookings):
+    result = []
+    for booking in bookings:
+        result.append(read_booking_details(booking))
     return result

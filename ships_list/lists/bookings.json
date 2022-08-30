@@ -1,6 +1,7 @@
 [
     {
         "id": 242,
+        "account": null,
         "name_of_cargo": "grain",
         "cargo_quantity": "1000",
         "allowance_of_cargo": "10",
@@ -34,6 +35,7 @@
     },
     {
         "id": 243,
+        "account": null,
         "name_of_cargo": "coal",
         "cargo_quantity": "10",
         "allowance_of_cargo": "1",
@@ -64,5 +66,40 @@
             }
         ],
         "lay_can": "10.11.21"
+    },
+    {
+        "id": 244,
+        "name_of_cargo": "Grain",
+        "cargo_quantity": "10",
+        "allowance_of_cargo": "1",
+        "points": [
+            {
+                "point_type": "Load port",
+                "point_name": "Odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "Load port",
+                "point_name": "Nikolayev",
+                "in_SECA": false,
+                "laytime_port_terms": "shex"
+            },
+            {
+                "point_type": "Discharge port",
+                "point_name": "Algeciras",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address commission",
+                "value": 2.0
+            }
+        ],
+        "lay_can": "20.12.22",
+        "account": "Nike",
+        "comments": ""
     }
 ]

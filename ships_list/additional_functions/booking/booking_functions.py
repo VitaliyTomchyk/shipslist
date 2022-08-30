@@ -2,9 +2,10 @@ from ships_list.lists.Standard.constants import BOOKINGS_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import amend_JSON_dict, read_JSON_file, append_JSON_file
 from ships_list.additional_functions.supporting_functions.additional_functions\
-    import list_to_ol_string, read_dict
+    import list_to_ol_string
 from ships_list.additional_functions.booking.additional_functions \
-    import booking_details_collector, read_booking_details
+    import booking_details_collector, read_booking_details, \
+    read_booking_details_list
 
 
 def add_booking():
@@ -16,7 +17,7 @@ def add_booking():
 
     # printing booking details
     print('\n\nBooking was created with below details:\n')
-    print(read_dict(booking_details))
+    print(read_booking_details(booking_details['id']))
 
 
 def read_booking():
@@ -24,7 +25,8 @@ def read_booking():
     bookings = read_JSON_file(BOOKINGS_FILE)
 
     # printing bookings
-    print('Bookings are \n' + list_to_ol_string(bookings))
+    print('Bookings are \n' +
+          list_to_ol_string(read_booking_details_list(bookings)))
 
     # input of booking id to read
     booking_id = input('Please input booking id to read from bookings list\n')
