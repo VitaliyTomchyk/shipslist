@@ -51,10 +51,14 @@ def input_commissions_short():
                                                     'commission_types',
                                                     'commission type')
 
-        commission['value'] = input(
-            'Please put % of {} '.format(commission['type']) +
-            "commission number {} of {}\n".format(i + 1,
-                                                  quantity_of_points))
+        commission['value'] = float(
+            input(
+                'Please put % of {} '.format(
+                    commission['type']) +
+                "commission number {} of {}, in format \"2.5\"\n".format(
+                    i +
+                    1,
+                    quantity_of_points)))
         commissions.append(commission)
 
     return commissions

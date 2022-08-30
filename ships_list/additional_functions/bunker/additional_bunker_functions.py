@@ -76,11 +76,11 @@ def input_points_detailed(voyage_info):
     return points
 
 
-def adding_duration_of_stay_working(point, laytime_port_terms):
+def adding_duration_of_stay_working(point):
 
-    # adding laytime port terms for point
-    point['lay_time_port_term'] = laytime_port_terms['point_name']
-    lt_multiplier = point['lay_time_port_term']
+    # printing point_name and point_type
+    print('\\{} {} is working with ship\'s cranes'.format(point['point_type'],
+                                                          point['point_name']))
 
     # adding cargo quantity for handling in the point
     point['cargo_quantity_for_handling'] = int(input(
@@ -92,16 +92,15 @@ def adding_duration_of_stay_working(point, laytime_port_terms):
     point['rate_of_handling'] = int(input(
         'Please put rate of handling in {}, mt\n'.format(
             point['point_name'])))
-    rate_of_handling = point['rate_of_handling']
 
     # input quantity of working days
-    point['working_days'] = round(cargo_quantity / rate_of_handling
-                                  * lt_multiplier, 2)
+    point['working_days'] = round(cargo_quantity / point['rate_of_handling']
+                                  * point['lay_time'], 2)
 
     return point
 
 
-def adding_duration_of_stay(point, laytime_port_terms):
+def adding_duration_of_stay(point):
 
     # input quantity of working days
     if point['point_type'] in ['loading', 'discharging']:
@@ -109,7 +108,7 @@ def adding_duration_of_stay(point, laytime_port_terms):
         reply_working = input(question.format(point['point_name']))
 
         if reply_working == 'y':
-            point = adding_duration_of_stay_working(point, laytime_port_terms)
+            point = adding_duration_of_stay_working(point)
 
     # input quantity of idle days
     point['idle_days'] = int(
