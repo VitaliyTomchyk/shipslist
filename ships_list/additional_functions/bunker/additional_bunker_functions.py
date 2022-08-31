@@ -48,30 +48,32 @@ def input_points_detailed(voyage_info):
     # input points from user
     while True:
 
-        # adding point parameter 'point_name'
-        point_name = input(
-            'Please put name of point, or push Enter to stop adding points\n')
-        if point_name == '':
-            break
-        point = add_point(point_name)
+        # ask if user wants to add point
+        reply = input("Do you want to add new point? (y/n)\n")
+        if reply == 'y':
+            point = add_point()
 
-        # adding points with point
-        points.append(point)
-    # TODO sicle for adding points untill checker returns TRUE
-    # checker for mandatory points
-    if checker_for_mandatory_points(points) is False:
-        return None
+            # adding points with point
+            points.append(point)
+        else:
+            # checker for mandatory points
+            if checker_for_mandatory_points(points) is False:
+                points.append(add_point())
+            break
 
     return points
 
 
-def add_point(point_name):
+def add_point(point_type=None):
     point = {}
-    point['point_name'] = point_name
+    point['point_name'] = input(
+        'Please put name of point, or push Enter to stop adding points\n')
+
     # adding point parameter 'point_type'
-    point['point_type'] = input_option_from_dict(SUPPORTING_FILE,
-                                                 'point_types',
-                                                 'point type')
+    point['point_type'] = point_type if point_type is not None \
+        else input_option_from_dict(SUPPORTING_FILE,
+                                    'point_types',
+                                    'point type')
 
     # adding point parameter 'in_SECA'
     in_SECA = input(
