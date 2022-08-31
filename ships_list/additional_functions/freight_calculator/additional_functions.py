@@ -13,7 +13,7 @@ def checker_for_booking_to_use():
         option = input_booking_short()
         return option
     else:
-        add_booking()
+        return add_booking()
 
 # functions summs all values in list of dicts under key 'value'
 

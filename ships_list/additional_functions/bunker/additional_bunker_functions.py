@@ -32,7 +32,7 @@ def input_points_from_booking(voyage_info):
         return []
 
     points = voyage_info['booking_info']['points']
-    # TODO refactoring of below
+    # adding  duration of port stay point
     for point in points:
         point = adding_duration_of_stay(point)
 
@@ -42,38 +42,60 @@ def input_points_from_booking(voyage_info):
 # input points of route
 def input_points_detailed(voyage_info):
 
-    # input points
+    # input points from booking
     points = input_points_from_booking(voyage_info)
+
+    # input points from user
     while True:
 
-        point = {}
         # adding point parameter 'point_name'
-        point['point_name'] = input(
+        point_name = input(
             'Please put name of point, or push Enter to stop adding points\n')
-        if point['point_name'] == '':
+        if point_name == '':
             break
-
-        # adding point parameter 'point_type'
-        point['point_type'] = input_option_from_dict(SUPPORTING_FILE,
-                                                     'point_types',
-                                                     'point type')
-
-        # adding point parameter 'in_SECA'
-        in_SECA = input(
-            'Is point {} in SECA zone? (y/n)\n'.format(point['point_name']))
-        point['in_SECA'] = True if in_SECA == 'y' else False
-
-        # adding point parameter duration of stay
-        point['laytime_port_terms'] = input_option_from_dict(
-            SUPPORTING_FILE, 'laytime_port_terms', 'laytime port terms')
-
-        # adding duration of port stay to load and disch point
-        point = adding_duration_of_stay(point, point['laytime_port_terms'])
+        point = add_point(point_name)
 
         # adding points with point
         points.append(point)
+    # TODO sicle for adding points untill checker returns TRUE
+    # checker for mandatory points
+    if checker_for_mandatory_points(points) is False:
+        return None
 
     return points
+
+
+def add_point(point_name):
+    point = {}
+    point['point_name'] = point_name
+    # adding point parameter 'point_type'
+    point['point_type'] = input_option_from_dict(SUPPORTING_FILE,
+                                                 'point_types',
+                                                 'point type')
+
+    # adding point parameter 'in_SECA'
+    in_SECA = input(
+        'Is point {} in SECA zone? (y/n)\n'.format(point['point_name']))
+    point['in_SECA'] = True if in_SECA == 'y' else False
+
+    # adding point parameter duration of stay
+    point['laytime_port_terms'] = input_option_from_dict(
+        SUPPORTING_FILE, 'laytime_port_terms', 'laytime port terms')
+
+    # adding duration of port stay to load and disch point
+    point = adding_duration_of_stay(point)
+    return point
+
+
+def checker_for_mandatory_points(points):
+    set_of_points_types = set([x['point_type'] for x in points])
+    list_of_mandatory_types = ['Load port', 'Discharge port',
+                               'Delivery point', 'Redelivery point']
+    for mandatory_type in list_of_mandatory_types:
+        if mandatory_type not in set_of_points_types:
+            print('\nPlease put {} point\n'.format(mandatory_type))
+            return False
+    return True
 
 
 def adding_duration_of_stay_working(point):
@@ -86,7 +108,6 @@ def adding_duration_of_stay_working(point):
     point['cargo_quantity_for_handling'] = int(input(
         'Please put quantity of cargo for handling' +
         ' in {}, mt\n'.format(point['point_name'])))
-    cargo_quantity = point['cargo_quantity_for_handling']
 
     # adding rate_of_handling for point
     point['rate_of_handling'] = int(input(
@@ -94,8 +115,11 @@ def adding_duration_of_stay_working(point):
             point['point_name'])))
 
     # input quantity of working days
-    point['working_days'] = round(cargo_quantity / point['rate_of_handling']
-                                  * point['lay_time'], 2)
+    point['working_days'] = round(
+        point['cargo_quantity_for_handling'] /
+        point['rate_of_handling'] *
+        point['lay_time'],
+        2)
 
     return point
 
@@ -103,11 +127,11 @@ def adding_duration_of_stay_working(point):
 def adding_duration_of_stay(point):
 
     # input quantity of working days
-    if point['point_type'] in ['loading', 'discharging']:
+    if point['point_type'] in ['Load port', 'Discharge port']:
         question = 'Is point {} working with ship\'s cranes? (y/n)'
-        reply_working = input(question.format(point['point_name']))
+        reply_if_working = input(question.format(point['point_name']))
 
-        if reply_working == 'y':
+        if reply_if_working == 'y':
             point = adding_duration_of_stay_working(point)
 
     # input quantity of idle days
