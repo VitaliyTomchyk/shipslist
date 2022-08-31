@@ -1,7 +1,7 @@
 from ships_list.additional_functions.bunker.bunker_consumption \
     import calculate_bunkers_consumption
 from ships_list.additional_functions.freight_calculator.additional_functions \
-    import add_voyage_details, sum_bunkers_price, total_calculator, \
+    import add_voyage_details, sum_bunkers_cost, total_calculator, \
     additional_costs_collector, checker_for_booking_to_use
 from ships_list.lists.Standard.constants import \
     FREIGHT_CALCULATIONS_FILE
@@ -10,6 +10,7 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 
 
 def freight_calculator():
+    # read booking info if it is available
     booking_info = checker_for_booking_to_use()
 
     # TODO hire rate should be collected in one place
@@ -18,7 +19,9 @@ def freight_calculator():
 
     # calculating total cost of bunker consumption
     voyage_info = calculate_bunkers_consumption(voyage_info)
-    total_bunkers_price = sum_bunkers_price(voyage_info)
+
+    # calculating total cost of bunkers
+    total_bunkers_cost = sum_bunkers_cost(voyage_info)
 
     # calculating total cost of freight
     total_freight = total_calculator(voyage_info['freight_rate'],
@@ -37,7 +40,7 @@ def freight_calculator():
         voyage_info['commition_on_hire'])
 
     # calculating total cost of voyage
-    total_expanses = total_hire + total_additional_costs + total_bunkers_price
+    total_expanses = total_hire + total_additional_costs + total_bunkers_cost
 
     # calculating profit
     profit = round(total_freight - total_expanses, 2)

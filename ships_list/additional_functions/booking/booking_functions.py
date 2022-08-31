@@ -9,6 +9,7 @@ from ships_list.additional_functions.booking.additional_functions \
 
 
 def add_booking():
+    print('Booking will be added.')
     # collecting details
     booking_details = booking_details_collector()
 
@@ -18,6 +19,8 @@ def add_booking():
     # printing booking details
     print('\n\nBooking was created with below details:\n')
     print(read_booking_details(booking_details['id']))
+
+    return booking_details
 
 
 def read_booking():

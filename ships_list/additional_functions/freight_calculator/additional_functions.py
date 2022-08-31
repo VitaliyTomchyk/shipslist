@@ -1,6 +1,9 @@
 from ships_list.additional_functions.booking.additional_functions \
     import input_booking_short
 import math
+
+from ships_list.additional_functions.booking.booking_functions \
+    import add_booking
 # function checker_for_to_use returns booking information if input is 'y' else
 # returns None
 
@@ -9,23 +12,22 @@ def checker_for_booking_to_use():
     if input('Do you want to use existing booking? (y/n)\n') == 'y':
         option = input_booking_short()
         return option
+    else:
+        add_booking()
 
 # functions summs all values in list of dicts under key 'value'
 
 
 def summ_commitions(booking_info):
     commissions = booking_info['commission']
-    list_of_values = [float(commission['value']) for commission in commissions]
+    list_of_values = [float(comm['value']) for comm in commissions]
     return math.fsum(list_of_values)
 
 
 # function commition_calculator returns input() if booking_id is None else
 # returns booking_id['commition']
 def commition_calculator(booking_info=None):
-    if booking_info is None:
-        return int(input('Total commition on freight, %\n')) / 100
-    else:
-        return summ_commitions(booking_info)
+    return summ_commitions(booking_info)
 
 
 def cargo_quantity_calculator(booking_info=None):
@@ -40,7 +42,7 @@ def add_voyage_details(booking_info=None):
     input_information = {
         "freight_rate": int(input('\nPlease input freight rate, USD\n')),
         "commition_on_freight": commition_calculator(booking_info),
-        "cargo_quantity": cargo_quantity_calculator(booking_info),
+        "cargo_quantity": booking_info['cargo_quantity'],
 
         "hire_rate": int(input('Hire rate, USD per day\n')),
         "commition_on_hire": float(input('Commition on hire, %\n')) / 100,
@@ -49,7 +51,7 @@ def add_voyage_details(booking_info=None):
     return input_information
 
 
-def sum_bunkers_price(input_information):
+def sum_bunkers_cost(input_information):
     return sum([cost['price']
                 for cost in input_information['bunker_consumption']
                 ['additional_costs']])
