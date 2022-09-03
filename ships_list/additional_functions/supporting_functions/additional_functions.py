@@ -116,3 +116,11 @@ def check_percentage(percentage):
         print('Percentage is not a number or is not in range 0-100')
         return False
     return True
+
+
+def assurance_question(text):
+    answer = input(f'You sure you want to {text}? y/n\n')
+    if answer == 'y':
+        return
+    else:
+        return print(f'Your request to {text} is cancelled.'), exit()

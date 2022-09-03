@@ -7,6 +7,7 @@ from ships_list.lists.Standard.constants import SUPPORTING_FILE
 
 
 def template_selector():
+
     list_of_templates = read_JSON_file(SUPPORTING_FILE)['templates']
     print('\nList of templates:')
     print(dict_to_ol_string(list_of_templates))

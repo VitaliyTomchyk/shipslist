@@ -3,9 +3,13 @@ from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file
 from ships_list.additional_functions.templates.additional_functions import \
     details_generator, data_collector, creating_address_for_filled_template
+from ships_list.additional_functions.supporting_functions.\
+    additional_functions import assurance_question
 
 
 def fill_template():
+
+    assurance_question('fill a template')
 
     tmplt_details = details_generator()
 

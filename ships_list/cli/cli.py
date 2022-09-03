@@ -48,6 +48,8 @@ def parcer():
 
     parser.add_argument('-fill_template', help='function will fill a template',
                         action='store_true')
+    parser.add_argument('-create_template', help='create a template written ' +
+                        'by user', action='store_true')
     # generating result
     return {
         'add_ship': parser.parse_args().add_ship,
@@ -72,5 +74,6 @@ def parcer():
 
         'freight_calculator': parser.parse_args().freight_calculator,
 
-        'fill_template': parser.parse_args().fill_template
+        'fill_template': parser.parse_args().fill_template,
+        'create_template': parser.parse_args().create_template
     }
