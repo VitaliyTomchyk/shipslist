@@ -55,11 +55,11 @@ def input_points_detailed(voyage_info):
 
             # adding points with point
             points.append(point)
-        else:
-            # checker for mandatory points
-            if checker_for_mandatory_points(points) is False:
-                points.append(add_point())
-            break
+
+        # checker for mandatory points
+        if checker_for_mandatory_points(points) is False:
+            points.append(add_point())
+        break
 
     return points
 

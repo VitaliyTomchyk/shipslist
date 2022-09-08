@@ -78,9 +78,11 @@ def input_point_short(point_type):
 
     for i in range(int(quantity_of_points)):
         point = {'point_type': point_type}
+
         # adding point parameter 'point_name'
         point['point_name'] = input(
-            'Please put name of {} number {}\n'.format(point_type, i + 1))
+            'Please put name of {} number {} from {}\n'.format(
+                point_type, i + 1, quantity_of_points))
 
         # adding point parameter 'in_SECA'
         in_SECA = input(
@@ -107,8 +109,9 @@ def read_booking_details(the_booking):
 
     # collecting ports
     ports = [(x['point_name'], x['point_type']) for x in the_booking['points']]
-    load_ports = [x[0] for x in ports if x[1] == 'Load port']
-    discharge_ports = [x[0] for x in ports if x[1] == 'Discharge port']
+
+    load_ports = list(filter(lambda x: x[1] == 'Load port', ports))
+    discharge_ports = list(filter(lambda x: x[1] == 'Discharge port', ports))
 
     destination_line = 'From {} to {}'.format(list_to_string(load_ports),
                                               list_to_string(discharge_ports))
