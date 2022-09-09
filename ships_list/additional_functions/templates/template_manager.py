@@ -21,8 +21,8 @@ def fill_template():
     str_with_result = temp_obj.substitute(**data)
 
     filled_template_address = creating_address_for_filled_template()
-    with open(filled_template_address, 'w') as pda_file:
-        pda_file.write(str_with_result)
+    with open(filled_template_address, 'w') as f:
+        f.write(str_with_result)
 
     data = {'filled_template_address': filled_template_address}
 

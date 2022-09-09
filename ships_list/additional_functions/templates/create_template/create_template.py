@@ -1,54 +1,60 @@
 from ships_list.additional_functions.supporting_functions. \
     additional_functions import assurance_question
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import write_JSON_file, read_JSON_file
+from ships_list.lists.Standard.constants import SUPPORTING_FILE
 
 
 # create a txt file through terminal
 def create_template():
+
+    instructions = 'This function is used to create a new template.\n\n\
+Add a dollar sign ($) before the word that is a variable. After the template\n\
+is created you can use the function -fill_template for your new template.\n\n\
+Good luck!\n\n'
+    print(instructions)
     assurance_question('create a new template')
 
     # input template name
     template_name = input('Write the name of the new template:\n')
-    print(template_name)
+    address_of_template = (f'ships_list/files/{template_name}')
+
     # input template text
     # TODO replace with input from file
     template_text = input('Write the text of the new template:\n')
+    with open(address_of_template, 'w') as f:
+        f.write(template_text)
+        f.write('\n')
+        f.close()
 
-    # create list of substrings
-    list_of_substrings = create_list_of_substrings(template_text)
+    # for every word after $ in template_text, add it to the list of words
+    words = []
+    for word in template_text.split():
+        if word.startswith('$'):
+            if word.endswith('.'):
+                word = word[1:-1]
+                words.append(word)
+            else:
+                word = word[1:]
+                words.append(word)
 
-    # find '$$$' in template text and calculate quantity of '$$$' found
-    quantity_of_dollars = template_text.count('$$$')
-    print('Quantity of $$$ in template text is {}'.format(quantity_of_dollars))
+    # add dict with template details to storage of template details
+    result = {
+        template_name: {
+            "address_of_template": address_of_template,
+            "keys_of_tmplt": words
+        }}
 
-    # check if quantity of '$$$' is same as quantity of substrings
-    if quantity_of_dollars == len(list_of_substrings):
-        print('Quantity of $$$ is same as quantity of substrings')
-    else:
-        print('Quantity of $$$ is not same as quantity of substrings')
-        print('Quantity of $$$ is {}'.format(quantity_of_dollars))
-        print('Quantity of substrings is {}'.format(len(list_of_substrings)))
-
-    # create a list of keys for template
-    keys = {}
-    for i in range(quantity_of_dollars):
-        print(
-            'Please enter key for substring:\n{}'.format(
-                list_of_substrings[i]))
-        key = input('Write the key of the new template:\n')
-        if key not in keys:
-            keys[key] = input('Write the value of the key {}:\n'.format(key))
-
-    # TODO create file with template
-    # TODO add dict with template details to storage of template details
-
-    return
+    return add_template_to_dict(result)
 
 
-# create list of substrings from input text that are 15 symbols before  $$$
-# and 18 symbols after $$$
-def create_list_of_substrings(template_text):
-    list_of_substrings = []
-    for i in range(len(template_text)):
-        if template_text[i:i + 3] == '$$$':
-            list_of_substrings.append(template_text[i - 15:i + 18])
-    return list_of_substrings
+# add template information to dictionary of json files
+
+
+def add_template_to_dict(new_created_template):
+    dict = read_JSON_file(SUPPORTING_FILE)
+    dict_to_append = dict['templates']
+    template_name = list(new_created_template.keys())[0]
+    dict_to_append[template_name] = new_created_template[template_name]
+    print(dict_to_append[template_name])
+    write_JSON_file(SUPPORTING_FILE, dict_to_append)
