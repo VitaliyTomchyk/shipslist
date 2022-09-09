@@ -101,5 +101,32 @@
         "lay_can": "20.12.22",
         "account": "Nike",
         "comments": ""
+    },
+    {
+        "id": 246,
+        "name_of_cargo": "grain",
+        "cargo_quantity": "10000",
+        "allowance_of_cargo": "2",
+        "points": [
+            {
+                "point_type": "Load port",
+                "point_name": "Odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "Discharge port",
+                "point_name": "Istanbul",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address",
+                "value": "3"
+            }
+        ],
+        "lay_can": "10.11.22"
     }
 ]
