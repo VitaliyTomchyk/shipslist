@@ -65,6 +65,13 @@
                 "city",
                 "name_of_function"
             ]
+        },
+        "exp": {
+            "address_of_template": "ships_list/files/exp.txt",
+            "keys_of_tmplt": [
+                "name",
+                "function_name"
+            ]
         }
     },
     "commission_types": [

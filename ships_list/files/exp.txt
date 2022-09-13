@@ -1,0 +1,4 @@
+Hello! My name is $name.
+And today I finished my new function called $function_name.
+
+
