@@ -57,6 +57,14 @@
                 "cargo_quantity",
                 "cargo_operations_term"
             ]
+        },
+        "experimental": {
+            "address_of_template": "ships_list/files/experimental.txt",
+            "keys_of_tmplt": [
+                "name",
+                "city",
+                "name_of_function"
+            ]
         }
     },
     "commission_types": [

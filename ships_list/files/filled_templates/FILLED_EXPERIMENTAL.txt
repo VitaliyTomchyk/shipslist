@@ -1,0 +1,3 @@
+Hello! My name is Vitaliy and I live in Tarragona.
+
+Today I'm creating a new function called create template for Ships List project.

@@ -17,5 +17,8 @@
     },
     {
         "filled_template_address": "ships_list/files/filled_templates/.txt"
+    },
+    {
+        "filled_template_address": "ships_list/files/filled_templates/FILLED_EXPERIMENTAL.txt"
     }
 ]
