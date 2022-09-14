@@ -8,16 +8,21 @@ from ships_list.lists.Standard.constants import BUNKERING_FILE, \
     EXPECTED_OUTPUT_NEW_SHIP_FILE, SHIPS_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, write_JSON_file
+from tests.universal_test import standard_test_of_input_function
 from datetime import datetime
+from tests.fixtures.expected_output_new_ship import fixture_output, \
+    fixture_diff
 
 
-# def test_add_ship():
-#     proforma_input(add_ship,
-#                 ['DISCOVERY', '1', '1', '2', '3', '4', '5', '6', '7', '8'],
-#                 ['Please enter IMO of the ship',
-#                 'Ship DISCOVERY has been added.\n'],
-#                 '',
-#                 SHIPS_FILE)
+def test_add_ship():
+
+    standard_test_of_input_function(add_ship,
+                ['POpy'] + list(range(1, 12)),
+                fixture_output,
+                fixture_diff,
+                SHIPS_FILE)
+
+
 def test_add_not_existing_ship():
     # copy old list
     old_version = read_JSON_file(SHIPS_FILE)
@@ -25,60 +30,26 @@ def test_add_not_existing_ship():
     # running function and collecting result of function
     set_keyboard_input(['POpy'] + list(range(1, 12)))
     add_ship()
-    output = str(get_display_output())
+    output = get_display_output()
     updated_version = read_JSON_file(SHIPS_FILE)
 
     # finding difference
     diff =  [x for x in updated_version if x not in old_version]
-
-    # expected values
-    expected_diff = [{
-        'ships_name': "POPY",
-        'IMO': 1,
-        'additional_consumption': {'port_stay': 10,
-                                   'steaming': 11},
-        'speed': {'laden_full_speed': 2,
-                  'laden_eco_speed': 3,
-                  'ballast_full_speed': 4,
-                  'ballast_eco_speed': 5,
-                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())},
-        'consumption': {
-                  'laden_full_consumption': 6,
-                  'laden_eco_consumption': 7,
-                  'ballast_full_consumption': 8,
-                  'ballast_eco_consumption': 9,
-                  'date_of_update': '{:%Y-%m-%d}'.format(datetime.now())}}]
-    expected_output = str(["Please enter ship's name\n",      
-                      'Please enter IMO of the ship\n',      
-                      '\nPlease add full laden speed of the ship, kn\n',      
-                      '\nPlease add eco laden speed of the ship, kn\n',      
-                      '\nPlease add full ballast speed of the ship, kn\n',      
-                      '\nPlease add eco ballast speed of the ship, kn\n',      
-                      '\nPlease add full laden consumption of the ship,' +  
-                      ' mt/day\n',      
-                      '\nPlease add eco laden consumption of the ship,' + 
-                      ' mt/day\n',      
-                      '\nPlease add full ballast consumption of the ship,' +  
-                      ' mt/day\n',      
-                      '\nPlease add eco ballast consumption of the ship,' +  
-                      ' mt/day\n',      
-                      '\nPlease add additional consumption during' +  
-                      ' port_stay, mt of MGO\n',      
-                      '\nPlease add additional consumption during steaming,' +  
-                      ' mt of MGO\n',      
-                      'Ship POPY has been added.\n'])
     
     # writing back prev version of information
     write_JSON_file(SHIPS_FILE, old_version)
 
     # checkng result against expectations
-    assert output == expected_output
-    assert diff == expected_diff
+    assert output == fixture_output
+    assert diff == fixture_diff
 
 
 def test_add_existing_ship():
     # copy old list
     old_version = read_JSON_file(SHIPS_FILE)
+
+    if len(old_version) == 0:
+        return
     
     existing_ships_name = old_version[0]['ships_name']
     existing_IMO = old_version[0]['IMO']

@@ -20,7 +20,6 @@ update:
 	make build
 	make publish
 	make package-install
-	export PATH="$PATH:/Users/dmitriychebruchan/Library/Python/3.9/bin"
 
 pytest:
 	poetry run pytest -s -vv
