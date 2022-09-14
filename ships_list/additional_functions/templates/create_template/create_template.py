@@ -22,13 +22,9 @@ function -fill_template for your new template.\n\n'
     # input template name
     template_name = input('Write the name of the template you want to edit or \
 create:\n')
+    f = open(f"ships_list/files/{template_name}.txt", "+a")
     address_of_template = (f"ships_list/files/{template_name}.txt")
-    if not address_of_template:
-        f = open(f"ships_list/files/{template_name}.txt", "w")
-        address_of_template = (f"ships_list/files/{template_name}.txt")
-        f.close()
-    else:
-        address_of_template = (f"ships_list/files/{template_name}.txt")
+    f.close()
 
     # input template text
     # TODO replace with input from file
@@ -37,8 +33,7 @@ create:\n')
     template_text = text_file.read()
 
     # for every word after $ in template_text, add it to the list of words
-    words = []
-    keys_of_template_finder(template_text, words)
+    words = keys_of_template_finder(template_text)
 
     text_file.close()
 
@@ -64,13 +59,15 @@ def add_template_to_dict(new_created_template):
     write_JSON_file(SUPPORTING_FILE, dict)
 
 
-def keys_of_template_finder(template_text, words):
+def keys_of_template_finder(template_text):
+    words = []
     for word in template_text.split():
         if word.startswith('$'):
-            if word.endswith('.'):
+            if word[-1:].isalpha() is False:
                 word = word[1:-1]
                 words.append(word)
             else:
                 word = word[1:]
                 words.append(word)
-    return words
+    result = list(set(words))
+    return result

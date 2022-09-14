@@ -72,6 +72,13 @@
                 "name",
                 "function_name"
             ]
+        },
+        "test_template": {
+            "address_of_template": "ships_list/files/test_template.txt",
+            "keys_of_tmplt": [
+                "company_to",
+                "company_name"
+            ]
         }
     },
     "commission_types": [
