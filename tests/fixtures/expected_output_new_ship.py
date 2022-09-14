@@ -1,5 +1,7 @@
 from datetime import datetime
 
+fixture_input = ['POpy'] + list(range(1, 12))
+
 fixture_output = ["Please enter ship's name\n",      
                       'Please enter IMO of the ship\n',      
                       '\nPlease add full laden speed of the ship, kn\n',      

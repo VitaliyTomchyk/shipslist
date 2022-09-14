@@ -8,75 +8,41 @@ from ships_list.lists.Standard.constants import BUNKERING_FILE, \
     EXPECTED_OUTPUT_NEW_SHIP_FILE, SHIPS_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, write_JSON_file
-from tests.universal_test import standard_test_of_input_function
+from tests.universal_test import standard_test_of_input_function, \
+    standard_test_of_read_function
 from datetime import datetime
 from tests.fixtures.expected_output_new_ship import fixture_output, \
-    fixture_diff
+    fixture_diff, fixture_input
 
 
-def test_add_ship():
+def test_add_not_existing_ship():
 
     standard_test_of_input_function(add_ship,
-                ['POpy'] + list(range(1, 12)),
+                fixture_input,
                 fixture_output,
                 fixture_diff,
                 SHIPS_FILE)
 
 
-def test_add_not_existing_ship():
-    # copy old list
-    old_version = read_JSON_file(SHIPS_FILE)
-
-    # running function and collecting result of function
-    set_keyboard_input(['POpy'] + list(range(1, 12)))
-    add_ship()
-    output = get_display_output()
-    updated_version = read_JSON_file(SHIPS_FILE)
-
-    # finding difference
-    diff =  [x for x in updated_version if x not in old_version]
-    
-    # writing back prev version of information
-    write_JSON_file(SHIPS_FILE, old_version)
-
-    # checkng result against expectations
-    assert output == fixture_output
-    assert diff == fixture_diff
-
-
 def test_add_existing_ship():
+    
     # copy old list
     old_version = read_JSON_file(SHIPS_FILE)
 
+    # check if ships exist  in list
     if len(old_version) == 0:
         return
     
-    existing_ships_name = old_version[0]['ships_name']
-    existing_IMO = old_version[0]['IMO']
+    input_of_function = [old_version[0]['ships_name'],
+                         old_version[0]['IMO']]
 
-    # running function and collecting result
-    set_keyboard_input([existing_ships_name, existing_IMO])
-    add_ship()
-    output = get_display_output()
-    updated_version = read_JSON_file(SHIPS_FILE)
-
-    # finding difference
-    diff =  [x for x in updated_version if x not in old_version]
-
-    # expected difference is empty list, as no new ship has been added
-    expected_diff = []
-
-    # expected output
-    expected_output = ['Please enter ship\'s name\n',
-                      'Please enter IMO of the ship\n',
-                      'IMO is already in list']
-    
-    # writing back prev version of information
-    write_JSON_file(SHIPS_FILE, old_version)
-
-    # checkng result against expectations
-    assert output == expected_output
-    assert diff == expected_diff
+    standard_test_of_input_function(add_ship,
+                input_of_function,
+                ['Please enter ship\'s name\n',
+                 'Please enter IMO of the ship\n',
+                 'IMO is already in list'],
+                [],
+                SHIPS_FILE)
 
 
 def test_read_existing_ship():
@@ -198,9 +164,3 @@ def test_delete_missing_ship():
     # checkng result against expectations
     assert output == expected_output
     assert old_version == read_JSON_file(SHIPS_FILE)
-
-# # def test_h():
-# #     with open(HELP_FILE, 'r') as f:
-# #         expected_output = f.read()
-# #     ouput = ships_list -h
-# #     assert output == expected_output

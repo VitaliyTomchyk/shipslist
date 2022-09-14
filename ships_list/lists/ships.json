@@ -1,1 +1,24 @@
-[]
+[
+    {
+        "ships_name": "TESTISIO",
+        "IMO": 1222312313,
+        "speed": {
+            "laden_full_speed": 1,
+            "laden_eco_speed": 1,
+            "ballast_full_speed": 1,
+            "ballast_eco_speed": 1,
+            "date_of_update": "2022-09-14"
+        },
+        "consumption": {
+            "laden_full_consumption": 1,
+            "laden_eco_consumption": 1,
+            "ballast_full_consumption": 1,
+            "ballast_eco_consumption": 1,
+            "date_of_update": "2022-09-14"
+        },
+        "additional_consumption": {
+            "port_stay": 1,
+            "steaming": 1
+        }
+    }
+]
