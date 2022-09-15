@@ -70,18 +70,19 @@ def input_points_short():
     return points
 
 
-def input_point_short(point_type):
+def input_point_short(input_point_type):
+    point_type = input_point_type.lower()
     points = []
 
     quantity_of_points = input(
-        'Please input quantity of {}s\n'.format(point_type))
+        'Please input QUANTITY of {}s\n'.format(point_type))
 
     for i in range(int(quantity_of_points)):
         point = {'point_type': point_type}
 
         # adding point parameter 'point_name'
         point['point_name'] = input(
-            'Please put name of {} number {} from {}\n'.format(
+            'Please put NAME of {} number {} from {}\n'.format(
                 point_type, i + 1, quantity_of_points))
 
         # adding point parameter 'in_SECA'
@@ -99,7 +100,29 @@ def input_point_short(point_type):
     return points
 
 
-def read_booking_details(the_booking):
+def booking_selector():
+    bookings = read_JSON_file(BOOKINGS_FILE)
+    for i, booking in enumerate(bookings):
+        print('\nBooking number {}\n'.format(i + 1))
+        print(read_booking_details(booking))
+    option = bookings[int(input('Please input booking number to read\n')) - 1]
+    print('You have chosen following booking:\n{}'.format(
+        read_booking_details(option)))
+    return option
+
+
+def booking_finder(booking_id):
+    if booking_id is None:
+        return booking_selector()
+
+    bookings = read_JSON_file(BOOKINGS_FILE)
+    return [booking for booking in bookings
+            if booking['id'] == booking_id][0]
+
+
+def read_booking_details(booking_id=None):
+
+    the_booking = booking_finder(booking_id)
 
     account = 'Account: {}'.format(str(the_booking['account']))
     cargo_line = 'Booking for {} mt MOL {}% of {}'.format(

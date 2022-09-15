@@ -2,9 +2,9 @@ from ships_list.additional_functions.supporting_functions. \
     additional_functions import assurance_question
 from ships_list.additional_functions.templates.create_template.Tkinter \
     import open_txt_file
-import time
 from ships_list.additional_functions.templates.create_template.\
     additional_functions import keys_of_template_finder, add_template_to_dict
+import time
 
 
 def create_template():

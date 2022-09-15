@@ -128,5 +128,40 @@
             }
         ],
         "lay_can": "10.11.22"
+    },
+    {
+        "id": 247,
+        "name_of_cargo": "grain",
+        "cargo_quantity": "20000",
+        "allowance_of_cargo": "10",
+        "points": [
+            {
+                "point_type": "Load port",
+                "point_name": "Odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "Load port",
+                "point_name": "Illichevsk",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "Discharge port",
+                "point_name": "Algeciras",
+                "in_SECA": true,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address commission",
+                "value": 2.5
+            }
+        ],
+        "lay_can": "10.12.22",
+        "account": "Mobil",
+        "comments": ""
     }
 ]
