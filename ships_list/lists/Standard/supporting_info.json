@@ -43,7 +43,7 @@
     "laytime_port_terms": {
         "shinc": 1,
         "shex": 1.2,
-        "fshex": 1.5
+        "fshex": 1.75
     },
     "templates": {
         "pda_request": {
@@ -78,6 +78,15 @@
             "keys_of_tmplt": [
                 "company_to",
                 "company_name"
+            ]
+        },
+        "dima": {
+            "address_of_template": "ships_list/files/dima.txt",
+            "keys_of_tmplt": [
+                "brother",
+                "father",
+                "mom",
+                "sister"
             ]
         }
     },

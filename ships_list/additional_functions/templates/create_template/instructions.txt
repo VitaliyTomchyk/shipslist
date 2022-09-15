@@ -1,0 +1,7 @@
+This function is used to create a new template and for editing existing
+templates.
+
+After writing the name of the template a screen will pop up. Write the text 
+that you want to appear in your new template. Add a dollar sign ($) before 
+the word that is a variable. After the template is created you can use the 
+function -fill_template for your new template.
