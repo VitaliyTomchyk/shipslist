@@ -163,5 +163,92 @@
         "lay_can": "10.12.22",
         "account": "Mobil",
         "comments": ""
+    },
+    {
+        "id": 248,
+        "name_of_cargo": "grain",
+        "cargo_quantity": "35000",
+        "allowance_of_cargo": "5",
+        "points": [
+            {
+                "point_type": "Load port",
+                "point_name": "odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "Discharge port",
+                "point_name": "Nikolayev",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address",
+                "value": 2.0
+            }
+        ],
+        "lay_can": "20.11.22",
+        "account": "Nike",
+        "comments": ""
+    },
+    {
+        "id": 249,
+        "account": "1",
+        "name_of_cargo": "1",
+        "cargo_quantity": "1",
+        "allowance_of_cargo": "1",
+        "points": [
+            {
+                "point_type": "load port",
+                "point_name": "1",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "discharge port",
+                "point_name": "1",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address",
+                "value": 1.0
+            }
+        ],
+        "lay_can": "20.12.22",
+        "comments": ""
+    },
+    {
+        "id": 251,
+        "account": "Test_account",
+        "name_of_cargo": "grain",
+        "cargo_quantity": "1000",
+        "allowance_of_cargo": "1",
+        "points": [
+            {
+                "point_type": "load port",
+                "point_name": "Odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "discharge port",
+                "point_name": "Nikolayev",
+                "in_SECA": false,
+                "laytime_port_terms": "shex"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address",
+                "value": 2.5
+            }
+        ],
+        "lay_can": "20.11.22",
+        "comments": "test comment"
     }
 ]

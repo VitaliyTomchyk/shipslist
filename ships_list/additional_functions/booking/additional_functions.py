@@ -24,6 +24,7 @@ def input_booking_short():
 
 def booking_details_collector():
     result = {'id': id_generator(),
+              'account': input('\nPlease input account name\n'),
               'name_of_cargo': input('\nPlease input cargo name\n'),
               'cargo_quantity': input('\nPlease input cargo quantity, mt\n'),
               'allowance_of_cargo': input('\nPlease input allowance, %\n'),
@@ -31,7 +32,6 @@ def booking_details_collector():
               'commission': input_commissions_short(),
               'lay_can': input('\nPlease input lay can in following ' +
                                'format: "20.12.22"\n'),
-              'account': input('\nPlease input account name\n'),
               'comments': input('\nPlease input comments\n')
               }
     return result
@@ -77,7 +77,7 @@ def input_point_short(input_point_type):
     points = []
 
     quantity_of_points = input(
-        'Please input QUANTITY of {}s\n'.format(point_type))
+        '\nPlease input QUANTITY of {}s\n'.format(point_type))
 
     for i in range(int(quantity_of_points)):
         point = {'point_type': point_type}
