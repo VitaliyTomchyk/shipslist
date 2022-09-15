@@ -24,3 +24,5 @@ HELP_TEXT = "ships_list/tests/fixtures/" + \
     "help_text.txt"
 EXPECTED_OUTPUT_NEW_SHIP_FILE = "tests/fixtures/" + \
     "expected_output_new_ship.txt"
+INSTRUCTIONS_TO_CREATE_TEMPLATE = 'ships_list/additional_functions/' + \
+    'templates/create_template/instructions.txt'

@@ -5,12 +5,14 @@ from ships_list.additional_functions.templates.create_template.Tkinter \
 from ships_list.additional_functions.templates.create_template.\
     additional_functions import keys_of_template_finder, add_template_to_dict
 import time
+from ships_list.lists.Standard.constants import INSTRUCTIONS_TO_CREATE_TEMPLATE
 
 
 def create_template():
 
     # printing instructions
-    with open('instructions.txt', 'r') as file:
+    with open(INSTRUCTIONS_TO_CREATE_TEMPLATE, 'r') \
+            as file:
         instructions = file.read()
     print(instructions)
     time.sleep(2)

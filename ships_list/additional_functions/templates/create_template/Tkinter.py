@@ -34,4 +34,4 @@ def save_txt(file, text):
     text_file = open(file, 'w')
     text_file.write(text.get(1.0, tkinter.END))
     text_file.close()
-    print("New template has been saved.")
+    print("New template text has been saved.")

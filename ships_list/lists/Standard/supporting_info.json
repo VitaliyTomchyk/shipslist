@@ -80,13 +80,16 @@
                 "company_name"
             ]
         },
-        "dima": {
-            "address_of_template": "ships_list/files/dima.txt",
+        "berthday_congrats": {
+            "address_of_template": "ships_list/files/berthday_congrats.txt",
             "keys_of_tmplt": [
-                "brother",
-                "father",
-                "mom",
-                "sister"
+                "name"
+            ]
+        },
+        "congrets": {
+            "address_of_template": "ships_list/files/congrets.txt",
+            "keys_of_tmplt": [
+                "name"
             ]
         }
     },

@@ -102,20 +102,9 @@ def input_point_short(input_point_type):
     return points
 
 
-def booking_selector():
-    bookings = read_JSON_file(BOOKINGS_FILE)
-    for i, booking in enumerate(bookings):
-        print('\nBooking number {}\n'.format(i + 1))
-        print(read_booking_details(booking))
-    option = bookings[int(input('Please input booking number to read\n')) - 1]
-    print('You have chosen following booking:\n{}'.format(
-        read_booking_details(option)))
-    return option
-
-
 def booking_finder(booking_id):
     if booking_id is None:
-        return booking_selector()
+        return input_booking_short()
 
     bookings = read_JSON_file(BOOKINGS_FILE)
     return [booking for booking in bookings

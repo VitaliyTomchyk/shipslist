@@ -12,8 +12,7 @@ def checker_for_booking_to_use():
     if input('Do you want to use existing booking? (y/n)\n') == 'y':
         option = input_booking_short()
         return option
-    else:
-        return add_booking()
+    add_booking()
 
 # functions summs all values in list of dicts under key 'value'
 
