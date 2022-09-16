@@ -1,20 +1,21 @@
 # add template information to dictionary of json files
 from ships_list.additional_functions.supporting_functions.json_functions \
     import write_JSON_file, read_JSON_file
-from ships_list.lists.Standard.constants import SUPPORTING_FILE
 
 
 def add_template_to_dict(new_created_template):
 
     # collecting list of templates
-    list_of_dicts = read_JSON_file(SUPPORTING_FILE)
+    list_of_dicts = read_JSON_file('ships_list/lists/templates/' +
+                                   'created_template.json')
     dict_to_append = list_of_dicts['templates']
 
     template_name = list(new_created_template.keys())[0]
 
     dict_to_append[template_name] = new_created_template[template_name]
 
-    write_JSON_file(SUPPORTING_FILE, list_of_dicts)
+    write_JSON_file('ships_list/lists/templates/created_template.json',
+                    list_of_dicts)
 
     print('Your new template {} has been added.'.format(template_name))
 

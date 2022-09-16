@@ -45,54 +45,6 @@
         "shex": 1.2,
         "fshex": 1.75
     },
-    "templates": {
-        "pda_request": {
-            "address_of_template": "ships_list/files/pda_request.txt",
-            "keys_of_tmplt": [
-                "company_name",
-                "company_to",
-                "quantity_of_cargo",
-                "port_name",
-                "cargo_name",
-                "cargo_quantity",
-                "cargo_operations_term"
-            ]
-        },
-        "experimental": {
-            "address_of_template": "ships_list/files/experimental.txt",
-            "keys_of_tmplt": [
-                "name",
-                "city",
-                "name_of_function"
-            ]
-        },
-        "exp": {
-            "address_of_template": "ships_list/files/exp.txt",
-            "keys_of_tmplt": [
-                "name",
-                "function_name"
-            ]
-        },
-        "test_template": {
-            "address_of_template": "ships_list/files/test_template.txt",
-            "keys_of_tmplt": [
-                "company_to",
-                "company_name"
-            ]
-        },
-        "berthday_congrats": {
-            "address_of_template": "ships_list/files/berthday_congrats.txt",
-            "keys_of_tmplt": [
-                "name"
-            ]
-        },
-        "congrets": {
-            "address_of_template": "ships_list/files/congrets.txt",
-            "keys_of_tmplt": [
-                "name"
-            ]
-        }
-    },
     "commission_types": [
         "address",
         "broker's",
