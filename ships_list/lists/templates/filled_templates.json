@@ -89,5 +89,20 @@
             "name_of_vessel": "f",
             "terms": "g"
         }
+    },
+    {
+        "purpose": "to test for second time",
+        "what": "proformat",
+        "filled_template_address": "ships_list/files/filled_templates/DIMA_TESTS.txt"
+    },
+    {
+        "name_sender": "Dima",
+        "name": "Vitaliy",
+        "filled_template_address": "ships_list/files/filled_templates/CONGRETS TO VITALIY.txt"
+    },
+    {
+        "name_sender": "Dima",
+        "name": "Vitaliy",
+        "filled_template_address": "ships_list/files/filled_templates/FROM DIMA TO VITALIY.txt"
     }
 ]
