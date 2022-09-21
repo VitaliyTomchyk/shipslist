@@ -1,13 +1,13 @@
-{
-    "templates": {
-        "new_template": {
-            "address_of_template": "ships_list/files/new_template.txt",
-            "keys_of_tmplt": [
-                "purpose",
-                "what"
+[{
+    "template_name": "new_template",
+    "address_of_template": "ships_list/files/new_template.txt",
+    "keys_of_tmplt": [
+        "purpose",
+        "what"
             ]
         },
-        "pda_request": {
+        {
+            "template_name": "pda_request",
             "address_of_template": "ships_list/files/pda_request.txt",
             "keys_of_tmplt": [
                 "company_name",
@@ -19,39 +19,34 @@
                 "cargo_operations_term"
             ]
         },
-        "experimental": {
+        {
+            "template_name": "experimental",
             "address_of_template": "ships_list/files/experimental.txt",
             "keys_of_tmplt": [
                 "name",
                 "city",
                 "name_of_function"
             ]
-        },
-        "exp": {
+        },{
+            "template_name": "exp",
             "address_of_template": "ships_list/files/exp.txt",
             "keys_of_tmplt": [
                 "name",
                 "function_name"
             ]
-        },
-        "test_template": {
+        },{
+            "template_name": "test_template",
             "address_of_template": "ships_list/files/test_template.txt",
             "keys_of_tmplt": [
                 "company_to",
                 "company_name"
             ]
-        },
-        "berthday_congrats": {
-            "address_of_template": "ships_list/files/berthday_congrats.txt",
+        },{
+            "template_name": "test_Dima",
+            "address_of_template": "ships_list/files/test_Dima.txt",
             "keys_of_tmplt": [
-                "name"
-            ]
-        },
-        "congrets": {
-            "address_of_template": "ships_list/files/congrets.txt",
-            "keys_of_tmplt": [
+                "name_sender",
                 "name"
             ]
         }
-    }
-}
+]

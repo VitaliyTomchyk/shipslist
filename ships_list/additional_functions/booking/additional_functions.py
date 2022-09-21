@@ -124,8 +124,11 @@ def read_booking_details(booking_id=None):
     # collecting ports
     ports = [(x['point_name'], x['point_type']) for x in the_booking['points']]
 
-    load_ports = list(filter(lambda x: x[1] == 'Load port', ports))
-    discharge_ports = list(filter(lambda x: x[1] == 'Discharge port', ports))
+    load_ports, discharge_ports = list(
+        filter(
+            lambda x: x[1] == 'Load port', ports)), list(
+        filter(
+            lambda x: x[1] == 'Discharge port', ports))
 
     destination_line = 'From {} to {}'.format(list_to_string(load_ports),
                                               list_to_string(discharge_ports))

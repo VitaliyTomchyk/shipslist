@@ -1,11 +1,14 @@
 from ships_list.additional_functions.supporting_functions. \
     additional_functions import assurance_question
+from ships_list.additional_functions.supporting_functions.json_functions\
+    import append_JSON_file
 from ships_list.additional_functions.templates.create_template.Tkinter \
     import open_txt_file
 from ships_list.additional_functions.templates.create_template.\
-    additional_functions import keys_of_template_finder, add_template_to_dict
+    additional_functions import keys_of_template_finder, add_template_to_list
 import time
-from ships_list.lists.Standard.constants import INSTRUCTIONS_TO_CREATE_TEMPLATE
+from ships_list.lists.Standard.constants import \
+    INSTRUCTIONS_TO_CREATE_TEMPLATE, KEYS_OF_TEMPLATES_FILE
 
 
 def create_template():
@@ -48,4 +51,5 @@ def create_template():
         }}
 
     # adding template information
-    add_template_to_dict(result)
+    add_template_to_list(result)
+    append_JSON_file(result, KEYS_OF_TEMPLATES_FILE)

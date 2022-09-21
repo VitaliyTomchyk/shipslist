@@ -7,6 +7,7 @@ BOOKINGS_FILE = "ships_list/lists/bookings.json"
 BUNKERING_FILE = "ships_list/lists/bunkers_calculations.json"
 FREIGHT_CALCULATIONS_FILE = "ships_list/lists/freight_calculations.json"
 
+KEYS_OF_TEMPLATES_FILE = 'ships_list/lists/templates/keys_of_templates.json'
 FILLED_TEMPLATES_FILE = "ships_list/lists/templates/filled_templates.json"
 TEMPLATE_FILLERS_FILE = "ships_list/lists/templates/template_fillers.json"
 

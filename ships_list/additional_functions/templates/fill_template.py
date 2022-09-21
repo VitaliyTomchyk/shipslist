@@ -6,8 +6,9 @@ from ships_list.lists.Standard.constants import SUPPORTING_FILE
 
 def fill_template():
     # choose template
-    dict_of_templates = read_JSON_file(SUPPORTING_FILE)['templates']
-    list_of_templates_names = list(dict_of_templates.keys())
+    list_of_templates = read_JSON_file(SUPPORTING_FILE)
+    list_of_templates_names = list(map(lambda x: x("template_name"),
+                                       list_of_templates))
     return list_of_templates_names
     # fill keys
 
