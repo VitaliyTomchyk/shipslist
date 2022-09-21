@@ -41,3 +41,22 @@ def fill_template():
     time.sleep(2)
     print('Template has been filled and saved.\n' +
           'Filled template is \nQuote\n{}\nUnquote'.format(str_with_result))
+
+
+# TODO amend below function
+# # function deletes template
+# def delete_template():
+
+#     # assurance
+#     assurance_question('delete a template')
+
+#     # selecting template
+#     selected_template = template_selector()
+
+#     # deleting template
+#     with open(selected_template['address_of_template'], 'w') as f:
+#         f.write('')
+
+#     # reporting to user
+#     time.sleep(2)
+#     print('Template has been deleted.\n')

@@ -1,4 +1,3 @@
-# template filler
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file
 from ships_list.lists.Standard.constants import KEYS_OF_TEMPLATES_FILE
