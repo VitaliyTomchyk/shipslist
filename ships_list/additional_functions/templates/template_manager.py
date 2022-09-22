@@ -1,12 +1,15 @@
 from string import Template
 from ships_list.additional_functions.supporting_functions.json_functions \
-    import append_JSON_file
+    import append_JSON_file, read_JSON_file
 from ships_list.additional_functions.templates.additional_functions import \
     template_selector, creating_address_for_filled_template, values_from_user
 from ships_list.additional_functions.supporting_functions.\
     additional_functions import assurance_question
-from ships_list.lists.Standard.constants import FILLED_TEMPLATES_FILE
+from ships_list.lists.Standard.constants import FILLED_TEMPLATES_FILE, \
+    KEYS_OF_TEMPLATES_FILE
 import time
+import os
+import json
 
 
 def fill_template():
@@ -43,20 +46,24 @@ def fill_template():
           'Filled template is \nQuote\n{}\nUnquote'.format(str_with_result))
 
 
-# TODO amend below function
 # # function deletes template
-# def delete_template():
+def remove_template():
 
-#     # assurance
-#     assurance_question('delete a template')
+    # assurance
+    assurance_question('delete a template')
 
-#     # selecting template
-#     selected_template = template_selector()
+    # selecting template
+    selected_template = template_selector()
 
-#     # deleting template
-#     with open(selected_template['address_of_template'], 'w') as f:
-#         f.write('')
+    # deleting template file
+    os.remove(selected_template['address_of_template'])
 
-#     # reporting to user
-#     time.sleep(2)
-#     print('Template has been deleted.\n')
+    # deleting template details from JSON file
+    list_of_templates = read_JSON_file(KEYS_OF_TEMPLATES_FILE)
+    list_of_templates.remove(selected_template)
+    with open(KEYS_OF_TEMPLATES_FILE, 'w') as f:
+        json.dump(list_of_templates, f)
+
+    # reporting to user
+    time.sleep(2)
+    print('Template has been deleted.\n')

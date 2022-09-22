@@ -1,2 +1,0 @@
-Happy B Day, $name!
-From $name_sender!
