@@ -52,6 +52,14 @@ def parcer():
                         'by user', action='store_true')
     parser.add_argument('-remove_template', help='remove a template',
                         action='store_true')
+
+    parser.add_argument('-create_company', help='create a company',
+                        action='store_true')
+    parser.add_argument('-remove_company', help='remove a company',
+                        action='store_true')
+    parser.add_argument('-edit_company', help='edit a company',
+                        action='store_true')
+
     # generating result
     return {
         'add_ship': parser.parse_args().add_ship,
@@ -78,5 +86,9 @@ def parcer():
 
         'fill_template': parser.parse_args().fill_template,
         'create_template': parser.parse_args().create_template,
-        'remove_template': parser.parse_args().remove_template
+        'remove_template': parser.parse_args().remove_template,
+
+        'create_company': parser.parse_args().create_company,
+        'remove_company': parser.parse_args().remove_company,
+        'edit_company': parser.parse_args().edit_company,
     }
