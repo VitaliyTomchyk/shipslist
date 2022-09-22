@@ -1,6 +1,6 @@
 from string import Template
 from ships_list.additional_functions.supporting_functions.json_functions \
-    import append_JSON_file, read_JSON_file
+    import append_JSON_file, read_JSON_file, write_JSON_file
 from ships_list.additional_functions.templates.additional_functions import \
     template_selector, creating_address_for_filled_template, values_from_user
 from ships_list.additional_functions.supporting_functions.\
@@ -9,7 +9,6 @@ from ships_list.lists.Standard.constants import FILLED_TEMPLATES_FILE, \
     KEYS_OF_TEMPLATES_FILE
 import time
 import os
-import json
 
 
 def fill_template():
@@ -61,9 +60,10 @@ def remove_template():
     # deleting template details from JSON file
     list_of_templates = read_JSON_file(KEYS_OF_TEMPLATES_FILE)
     list_of_templates.remove(selected_template)
-    with open(KEYS_OF_TEMPLATES_FILE, 'w') as f:
-        json.dump(list_of_templates, f)
+
+    # writing new list of templates to JSON file
+    write_JSON_file(KEYS_OF_TEMPLATES_FILE, list_of_templates)
 
     # reporting to user
-    time.sleep(2)
+    time.sleep(1)
     print('Template has been deleted.\n')

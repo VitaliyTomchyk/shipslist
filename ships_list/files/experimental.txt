@@ -1,5 +1,0 @@
-Hello! My name is $name and I live in $city.
-
-Today I'm creating a new function called $name_of_function for Ships List project.
-
-

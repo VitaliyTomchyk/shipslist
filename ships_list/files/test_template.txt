@@ -1,8 +1,0 @@
-From $company_name, to $company_to.
-
-Hello, $company_name sent you a letter with additional information.
-
-
-
-
-

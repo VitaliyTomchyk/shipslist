@@ -1,17 +1,17 @@
 from ships_list.additional_functions.supporting_functions. \
     additional_functions import assurance_question
-from ships_list.additional_functions.supporting_functions.json_functions\
-    import append_JSON_file
 from ships_list.additional_functions.templates.create_template.Tkinter \
     import open_txt_file
 from ships_list.additional_functions.templates.create_template.\
     additional_functions import keys_of_template_finder, add_template_to_list
 import time
 from ships_list.lists.Standard.constants import \
-    INSTRUCTIONS_TO_CREATE_TEMPLATE, KEYS_OF_TEMPLATES_FILE
+    INSTRUCTIONS_TO_CREATE_TEMPLATE
 
 
 def create_template():
+    # assurance question
+    assurance_question('create/amend a new template')
 
     # printing instructions
     with open(INSTRUCTIONS_TO_CREATE_TEMPLATE, 'r') \
@@ -19,9 +19,6 @@ def create_template():
         instructions = file.read()
     print(instructions)
     time.sleep(2)
-
-    # assurance question
-    assurance_question('create/amend a new template')
 
     # input template name
     template_name = input('Write the name of the template you want to ' +
@@ -45,11 +42,10 @@ def create_template():
 
     # add dict with template details to storage of template details
     result = {
-        template_name: {
-            "address_of_template": address_of_template,
-            "keys_of_tmplt": list_of_keys
-        }}
+        'template_name': template_name,
+        "address_of_template": address_of_template,
+        "keys_of_tmplt": list_of_keys
+    }
 
     # adding template information
     add_template_to_list(result)
-    append_JSON_file(result, KEYS_OF_TEMPLATES_FILE)

@@ -104,5 +104,9 @@
         "name_sender": "Dima",
         "name": "Vitaliy",
         "filled_template_address": "ships_list/files/filled_templates/FROM DIMA TO VITALIY.txt"
+    },
+    {
+        "name": "Dima",
+        "filled_template_address": "ships_list/files/filled_templates/DIMA_TESTS1.txt"
     }
 ]

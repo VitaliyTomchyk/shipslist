@@ -1,1 +1,23 @@
-[{"template_name": "new_template", "address_of_template": "ships_list/files/new_template.txt", "keys_of_tmplt": ["purpose", "what"]}, {"template_name": "pda_request", "address_of_template": "ships_list/files/pda_request.txt", "keys_of_tmplt": ["company_name", "company_to", "quantity_of_cargo", "port_name", "cargo_name", "cargo_quantity", "cargo_operations_term"]}, {"template_name": "experimental", "address_of_template": "ships_list/files/experimental.txt", "keys_of_tmplt": ["name", "city", "name_of_function"]}, {"template_name": "test_template", "address_of_template": "ships_list/files/test_template.txt", "keys_of_tmplt": ["company_to", "company_name"]}]
+[
+    {
+        "template_name": "new_template",
+        "address_of_template": "ships_list/files/new_template.txt",
+        "keys_of_tmplt": [
+            "purpose",
+            "what"
+        ]
+    },
+    {
+        "template_name": "pda_request",
+        "address_of_template": "ships_list/files/pda_request.txt",
+        "keys_of_tmplt": [
+            "company_name",
+            "company_to",
+            "quantity_of_cargo",
+            "port_name",
+            "cargo_name",
+            "cargo_quantity",
+            "cargo_operations_term"
+        ]
+    }
+]
