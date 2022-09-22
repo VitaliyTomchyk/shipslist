@@ -10,8 +10,8 @@ from ships_list.additional_functions.booking.booking_functions \
     import add_booking, read_booking, remove_booking
 from ships_list.additional_functions.templates.template_manager \
     import fill_template, remove_template
-from ships_list.additional_functions.templates.create_template.\
-    create_template import create_template
+from ships_list.additional_functions.templates.create_template.create_template\
+    import create_template
 
 
 def ships_list(parced_result):

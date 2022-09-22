@@ -11,6 +11,7 @@ import time
 import os
 
 
+# function creates filled template
 def fill_template():
 
     # assurance
