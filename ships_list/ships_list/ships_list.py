@@ -12,6 +12,8 @@ from ships_list.additional_functions.templates.template_manager \
     import fill_template, remove_template
 from ships_list.additional_functions.templates.create_template.create_template\
     import create_template
+from ships_list.additional_functions.companies.companies_module import \
+    add_company, remove_company, edit_company
 
 
 def ships_list(parced_result):
@@ -41,9 +43,9 @@ def ships_list(parced_result):
         'create_template': create_template,
         'remove_template': remove_template,
 
-        # 'create_company': create_company,
-        # 'remove_company': remove_company,
-        # 'edit_company': edit_company,
+        'add_company': add_company,
+        'remove_company': remove_company,
+        'edit_company': edit_company,
 
     }
 

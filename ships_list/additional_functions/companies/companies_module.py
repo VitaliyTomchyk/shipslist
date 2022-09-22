@@ -6,30 +6,49 @@ from ships_list.additional_functions.supporting_functions.input_functions \
 from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator
 
+
+# function input_email
+def input_email():
+    # input email
+    email = input('Please enter email of company\n')
+    # checking if email is valid
+    if not email or '@' not in email:
+        print('Email is not valid. Please try again.')
+        email = input_email()
+    # returning email
+    return email
+
+
 # function to create a company
-
-
-def create_company():
-    # creating a party
-    party = {}
+def add_company():
+    # creating a company
+    company = {}
     # generating id
-    party['id'] = id_generator()
+    company['id'] = id_generator()
     # adding company name
-    party['company_name'] = input('Please enter company name\n')
+    company['company_name'] = input('Please enter company name\n')
     # adding email
-    party['email'] = input('Please enter email of party\n')
+    company['email'] = input_email()
     # adding phone number
-    party['phone_number'] = input('Please enter phone number of party\n')
+    company['phone_number'] = input('Please enter phone number of company\n')
     # adding address
-    party['address'] = input('Please enter address of party\n')
-    # save party to file
-    append_JSON_file(party, PARTIES_FILE)
+    company['address'] = input('Please enter address of company\n')
+    # save company to file
+    append_JSON_file(company, PARTIES_FILE)
+
+    # printing created company
+    print('\nCreated company with following details:\n')
+    print(company)
 
 
 # function to remove a company
 def remove_company():
     # reading parties from file
     list_of_companies = read_JSON_file(PARTIES_FILE)
+
+    if list_of_companies == []:
+        print('There are no companies to remove.')
+        return
 
     # creating list of company names
     list_of_companies = list(
@@ -39,12 +58,12 @@ def remove_company():
     company_to_remove = input_from_list('company to remove', list_of_companies)
 
     # creating new list of parties without selected company
-    list_of_companies = list(filter(lambda x:
-                                    x['company_name'] != company_to_remove,
-                                    list_of_companies))
+    list_of_companies.remove(company_to_remove)
 
     # saving new list of parties to file
-    write_JSON_file(list_of_companies, PARTIES_FILE)
+    write_JSON_file(PARTIES_FILE, list_of_companies)
+
+    print('Company {} was removed'.format(company_to_remove))
 
 
 # function to edit a company
