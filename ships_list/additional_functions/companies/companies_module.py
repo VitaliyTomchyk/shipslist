@@ -51,17 +51,18 @@ def remove_company():
         return
 
     # creating list of company names
-    list_of_companies = list(
+    list_of_names = list(
         map(lambda x: x['company_name'], list_of_companies))
 
     # selecting company to remove
-    company_to_remove = input_from_list('company to remove', list_of_companies)
+    company_to_remove = input_from_list('company to remove', list_of_names)
 
     # creating new list of parties without selected company
-    list_of_companies.remove(company_to_remove)
+    result = list(filter(lambda x: x['company_name'] != company_to_remove,
+                         list_of_companies))
 
     # saving new list of parties to file
-    write_JSON_file(PARTIES_FILE, list_of_companies)
+    write_JSON_file(PARTIES_FILE, result)
 
     print('Company {} was removed'.format(company_to_remove))
 
