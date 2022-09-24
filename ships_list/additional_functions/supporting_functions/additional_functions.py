@@ -21,6 +21,13 @@ def list_to_ol_string(the_list):
     return result
 
 
+def dict_to_string(the_dict):
+    result = '\n'
+    for key in the_dict:
+        result = result + key + ': ' + str(the_dict[key]) + '\n'
+    return result
+
+
 def dict_to_ol_string(the_dict):
     the_list = list(the_dict)
     result = list_to_ol_string(the_list)

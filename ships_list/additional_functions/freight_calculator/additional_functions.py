@@ -44,7 +44,8 @@ def add_voyage_details(booking_info=None):
         "cargo_quantity": booking_info['cargo_quantity'],
 
         "hire_rate": int(input('Hire rate, USD per day\n')),
-        "commition_on_hire": float(input('Commition on hire, %\n')) / 100,
+        "commition_on_hire":
+            float(input('Commition on hire, %\n').replace(',', '.')) / 100,
         'booking_info': booking_info
     }
     return input_information

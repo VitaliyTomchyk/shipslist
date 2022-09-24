@@ -103,8 +103,8 @@ def checker_for_mandatory_points(points):
 def adding_duration_of_stay_working(point):
 
     # printing point_name and point_type
-    print('\\{} {} is working with ship\'s cranes'.format(point['point_type'],
-                                                          point['point_name']))
+    print('{} {} is working with ship\'s cranes.'.format(point['point_type'],
+                                                         point['point_name']))
 
     # adding cargo quantity for handling in the point
     point['cargo_quantity_for_handling'] = int(input(
@@ -130,7 +130,7 @@ def adding_duration_of_stay(point):
 
     # input quantity of working days
     if point['point_type'] in ['Load port', 'Discharge port']:
-        question = 'Is point {} working with ship\'s cranes? (y/n)'
+        question = 'Is point {} working with ship\'s cranes? (y/n)\n'
         reply_if_working = input(question.format(point['point_name']))
 
         if reply_if_working == 'y':

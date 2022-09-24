@@ -14,7 +14,7 @@ from ships_list.additional_functions.supporting_functions.\
 
 
 def calculate_bunkers_consumption(voyage_info):
-    print('\nCalculating bunker consumption...')
+    print('\nCalculating bunker consumption.')
     calculation = {'id': id_generator}
 
     # adding ship's details to input information

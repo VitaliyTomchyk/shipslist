@@ -13,12 +13,14 @@ from ships_list.additional_functions.supporting_functions.input_functions \
 # bookings
 def input_booking_short():
     bookings = read_JSON_file(BOOKINGS_FILE)
+
     for i, booking in enumerate(bookings):
         print('\nBooking number {}\n'.format(i + 1))
-        print(read_booking_details(booking))
+        print(read_booking_details(booking['id']))
+
     option = bookings[int(input('Please input booking number to read\n')) - 1]
     print('You have chosen following booking:\n{}'.format(
-        read_booking_details(option)))
+        read_booking_details(option['id'])))
     return option
 
 
@@ -134,8 +136,8 @@ def read_booking_details(booking_id=None):
                                               list_to_string(discharge_ports))
 
     lay_can_line = 'Lay can: {}'.format(the_booking['lay_can'])
-    commission_line = 'Commissions: {}'.format(
-        list_to_string(the_booking['commission']))
+    commission_line = 'Commissions: \n{}'.format(
+        read_commissions(the_booking['id']))
 
     result = '{}\n{}\n{}\n{}\n{}\n'.format(
         account,
@@ -144,6 +146,15 @@ def read_booking_details(booking_id=None):
         lay_can_line,
         commission_line)
 
+    return result
+
+
+# function list of commissions for booking as string
+def read_commissions(booking_id=None):
+    the_booking = booking_finder(booking_id)
+    result = ''
+    for commission in the_booking['commission']:
+        result += '{}: {}%\n'.format(commission['type'], commission['value'])
     return result
 
 

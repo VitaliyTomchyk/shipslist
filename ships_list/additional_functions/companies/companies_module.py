@@ -1,4 +1,4 @@
-from ships_list.lists.Standard.constants import PARTIES_FILE
+from ships_list.lists.Standard.constants import COMPANIES_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file, read_JSON_file, write_JSON_file
 from ships_list.additional_functions.supporting_functions.input_functions \
@@ -34,7 +34,7 @@ def add_company():
     # adding address
     company['address'] = input('Please enter address of company\n')
     # save company to file
-    append_JSON_file(company, PARTIES_FILE)
+    append_JSON_file(company, COMPANIES_FILE)
 
     # printing created company
     print('\nCreated company with following details:\n')
@@ -44,7 +44,7 @@ def add_company():
 # function to remove a company
 def remove_company():
     # reading parties from file
-    list_of_companies = read_JSON_file(PARTIES_FILE)
+    list_of_companies = read_JSON_file(COMPANIES_FILE)
 
     if list_of_companies == []:
         print('There are no companies to remove.')
@@ -62,7 +62,7 @@ def remove_company():
                          list_of_companies))
 
     # saving new list of parties to file
-    write_JSON_file(PARTIES_FILE, result)
+    write_JSON_file(COMPANIES_FILE, result)
 
     print('Company {} was removed'.format(company_to_remove))
 
@@ -70,7 +70,7 @@ def remove_company():
 # function to edit a company
 def edit_company():
     # reading parties from file
-    list_of_companies = read_JSON_file(PARTIES_FILE)
+    list_of_companies = read_JSON_file(COMPANIES_FILE)
 
     # creating list of company names
     list_of_companies = list(
@@ -92,7 +92,7 @@ def edit_company():
             company[field_to_edit] = new_value
 
     # saving new list of parties to file
-    write_JSON_file(list_of_companies, PARTIES_FILE)
+    write_JSON_file(list_of_companies, COMPANIES_FILE)
 
     # printing updated company
     print('\nUpdated company with following was saved details:\n')
