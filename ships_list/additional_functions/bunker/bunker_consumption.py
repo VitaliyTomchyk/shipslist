@@ -38,9 +38,7 @@ def calculate_bunkers_consumption(voyage_info):
     calculation['distances_with_WF'] = add_weather_factor(distances)
 
     # finding optimal speed
-    optimal_speed = optimal_speed_calculation((calculation['ship'],
-                                               voyage_info['hire_rate']),
-                                              calculation['bunker_prices'])
+    optimal_speed = optimal_speed_calculation(calculation, voyage_info)
     print('Optimal speed is \n' + str(optimal_speed))
 
     # calculating consumption at points and steaming leg
