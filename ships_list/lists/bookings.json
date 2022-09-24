@@ -251,5 +251,34 @@
         ],
         "lay_can": "20.11.22",
         "comments": "test comment"
+    },
+    {
+        "id": 272,
+        "account": "1",
+        "name_of_cargo": "1",
+        "cargo_quantity": "1",
+        "allowance_of_cargo": "1",
+        "points": [
+            {
+                "point_type": "load port",
+                "point_name": "1",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "discharge port",
+                "point_name": "1",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address",
+                "value": 1.0
+            }
+        ],
+        "lay_can": "1",
+        "comments": "1"
     }
 ]

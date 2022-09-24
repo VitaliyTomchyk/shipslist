@@ -1,9 +1,61 @@
-[{"name": "Odessa",
-  "city": "Odessa",
-  "country": "Ukraine"},
- {"name": "Algeciras",
-  "city": "Algeciras",
-  "country": "Spain"},
- {"name": "Valencia",
-  "city": "Valencia",
-  "country": "Spain"}]
+[
+    {
+        "name": "Odessa",
+        "city": "Odessa",
+        "country": "Ukraine"
+    },
+    {
+        "name": "Algeciras",
+        "city": "Algeciras",
+        "country": "Spain"
+    },
+    {
+        "name": "Valencia",
+        "city": "Valencia",
+        "country": "Spain"
+    },
+    {
+        "name": "Algeciras",
+        "in_SECA": "y"
+    },
+    {
+        "name": "Odessa",
+        "in_SECA": "n"
+    },
+    {
+        "name": "Odessa",
+        "in_SECA": "y"
+    },
+    {
+        "name": "Odessa",
+        "in_SECA": "n"
+    },
+    {
+        "name": "Illichivsk",
+        "in_SECA": "n"
+    },
+    {
+        "name": "1",
+        "in_SECA": "1"
+    },
+    {
+        "name": "2",
+        "in_SECA": "2"
+    },
+    {
+        "name": "Oslo",
+        "in_SECA": "y"
+    },
+    {
+        "name": "Redelivery port",
+        "in_SECA": "y"
+    },
+    {
+        "name": "Dely",
+        "in_SECA": "n"
+    },
+    {
+        "name": "Redely",
+        "in_SECA": "n"
+    }
+]

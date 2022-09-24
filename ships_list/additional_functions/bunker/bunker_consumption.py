@@ -7,8 +7,10 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 from ships_list.additional_functions.optimal_speed \
     import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
-    import input_points_detailed, add_distance, add_weather_factor, \
+    import input_points_detailed, add_distance, \
     add_consuption_calculation
+from ships_list.additional_functions.bunker.weather.weather_functions \
+    import add_weather_factor
 from ships_list.additional_functions.supporting_functions.\
     additional_functions import id_generator
 
@@ -37,7 +39,7 @@ def calculate_bunkers_consumption(voyage_info):
 
     # finding optimal speed
     optimal_speed = optimal_speed_calculation((calculation['ship'],
-                                               calculation['hire_rate']),
+                                               voyage_info['hire_rate']),
                                               calculation['bunker_prices'])
     print('Optimal speed is \n' + str(optimal_speed))
 
