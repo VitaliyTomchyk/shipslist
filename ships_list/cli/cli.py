@@ -60,6 +60,13 @@ def parcer():
     parser.add_argument('-edit_company', help='edit a company',
                         action='store_true')
 
+    parser.add_argument('-add_person', help='create a person',
+                        action='store_true')
+    parser.add_argument('-remove_person', help='remove a person',
+                        action='store_true')
+    parser.add_argument('-edit_person', help='edit a person',
+                        action='store_true')
+
     # generating result
     return {
         'add_ship': parser.parse_args().add_ship,
@@ -91,4 +98,9 @@ def parcer():
         'add_company': parser.parse_args().add_company,
         'remove_company': parser.parse_args().remove_company,
         'edit_company': parser.parse_args().edit_company,
+
+        'add_person': parser.parse_args().add_person,
+        'remove_person': parser.parse_args().remove_person,
+        'edit_person': parser.parse_args().edit_person
+
     }

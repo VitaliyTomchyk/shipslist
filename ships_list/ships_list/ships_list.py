@@ -14,6 +14,8 @@ from ships_list.additional_functions.templates.create_template.create_template\
     import create_template
 from ships_list.additional_functions.companies.companies_module import \
     add_company, remove_company, edit_company
+from ships_list.additional_functions.people.people_module import add_person,\
+    remove_person, edit_person
 
 
 def ships_list(parced_result):
@@ -46,6 +48,10 @@ def ships_list(parced_result):
         'add_company': add_company,
         'remove_company': remove_company,
         'edit_company': edit_company,
+
+        'add_person': add_person,
+        'remove_person': remove_person,
+        'edit_person': edit_person,
 
     }
 

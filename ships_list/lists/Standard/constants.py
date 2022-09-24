@@ -28,4 +28,5 @@ EXPECTED_OUTPUT_NEW_SHIP_FILE = "tests/fixtures/" + \
 INSTRUCTIONS_TO_CREATE_TEMPLATE = 'ships_list/additional_functions/' + \
     'templates/create_template/instructions.txt'
 
-PARTIES_FILE = "ships_list/lists/parties.json"
+COMPANIES_FILE = "ships_list/lists/companies.json"
+PEOPLE_FILE = "ships_list/lists/people.json"
