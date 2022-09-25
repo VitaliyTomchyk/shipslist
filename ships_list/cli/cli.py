@@ -1,11 +1,7 @@
 import argparse
 
 
-def parcer():
-    # creating parser
-    parser = argparse.ArgumentParser(description='Working with ship\'s list.',
-                                     prog='ships_list')
-
+def adding_arguments(parser):
     # adding arguments
     parser.add_argument('-add_ship',
                         help='function will add the ship', action='store_true')
@@ -66,10 +62,12 @@ def parcer():
                         action='store_true')
     parser.add_argument('-edit_person', help='edit a person',
                         action='store_true')
+    return parser
 
-    # generating result
-    return {
-        'add_ship': parser.parse_args().add_ship,
+
+def creating_result(parser):
+    result = {
+        'add_ship': parser.parse_aArgs().add_ship,
         'read_ship': parser.parse_args().read_ship,
         'remove_ship': parser.parse_args().remove_ship,
 
@@ -104,3 +102,17 @@ def parcer():
         'edit_person': parser.parse_args().edit_person
 
     }
+    return result
+
+
+def parcer():
+    # creating parser
+    parser = argparse.ArgumentParser(description='Working with ship\'s list.',
+                                     prog='ships_list')
+
+    parser_with_arguments = adding_arguments(parser)
+
+    # generating result
+    result = creating_result(parser_with_arguments)
+
+    return result

@@ -76,30 +76,27 @@ def edit_element(element):
     list_of_elements = read_JSON_file(file)
 
     # creating list of element names
-    list_of_elements = list(
+    list_of_names = list(
         map(lambda x: x['name'], list_of_elements))
 
+    # selecting name of element to edit
+    element_name_to_edit = input_from_list('{} to edit'.format(element),
+                                           list_of_names)
+
     # selecting element to edit
-    element_to_edit = input_from_list('{} to edit'.format(element),
-                                      list_of_elements)
+    element_to_edit = list(filter(lambda x: x['name'] == element_name_to_edit,
+                                  list_of_elements))[0]
 
     # select field to edit
     field_to_edit = input_from_list('field to edit',
                                     ['name', 'email',
                                         'phone_number', 'address'])
     # select new value of field
-    new_value = input('Please enter new value of field\n')
+    new_value = input('Please enter new value of field {}\n'.format(
+        field_to_edit))
 
     # updating value of field
-    for element in list_of_elements:
-        if element['name'] == element_to_edit:
-            element[field_to_edit] = new_value
+    element_to_edit[field_to_edit] = new_value
 
     # saving new list of parties to file
     write_JSON_file(list_of_elements, file)
-
-    # printing updated element
-    print('\nUpdated {} with following was saved details:\n'.format(element))
-    for element in list_of_elements:
-        if element['name'] == element_to_edit:
-            print(element)
