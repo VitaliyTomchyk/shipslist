@@ -5,6 +5,8 @@ from ships_list.additional_functions.supporting_functions.input_functions \
     import input_from_list
 from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator
+from ships_list.additional_functions.supporting_functions.additional_functions\
+    import filter_list_of_dict_by_value
 
 
 # function input_email
@@ -84,8 +86,8 @@ def edit_element(element):
                                            list_of_names)
 
     # selecting element to edit
-    element_to_edit = list(filter(lambda x: x['name'] == element_name_to_edit,
-                                  list_of_elements))[0]
+    element_to_edit = filter_list_of_dict_by_value(list_of_elements, 'name',
+                                                   element_name_to_edit)
 
     # select field to edit
     field_to_edit = input_from_list('field to edit',

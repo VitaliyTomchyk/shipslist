@@ -3,6 +3,8 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 from ships_list.lists.Standard.constants import KEYS_OF_TEMPLATES_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_from_list
+from ships_list.additional_functions.supporting_functions.additional_functions\
+    import filter_list_of_dict_by_value
 import time
 
 
@@ -15,8 +17,8 @@ def template_selector():
     name_of_template = input_from_list(
         'name of template', names_of_templates)
 
-    template = list(filter(lambda x: x['template_name'] == name_of_template,
-                           list_of_templates))[0]
+    template = filter_list_of_dict_by_value(list_of_templates, 'template_name',
+                                            name_of_template)
 
     return template
 

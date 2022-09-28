@@ -1,5 +1,4 @@
 import json
-
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, amend_JSON_dict
@@ -131,3 +130,8 @@ def assurance_question(text):
         return
     else:
         return print(f'Your request to {text} is cancelled.'), exit()
+
+
+def filter_list_of_dict_by_value(list_of_dicts, key, value):
+    return list(filter(lambda x: x[key] == value,
+                       list_of_dicts))[0]
