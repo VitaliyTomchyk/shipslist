@@ -3,65 +3,46 @@ import argparse
 
 def adding_arguments(parser):
     # adding arguments
-    parser.add_argument('-add_ship',
-                        help='function will add the ship', action='store_true')
-    parser.add_argument('-remove_ship',
-                        help='removes ship from list based' +
-                        ' on name of the ship', action='store_true')
-    parser.add_argument('-read_ship',
-                        help='reads ship\'s details from list based' +
-                        ' on name of the ship', action='store_true')
+    arguments = [
+        ['-add_ship', 'function will add the ship'],
+        ['-remove_ship', 'removes ship from list based' +
+         ' on name of the ship'],
+        ['-read_ship', 'reads ship\'s details from list based' +
+         ' on name of the ship'],
 
-    parser.add_argument('-add_task', help='put name of task',
-                        action='store_true')
-    parser.add_argument('-close_task', help='put id of task to close',
-                        action='store_true')
-    parser.add_argument('-remove_task', help='put name of task',
-                        action='store_true')
-    parser.add_argument('-amend_task', help='amend a task\' value by key',
-                        action='store_true')
+        ['-add_task', 'put name of task'],
+        ['-close_task', 'put id of task to close'],
+        ['-remove_task', 'put name of task'],
+        ['-amend_task', 'amend a task\' value by key'],
 
-    parser.add_argument('-add_voyage', help='add voyage', action='store_true')
-    parser.add_argument('-remove_voyage', help='remove voyage by id',
-                        action='store_true')
-    parser.add_argument('-read_voyage', help='read details of ' +
-                        'voyage from id')
+        ['-add_voyage', 'add voyage'],
+        ['-remove_voyage', 'remove voyage by id'],
+        ['-read_voyage', 'read details of voyage from id'],
 
-    parser.add_argument('-read_tasks_list', help='read the tasks',
-                        action='store_true')
-    parser.add_argument('-print_ship', help='prints details of ship',
-                        action='store_true')
+        ['-read_tasks_list', 'read the tasks'],
+        ['-print_ship', 'prints details of ship'],
 
-    parser.add_argument('-add_booking', help='create booking',
-                        action='store_true')
-    parser.add_argument('-read_booking', help='read booking',
-                        action='store_true')
-    parser.add_argument('-remove_booking', help='remove booking',
-                        action='store_true')
+        ['-add_booking', 'create booking'],
+        ['-read_booking', 'read booking'],
+        ['-remove_booking', 'remove booking'],
 
-    parser.add_argument('-freight_calculator', help='calculate_freight',
-                        action='store_true')
+        ['-freight_calculator', 'calculate_freight'],
 
-    parser.add_argument('-fill_template', help='function will fill a template',
-                        action='store_true')
-    parser.add_argument('-create_template', help='create a template written ' +
-                        'by user', action='store_true')
-    parser.add_argument('-remove_template', help='remove a template',
-                        action='store_true')
+        ['-fill_template', 'function will fill a template'],
+        ['-create_template', 'create a template written by user'],
+        ['-remove_template', 'remove a template'],
 
-    parser.add_argument('-add_company', help='create a company',
-                        action='store_true')
-    parser.add_argument('-remove_company', help='remove a company',
-                        action='store_true')
-    parser.add_argument('-edit_company', help='edit a company',
-                        action='store_true')
+        ['-add_company', 'create a company'],
+        ['-remove_company', 'remove a company'],
+        ['-edit_company', 'edit a company'],
 
-    parser.add_argument('-add_person', help='create a person',
-                        action='store_true')
-    parser.add_argument('-remove_person', help='remove a person',
-                        action='store_true')
-    parser.add_argument('-edit_person', help='edit a person',
-                        action='store_true')
+        ['-add_person', 'create a person'],
+        ['-remove_person', 'remove a person'],
+        ['-edit_person', 'edit a person']]
+
+    for argument in arguments:
+        parser.add_argument(argument[0], help=argument[1], action='store_true')
+
     return parser
 
 
