@@ -17,8 +17,38 @@
             "date_of_update": "2022-09-14"
         },
         "additional_consumption": {
-            "port_stay": 1,
-            "steaming": 1
+            "idle": 1,
+            "working": 1
+        },
+        "stay_consumption": {
+            "idle": 1.5,
+            "working": 3
+        }
+    },
+    {
+        "ships_name": "TEST",
+        "IMO": 1234567,
+        "speed": {
+            "laden_full_speed": 13.0,
+            "laden_eco_speed": 12.0,
+            "ballast_full_speed": 14.0,
+            "ballast_eco_speed": 13.0,
+            "date_of_update": "2022-09-28"
+        },
+        "consumption": {
+            "laden_full_consumption": 26.0,
+            "laden_eco_consumption": 24.0,
+            "ballast_full_consumption": 26.0,
+            "ballast_eco_consumption": 24.0,
+            "date_of_update": "2022-09-28"
+        },
+        "additional_consumption": {
+            "idle": 0.1,
+            "working": 0.1
+        },
+        "stay_consumption": {
+            "idle": 1.5,
+            "working": 3
         }
     }
 ]

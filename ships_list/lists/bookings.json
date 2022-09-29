@@ -173,7 +173,7 @@
         "points": [
             {
                 "point_type": "Load port",
-                "point_name": "odessa",
+                "point_name": "Odessa",
                 "in_SECA": false,
                 "laytime_port_terms": "shinc"
             },
@@ -261,13 +261,13 @@
         "points": [
             {
                 "point_type": "load port",
-                "point_name": "1",
+                "point_name": "Cartahena",
                 "in_SECA": false,
                 "laytime_port_terms": "shinc"
             },
             {
                 "point_type": "discharge port",
-                "point_name": "1",
+                "point_name": "Istanbul",
                 "in_SECA": false,
                 "laytime_port_terms": "shinc"
             }

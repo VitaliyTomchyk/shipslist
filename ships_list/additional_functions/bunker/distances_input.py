@@ -3,8 +3,8 @@ def add_distance(points):
     print('\nPlease put distance between points in nautical miles.')
     distances = []
     for i in range(len(points) - 1):
-        for marker_SECA, port_of_key in [('only SECA', 'only_SECA'),
-                                         ('total', 'including_SECA')]:
+        for marker_SECA, port_of_key in [('total', 'including_SECA'),
+                                         ('only SECA', 'only_SECA')]:
             text = 'Please put {} distance from {} {} to {} {}\n'
             request = text.format(
                 marker_SECA,

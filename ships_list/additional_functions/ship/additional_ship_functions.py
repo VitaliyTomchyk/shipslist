@@ -40,12 +40,28 @@ def options_generator(types_of_leg, types_of_speed, parameter):
 def add_additional_consumption(ship):
 
     text = "\nPlease add additional consumption during {}, mt of MGO\n"
-    ship['additional_consumption'] = {'port_stay': None, 'steaming': None}
+    ship['additional_consumption'] = {'idle': None, 'working': None}
 
-    for stage in ['port_stay', 'steaming']:
+    for stage in ['idle', 'working']:
         revised_text = text.format(stage)
-        additional_consumption = int(input(revised_text))
+        additional_consumption = float(
+            str(input(revised_text)).replace(',', '.'))
         ship['additional_consumption'][stage] = additional_consumption
+
+    return ship
+
+
+def add_stay_consumption(ship, parameter):
+
+    text = "\nPlease add main consumption in {} condition, mt of MGO\n"
+
+    ship[parameter]['stay_consumption'] = {'idle': None, 'working': None}
+
+    for stage in ['idle', 'working']:
+        revised_text = text.format(stage)
+        additional_consumption = float(
+            str(input(revised_text)).replace(',', '.'))
+        ship[parameter]['stay_consumption'][stage] = additional_consumption
 
     return ship
 
@@ -58,14 +74,15 @@ def add_parameter(ship, parameter):
     types_of_speed = ['full', 'eco']
 
     options = options_generator(types_of_leg, types_of_speed, parameter)
+
     for option in options:
         the_type_of_leg, the_type_of_speed, the_parameter = option.split('_')
         units = 'kn' if the_parameter == 'speed' else 'mt/day'
 
         text = "\nPlease add {} {} {} of the ship, {}\n".format(
             the_type_of_speed, the_type_of_leg, the_parameter, units)
-
-        ship[parameter][option] = int(input(text))
+        input_value = input(text)
+        ship[parameter][option] = float(str(input_value).replace(',', '.'))
     ship[parameter]["date_of_update"] = "{:%Y-%m-%d}".format(datetime.now())
     return ship
 

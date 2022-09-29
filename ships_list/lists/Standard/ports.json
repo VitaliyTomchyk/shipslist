@@ -57,5 +57,13 @@
     {
         "name": "Redely",
         "in_SECA": "n"
+    },
+    {
+        "name": "Delivery",
+        "in_SECA": "n"
+    },
+    {
+        "name": "OPL Redelivery point",
+        "in_SECA": "n"
     }
 ]

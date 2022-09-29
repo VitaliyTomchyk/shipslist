@@ -48,7 +48,7 @@ def adding_arguments(parser):
 
 def creating_result(parser):
     result = {
-        'add_ship': parser.parse_aArgs().add_ship,
+        'add_ship': parser.parse_args().add_ship,
         'read_ship': parser.parse_args().read_ship,
         'remove_ship': parser.parse_args().remove_ship,
 

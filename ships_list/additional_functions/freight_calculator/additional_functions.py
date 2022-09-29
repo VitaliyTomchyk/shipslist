@@ -40,11 +40,11 @@ def add_voyage_details(booking_info=None):
     # adding voyage details to input information
     input_information = {
         "freight_rate": int(input('\nPlease input freight rate, USD\n')),
-        "commition_on_freight": commition_calculator(booking_info),
+        "commission_on_freight": commition_calculator(booking_info),
         "cargo_quantity": booking_info['cargo_quantity'],
 
         "hire_rate": int(input('Hire rate, USD per day\n')),
-        "commition_on_hire":
+        "commission_on_hire":
             float(input('Commition on hire, %\n').replace(',', '.')) / 100,
         'booking_info': booking_info
     }

@@ -51,7 +51,7 @@ def test_read_existing_ship():
 
     # running function and collecting result
     name = 'TESTO'
-    set_keyboard_input([name] + list(range(0, 11)))
+    set_keyboard_input([name] + list(range(0, 13)))
     add_ship() 
 
     # running function and collecting result
@@ -65,20 +65,23 @@ def test_read_existing_ship():
              'ships_name: TESTO\n'
              'IMO: 0\n'
              'speed:\n'
-             'laden_full_speed: 1\n'
-             'laden_eco_speed: 2\n'
-             'ballast_full_speed: 3\n'
-             'ballast_eco_speed: 4\n'
+             'laden_full_speed: 1.0\n'
+             'laden_eco_speed: 2.0\n'
+             'ballast_full_speed: 3.0\n'
+             'ballast_eco_speed: 4.0\n'
              'date_of_update: '+ "{:%Y-%m-%d}".format(datetime.now()) +'\n'
              'consumption:\n'
-             'laden_full_consumption: 5\n'
-             'laden_eco_consumption: 6\n'
-             'ballast_full_consumption: 7\n'
-             'ballast_eco_consumption: 8\n'
+             'laden_full_consumption: 5.0\n'
+             'laden_eco_consumption: 6.0\n'
+             'ballast_full_consumption: 7.0\n'
+             'ballast_eco_consumption: 8.0\n'
              'date_of_update: '+ "{:%Y-%m-%d}".format(datetime.now()) +'\n'
+             'stay_consumption:\n'
+             'idle: 11.0\n'
+             'working: 12.0\n'
              'additional_consumption:\n'
-             'port_stay: 9\n'
-             'steaming: 10\n',
+             'idle: 9.0\n'
+             'working: 10.0\n',
            ]
     # writing back prev version of information
     write_JSON_file(SHIPS_FILE, old_version)
@@ -107,7 +110,7 @@ def test_delete_ship():
     old_version = read_JSON_file(SHIPS_FILE)
 
     # running function and collecting result
-    set_keyboard_input(['TESTO'] + list(range(0, 11)))
+    set_keyboard_input(['TESTO'] + list(range(0, 13)))
     add_ship()
     output = get_display_output()
 
@@ -128,8 +131,10 @@ def test_delete_ship():
                        '\nPlease add eco laden consumption of the ship, mt/day\n',      
                        '\nPlease add full ballast consumption of the ship, mt/day\n',      
                        '\nPlease add eco ballast consumption of the ship, mt/day\n',      
-                       '\nPlease add additional consumption during port_stay, mt of MGO\n',      
-                       '\nPlease add additional consumption during steaming, mt of MGO\n',      
+                       '\nPlease add additional consumption during idle, mt of MGO\n',      
+                       '\nPlease add additional consumption during working, mt of MGO\n',      
+                       '\nPlease add main consumption in idle condition, mt of MGO\n',
+                       '\nPlease add main consumption in working condition, mt of MGO\n',
                        'Ship TESTO has been added.\n',
                        '\nList of ships:\n' + str_with_ships,
                        "Please put ship's name you want to remove.",

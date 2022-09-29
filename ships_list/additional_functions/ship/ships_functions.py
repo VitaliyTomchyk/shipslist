@@ -5,7 +5,7 @@ from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file, read_JSON_file, write_JSON_file
 from ships_list.additional_functions.ship.additional_ship_functions import \
     add_parameter, voyages_assigned_checker, add_additional_consumption, \
-    IMO_checker
+    IMO_checker, add_stay_consumption
 
 
 def print_ship():
@@ -44,6 +44,7 @@ def add_ship():
     ships_details = add_parameter(ships_details, 'speed')
     ships_details = add_parameter(ships_details, 'consumption')
     ships_details = add_additional_consumption(ships_details)
+    ships_details = add_stay_consumption(ships_details, 'consumption')
 
     append_JSON_file(ships_details, SHIPS_FILE)
     print('Ship {} has been added.\n'.format(name.upper()))

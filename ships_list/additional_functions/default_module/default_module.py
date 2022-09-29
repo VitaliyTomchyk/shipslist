@@ -1,4 +1,3 @@
-from ships_list.lists.Standard.constants import file
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file, read_JSON_file, write_JSON_file
 from ships_list.additional_functions.supporting_functions.input_functions \
@@ -73,7 +72,7 @@ def remove_element(element, file):
 
 
 # function to edit a element
-def edit_element(element):
+def edit_element(element, file):
     # reading parties from file
     list_of_elements = read_JSON_file(file)
 

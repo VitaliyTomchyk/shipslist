@@ -7,8 +7,8 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 from ships_list.additional_functions.optimal_speed \
     import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
-    import input_points_detailed, add_distance, \
-    add_consuption_calculation
+    import input_points_detailed, add_consuption_calculation
+from ships_list.additional_functions.bunker.distances_input import add_distance
 from ships_list.additional_functions.bunker.weather.weather_functions \
     import add_weather_factor
 from ships_list.additional_functions.supporting_functions.\
