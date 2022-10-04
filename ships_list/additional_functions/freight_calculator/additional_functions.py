@@ -9,7 +9,7 @@ from ships_list.additional_functions.booking.booking_functions \
 
 
 def checker_for_booking_to_use():
-    if input('Do you want to use existing booking? (y/n)\n') == 'y':
+    if input('\nDo you want to use existing booking? (y/n)\n') == 'y':
         option = input_booking_short()
         return option
     return add_booking()

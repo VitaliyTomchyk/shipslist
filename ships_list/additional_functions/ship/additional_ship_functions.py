@@ -38,6 +38,7 @@ def options_generator(types_of_leg, types_of_speed, parameter):
 
 
 def add_additional_consumption(ship):
+    print('Additional consumption will be added now.')
 
     text = "\nPlease add additional consumption during {}, mt of MGO\n"
     ship['additional_consumption'] = {'idle': None, 'working': None}
@@ -52,7 +53,7 @@ def add_additional_consumption(ship):
 
 
 def add_stay_consumption(ship, parameter):
-
+    print('Port stay consumption will be added now.')
     text = "\nPlease add main consumption in {} condition, mt of MGO\n"
 
     ship[parameter]['stay_consumption'] = {'idle': None, 'working': None}
@@ -68,6 +69,7 @@ def add_stay_consumption(ship, parameter):
 
 def add_parameter(ship, parameter):
 
+    print('Parameter {} will be added now.'.format(parameter))
     ship[parameter] = {}
 
     types_of_leg = ['laden', 'ballast']

@@ -4,10 +4,12 @@ fixture_input = ['POpy'] + list(range(1, 14))
 
 fixture_output = ["Please enter ship's name\n",      
                       'Please enter IMO of the ship\n',      
+                      'Parameter speed will be added now.',
                       '\nPlease add full laden speed of the ship, kn\n',      
                       '\nPlease add eco laden speed of the ship, kn\n',      
                       '\nPlease add full ballast speed of the ship, kn\n',      
-                      '\nPlease add eco ballast speed of the ship, kn\n',      
+                      '\nPlease add eco ballast speed of the ship, kn\n',
+                      'Parameter consumption will be added now.',      
                       '\nPlease add full laden consumption of the ship,' +  
                       ' mt/day\n',      
                       '\nPlease add eco laden consumption of the ship,' + 
@@ -15,11 +17,13 @@ fixture_output = ["Please enter ship's name\n",
                       '\nPlease add full ballast consumption of the ship,' +  
                       ' mt/day\n',      
                       '\nPlease add eco ballast consumption of the ship,' +  
-                      ' mt/day\n',      
+                      ' mt/day\n',    
+                      'Additional consumption will be added now.',  
                       '\nPlease add additional consumption during' +  
                       ' idle, mt of MGO\n',      
                       '\nPlease add additional consumption during working,' +  
-                      ' mt of MGO\n',      
+                      ' mt of MGO\n',  
+                      'Port stay consumption will be added now.',    
                       '\nPlease add main consumption in idle condition' +  
                       ', mt of MGO\n',      
                       '\nPlease add main consumption in working condition,' +  

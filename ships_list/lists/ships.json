@@ -50,5 +50,31 @@
             "idle": 1.5,
             "working": 3
         }
+    },
+    {
+        "ships_name": "SOSNA",
+        "IMO": 12345654,
+        "speed": {
+            "laden_full_speed": 13.2,
+            "laden_eco_speed": 11.0,
+            "ballast_full_speed": 14.0,
+            "ballast_eco_speed": 12.5,
+            "date_of_update": "2022-09-30"
+        },
+        "consumption": {
+            "laden_full_consumption": 28.0,
+            "laden_eco_consumption": 24.0,
+            "ballast_full_consumption": 26.0,
+            "ballast_eco_consumption": 24.0,
+            "date_of_update": "2022-09-30",
+            "stay_consumption": {
+                "idle": 2.5,
+                "working": 4.0
+            }
+        },
+        "additional_consumption": {
+            "idle": 0.1,
+            "working": 0.1
+        }
     }
 ]

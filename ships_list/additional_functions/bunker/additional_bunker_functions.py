@@ -37,14 +37,14 @@ def input_points_detailed(voyage_info):
     points = []
 
     # adding delivery point
-    point = add_point('Delivery point', point_in_SECA=False)
+    point = create_point('Delivery point', point_in_SECA=False)
     points.insert(0, point)
 
     # input points from booking
     points += input_points_from_booking(voyage_info)
 
     # adding delivery point
-    points += add_point('Redelivery point', point_in_SECA=False)
+    points.append(create_point('Redelivery point', point_in_SECA=False))
 
     # input points from user
     while True:
@@ -52,17 +52,18 @@ def input_points_detailed(voyage_info):
         # ask if user wants to add point
         reply = input("Do you want to add new point? (y/n)\n")
         if reply == 'y':
-            point = add_point()
+            point = create_point()
 
             # adding points with point
             points.append(point)
 
         # checker for mandatory points
         if checker_for_mandatory_points(points) is False:
-            points.append(add_point())
+
+            points.append(create_point())
         break
 
-    # # checker for summ of cargo
+    # # TODO checker for summ of cargo
     # checker_for_summ_of_cargo(points, voyage_info['cargo_quantity'])
 
     return points
@@ -83,7 +84,8 @@ def checker_for_summ_of_cargo(points, total_cargo_quantity):
     return True
 
 
-def add_point(point_type=None, total_cargo_quantity=None, point_in_SECA=None):
+def create_point(point_type=None, total_cargo_quantity=None,
+                 point_in_SECA=None):
     point = {}
 
     # adding point parameter 'point_type'
@@ -109,7 +111,9 @@ def add_point(point_type=None, total_cargo_quantity=None, point_in_SECA=None):
             SUPPORTING_FILE, 'laytime_port_terms', 'laytime port terms')
 
     # adding duration of port stay to load and disch point
-    return adding_duration_of_stay(point, total_cargo_quantity)
+    adding_duration_of_stay(point, total_cargo_quantity)
+
+    return point
 
 
 def check_point_in_SECA(point_name):
@@ -129,6 +133,7 @@ def check_point_in_SECA(point_name):
 
 
 def checker_for_mandatory_points(points):
+
     set_of_points_types = set([x['point_type'] for x in points])
     list_of_mandatory_types = ['Load port', 'Discharge port',
                                'Delivery point', 'Redelivery point']
@@ -139,18 +144,24 @@ def checker_for_mandatory_points(points):
     return True
 
 
-def add_working_days(point, total_cargo_quantity):
+def add_working_days(point, total_cargo_quantity, working_days=None):
+
+    if working_days is not None:
+        point['working_days'] = working_days
+        point['cargo_quantity_for_handling'] = 0
+        point['rate_of_handling'] = None
+        return point
 
     # printing point_name and point_type
-    print('{} {} is working with ship\'s cranes.'.format(point['point_type'],
-                                                         point['point_name']))
+    print('{} {} is working with ship\'s cranes.'.format(
+        point['point_type'] .lower(), point['point_name']))
 
     # adding cargo quantity for handling in the point
     point['cargo_quantity_for_handling'] = int(input(
-        '\nTotal quantity of cargo for handling at {} is:\n'.format(
-            point['point_name']) +
+        '\nTotal quantity of cargo for handling is:\n{}'.format(
+            total_cargo_quantity) +
         '\nPlease put quantity of cargo for handling' +
-        ' in {}, mt\n'.format(total_cargo_quantity)))
+        ' in {}, mt\n'.format(point['point_name'])))
 
     # adding rate_of_handling for point
     point['rate_of_handling'] = int(input(
@@ -174,17 +185,20 @@ def adding_duration_of_stay(point, total_cargo_quantity):
 
     # input quantity of working days
     if point['point_type'] in ['Load port', 'Discharge port']:
-        question = 'Is point {} working with ship\'s cranes? (y/n)\n'
-        reply_if_working = input(question.format(point['point_name']))
+        question = 'Is point {} {} working with ship\'s cranes? (y/n)\n'
+        reply_if_working = input(question.format(point['point_type'],
+                                                 point['point_name']))
 
-        if reply_if_working == 'y':
-            point = add_working_days(point,
-                                     total_cargo_quantity)
+        point = add_working_days(point,
+                                 total_cargo_quantity,
+                                 None if reply_if_working == 'y' else 0)
 
     # input quantity of idle days
-    point['idle_days'] = int(
+    input_idle_days = float(
         input(
             '\nPlease put quantity of idle days at {}\n'.format(
                 point['point_name'])))
+
+    point['idle_days'] = input_idle_days
 
     return point
