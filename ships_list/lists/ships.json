@@ -73,8 +73,60 @@
             }
         },
         "additional_consumption": {
-            "idle": 0.1,
-            "working": 0.1
+            "steaming": 0.1,
+            "at_port": 0.1
+        }
+    },
+    {
+        "ships_name": "MY MAN",
+        "IMO": 148914,
+        "speed": {
+            "laden_full_speed": 14.0,
+            "laden_eco_speed": 13.0,
+            "ballast_full_speed": 14.5,
+            "ballast_eco_speed": 13.5,
+            "date_of_update": "2022-10-11"
+        },
+        "consumption": {
+            "laden_full_consumption": 25.0,
+            "laden_eco_consumption": 22.0,
+            "ballast_full_consumption": 25.0,
+            "ballast_eco_consumption": 22.0,
+            "date_of_update": "2022-10-11",
+            "stay_consumption": {
+                "idle": 3.0,
+                "working": 5.0
+            }
+        },
+        "additional_consumption": {
+            "at_port": 0.2,
+            "steaming": 0.2
+        }
+    },
+    {
+        "ships_name": "SAMSON 14",
+        "IMO": 14,
+        "speed": {
+            "laden_full_speed": 13.5,
+            "laden_eco_speed": 11.0,
+            "ballast_full_speed": 14.0,
+            "ballast_eco_speed": 11.0,
+            "date_of_update": "2022-10-11"
+        },
+        "consumption": {
+            "laden_full_consumption": 28.0,
+            "laden_eco_consumption": 25.0,
+            "ballast_full_consumption": 26.0,
+            "ballast_eco_consumption": 24.0,
+            "date_of_update": "2022-10-11",
+            "stay_consumption": {
+                "idle": 2.0,
+                "working": 4.0
+            }
+        },
+        "additional_consumption": {
+            "steaming": 0.2,
+            "at_port": 0.2
         }
     }
 ]

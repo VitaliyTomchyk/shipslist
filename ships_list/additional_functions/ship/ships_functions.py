@@ -43,11 +43,12 @@ def add_ship():
 
     ships_details = add_parameter(ships_details, 'speed')
     ships_details = add_parameter(ships_details, 'consumption')
-    ships_details = add_additional_consumption(ships_details)
+
     ships_details = add_stay_consumption(ships_details, 'consumption')
+    ships_details = add_additional_consumption(ships_details)
 
     append_JSON_file(ships_details, SHIPS_FILE)
-    print('Ship {} has been added.\n'.format(name.upper()))
+    print('\nShip {} has been added.\n'.format(name.upper()))
 
 
 # removes function from bata base

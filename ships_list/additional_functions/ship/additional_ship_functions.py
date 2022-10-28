@@ -29,7 +29,7 @@ def IMO_checker(IMO):
     return True if str(result)[-1] == IMO[-1] else False
 
 
-def options_generator(types_of_leg, types_of_speed, parameter):
+def leg_options_generator(types_of_leg, types_of_speed, parameter):
     options = []
     for leg in types_of_leg:
         for speed in types_of_speed:
@@ -41,9 +41,9 @@ def add_additional_consumption(ship):
     print('Additional consumption will be added now.')
 
     text = "\nPlease add additional consumption during {}, mt of MGO\n"
-    ship['additional_consumption'] = {'idle': None, 'working': None}
+    ship['additional_consumption'] = {'steaming': None, 'at_port': None}
 
-    for stage in ['idle', 'working']:
+    for stage in ['steaming', 'at_port']:
         revised_text = text.format(stage)
         additional_consumption = float(
             str(input(revised_text)).replace(',', '.'))
@@ -54,7 +54,7 @@ def add_additional_consumption(ship):
 
 def add_stay_consumption(ship, parameter):
     print('Port stay consumption will be added now.')
-    text = "\nPlease add main consumption in {} condition, mt of MGO\n"
+    text = "\nPlease add main consumption in {} condition, mt\n"
 
     ship[parameter]['stay_consumption'] = {'idle': None, 'working': None}
 
@@ -69,13 +69,13 @@ def add_stay_consumption(ship, parameter):
 
 def add_parameter(ship, parameter):
 
-    print('Parameter {} will be added now.'.format(parameter))
+    print('\n\nParameter {} will be added now.'.format(parameter))
     ship[parameter] = {}
 
     types_of_leg = ['laden', 'ballast']
     types_of_speed = ['full', 'eco']
 
-    options = options_generator(types_of_leg, types_of_speed, parameter)
+    options = leg_options_generator(types_of_leg, types_of_speed, parameter)
 
     for option in options:
         the_type_of_leg, the_type_of_speed, the_parameter = option.split('_')

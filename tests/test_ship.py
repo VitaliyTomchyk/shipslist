@@ -77,11 +77,11 @@ def test_read_existing_ship():
              'ballast_eco_consumption: 8.0\n'
              'date_of_update: '+ "{:%Y-%m-%d}".format(datetime.now()) +'\n'
              'stay_consumption:\n'
-             'idle: 11.0\n'
-             'working: 12.0\n'
-             'additional_consumption:\n'
              'idle: 9.0\n'
-             'working: 10.0\n',
+             'working: 10.0\n'
+             'additional_consumption:\n'
+             'steaming: 11.0\n'
+             'at_port: 12.0\n'
            ]
     # writing back prev version of information
     write_JSON_file(SHIPS_FILE, old_version)
@@ -123,23 +123,23 @@ def test_delete_ship():
     # expected output
     expected_output = ["Please enter ship's name\n",      
                        'Please enter IMO of the ship\n',
-                       'Parameter speed will be added now.',      
+                       '\n\nParameter speed will be added now.',      
                        '\nPlease add full laden speed of the ship, kn\n',      
                        '\nPlease add eco laden speed of the ship, kn\n',      
                        '\nPlease add full ballast speed of the ship, kn\n',      
                        '\nPlease add eco ballast speed of the ship, kn\n',
-                       'Parameter consumption will be added now.',      
+                       '\n\nParameter consumption will be added now.',      
                        '\nPlease add full laden consumption of the ship, mt/day\n',      
                        '\nPlease add eco laden consumption of the ship, mt/day\n',      
                        '\nPlease add full ballast consumption of the ship, mt/day\n',      
                        '\nPlease add eco ballast consumption of the ship, mt/day\n',
+                       'Port stay consumption will be added now.',
+                       '\nPlease add main consumption in idle condition, mt\n',
+                       '\nPlease add main consumption in working condition, mt\n',
                        'Additional consumption will be added now.',      
-                       '\nPlease add additional consumption during idle, mt of MGO\n',      
-                       '\nPlease add additional consumption during working, mt of MGO\n',
-                       'Port stay consumption will be added now.',      
-                       '\nPlease add main consumption in idle condition, mt of MGO\n',
-                       '\nPlease add main consumption in working condition, mt of MGO\n',
-                       'Ship TESTO has been added.\n',
+                       '\nPlease add additional consumption during steaming, mt of MGO\n',      
+                       '\nPlease add additional consumption during at_port, mt of MGO\n',
+                       '\nShip TESTO has been added.\n',
                        '\nList of ships:\n' + str_with_ships,
                        "Please put ship's name you want to remove.",
                        '\nShip TESTO was removed.\n']
