@@ -1,11 +1,11 @@
 # calculates basic price for 1 mile
-def price_for_mile(speed_type, hire_info, ship, bunker_price):
-
+def price_for_mile(leg_type, hire_info, ship, bunker_price):
+    consumption_type = leg_type + '_consumption'
     hire, hire_commission = hire_info
-    duration = 1 / (int(ship['speed'][speed_type]) * 24)
+    duration = 1 / (int(ship['consumption'][consumption_type]) * 24)
 
     price_of_bunkers = duration * \
-        ship['consumption'][speed_type] * bunker_price
+        ship['consumption'][consumption_type] * bunker_price
 
     total_price = price_of_bunkers + duration * hire * (1 - hire_commission)
 
@@ -17,9 +17,9 @@ def compearing_speed_options(ships_details, bunker_price, leg_type,
 
     ship, hire_rate = ships_details
 
-    price_FULL_laden = price_for_mile(leg_type + '_full_speed', (hire_rate,
+    price_FULL_laden = price_for_mile(leg_type + '_full', (hire_rate,
                                       hire_commission), ship, bunker_price)
-    price_ECO_laden = price_for_mile(leg_type + '_eco_speed', (hire_rate,
+    price_ECO_laden = price_for_mile(leg_type + '_eco', (hire_rate,
                                      hire_commission), ship, bunker_price)
 
     return 'Full' if price_FULL_laden < price_ECO_laden else "Eco"
@@ -39,6 +39,9 @@ def speed_option(leg_type, calculation, voyage_info):
             bunker_prices[bunker_type],
             leg_type,
             commission_on_hire)
+
+    print('Optimal speed is \n{}'.format(str(optimal_speed)))
+
     return optimal_speed
 
 

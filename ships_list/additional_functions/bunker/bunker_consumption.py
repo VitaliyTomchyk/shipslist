@@ -26,8 +26,8 @@ def calculate_bunkers_consumption(voyage_info):
 
     # input prices of IFO, MGO
     calculation['bunker_prices'] = {
-        'IFO': int(input('Please put price of IFO, USD\n')),
-        'MGO': int(input('Please put price of MGO, USD\n'))
+        'IFO': float(input('Please put price of IFO, USD\n')),
+        'MGO': float(input('Please put price of MGO, USD\n'))
     }
 
     # input points of route

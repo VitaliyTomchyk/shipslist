@@ -5,7 +5,7 @@ def add_distance(points):
     for i in range(len(points) - 1):
         for marker_SECA, port_of_key in [('total', 'including_SECA'),
                                          ('only SECA', 'only_SECA')]:
-            text = 'Please put {} distance from {} {} to {} {}\n'
+            text = 'Please put {} distance \nfrom {} {} to {} {}\n'
             request = text.format(
                 marker_SECA,
                 points[i]['point_type'],
