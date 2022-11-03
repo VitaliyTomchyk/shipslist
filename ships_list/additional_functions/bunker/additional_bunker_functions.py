@@ -194,10 +194,10 @@ def adding_duration_of_stay(point, total_cargo_quantity):
                                  None if reply_if_working == 'y' else 0)
 
     # input quantity of idle days
-    input_idle_days = float(
-        input(
-            '\nPlease put quantity of idle days at {}\n'.format(
-                point['point_name'])))
+    idle_days = input(
+        '\nPlease put quantity of idle days at {}\n'.format(
+            point['point_name']))
+    input_idle_days = 0 if idle_days == '' else float(idle_days)
 
     point['idle_days'] = input_idle_days
 

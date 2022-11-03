@@ -62,7 +62,7 @@ def point_consumption_not_in_SECA(point, ship):
 def point_consumption_calculator(point, ship):
 
     options = {
-        'True': point_consumption_in_SECA,
-        'False': point_consumption_not_in_SECA}
+        point_consumption_in_SECA(point, ship): 'True',
+        point_consumption_not_in_SECA(point, ship): 'False'}
 
     return options[str(point['SECA'])](point, ship)
