@@ -18,7 +18,8 @@ def freight_calculator():
     voyage_info = add_voyage_details(booking_info)
 
     # calculating total cost of bunker consumption
-    voyage_info = calculate_bunkers_consumption(voyage_info)
+    voyage_info['bunker_consumption'] = calculate_bunkers_consumption(
+        voyage_info)
 
     # calculating total cost of bunkers
     total_bunkers_cost = sum_bunkers_cost(voyage_info)

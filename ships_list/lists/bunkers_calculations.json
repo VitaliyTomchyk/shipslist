@@ -1,0 +1,101 @@
+[
+    {
+        "id": 280,
+        "ship": {
+            "ships_name": "SOSNA",
+            "IMO": 12345654,
+            "speed": {
+                "laden_full_speed": 13.2,
+                "laden_eco_speed": 11.0,
+                "ballast_full_speed": 14.0,
+                "ballast_eco_speed": 12.5,
+                "date_of_update": "2022-09-30"
+            },
+            "consumption": {
+                "laden_full_consumption": 1,
+                "laden_eco_consumption": 1,
+                "ballast_full_consumption": 1,
+                "ballast_eco_consumption": 1,
+                "date_of_update": "2022-09-14"
+            },
+            "additional_consumption": {
+                "idle": 1,
+                "working": 1
+            },
+            "stay_consumption": {
+                "idle": 1.5,
+                "working": 3
+            }
+        },
+        "bunker_prices": {
+            "IFO": 4.0,
+            "MGO": 4.0
+        },
+        "points": [
+            {
+                "point_type": "Delivery point",
+                "point_name": "d",
+                "in_SECA": false,
+                "working_days": 0,
+                "idle_days": 4.0
+            },
+            {
+                "point_type": "Load port",
+                "point_name": "Odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc",
+                "working_days": 0,
+                "cargo_quantity_for_handling": 0,
+                "rate_of_handling": null,
+                "idle_days": 4.0
+            },
+            {
+                "point_type": "Discharge port",
+                "point_name": "Istanbul",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc",
+                "working_days": 0,
+                "cargo_quantity_for_handling": 0,
+                "rate_of_handling": null,
+                "idle_days": 4.0
+            },
+            {
+                "point_type": "Redelivery point",
+                "point_name": "r",
+                "in_SECA": false,
+                "working_days": 0,
+                "idle_days": 4.0
+            }
+        ],
+        "distances_with_WF": [],
+        "optimal_speed": {
+            "ballast": {
+                "not_SECA": "Eco",
+                "in_SECA": "Eco"
+            },
+            "laden": {
+                "not_SECA": "Eco",
+                "in_SECA": "Eco"
+            }
+        },
+        "consumption_at_points": {
+            "d": {
+                "IFO": 6.0,
+                "MGO": 4.0
+            },
+            "Odessa": {
+                "IFO": 6.0,
+                "MGO": 4.0
+            },
+            "Istanbul": {
+                "IFO": 6.0,
+                "MGO": 4.0
+            },
+            "r": {
+                "IFO": 6.0,
+                "MGO": 4.0
+            }
+        },
+        "total_duration": 16.0
+    }
+]

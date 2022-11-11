@@ -13,16 +13,20 @@ from ships_list.additional_functions.bunker.weather.weather_functions \
     import add_weather_factor
 from ships_list.additional_functions.supporting_functions.\
     additional_functions import id_generator
+from ships_list.additional_functions.supporting_functions.json_functions \
+    import read_JSON_file
 
 
 def calculate_bunkers_consumption(voyage_info):
     print('\nCalculating bunker consumption.')
 
     # adding bunker consumption calculation
-    calculation = {'id': id_generator}
+    calculation = {'id': id_generator()}
 
     # adding ship's details to input information
-    calculation['ship'] = input_option(SHIPS_FILE, 'ships_name', 'ship')
+    ships_name = input_option(SHIPS_FILE, 'ships_name', 'ship')
+    calculation['ship'] = list(filter(lambda x: x['ships_name'] == ships_name,
+                                      read_JSON_file(SHIPS_FILE)))[0]
 
     # input prices of IFO, MGO
     calculation['bunker_prices'] = {
@@ -34,29 +38,30 @@ def calculate_bunkers_consumption(voyage_info):
     calculation['points'] = input_points_detailed(voyage_info)
 
     # input distance including SECA zone from each between points
-    distances = add_distance(calculation['points'])
+    calculation['legs'] = add_distance(calculation['points'])
 
     # input weather factor for each distance
-    calculation['distances_with_WF'] = add_weather_factor(distances)
+    calculation['distances_with_WF'] = add_weather_factor(calculation['legs'])
 
     # finding optimal speed
     calculation['optimal_speed'] = optimal_speed_calculation(calculation,
                                                              voyage_info)
 
-    # calculating consumption at points and steaming leg
-    calculation = add_consuption_calculation(calculation)
+    # calculating consumption at points and steaming
+    calculation['consumption'] = \
+        add_consuption_calculation(calculation)
 
     # adding total duration of voyage
-    calculation['total_duration'] = calculate_total_duration(calculation)
+    calculation['total_duration'] = \
+        calculate_total_duration(calculation)
 
     # print result of calculation
     read_calculation(calculation)
 
     # save data to JSON file BUNKERING_FILE
-    append_JSON_file(BUNKERING_FILE, calculation)
-    voyage_info['bunker_consumption'] = calculation
+    append_JSON_file(calculation, BUNKERING_FILE)
 
-    return voyage_info
+    return calculation
 
 
 def read_calculation(calculation):
@@ -65,12 +70,10 @@ def read_calculation(calculation):
 
 # calculates total duraration of voyage
 def calculate_total_duration(voyage_info):
-    calculation = voyage_info['bunker_consumption']
 
     total_duration = 0
-
     # adding total duration of voyage
-    for point in calculation['points']:
+    for point in voyage_info['points']:
         total_duration += point['working_days'] + point['idle_days']
-    calculation['total_duration'] = total_duration
-    return calculation
+
+    return total_duration

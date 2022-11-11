@@ -2,20 +2,34 @@ from ships_list.lists.Standard.constants import SUPPORTING_FILE, PORTS_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
 from ships_list.additional_functions.bunker.point_consumption import \
-    point_consumption_calculator
+    point_consumption_in_SECA, point_consumption_not_in_SECA
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, append_JSON_file
 
 
 def add_consuption_calculation(calculations):
-    points = calculations['points']
+    points, legs, ship = calculations['points'], calculations['legs'],\
+        calculations['ship']
 
+    # adding bunker consumption to points
     consumption_at_points = {}
     for point in points:
         consumption_at_points[point['point_name']] = \
-            point_consumption_calculator(point, calculations['ship'])
+            point_consumption_in_SECA(point, ship) if point['in_SECA'] else \
+            point_consumption_not_in_SECA(point, ship)
 
-    return calculations
+    # adding bunker consumption during steaming
+    consumption_during_steaming = {}
+    for leg in legs:
+        consumption_during_steaming[leg['description']['consumption']] = \
+            steaming_consumption_calculator(leg, ship)
+
+    return consumption_at_points
+
+
+def steaming_consumption_calculator(leg, ship):
+    # TODO
+    return 0
 
 
 # input points of booking in voyage_info
@@ -111,7 +125,7 @@ def create_point(point_type=None, total_cargo_quantity=None,
             SUPPORTING_FILE, 'laytime_port_terms', 'laytime port terms')
 
     # adding duration of port stay to load and disch point
-    adding_duration_of_stay(point, total_cargo_quantity)
+    point = adding_duration_of_stay(point, total_cargo_quantity)
 
     return point
 
@@ -147,7 +161,7 @@ def checker_for_mandatory_points(points):
 def add_working_days(point, total_cargo_quantity, working_days=None):
 
     if working_days is not None:
-        point['working_days'] = working_days
+        point['working_days'] = 0
         point['cargo_quantity_for_handling'] = 0
         point['rate_of_handling'] = None
         return point
@@ -192,6 +206,8 @@ def adding_duration_of_stay(point, total_cargo_quantity):
         point = add_working_days(point,
                                  total_cargo_quantity,
                                  None if reply_if_working == 'y' else 0)
+    else:
+        point['working_days'] = 0
 
     # input quantity of idle days
     idle_days = input(

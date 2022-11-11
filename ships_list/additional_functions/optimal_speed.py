@@ -1,19 +1,10 @@
-from ships_list.additional_functions.supporting_functions.json_functions \
-    import read_JSON_file
-from ships_list.lists.Standard.constants import SHIPS_FILE
-
 # calculates basic price for 1 mile
-
-
 def price_for_mile(leg_type, hire_info, ship, bunker_price):
 
     consumption_type = leg_type + '_consumption'
     hire, hire_commission = hire_info
 
-    print('Ship is {}'.format(ship))
-    print('ship consumption is {}'.format(ship['consumption']))
-    print('ship consumption type is {}'.format(
-        ship['consumption'][consumption_type]))
+    print('ship is {}'.format(str(ship)))
     duration = 1 / (int(ship['consumption'][consumption_type]) * 24)
 
     price_of_bunkers = duration * \
@@ -40,12 +31,9 @@ def compearing_speed_options(ships_details, bunker_price, leg_type,
 
 def speed_option(leg_type, calculation, voyage_info):
 
-    the_ship = filter(
-        lambda ship: ship['ships_name'] == calculation['ship'],
-        read_JSON_file(SHIPS_FILE))
-    ships_description = list(the_ship)[0]
+    the_ship = calculation['ship']
 
-    ships_details = (ships_description, voyage_info['hire_rate'])
+    ships_details = (the_ship, voyage_info['hire_rate'])
     bunker_prices, commission_on_hire = calculation['bunker_prices'], \
         voyage_info['commission_on_hire']
 
@@ -57,8 +45,6 @@ def speed_option(leg_type, calculation, voyage_info):
             bunker_prices[bunker_type],
             leg_type,
             commission_on_hire)
-
-    print('Optimal speed is \n{}'.format(str(optimal_speed)))
 
     return optimal_speed
 

@@ -17,6 +17,7 @@ def wf_setter(distance, text):
 def add_weather_factor(distances):
     for distance in distances:
         text = 'Please put weather factor for leg' + \
-            ' from {} to {}'.format(distance['from'], distance['to'])
+            ' from {} to {}'.format(distance['description']['from'],
+                                    distance['description']['to'])
         distance = wf_setter(distance, text)
     return distances

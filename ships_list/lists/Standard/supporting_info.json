@@ -39,7 +39,7 @@
         "Bunkering point",
         "Redelivery port"
     ],
-    "id": 274,
+    "id": 280,
     "laytime_port_terms": {
         "shinc": 1,
         "shex": 1.2,
@@ -49,5 +49,13 @@
         "address",
         "broker's",
         "other"
+    ],
+    "vessel_condition": [
+        "laden",
+        "ballast"
+    ],
+    "speed_types": [
+        "full",
+        "eco"
     ]
 }
