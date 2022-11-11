@@ -28,8 +28,36 @@ def add_consuption_calculation(calculations):
 
 
 def steaming_consumption_calculator(leg, ship):
+
+    distance_in_SECA = leg['distance_only_SECA']['distance']
+    distance_not_in_SECA = leg['distance_total']['distance'] - distance_in_SECA
+
+    WF_in_SECA = leg['distance_only_SECA']['WF']
+    WF_not_in_SECA = leg['distance_total']['WF']
+
+    speed_in_SECA = leg['distance_only_SECA']['speed']
+    speed_not_in_SECA = leg['distance_total']['speed']
+
     # TODO
-    return 0
+
+    duration_of_the_leg = {"in_SECA": distance_in_SECA * WF_in_SECA
+                           / speed_in_SECA / 24,
+                           "not_in_SECA": distance_not_in_SECA *
+                           WF_not_in_SECA / speed_not_in_SECA / 24}
+    consumption = 0
+    result = duration_of_the_leg * consumption
+
+    total_consumption_SECA = {'IFO': 5,
+                              'MGO': 4}
+    total_consumption_excl_SECA = {'IFO': 5,
+                                   'MGO': 4}
+
+    result = {'IFO': total_consumption_SECA['IFO']
+              + total_consumption_excl_SECA['IFO'],
+              'MGO': total_consumption_SECA['MGO'] +
+              total_consumption_excl_SECA['MGO']}
+
+    return result
 
 
 # input points of booking in voyage_info

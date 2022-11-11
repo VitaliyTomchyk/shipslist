@@ -4,15 +4,15 @@ from ships_list.lists.Standard.constants import SUPPORTING_FILE
 
 
 # add distance to points for in_SECA = False or True
-def add_distance(points):
+def add_distances(points):
 
     print('\nPlease put distance between points in nautical miles.')
 
     legs = []
 
     for i in range(len(points) - 1):
-        for marker_SECA, port_of_key in [('total', 'total'),
-                                         ('only SECA', 'only_SECA')]:
+        for marker_SECA, SECA_type in [('total', 'total'),
+                                       ('only SECA', 'only_SECA')]:
             from_point, to_point = points[i]['point_name'], \
                 points[i + 1]['point_name']
             text = 'Please put {} distance \n- from {} {} to {} {}\n'
@@ -24,11 +24,15 @@ def add_distance(points):
                 to_point)
 
             the_leg = {}
-            the_leg['distance_' + port_of_key] = int(input(request))
+            the_leg['distance_' + SECA_type] = {}
+            the_leg['distance_' + SECA_type]['distance'] = \
+                int(input(request))
             the_leg['description'] = {'from': from_point,
                                       'to': to_point,
                                       'condition': ask_condition(from_point,
                                                                  to_point),
+                                      # TODO input speed type for each SECA
+                                      # TYPE
                                       'speed_type': ask_speed_type()}
             legs.append(the_leg)
 
