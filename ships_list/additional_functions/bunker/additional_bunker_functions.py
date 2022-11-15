@@ -28,15 +28,19 @@ def add_consuption_calculation(calculations):
 
 
 def steaming_consumption_calculator(leg, ship):
-
+    # collecting distances
     distance_in_SECA = leg['distance_only_SECA']['distance']
     distance_not_in_SECA = leg['distance_total']['distance'] - distance_in_SECA
 
+    # collecting weather factors for different distances
     WF_in_SECA = leg['distance_only_SECA']['WF']
     WF_not_in_SECA = leg['distance_total']['WF']
 
+    # calculating speed
     speed_in_SECA = leg['distance_only_SECA']['speed']
     speed_not_in_SECA = leg['distance_total']['speed']
+
+    # calculating consumption rate
 
     # TODO
 
