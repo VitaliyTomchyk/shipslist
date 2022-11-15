@@ -1,6 +1,8 @@
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
+from ships_list.additional_functions.bunker.weather.weather_functions \
+    import add_weather_factor
 
 
 # add distance to points for in_SECA = False or True
@@ -15,31 +17,38 @@ def add_distances(points):
         the_leg = {}
         for marker_SECA, dist_type in [('total', 'total'),
                                        ('only SECA', 'only_SECA')]:
-            the_leg = k(the_leg, points, marker_SECA, dist_type, i)
+            the_points = [points[i], points[i + 1]]
+            the_sub_leg = sub_leg_generator(the_points, marker_SECA, dist_type)
+            the_leg[dist_type] = the_sub_leg
         legs.append(the_leg)
 
     return legs
 
 
-def k(the_leg, points, marker_SECA, dist_type, i):
+def sub_leg_generator(points, marker_SECA, dist_type):
 
-    from_point, to_point = points[i]['point_name'], \
-        points[i + 1]['point_name']
+    the_dist_type = dist_type if dist_type != 'total' else 'not_SECA'
+
+    the_leg = {}
+    from_point, to_point = points[0]['point_name'], \
+        points[1]['point_name']
+
+    the_leg['description'] = add_leg_description(from_point, to_point,
+                                                 the_dist_type)
 
     text = 'Please put {} distance \n- from {} {} to {} {}\n'
 
     request = text.format(
         marker_SECA,
-        points[i]['point_type'],
+        points[0]['point_type'],
         from_point,
-        points[i + 1]['point_type'],
+        points[1]['point_type'],
         to_point)
-    # TODO add weatherfactor in below dict
-    the_leg['distance_' + dist_type] = {'distance': int(input(request)),
-                                        'speed': add_speed_type(dist_type)}
 
-    the_leg['description'] = add_leg_description(from_point, to_point,
-                                                 dist_type)
+    the_leg['distance_' + the_dist_type] = \
+        {'distance': int(input(request)),
+         'speed': add_speed_type(the_dist_type),
+         'wf': add_weather_factor(the_leg['description'], dist_type)}
 
     return the_leg
 
@@ -63,8 +72,7 @@ def add_leg_condition(point_from, point_to):
 
 
 def add_speed_type(dist_type):
-    updated_dist_type = dist_type if dist_type != 'total' else 'in SECA'
-    print('Please put speed type for {} distance.'.format(updated_dist_type))
+    print('Please put speed type for {} distance.'.format(dist_type))
 
     speed_type = input_option(SUPPORTING_FILE, 'speed_types', 'speed type')
     return speed_type
