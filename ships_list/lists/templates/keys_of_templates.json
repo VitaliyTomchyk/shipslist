@@ -19,5 +19,13 @@
             "cargo_quantity",
             "cargo_operations_term"
         ]
+    },
+    {
+        "template_name": "Comeback",
+        "address_of_template": "ships_list/files/Comeback.txt",
+        "keys_of_tmplt": [
+            "name_of_reciever",
+            "your_name"
+        ]
     }
 ]

@@ -42,7 +42,7 @@ def create_template():
 
     # add dict with template details to storage of template details
     result = {
-        'template_name': template_name,
+        "template_name": template_name,
         "address_of_template": address_of_template,
         "keys_of_tmplt": list_of_keys
     }
