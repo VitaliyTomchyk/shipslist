@@ -18,8 +18,8 @@ def add_distances(points):
         for marker_SECA, dist_type in [('total', 'total'),
                                        ('only SECA', 'only_SECA')]:
             the_points = [points[i], points[i + 1]]
-            the_sub_leg = sub_leg_generator(the_points, marker_SECA, dist_type)
-            the_leg[dist_type] = the_sub_leg
+            the_leg[dist_type] = sub_leg_generator(the_points, marker_SECA,
+                                                   dist_type)
         legs.append(the_leg)
 
     return legs
@@ -30,8 +30,7 @@ def sub_leg_generator(points, marker_SECA, dist_type):
     the_dist_type = dist_type if dist_type != 'total' else 'not_SECA'
 
     the_leg = {}
-    from_point, to_point = points[0]['point_name'], \
-        points[1]['point_name']
+    from_point, to_point = points[0]['point_name'], points[1]['point_name']
 
     the_leg['description'] = add_leg_description(from_point, to_point,
                                                  the_dist_type)
