@@ -4,3 +4,6 @@
 .coverage
 __pycache__
 dist
+position.DS_Store
+positionships_list/.DS_Store
+positiontests/.DS_Store

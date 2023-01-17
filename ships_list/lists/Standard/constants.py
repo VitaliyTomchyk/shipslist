@@ -15,6 +15,7 @@ TEMPLATE_FILLERS_FILE = "ships_list/lists/templates/template_fillers.json"
 
 ADDITIONAL_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
     "additional_functions.py"
+
 CLASSES_FILE = "ships_list/additional_functions/" + \
     "classes.py"
 SHIPS_FUNCTIONS_FILE = "ships_list/additional_functions/" + \
@@ -32,3 +33,4 @@ INSTRUCTIONS_TO_CREATE_TEMPLATE = 'ships_list/additional_functions/' + \
 
 COMPANIES_FILE = "ships_list/lists/companies.json"
 PEOPLE_FILE = "ships_list/lists/people.json"
+POSITIONS_FILE = "ships_list/lists/positions.json"
