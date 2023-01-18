@@ -16,6 +16,10 @@ from ships_list.additional_functions.companies.companies_module import \
     add_company, remove_company, edit_company
 from ships_list.additional_functions.people.people_module import add_person,\
     remove_person, edit_person
+from ships_list.additional_functions.positions.positions import \
+    add_position, select_position
+from ships_list.additional_functions.indexes.indexes import \
+    add_index
 
 
 def ships_list(parced_result):
@@ -52,6 +56,11 @@ def ships_list(parced_result):
         'add_person': add_person,
         'remove_person': remove_person,
         'edit_person': edit_person,
+
+        'add_position': add_position,
+        'select_position': select_position,
+
+        'add_index': add_index
 
     }
 

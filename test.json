@@ -1,0 +1,12 @@
+{"S1B_58": "Canakkale trip via Med or Bl Sea to China-South Korea",
+"S1C_58": "US Gulf trip to China-south Japan",
+"S2_58": "North China one Australian or Pacific round voyage",
+"S3_58": "North China trip to West Africa",
+"S4A_58": "US Gulf trip to Skaw-Passero",
+"S4B_58": "Skaw-Passero trip to US Gulf",
+"S5_58": "West Africa trip via east coast South America to north China",
+"S8_58": "South China trip via Indonesia to east coast India",
+"S9_58": "West Africa trip via east coast South America to Skaw-Passero",
+"S10_58": "South China trip via Indonesia to south China",
+"10TC Weighted Timecharter Average": "  Sum(S1B_58*0.05, S1C_58*0.05, S2_58*0.20, S3_58*0.15, S4A_58*0.075, S4B_58*0.10, S5_58*0.05, S8_58*0.15, S9_58*0.075, S10_58*0.10)",
+"Baltic Supramax Index (BSI)": " Sum(S1B_58*0.004545455, S1C_58*0.004545455, S2_58*0.018181818, S3_58*0.013636364, S4A_58*0.006818182, S4B_58*0.009090909, S5_58*0.004545455, S8_58*0.013636364, S9_58*0.006818182, S10_58*0.009090909) Baltic Supramax vesssel for Timecharter routes is based on a non-scrubber fitted standard “Tess58 ” type vessel"}

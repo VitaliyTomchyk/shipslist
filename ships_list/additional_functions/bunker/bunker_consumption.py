@@ -11,7 +11,7 @@ from ships_list.additional_functions.bunker.additional_bunker_functions \
 from ships_list.additional_functions.bunker.distances_input \
     import add_distances
 from ships_list.additional_functions.bunker.weather.weather_functions \
-    import wf_setter
+    import add_weather_factor
 from ships_list.additional_functions.supporting_functions.\
     additional_functions import id_generator
 from ships_list.additional_functions.supporting_functions.json_functions \
@@ -42,7 +42,7 @@ def calculate_bunkers_consumption(voyage_info):
     calculation['legs'] = add_distances(calculation['points'])
 
     # input weather factor for each distance
-    calculation['legs'] = list(map(wf_setter, calculation['legs']))
+    calculation['legs'] = list(map(add_weather_factor, calculation['legs']))
 
     # finding optimal speed
     calculation['optimal_speed'] = optimal_speed_calculation(calculation,

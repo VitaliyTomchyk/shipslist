@@ -34,3 +34,4 @@ INSTRUCTIONS_TO_CREATE_TEMPLATE = 'ships_list/additional_functions/' + \
 COMPANIES_FILE = "ships_list/lists/companies.json"
 PEOPLE_FILE = "ships_list/lists/people.json"
 POSITIONS_FILE = "ships_list/lists/positions.json"
+INDEXES_FILE = "ships_list/lists/indexes.json"

@@ -38,7 +38,13 @@ def adding_arguments(parser):
 
         ['-add_person', 'create a person'],
         ['-remove_person', 'remove a person'],
-        ['-edit_person', 'edit a person']]
+        ['-edit_person', 'edit a person'],
+        
+        ['-add_position', 'add position'],
+        ['-select_position', 'select position'],
+        
+        ['-add_index', 'add index']]
+        
 
     for argument in arguments:
         parser.add_argument(argument[0], help=argument[1], action='store_true')
@@ -80,7 +86,12 @@ def creating_result(parser):
 
         'add_person': parser.parse_args().add_person,
         'remove_person': parser.parse_args().remove_person,
-        'edit_person': parser.parse_args().edit_person
+        'edit_person': parser.parse_args().edit_person,
+
+        'add_position': parser.parse_args().add_position,
+        'select_position': parser.parse_args().select_position,
+
+        'add_index': parser.parse_args().add_index
 
     }
     return result
