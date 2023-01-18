@@ -9,7 +9,7 @@ def add_template_to_list(new_created_template):
     # collecting list of templates
     list_of_templates = read_JSON_file(KEYS_OF_TEMPLATES_FILE)
 
-    template_name = list(new_created_template.keys())[0]
+    template_name = list(new_created_template.values())[0]
 
     list_of_templates.append(new_created_template)
 
