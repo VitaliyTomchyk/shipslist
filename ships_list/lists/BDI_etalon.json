@@ -1,168 +1,91 @@
 [
-        {
-          "name": "BALTIC PANAMAX",
-          "DWT": 82500,
-          "draft": 14.43,
-          "age": 12,
-          "LOA": 229,
-          "beam": 32.25,
-          "TPC": 70.5,
-          "cbm grain": 97000,
-          "speed-consumption": {
-            "full": {
-              "laden": {
-                "speed": 13.5,
-                "consumption": 33
-              },
-              "ballast": {
-                "speed": 14,
-                "consumption": 31
-              },
-              "eco": {
-                "laden": {
-                  "speed": 11.5,
-                  "consumption": 22
-                },
-                "ballast": {
-                  "speed": 12.5,
-                  "consumption": 23
-                }
-              },
-              "additional": 0.1
-            }
-          }
-        },
-        {
-          "name": "BALTIC CAPESIZE",
-          "DWT": 18000,
-          "draft": 18.2,
-          "age": 10,
-          "LOA": 290,
-          "beam": 45,
-          "TPC": 121,
-          "cbm grain": 198000,
-          "speed-consumption": {
-            "full": {
-              "laden": {
-                "speed": 14,
-                "consumption": 62
-              },
-              "ballast": {
-                "speed": 15,
-                "consumption": 62
-              },
-              "eco": {
-                "laden": {
-                  "speed": 12,
-                  "consumption": 43
-                },
-                "ballast": {
-                  "speed": 13,
-                  "consumption": 43
-                }
-              },
-              "additional": 0
-            }
-          }
-        },
-        {
-          "name": "BALTIC SUEZMAX",
-          "DWT": 58328,
-          "draft": 12.8,
-          "age": 15,
-          "LOA": 189.99,
-          "beam": 32.26,
-          "TPC": 57.5,
-          "cbm grain": 72360,
-          "speed-consumption": {
-            "full": {
-              "laden": {
-                "speed": 14,
-                "consumption": 32
-              },
-              "ballast": {
-                "speed": 14,
-                "consumption": 32
-              },
-              "eco": {
-                "laden": {
-                  "speed": 12,
-                  "consumption": 23
-                },
-                "ballast": {
-                  "speed": 12.5,
-                  "consumption": 23
-                }
-              },
-              "additional": 0
-            }
-          }
-        },
-        {
-          "name": "BALTIC HANDYSIZE",
-          "DWT": 38200,
-          "draft": 10.538,
-          "age": 15,
-          "LOA": 180,
-          "beam": 29.8,
-          "TPC": 49,
-          "cbm grain": 47125,
-          "cbm bale": 45300,
-          "speed-consumption": {
-            "full": {
-              "laden": {
-                "speed": 14,
-                "consumption": 26
-              },
-              "ballast": {
-                "speed": 14,
-                "consumption": 24
-              },
-              "eco": {
-                "laden": {
-                  "speed": 12,
-                  "consumption": 18
-                },
-                "ballast": {
-                  "speed": 12,
-                  "consumption": 17
-                }
-              },
-              "additional": 0.1
-            }
-          }
-        },
-        {
-          "name": "BALTIC SUEZMAX",
-          "DWT": 58328,
-          "draft": 12.8,
-          "age": 15,
-          "LOA": 189.99,
-          "beam": 32.26,
-          "TPC": 57.5,
-          "cbm grain": 72360,
-          "speed-consumption": {
-            "full": {
-              "laden": {
-                "speed": 14,
-                "consumption": 32
-              },
-              "ballast": {
-                "speed": 14,
-                "consumption": 32
-              },
-              "eco": {
-                "laden": {
-                  "speed": 12,
-                  "consumption": 23
-                },
-                "ballast": {
-                  "speed": 12.5,
-                  "consumption": 23
-                }
-              },
-              "additional": 0
-            }
-          }
-        }
-      ]
+  {
+    "name": "BALTIC HANDYSIZE",
+    "DWT": 38200,
+    "draft": 10.538,
+    "age": 15,
+    "LOA": 180,
+    "beam": 29.8,
+    "TPC": 49,
+    "cbm grain": 47125,
+    "cbm bale": 45300,
+
+    "speed": {
+      "laden_full_speed": 14,
+      "laden_eco_speed": 12,
+      "ballast_full_speed": 14,
+      "ballast_eco_speed": 12},
+    "consumption": {
+      "laden_full_consumption": 26,
+      "laden_eco_consumption": 18,
+      "ballast_full_consumption": 24,
+      "ballast_eco_consumption": 17,
+      "additional": 0.1}
+      },
+    {
+      "name": "BALTIC SUPRAMAX",
+      "DWT": 58328,
+      "draft": 12.8,
+      "age": 15,
+      "LOA": 189.99,
+      "beam": 32.26,
+      "TPC": 57.5,
+      "cbm grain": 72360,
+
+      "speed": {
+        "laden_full_speed": 14,
+        "laden_eco_speed": 12,
+        "ballast_full_speed": 14,
+        "ballast_eco_speed": 12},
+      "consumption": {
+        "laden_full_consumption": 33,
+        "laden_eco_consumption": 24,
+        "ballast_full_consumption": 32,
+        "ballast_eco_consumption": 23,
+        "additional": 0.1}
+    },
+    {
+      "name": "BALTIC PANAMAX",
+      "DWT": 82500,
+      "draft": 14.43,
+      "age": 12,
+      "LOA": 229,
+      "beam": 32.25,
+      "TPC": 70.5,
+      "cbm grain": 97000,
+
+      "speed": {
+        "laden_full_speed": 13.5,
+        "laden_eco_speed": 11.5,
+        "ballast_full_speed": 14,
+        "ballast_eco_speed": 12.5},
+      "consumption": {
+        "laden_full_consumption": 33,
+        "laden_eco_consumption": 22,
+        "ballast_full_consumption": 31,
+        "ballast_eco_consumption": 23,
+        "additional": 0.1}
+    },
+    {
+      "name": "BALTIC CAPESIZE",
+      "DWT": 18000,
+      "draft": 18.2,
+      "age": 10,
+      "LOA": 290,
+      "beam": 45,
+      "TPC": 121,
+      "cbm grain": 198000,
+      
+      "speed": {
+        "laden_full_speed": 14,
+        "laden_eco_speed": 12,
+        "ballast_full_speed": 15,
+        "ballast_eco_speed": 13},
+      "consumption": {
+        "laden_full_consumption": 62,
+        "laden_eco_consumption": 43,
+        "ballast_full_consumption": 62,
+        "ballast_eco_consumption": 43,
+        "additional": 0.1}
+    }
+  ]

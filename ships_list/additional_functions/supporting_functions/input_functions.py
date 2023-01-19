@@ -82,10 +82,7 @@ def input_from_list(value, options_list):
     return the_option
 
 
-def input_filtered_with_num(
-        pair,
-        pair2,
-        document=SUPPORTING_FILE):
+def input_filtered_with_num(pair, pair2, document=SUPPORTING_FILE):
 
     key, value = pair
     key2, value2 = pair2
@@ -108,6 +105,7 @@ def input_filtered_with_num(
         return
 
 
+# input instrument for inputing value from list
 def input_with_num(key, value, document=SUPPORTING_FILE):
     print(f'\nPlease choose number from following list to select {value}.')
 

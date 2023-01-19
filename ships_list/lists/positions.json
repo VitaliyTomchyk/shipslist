@@ -1,6 +1,21 @@
 [
     {
         "name": "MV TEST",
+        "type": "ship",
+        "hire": "13000",
+        "index": "p4",
+        "caliber": "25"
+    },
+    {
+        "name": "MV TEST 2",
+        "type": "ship",
+        "hire": "13000",
+        "index": "p4",
+        "caliber": "25"
+    },
+    {
+        "name": "MV TEST 3",
+        "type": "ship",
         "hire": "13000",
         "index": "p4",
         "caliber": "25"

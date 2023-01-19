@@ -73,7 +73,7 @@ def dictionary_finder(list_of_dictionaries, value, key):
 
 def options_generator(key, document, key2=None, value2=None):
     if document == SUPPORTING_FILE:
-        return read_JSON_file(document)[key]
+        return list(read_JSON_file(document)[key])
 
     list_of_dicts = read_JSON_file(document)
 
@@ -109,10 +109,9 @@ def point_appender_by_key(result, key, voyage):
             result.append(voyage[key])
     return result
 
+
 # function checks if argument is number and if it is higher than 0 and
 # lower than 100
-
-
 def check_percentage(percentage):
     try:
         percentage = int(percentage)
@@ -133,5 +132,4 @@ def assurance_question(text):
 
 
 def filter_list_of_dict_by_value(list_of_dicts, key, value):
-    return list(filter(lambda x: x[key] == value,
-                       list_of_dicts))[0]
+    return list(filter(lambda x: x[key] == value, list_of_dicts))[0]

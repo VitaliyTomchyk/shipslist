@@ -1,17 +1,60 @@
 [
     {
-        "name": "p4",
-        "value": "14000",
-        "date": "16/01/2023"
+        "type": "ship",
+        "sub_type": "Capesize",
+        "name": "C3",
+        "value": "2",
+        "date": "19/01/2023"
     },
     {
-        "name": "p4",
-        "value": "14000",
-        "date": "17/01/2023"
+        "type": "ship",
+        "sub_type": "Capesize",
+        "name": "C5",
+        "value": "30",
+        "date": "19/01/2023"
     },
     {
-        "name": "p4",
-        "value": "12000",
-        "date": "18/01/2023"
+        "type": "ship",
+        "sub_type": "Panamax",
+        "name": "P3A_82",
+        "value": "2900",
+        "date": "19/01/2023"
+    },
+    {
+        "type": "cargo",
+        "sub_type": "grain",
+        "name": {
+            "G2": "Grain 80,000 MT"
+        },
+        "value": "800",
+        "date": "19/01/2023"
+    },
+    {
+        "type": "cargo",
+        "sub_type": "grain",
+        "name": "G1",
+        "value": "\u001b[A",
+        "date": "19/01/2023"
+    },
+    {
+        "type": "ship",
+        "sub_type": "Capesize",
+        "name": "C2",
+        "value": "2",
+        "date": "19/01/2023"
+    },
+    {
+        "type": "ship",
+        "sub_type": "Capesize",
+        "name": "C2",
+        "value": "1",
+        "date": "19/01/2023"
+    },
+    {
+        "type": "cargo",
+        "sub_type": "coal",
+        "name": "C3",
+        "value": "2",
+        "date": "19/01/2023"
     }
 ]
