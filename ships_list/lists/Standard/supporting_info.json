@@ -1,133 +1,132 @@
 {
-  "stages": [
-    "Prior delivery",
-    "After delivery",
-    "Prior arrival at load port",
-    "Load port",
-    "Prior arrival discharge port",
-    "Discharge port",
-    "After redelivery",
-    "Redelivered"
-  ],
-  "parties": [
-    "Operator",
-    "Owner",
-    "Charterer",
-    "Agent",
-    "Surveyor",
-    "Master",
-    "Routing company",
-    "Broker",
-    "P and I",
-    "Other party"
-  ],
-  "voyage_types": [
-    "TC - VC",
-    "TC - TC",
-    "VC - VC"
-  ],
-  "voyage_statuses": [
-    "Not started",
-    "In progress",
-    "Completed",
-    "Cancelled"
-  ],
-  "point_types": [
-    "Delivery point",
-    "Load port",
-    "Discharge port",
-    "Bunkering point",
-    "Redelivery port"
-  ],
-  "id": 280,
-  "laytime_port_terms": {
-    "shinc": 1,
-    "shex": 1.2,
-    "fshex": 1.75
-  },
-  "commission_types": [
-    "address",
-    "broker's",
-    "other"
-  ],
-  "vessel_condition": [
-    "laden",
-    "ballast"
-  ],
-  "speed_types": [
-    "full",
-    "eco"
-  ],
-  "positions": [
-    "ship",
-    "booking"
-  ],
-  "indexes": 
-    {
-      "ship": [
-        {
-          "Capesize": {
-            "C2": "Tubarao to Rotterdam",
-            "C3": "Tubarao to Qingdao",
-            "C5": "West Australia to Qingdao",
-            "C7": "Bolivar to Rotterdam",
-            "C8_14": "Gibraltar/Hamburg transatlantic round voyage",
-            "C9_14": "Continent/Mediterranean trip China-Japan",
-            "C10_14": "China-Japan transpacific round voyage",
-            "C14": "China-Brazil round voyage",
-            "C16": "Revised backhaul",
-            "C17": "Saldanha Bay to Qingdao",
-            "5TC Weighted Timecharter Average": "Sum(C8_14*0.25, C9_14*0.125, C10_14*0.25, C14*0.25, C16*0.125)",
-            "Baltic Capesize Index (BCI)": "Sum(C8_14*0.030145, C9_14*0.0150725, C10_14*0.030145, C14*0.030145, C16*0.0150725) Baltic Capesize vessel for Timecharter routes is a non scrubber fitted vessel"
-          }
-        },
-        {
-          "Panamax": {
-            "P1A_82": "Panamax Skaw-Gib transatlantic round voyage",
-            "P2A_82": "Panamax Skaw-Gib trip to Taiwan-Japan",
-            "P3A_82": "Panamax Japan-S Korea Transpacific round voyage",
-            "P4_82": "Panamax Japan-S Korea trip to Skaw Passero",
-            "P5_82": "Panamax South China, Indonesian round voyage (BEP Asia)",
-            "P6_82": "Panamax Singapore round voyage via Atlantic",
-            "P7": "Panamax USG to Qingdao grain66,000 MT",
-            "P8": "Panamax Santos to Qingdao grain 66,000 MT ",
-            "P1A_03": "Panamax 74 Skaw-Gib transatlantic round voyage 74,000 MT",
-            "P2A_03": "Panamax 74 Skaw-Gib trip to Taiwan-Japan 74,000 MT ",
-            "P3A_03": "Panamax 74 Japan-S Korea Transpacific round voyage 74,000 MT",
-            "5TC Weighted Timecharter Average": "Sum(P1A_82*0.25, P2A_82*0.1, P3A_82*0.25, P4_82*0.10, P6_82*0.30) ",
-            "Baltic Panamax Index (BPI)": "Sum(P1A_82*0.027777775, P2A_82*0.01111111, P3A_82*0.027777775, P4_82*0.01111111, P6_82*0.03333333)"
-          }
-        },
-        {
-          "Supramax": {
-            "S1B_58": "Canakkale trip via Med or Bl Sea to China-South Korea",
-            "S1C_58": "US Gulf trip to China-south Japan",
-            "S2_58": "North China one Australian or Pacific round voyage",
-            "S3_58": "North China trip to West Africa",
-            "S4A_58": "US Gulf trip to Skaw-Passero",
-            "S4B_58": "Skaw-Passero trip to US Gulf",
-            "S5_58": "West Africa trip via east coast South America to north China",
-            "S8_58": "South China trip via Indonesia to east coast India",
-            "S9_58": "West Africa trip via east coast South America to Skaw-Passero",
-            "S10_58": "South China trip via Indonesia to south China",
-            "10TC Weighted Timecharter Average": "  Sum(S1B_58*0.05, S1C_58*0.05, S2_58*0.20, S3_58*0.15, S4A_58*0.075, S4B_58*0.10, S5_58*0.05, S8_58*0.15, S9_58*0.075, S10_58*0.10)",
-            "Baltic Supramax Index (BSI)": " Sum(S1B_58*0.004545455, S1C_58*0.004545455, S2_58*0.018181818, S3_58*0.013636364, S4A_58*0.006818182, S4B_58*0.009090909, S5_58*0.004545455, S8_58*0.013636364, S9_58*0.006818182, S10_58*0.009090909) Baltic Supramax vesssel for Timecharter routes is based on a non-scrubber fitted standard “Tess58 ” type vessel"
-          }
-        }
-      ],
-      "cargo": [
-        {
-          "grain": {
-            "G2": "grain 2",
-            "G3": "grain 3"
-          }
-        },
-        {
-          "coal": {
-            "C2": "coal 2",
-            "C3": "coal 3"
-          }
-        }
-      ]
+    "stages": [
+        "Prior delivery",
+        "After delivery",
+        "Prior arrival at load port",
+        "Load port",
+        "Prior arrival discharge port",
+        "Discharge port",
+        "After redelivery",
+        "Redelivered"
+    ],
+    "parties": [
+        "Operator",
+        "Owner",
+        "Charterer",
+        "Agent",
+        "Surveyor",
+        "Master",
+        "Routing company",
+        "Broker",
+        "P and I",
+        "Other party"
+    ],
+    "voyage_types": [
+        "TC - VC",
+        "TC - TC",
+        "VC - VC"
+    ],
+    "voyage_statuses": [
+        "Not started",
+        "In progress",
+        "Completed",
+        "Cancelled"
+    ],
+    "point_types": [
+        "Delivery point",
+        "Load port",
+        "Discharge port",
+        "Bunkering point",
+        "Redelivery port"
+    ],
+    "id": 281,
+    "laytime_port_terms": {
+        "shinc": 1,
+        "shex": 1.2,
+        "fshex": 1.75
+    },
+    "commission_types": [
+        "address",
+        "broker's",
+        "other"
+    ],
+    "vessel_condition": [
+        "laden",
+        "ballast"
+    ],
+    "speed_types": [
+        "full",
+        "eco"
+    ],
+    "positions": [
+        "ship",
+        "booking"
+    ],
+    "indexes": {
+        "ship": [
+            {
+                "Capesize": {
+                    "C2": "Tubarao to Rotterdam",
+                    "C3": "Tubarao to Qingdao",
+                    "C5": "West Australia to Qingdao",
+                    "C7": "Bolivar to Rotterdam",
+                    "C8_14": "Gibraltar/Hamburg transatlantic round voyage",
+                    "C9_14": "Continent/Mediterranean trip China-Japan",
+                    "C10_14": "China-Japan transpacific round voyage",
+                    "C14": "China-Brazil round voyage",
+                    "C16": "Revised backhaul",
+                    "C17": "Saldanha Bay to Qingdao",
+                    "5TC Weighted Timecharter Average": "Sum(C8_14*0.25, C9_14*0.125, C10_14*0.25, C14*0.25, C16*0.125)",
+                    "Baltic Capesize Index (BCI)": "Sum(C8_14*0.030145, C9_14*0.0150725, C10_14*0.030145, C14*0.030145, C16*0.0150725) Baltic Capesize vessel for Timecharter routes is a non scrubber fitted vessel"
+                }
+            },
+            {
+                "Panamax": {
+                    "P1A_82": "Panamax Skaw-Gib transatlantic round voyage",
+                    "P2A_82": "Panamax Skaw-Gib trip to Taiwan-Japan",
+                    "P3A_82": "Panamax Japan-S Korea Transpacific round voyage",
+                    "P4_82": "Panamax Japan-S Korea trip to Skaw Passero",
+                    "P5_82": "Panamax South China, Indonesian round voyage (BEP Asia)",
+                    "P6_82": "Panamax Singapore round voyage via Atlantic",
+                    "P7": "Panamax USG to Qingdao grain66,000 MT",
+                    "P8": "Panamax Santos to Qingdao grain 66,000 MT ",
+                    "P1A_03": "Panamax 74 Skaw-Gib transatlantic round voyage 74,000 MT",
+                    "P2A_03": "Panamax 74 Skaw-Gib trip to Taiwan-Japan 74,000 MT ",
+                    "P3A_03": "Panamax 74 Japan-S Korea Transpacific round voyage 74,000 MT",
+                    "5TC Weighted Timecharter Average": "Sum(P1A_82*0.25, P2A_82*0.1, P3A_82*0.25, P4_82*0.10, P6_82*0.30) ",
+                    "Baltic Panamax Index (BPI)": "Sum(P1A_82*0.027777775, P2A_82*0.01111111, P3A_82*0.027777775, P4_82*0.01111111, P6_82*0.03333333)"
+                }
+            },
+            {
+                "Supramax": {
+                    "S1B_58": "Canakkale trip via Med or Bl Sea to China-South Korea",
+                    "S1C_58": "US Gulf trip to China-south Japan",
+                    "S2_58": "North China one Australian or Pacific round voyage",
+                    "S3_58": "North China trip to West Africa",
+                    "S4A_58": "US Gulf trip to Skaw-Passero",
+                    "S4B_58": "Skaw-Passero trip to US Gulf",
+                    "S5_58": "West Africa trip via east coast South America to north China",
+                    "S8_58": "South China trip via Indonesia to east coast India",
+                    "S9_58": "West Africa trip via east coast South America to Skaw-Passero",
+                    "S10_58": "South China trip via Indonesia to south China",
+                    "10TC Weighted Timecharter Average": "  Sum(S1B_58*0.05, S1C_58*0.05, S2_58*0.20, S3_58*0.15, S4A_58*0.075, S4B_58*0.10, S5_58*0.05, S8_58*0.15, S9_58*0.075, S10_58*0.10)",
+                    "Baltic Supramax Index (BSI)": " Sum(S1B_58*0.004545455, S1C_58*0.004545455, S2_58*0.018181818, S3_58*0.013636364, S4A_58*0.006818182, S4B_58*0.009090909, S5_58*0.004545455, S8_58*0.013636364, S9_58*0.006818182, S10_58*0.009090909) Baltic Supramax vesssel for Timecharter routes is based on a non-scrubber fitted standard \u201cTess58 \u201d type vessel"
+                }
+            }
+        ],
+        "cargo": [
+            {
+                "grain": {
+                    "G2": "grain 2",
+                    "G3": "grain 3"
+                }
+            },
+            {
+                "coal": {
+                    "C2": "coal 2",
+                    "C3": "coal 3"
+                }
+            }
+        ]
     }
 }

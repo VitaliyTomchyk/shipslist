@@ -60,8 +60,11 @@ def check_position_status():
 
     # find today's index of selected position
     today_date = datetime.now().strftime("%d/%m/%Y")
-    today_index = list(filter(lambda x: True if x['date'] == today_date \
-        and x['name'] == index_of_position else False, indexes))[0]['value']
+    today_index = list(
+        filter(
+            lambda x: True if x['date'] == today_date and
+            x['name'] == index_of_position else False,
+            indexes))[0]['value']
 
     # print today's index
     print('Today\'s index is: {}\n'.format(today_index))
@@ -82,4 +85,4 @@ def check_position_status():
 
 
 def index_checker():
-    return 
+    return

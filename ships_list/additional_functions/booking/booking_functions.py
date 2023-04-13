@@ -32,10 +32,14 @@ def read_booking():
           list_to_ol_string(read_booking_details_list(bookings)))
 
     # input of booking id to read
-    booking_id = input('Please input booking id to read from bookings list\n')
+    booking_number = int(
+        input('Please input booking id to read from bookings list\n')) - 1
+
+    # reading booking id
+    booking_id = bookings[booking_number]['id']
 
     # printing booking details
-    print(read_booking_details(bookings[int(booking_id) - 1]))
+    print(read_booking_details(booking_id))
     return
 
 

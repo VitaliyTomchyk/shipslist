@@ -105,10 +105,12 @@ def input_point_short(input_point_type):
 
 
 def booking_finder(booking_id):
+
     if booking_id is None:
         return input_booking_short()
 
     bookings = read_JSON_file(BOOKINGS_FILE)
+
     return [booking for booking in bookings
             if booking['id'] == booking_id][0]
 
@@ -117,7 +119,7 @@ def read_booking_details(booking_id=None):
 
     the_booking = booking_finder(booking_id)
 
-    account = 'Account: {}'.format(str(the_booking['account']))
+    account = '\nAccount: {}'.format(str(the_booking['account']))
     cargo_line = 'Booking for {} mt MOL {}% of {}'.format(
         the_booking['cargo_quantity'],
         the_booking['allowance_of_cargo'],
@@ -126,16 +128,12 @@ def read_booking_details(booking_id=None):
     # collecting ports
     ports = [(x['point_name'], x['point_type']) for x in the_booking['points']]
 
-    load_ports, discharge_ports = list(
-        filter(
-            lambda x: x[1] == 'Load port', ports)), list(
-        filter(
-            lambda x: x[1] == 'Discharge port', ports))
+    load_ports, discharge_ports = reader_of_ports(ports)
 
     destination_line = 'From {} to {}'.format(list_to_string(load_ports),
                                               list_to_string(discharge_ports))
 
-    lay_can_line = 'Lay can: {}'.format(the_booking['lay_can'])
+    lay_can_line = 'Laycan: {}'.format(the_booking['lay_can'])
     commission_line = 'Commissions: \n{}'.format(
         read_commissions(the_booking['id']))
 
@@ -149,12 +147,26 @@ def read_booking_details(booking_id=None):
     return result
 
 
+def reader_of_ports(ports):
+
+    load_ports, discharge_ports = list(
+        filter(
+            lambda x: x[1] == 'Load port', ports)), list(
+        filter(
+            lambda x: x[1] == 'Discharge port', ports))
+
+    load_ports = [x[0] for x in load_ports]
+    discharge_ports = [x[0] for x in discharge_ports]
+
+    return load_ports, discharge_ports
+
+
 # function list of commissions for booking as string
 def read_commissions(booking_id=None):
     the_booking = booking_finder(booking_id)
     result = ''
     for commission in the_booking['commission']:
-        result += '{}: {}%\n'.format(commission['type'], commission['value'])
+        result += ' {}: {}%\n'.format(commission['type'], commission['value'])
     return result
 
 
@@ -162,5 +174,5 @@ def read_commissions(booking_id=None):
 def read_booking_details_list(bookings):
     result = []
     for booking in bookings:
-        result.append(read_booking_details(booking))
+        result.append(read_booking_details(booking['id']))
     return result
