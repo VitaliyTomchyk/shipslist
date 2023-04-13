@@ -53,10 +53,18 @@ def check_position_status():
 
     # input of required position by user
     the_position = position_selector()
+    index_of_position = the_position['index']
 
-    # return today's index of selected position
+    # return indexes
     indexes = read_JSON_file(INDEXES_FILE)
-    today_index = float(list(filter(index_checker, indexes))[0]['value'])
+
+    # find today's index of selected position
+    today_date = datetime.now().strftime("%d/%m/%Y")
+    today_index = list(filter(lambda x: True if x['date'] == today_date \
+        and x['name'] == index_of_position else False, indexes))[0]['value']
+
+    # print today's index
+    print('Today\'s index is: {}\n'.format(today_index))
 
     # calculate index equivalent in hire
     index_equivalet_in_hire = int(
@@ -66,13 +74,12 @@ def check_position_status():
 
     # calculate difference between today's index and index_equivalet_in_hire
     # of selected position
-    difference = today_index - index_equivalet_in_hire
+    difference = float(today_index) - index_equivalet_in_hire
     print('Difference between today\'s index and index ' +
-          'equivalent in hire is: {}\n'.format(difference))
+          'equivalent in hire is: \n{}\n'.format(difference))
 
     return
 
 
-def index_checker(index_of_position):
-    return lambda x: x if x['date'] == datetime.now().strftime("%d/%m/%Y") \
-        and x['name'] == index_of_position else False
+def index_checker():
+    return 

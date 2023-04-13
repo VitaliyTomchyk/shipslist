@@ -1,23 +1,23 @@
 [
     {
-        "name": "MV TEST",
+        "name": "TEST",
         "type": "ship",
         "hire": "13000",
-        "index": "p4",
+        "index": "P4_82",
         "caliber": "25"
     },
     {
-        "name": "MV TEST 2",
+        "name": "TEST 2",
         "type": "ship",
         "hire": "13000",
-        "index": "p4",
+        "index": "P4_82",
         "caliber": "25"
     },
     {
-        "name": "MV TEST 3",
+        "name": "TEST 3",
         "type": "ship",
         "hire": "13000",
-        "index": "p4",
+        "index": "P4_82",
         "caliber": "25"
     }
 ]
