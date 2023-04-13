@@ -22,26 +22,16 @@ def input_email(element):
 
 # function to create a element
 def add_element(input_element, file):
-    # creating a element
-    element = {}
-    # generating id
-    element['id'] = id_generator()
-    # adding element name
-    element['name'] = input('Please enter {} name\n'.format(input_element))
-    # adding email
-    element['email'] = input_email()
-    # adding phone number
-    element['phone_number'] = input(
-        'Please enter phone number of {}\n'.format(input_element))
-    # adding address
-    element['address'] = input(
-        'Please enter address of {}\n'.format(input_element))
-    # save element to file
+    element = {
+        'id': id_generator(),
+        'name': input(f'Please enter {input_element} name\n'),
+        'email': input_email(),
+        'phone_number': input('Please enter phone' +
+                              f' number of {input_element}\n'),
+        'address': input(f'Please enter address of {input_element}\n'),
+    }
     append_JSON_file(element, file)
-
-    # printing created element
-    print('\nCreated element with following details:\n')
-    print(element)
+    print(f'\nCreated element with the following details:\n{element}')
 
 
 # function to remove a element
