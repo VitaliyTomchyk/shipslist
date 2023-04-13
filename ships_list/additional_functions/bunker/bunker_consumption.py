@@ -13,9 +13,7 @@ from ships_list.additional_functions.bunker.distances_input \
 from ships_list.additional_functions.bunker.weather.weather_functions \
     import add_weather_factor
 from ships_list.additional_functions.supporting_functions.\
-    additional_functions import id_generator
-from ships_list.additional_functions.supporting_functions.json_functions \
-    import read_JSON_file
+    additional_functions import id_generator, filter_db_by_key
 
 
 def calculate_bunkers_consumption(voyage_info):
@@ -26,8 +24,9 @@ def calculate_bunkers_consumption(voyage_info):
 
     # adding ship's details to input information
     ships_name = input_option(SHIPS_FILE, 'ships_name', 'ship')
-    calculation['ship'] = list(filter(lambda x: x['ships_name'] == ships_name,
-                                      read_JSON_file(SHIPS_FILE)))[0]
+    calculation['ship'] = filter_db_by_key('ships_name',
+                                           ships_name,
+                                           SHIPS_FILE)[0]
 
     # input prices of IFO, MGO
     calculation['bunker_prices'] = {

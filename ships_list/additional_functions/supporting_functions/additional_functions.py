@@ -133,3 +133,7 @@ def assurance_question(text):
 
 def filter_list_of_dict_by_value(list_of_dicts, key, value):
     return list(filter(lambda x: x[key] == value, list_of_dicts))[0]
+
+
+def filter_db_by_key(key, value, db_file):
+    return list(filter(lambda x: x[key] == value, read_JSON_file(db_file)))

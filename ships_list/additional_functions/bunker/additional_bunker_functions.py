@@ -1,6 +1,8 @@
 from ships_list.lists.Standard.constants import SUPPORTING_FILE, PORTS_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
+from ships_list.additional_functions.supporting_functions.\
+    additional_functions import filter_db_by_key
 from ships_list.additional_functions.bunker.point_consumption import \
     point_consumption_in_SECA, point_consumption_not_in_SECA
 from ships_list.additional_functions.supporting_functions.json_functions \
@@ -164,8 +166,7 @@ def create_point(point_type=None, total_cargo_quantity=None,
 
 def check_point_in_SECA(point_name):
     # checking if point is in PORT_FILE
-    ports_in_db = list(filter(lambda x: x['name'] == point_name,
-                              read_JSON_file(PORTS_FILE)))
+    ports_in_db = filter_db_by_key('name', point_name, PORTS_FILE)
 
     if point_name in ports_in_db:
         return ports_in_db[point_name]['in_SECA']
