@@ -21,7 +21,7 @@ def input_email(element):
 
 
 # function to create a element
-def add_element(input_element, file):
+def create_element(input_element, file):
     element = {
         'id': id_generator(),
         'name': input(f'Please enter {input_element} name\n'),

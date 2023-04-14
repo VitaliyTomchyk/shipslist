@@ -1,11 +1,11 @@
 from ships_list.lists.Standard.constants import COMPANIES_FILE
 from ships_list.additional_functions.default_module.default_module import \
-    add_element, remove_element, edit_element
+    create_element, remove_element, edit_element
 
 
 # function to create a company
 def add_company():
-    add_element('company', COMPANIES_FILE)
+    create_element('company', COMPANIES_FILE)
 
 
 # function to remove a company
