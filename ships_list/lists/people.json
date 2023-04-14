@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": 287,
+        "name": "olo",
+        "email": "some",
+        "phone_number": "34",
+        "address": "srg"
+    },
+    {
+        "id": 288,
+        "name": "ere",
+        "email": "@",
+        "phone_number": "wef",
+        "address": "sdf"
+    }
+]
