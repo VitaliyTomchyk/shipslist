@@ -4,7 +4,6 @@ def price_for_mile(leg_type, hire_info, ship, bunker_price):
     consumption_type = leg_type + '_consumption'
     hire, hire_commission = hire_info
 
-    print('ship is {}'.format(str(ship)))
     duration = 1 / (int(ship['consumption'][consumption_type]) * 24)
 
     price_of_bunkers = duration * \

@@ -1,7 +1,7 @@
 from ships_list.additional_functions.bunker.bunker_consumption \
     import calculate_bunkers_consumption
 from ships_list.additional_functions.freight_calculator.additional_functions \
-    import add_voyage_details, sum_bunkers_cost, total_calculator, \
+    import add_voyage_details, calculate_bunkers_cost, total_calculator, \
     additional_costs_collector, checker_for_booking_to_use
 from ships_list.lists.Standard.constants import \
     FREIGHT_CALCULATIONS_FILE
@@ -21,7 +21,7 @@ def freight_calculator():
         voyage_info)
 
     # calculating total cost of bunkers
-    total_bunkers_cost = sum_bunkers_cost(voyage_info)
+    total_bunkers_cost = calculate_bunkers_cost(voyage_info)
 
     # calculating total cost of freight
     total_freight = total_calculator(voyage_info['freight_rate'],

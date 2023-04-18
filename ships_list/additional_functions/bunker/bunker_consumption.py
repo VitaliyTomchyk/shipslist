@@ -1,8 +1,10 @@
 from ships_list.lists.Standard.constants import BUNKERING_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file
+# from ships_list.additional_functions.optimal_speed \
+# import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
-    import input_points_detailed
+    import input_points_detailed, add_consuption_calculation
 from ships_list.additional_functions.bunker.distances_input \
     import add_distances
 from ships_list.additional_functions.supporting_functions.\
@@ -30,21 +32,23 @@ def calculate_bunkers_consumption(voyage_info):
     # input distance including SECA zone from each between points
     calculation['legs'] = add_distances(calculation['points'])
 
+    # save data to JSON file BUNKERING_FILE
     append_JSON_file(calculation, BUNKERING_FILE)
+
     # # finding optimal speed
     # calculation['optimal_speed'] = optimal_speed_calculation(calculation,
     #                                                          voyage_info)
 
-    # # calculating consumption at points and steaming
-    # calculation['consumption'] = \
-    #     add_consuption_calculation(calculation)
+    # calculating consumption at points and steaming
+    calculation['consumption'] = \
+        add_consuption_calculation(calculation)
 
-    # # adding total duration of voyage
-    # calculation['total_duration'] = \
-    #     calculate_total_duration(calculation)
+    # adding total duration of voyage
+    calculation['total_duration'] = \
+        calculate_total_duration(calculation)
 
-    # # print result of calculation
-    # read_calculation(calculation)
+    # print result of calculation
+    read_calculation(calculation)
 
     # # save data to JSON file BUNKERING_FILE
     # append_JSON_file(calculation, BUNKERING_FILE)

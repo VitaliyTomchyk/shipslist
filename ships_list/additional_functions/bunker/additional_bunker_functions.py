@@ -26,44 +26,106 @@ def add_consuption_calculation(calculations):
         consumption_during_steaming[leg['leg_type']['consumption']] = \
             steaming_consumption_calculator(leg, ship)
 
-    return consumption_at_points
+    # return dict with consumption at points and during steaming
+    return {'consumption_at_points': consumption_at_points,
+            'consumption_during_steaming': consumption_during_steaming}
 
 
 def steaming_consumption_calculator(leg, ship):
-    # collecting distances
-    distance_in_SECA = leg['distance_only_SECA']['distance']
-    distance_not_in_SECA = leg['distance_total']['distance'] - distance_in_SECA
 
-    # collecting weather factors for different distances
-    WF_in_SECA = leg['distance_only_SECA']['WF']
-    WF_not_in_SECA = leg['distance_total']['WF']
+    print(ship['consumption'])
+    # collecting distances
+    duration_of_the_leg = calculate_duration_of_leg(leg, ship)
 
     # calculating speed
-    speed_in_SECA = leg['distance_only_SECA']['speed']
-    speed_not_in_SECA = leg['distance_total']['speed']
+    speed_type_in_SECA = leg['only_SECA']['speed']
+    speed_type_not_in_SECA = leg['total']['speed']
 
-    # calculating consumption rate
+    # calculating total consumption in SECA by multiplying duration of the leg
+    # by consumption rate
+    consumption_SECA = consumption_in_SECA(
+        leg, ship, duration_of_the_leg, speed_type_in_SECA)
+    consumption_not_SECA = consumption_not_in_SECA(
+        leg, ship, duration_of_the_leg, speed_type_not_in_SECA)
 
-    # TODO
-
-    duration_of_the_leg = {"in_SECA": distance_in_SECA * WF_in_SECA
-                           / speed_in_SECA / 24,
-                           "not_in_SECA": distance_not_in_SECA *
-                           WF_not_in_SECA / speed_not_in_SECA / 24}
-    consumption = 0
-    result = duration_of_the_leg * consumption
-
-    total_consumption_SECA = {'IFO': 5,
-                              'MGO': 4}
-    total_consumption_excl_SECA = {'IFO': 5,
-                                   'MGO': 4}
-
-    result = {'IFO': total_consumption_SECA['IFO']
-              + total_consumption_excl_SECA['IFO'],
-              'MGO': total_consumption_SECA['MGO'] +
-              total_consumption_excl_SECA['MGO']}
+    result = {'IFO': consumption_not_SECA['IFO'],
+              'MGO': consumption_SECA['MGO'] + consumption_not_SECA['MGO']}
 
     return result
+
+
+# calculating consumption in SECA
+def consumption_in_SECA(leg, ship, duration, speed_type):
+
+    # collecting bunker consumption rates of the ship
+    main_consumption_rate = float(
+        ship['consumption'][leg['leg_type'] + "_" + speed_type + "_" +
+                            "consumption"])
+    main_consumption = duration['in_SECA'] * \
+        main_consumption_rate
+
+    # calculating additional consumption in SECA by multiplying duration of
+    # the leg
+    additional_consumption_rate = float(
+        ship['consumption']['additional_steaming_consumption'])
+    additional_consumption = duration['in_SECA'] * \
+        additional_consumption_rate
+
+    MGO_consumption = main_consumption + additional_consumption
+
+    return {'IFO': 0,
+            'MGO': MGO_consumption}
+
+
+# calculating consumption not in SECA
+def consumption_not_in_SECA(leg, ship, duration, speed_type):
+
+    # collecting bunker consumption rates of the ship
+    main_consumption_rate = float(
+        ship['consumption'][leg['leg_type'] + "_" + speed_type + "_" +
+                            "consumption"])
+    main_consumption = duration['not_in_SECA'] * \
+        main_consumption_rate
+
+    # calculating additional consumption not in SECA by multiplying duration
+    # of the leg
+    additional_consumption_rate = float(
+        ship['consumption']['additional_steaming_consumption'])
+    additional_consumption = duration['not_in_SECA'] * \
+        additional_consumption_rate
+
+    return {'IFO': main_consumption,
+            'MGO': additional_consumption}
+
+
+# calculating duration of the leg
+def calculate_duration_of_leg(leg, ship):
+    distance_in_SECA = float(leg['only_SECA']['distance'])
+    distance_not_in_SECA = float(leg['total']['distance'] - distance_in_SECA)
+
+    # collecting weather factors for different distances
+    wf_in_SECA = float(leg['only_SECA']['wf'])
+    wf_not_in_SECA = float(leg['total']['wf'])
+
+    # calculating speed
+    speed_type_in_SECA = leg['only_SECA']['speed']
+    speed_type_not_in_SECA = leg['total']['speed']
+
+    # collecting speed from ship's details
+    speed_in_SECA = float(
+        ship['speed'][leg['leg_type'] + "_" + speed_type_in_SECA + "_" +
+                      "speed"])
+    speed_not_in_SECA = float(
+        ship['speed'][leg['leg_type'] + "_" + speed_type_not_in_SECA + "_" +
+                      "speed"])
+
+    # calculating duration of the leg
+    duration_of_the_leg = {"in_SECA": distance_in_SECA * (1 + wf_in_SECA)
+                           / speed_in_SECA / 24,
+                           "not_in_SECA": distance_not_in_SECA *
+                           (1 + wf_not_in_SECA) / speed_not_in_SECA / 24}
+
+    return duration_of_the_leg
 
 
 # input points of booking in voyage_info

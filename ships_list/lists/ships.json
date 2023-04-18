@@ -16,10 +16,7 @@
             "ballast_eco_consumption": 1,
             "date_of_update": "2022-09-14"
         },
-        "additional_consumption": {
-            "idle": 1,
-            "working": 1
-        },
+        "additional_consumption_steaming": 1,
         "stay_consumption": {
             "idle": 1.5,
             "working": 3

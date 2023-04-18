@@ -61,9 +61,9 @@ def add_voyage_details(booking_info=None):
     return input_information
 
 
-def sum_bunkers_cost(input_information):
+def calculate_bunkers_cost(voyage_info):
     return sum([cost['price']
-                for cost in input_information['bunker_consumption']])
+                for cost in voyage_info['bunker_consumption']])
 
 
 def total_calculator(rate, base, persentage):

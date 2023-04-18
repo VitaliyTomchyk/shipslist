@@ -1,7 +1,5 @@
 def point_consumption_in_SECA(point, ship):
 
-    print('ship is {}'.format(str(ship)))
-
     # MGO consumption during working days
     MGO_consumption_working = point['working_days'] * \
         ship['stay_consumption']['working']

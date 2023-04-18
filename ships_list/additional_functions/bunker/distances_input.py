@@ -20,6 +20,8 @@ def add_distances(points):
             the_points = [points[i], points[i + 1]]
             the_leg[dist_type] = sub_leg_generator(the_points, marker_SECA,
                                                    dist_type)
+            # generating leg type
+            the_leg['leg_type'] = add_leg_condition(points[i], points[i + 1])
         legs.append(the_leg)
 
     return legs
@@ -38,24 +40,17 @@ def sub_leg_generator(points, marker_SECA, dist_type):
 
     distance = int(input(request))
     # TODO make algorythm for generating type of leg based on type of points
-    leg_type = add_leg_type(from_point, to_point)
+
     speed = add_speed_type(distance)
     wf = add_weather_factor(distance, dist_type)
 
-    return {'leg_type': leg_type,
-            'distance': distance,
+    return {'distance': distance,
             'speed': speed,
             'wf': wf}
 
 
-def add_leg_type(from_point, to_point):
-    result = {'from': from_point,
-              'to': to_point,
-              'condition': add_leg_condition(from_point, to_point)}
-    return result
-
-
 def add_leg_condition(point_from, point_to):
+
     # TODO add algorithm to calculate leg condition
     text = 'Please put condition of vessel for leg \n' + \
         '- from {} to {}\n'.format(point_from['point_name'],

@@ -1,6 +1,6 @@
 [
     {
-        "id": 280,
+        "id": 308,
         "ship": {
             "ships_name": "SOSNA",
             "IMO": 12345654,
@@ -28,16 +28,16 @@
             }
         },
         "bunker_prices": {
-            "IFO": 4.0,
-            "MGO": 4.0
+            "IFO": 1.0,
+            "MGO": 1.0
         },
         "points": [
             {
                 "point_type": "Delivery point",
-                "point_name": "d",
+                "point_name": "1",
                 "in_SECA": false,
                 "working_days": 0,
-                "idle_days": 4.0
+                "idle_days": 1.0
             },
             {
                 "point_type": "Load port",
@@ -47,55 +47,89 @@
                 "working_days": 0,
                 "cargo_quantity_for_handling": 0,
                 "rate_of_handling": null,
-                "idle_days": 4.0
+                "idle_days": 1.0
             },
             {
-                "point_type": "Discharge port",
-                "point_name": "Istanbul",
+                "point_type": "Load port",
+                "point_name": "Nikolayev",
                 "in_SECA": false,
                 "laytime_port_terms": "shinc",
                 "working_days": 0,
                 "cargo_quantity_for_handling": 0,
                 "rate_of_handling": null,
-                "idle_days": 4.0
+                "idle_days": 1.0
+            },
+            {
+                "point_type": "Discharge port",
+                "point_name": "Alexandria",
+                "in_SECA": true,
+                "laytime_port_terms": "shex",
+                "working_days": 0,
+                "cargo_quantity_for_handling": 0,
+                "rate_of_handling": null,
+                "idle_days": 1.0
             },
             {
                 "point_type": "Redelivery point",
-                "point_name": "r",
+                "point_name": "1",
                 "in_SECA": false,
                 "working_days": 0,
-                "idle_days": 4.0
+                "idle_days": 1.0
             }
         ],
-        "distances_with_WF": [],
-        "optimal_speed": {
-            "ballast": {
-                "not_SECA": "Eco",
-                "in_SECA": "Eco"
+        "legs": [
+            {
+                "total": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                },
+                "leg_type": "laden",
+                "only_SECA": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                }
             },
-            "laden": {
-                "not_SECA": "Eco",
-                "in_SECA": "Eco"
+            {
+                "total": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                },
+                "leg_type": "laden",
+                "only_SECA": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                }
+            },
+            {
+                "total": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                },
+                "leg_type": "laden",
+                "only_SECA": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                }
+            },
+            {
+                "total": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                },
+                "leg_type": "laden",
+                "only_SECA": {
+                    "distance": 1,
+                    "speed": "full",
+                    "wf": 1.0
+                }
             }
-        },
-        "consumption_at_points": {
-            "d": {
-                "IFO": 6.0,
-                "MGO": 4.0
-            },
-            "Odessa": {
-                "IFO": 6.0,
-                "MGO": 4.0
-            },
-            "Istanbul": {
-                "IFO": 6.0,
-                "MGO": 4.0
-            },
-            "r": {
-                "IFO": 6.0,
-                "MGO": 4.0
-            }
-        },
-        "total_duration": 16.0
+        ]
     }
 ]
