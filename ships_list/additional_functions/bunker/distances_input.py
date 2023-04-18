@@ -1,5 +1,5 @@
 from ships_list.additional_functions.supporting_functions.input_functions \
-    import input_option
+    import input_option_from_dict
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
 from ships_list.additional_functions.bunker.weather.weather_functions \
     import add_weather_factor
@@ -27,32 +27,28 @@ def add_distances(points):
 
 def sub_leg_generator(points, marker_SECA, dist_type):
 
-    the_dist_type = dist_type if dist_type != 'total' else 'not_SECA'
-
-    the_leg = {}
-    from_point, to_point = points[0]['point_name'], points[1]['point_name']
-
-    the_leg['description'] = add_leg_description(from_point, to_point,
-                                                 the_dist_type)
-
+    from_point, to_point = points[0], points[1]
     text = 'Please put {} distance \n- from {} {} to {} {}\n'
-
     request = text.format(
         marker_SECA,
         points[0]['point_type'],
-        from_point,
+        from_point['point_name'],
         points[1]['point_type'],
-        to_point)
+        to_point['point_name'])
 
-    the_leg['distance_' + the_dist_type] = \
-        {'distance': int(input(request)),
-         'speed': add_speed_type(the_dist_type),
-         'wf': add_weather_factor(the_leg['description'], dist_type)}
+    distance = int(input(request))
+    # TODO make algorythm for generating type of leg based on type of points
+    leg_type = add_leg_type(from_point, to_point)
+    speed = add_speed_type(distance)
+    wf = add_weather_factor(distance, dist_type)
 
-    return the_leg
+    return {'leg_type': leg_type,
+            'distance': distance,
+            'speed': speed,
+            'wf': wf}
 
 
-def add_leg_description(from_point, to_point, dist_type):
+def add_leg_type(from_point, to_point):
     result = {'from': from_point,
               'to': to_point,
               'condition': add_leg_condition(from_point, to_point)}
@@ -62,16 +58,21 @@ def add_leg_description(from_point, to_point, dist_type):
 def add_leg_condition(point_from, point_to):
     # TODO add algorithm to calculate leg condition
     text = 'Please put condition of vessel for leg \n' + \
-        '- from {} to {}\n'.format(point_from, point_to)
+        '- from {} to {}\n'.format(point_from['point_name'],
+                                   point_to['point_name'])
     print(text)
 
-    condition = input_option(SUPPORTING_FILE, 'vessel_conditions',
-                             'condition of vessel')
+    condition = input_option_from_dict(SUPPORTING_FILE, 'vessel_condition',
+                                       'condition of vessel')
     return condition
 
 
-def add_speed_type(dist_type):
-    print('Please put speed type for {} distance.'.format(dist_type))
+def add_speed_type(distance):
+    print('Please put speed type.')
 
-    speed_type = input_option(SUPPORTING_FILE, 'speed_types', 'speed type')
+    if distance == 0:
+        return 'full'
+
+    speed_type = input_option_from_dict(
+        SUPPORTING_FILE, 'speed_types', 'speed type')
     return speed_type

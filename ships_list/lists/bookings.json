@@ -280,5 +280,34 @@
         ],
         "lay_can": "1",
         "comments": "1"
+    },
+    {
+        "id": 300,
+        "account": "Nike",
+        "name_of_cargo": "coal",
+        "cargo_quantity": "20000",
+        "allowance_of_cargo": "10",
+        "points": [
+            {
+                "point_type": "load port",
+                "point_name": "Odessa",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            },
+            {
+                "point_type": "discharge port",
+                "point_name": "Alexandria",
+                "in_SECA": false,
+                "laytime_port_terms": "shinc"
+            }
+        ],
+        "commission": [
+            {
+                "type": "address",
+                "value": 2.5
+            }
+        ],
+        "lay_can": "20.12.22",
+        "comments": ""
     }
 ]

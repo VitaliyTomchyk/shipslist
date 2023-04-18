@@ -79,14 +79,14 @@ def input_point_short(input_point_type):
     points = []
 
     quantity_of_points = input(
-        '\nPlease input QUANTITY of {}s\n'.format(point_type))
+        '\nPlease input quantity of {}s\n'.format(point_type))
 
     for i in range(int(quantity_of_points)):
         point = {'point_type': point_type}
 
         # adding point parameter 'point_name'
         point['point_name'] = input(
-            'Please put NAME of {} number {} from {}\n'.format(
+            '\nPlease put NAME of {} number {} from {}\n'.format(
                 point_type, i + 1, quantity_of_points))
 
         # adding point parameter 'in_SECA'

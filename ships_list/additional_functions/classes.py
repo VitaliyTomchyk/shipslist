@@ -4,17 +4,8 @@ from ships_list.additional_functions.supporting_functions.input_functions \
     import input_from_list
 from ships_list.additional_functions.supporting_functions.additional_functions\
     import id_generator, read_dict
-
-
-def input_email(element):
-    # input email
-    email = input('Please enter email of {}\n'.format(element))
-    # checking if email is valid
-    if not email or '@' not in email:
-        print('Email is not valid. Please try again.')
-        email = input_email()
-    # returning email
-    return email
+from ships_list.additional_functions.supporting_functions.input_functions \
+    import input_email
 
 
 class StoredElement:

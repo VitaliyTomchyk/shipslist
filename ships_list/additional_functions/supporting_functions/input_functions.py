@@ -5,6 +5,17 @@ from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file
 
 
+def input_email(element):
+    # input email
+    email = input('Please enter email of {}\n'.format(element))
+    # checking if email is valid
+    if not email or '@' not in email:
+        print('Email is not valid. Please try again.')
+        email = input_email()
+    # returning email
+    return email
+
+
 def input_item(item):
     print('Please put {}'.format(item))
     return input('')

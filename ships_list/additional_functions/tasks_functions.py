@@ -148,8 +148,7 @@ def amend_task():
 
 
 def close_task():
-    # ship = input_option(SHIPS_FILE, 'ships_name', 'name of ship')
-    # voyage = input_option(LIST_OF_VOYAGES_FILE, 'id', 'id of voyage')
+
     task_id = input_option(TASKS_FILE, 'id', 'id of task')
     time_mark = datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
 

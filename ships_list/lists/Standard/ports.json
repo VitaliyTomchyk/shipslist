@@ -65,5 +65,9 @@
     {
         "name": "OPL Redelivery point",
         "in_SECA": "n"
+    },
+    {
+        "name": "Odesa",
+        "in_SECA": false
     }
 ]

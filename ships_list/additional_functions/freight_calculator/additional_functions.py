@@ -5,7 +5,11 @@ import math
 from ships_list.additional_functions.booking.booking_functions \
     import add_booking
 # function checker_for_to_use returns booking information if input is 'y' else
-# returns None
+from ships_list.additional_functions.supporting_functions.input_functions \
+    import input_option
+from ships_list.additional_functions.supporting_functions.\
+    additional_functions import filter_db_by_key
+from ships_list.lists.Standard.constants import SHIPS_FILE
 
 
 def checker_for_booking_to_use():
@@ -36,13 +40,19 @@ def cargo_quantity_calculator(booking_info=None):
         return booking_info['cargo_quantity']
 
 
+def input_ship():
+    # adding ship's details to input information
+    ships_name = input_option(SHIPS_FILE, 'ships_name', 'ship')
+    return filter_db_by_key('ships_name', ships_name, SHIPS_FILE)[0]
+
+
 def add_voyage_details(booking_info=None):
     # adding voyage details to input information
     input_information = {
         "freight_rate": int(input('\nPlease input freight rate, USD\n')),
         "commission_on_freight": commition_calculator(booking_info),
         "cargo_quantity": booking_info['cargo_quantity'],
-
+        "ship": input_ship(),
         "hire_rate": int(input('Hire rate, USD per day\n')),
         "commission_on_hire":
             float(input('Commition on hire, %\n').replace(',', '.')) / 100,

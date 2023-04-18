@@ -23,7 +23,7 @@ def add_consuption_calculation(calculations):
     # adding bunker consumption during steaming
     consumption_during_steaming = {}
     for leg in legs:
-        consumption_during_steaming[leg['description']['consumption']] = \
+        consumption_during_steaming[leg['leg_type']['consumption']] = \
             steaming_consumption_calculator(leg, ship)
 
     return consumption_at_points

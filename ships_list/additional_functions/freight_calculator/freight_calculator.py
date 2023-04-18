@@ -13,7 +13,6 @@ def freight_calculator():
     # read booking info if it is available
     booking_info = checker_for_booking_to_use()
 
-    # TODO hire rate should be collected in one place
     # adding voyage details to input information
     voyage_info = add_voyage_details(booking_info)
 
