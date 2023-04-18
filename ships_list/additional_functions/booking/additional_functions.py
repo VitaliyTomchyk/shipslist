@@ -6,7 +6,7 @@ from ships_list.lists.Standard.constants import SUPPORTING_FILE, BOOKINGS_FILE
 from ships_list.additional_functions.supporting_functions.input_functions \
     import input_option_from_dict
 
-# TODO devide below functions to different files
+# TODO: devide below functions to different files
 
 
 # function shows short version of booking details for all

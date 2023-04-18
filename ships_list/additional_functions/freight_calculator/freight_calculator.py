@@ -23,11 +23,6 @@ def freight_calculator():
     # calculating total cost of bunkers
     total_bunkers_cost = calculate_bunkers_cost(voyage_info)
 
-    # calculating total cost of freight
-    total_freight = total_calculator(voyage_info['freight_rate'],
-                                     voyage_info['cargo_quantity'],
-                                     voyage_info['commition_on_freight'])
-
     # calculating total cost of additional costs
     voyage_info = additional_costs_collector(voyage_info)
     total_additional_costs = sum(
@@ -41,6 +36,11 @@ def freight_calculator():
 
     # calculating total cost of voyage
     total_expanses = total_hire + total_additional_costs + total_bunkers_cost
+
+    # calculating total cost of freight
+    total_freight = total_calculator(voyage_info['freight_rate'],
+                                     voyage_info['cargo_quantity'],
+                                     voyage_info['commition_on_freight'])
 
     # calculating profit
     profit = round(total_freight - total_expanses, 2)

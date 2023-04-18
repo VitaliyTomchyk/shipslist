@@ -1,135 +1,132 @@
 [
-    {
-        "id": 308,
-        "ship": {
-            "ships_name": "SOSNA",
-            "IMO": 12345654,
-            "speed": {
-                "laden_full_speed": 13.2,
-                "laden_eco_speed": 11.0,
-                "ballast_full_speed": 14.0,
-                "ballast_eco_speed": 12.5,
-                "date_of_update": "2022-09-30"
-            },
-            "consumption": {
-                "laden_full_consumption": 1,
-                "laden_eco_consumption": 1,
-                "ballast_full_consumption": 1,
-                "ballast_eco_consumption": 1,
-                "date_of_update": "2022-09-14"
-            },
-            "additional_consumption": {
-                "idle": 1,
-                "working": 1
-            },
-            "stay_consumption": {
-                "idle": 1.5,
-                "working": 3
-            }
+  {
+    "id": 308,
+    "ship": {
+      "ships_name": "SOSNA",
+      "IMO": 12345654,
+      "speed": {
+        "laden_full_speed": 13.2,
+        "laden_eco_speed": 11.0,
+        "ballast_full_speed": 14.0,
+        "ballast_eco_speed": 12.5,
+        "date_of_update": "2022-09-30"
+      },
+      "consumption": {
+        "laden_full_consumption": 1,
+        "laden_eco_consumption": 1,
+        "ballast_full_consumption": 1,
+        "ballast_eco_consumption": 1,
+        "date_of_update": "2022-09-14"
+      },
+      "additional_consumption": 1,
+      "stay_consumption": {
+        "idle": 1.5,
+        "working": 3
+      }
+    },
+    "bunker_prices": {
+      "IFO": 1.0,
+      "MGO": 1.0
+    },
+    "points": [
+      {
+        "point_type": "Delivery point",
+        "point_name": "1",
+        "in_SECA": false,
+        "working_days": 0,
+        "idle_days": 1.0
+      },
+      {
+        "point_type": "Load port",
+        "point_name": "Odessa",
+        "in_SECA": false,
+        "laytime_port_terms": "shinc",
+        "working_days": 0,
+        "cargo_quantity_for_handling": 0,
+        "rate_of_handling": null,
+        "idle_days": 1.0
+      },
+      {
+        "point_type": "Load port",
+        "point_name": "Nikolayev",
+        "in_SECA": false,
+        "laytime_port_terms": "shinc",
+        "working_days": 0,
+        "cargo_quantity_for_handling": 0,
+        "rate_of_handling": null,
+        "idle_days": 1.0
+      },
+      {
+        "point_type": "Discharge port",
+        "point_name": "Alexandria",
+        "in_SECA": true,
+        "laytime_port_terms": "shex",
+        "working_days": 0,
+        "cargo_quantity_for_handling": 0,
+        "rate_of_handling": null,
+        "idle_days": 1.0
+      },
+      {
+        "point_type": "Redelivery point",
+        "point_name": "1",
+        "in_SECA": false,
+        "working_days": 0,
+        "idle_days": 1.0
+      }
+    ],
+    "legs": [
+      {
+        "total": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
         },
-        "bunker_prices": {
-            "IFO": 1.0,
-            "MGO": 1.0
+        "leg_type": "laden",
+        "only_SECA": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
+        }
+      },
+      {
+        "total": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
         },
-        "points": [
-            {
-                "point_type": "Delivery point",
-                "point_name": "1",
-                "in_SECA": false,
-                "working_days": 0,
-                "idle_days": 1.0
-            },
-            {
-                "point_type": "Load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc",
-                "working_days": 0,
-                "cargo_quantity_for_handling": 0,
-                "rate_of_handling": null,
-                "idle_days": 1.0
-            },
-            {
-                "point_type": "Load port",
-                "point_name": "Nikolayev",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc",
-                "working_days": 0,
-                "cargo_quantity_for_handling": 0,
-                "rate_of_handling": null,
-                "idle_days": 1.0
-            },
-            {
-                "point_type": "Discharge port",
-                "point_name": "Alexandria",
-                "in_SECA": true,
-                "laytime_port_terms": "shex",
-                "working_days": 0,
-                "cargo_quantity_for_handling": 0,
-                "rate_of_handling": null,
-                "idle_days": 1.0
-            },
-            {
-                "point_type": "Redelivery point",
-                "point_name": "1",
-                "in_SECA": false,
-                "working_days": 0,
-                "idle_days": 1.0
-            }
-        ],
-        "legs": [
-            {
-                "total": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                },
-                "leg_type": "laden",
-                "only_SECA": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                }
-            },
-            {
-                "total": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                },
-                "leg_type": "laden",
-                "only_SECA": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                }
-            },
-            {
-                "total": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                },
-                "leg_type": "laden",
-                "only_SECA": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                }
-            },
-            {
-                "total": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                },
-                "leg_type": "laden",
-                "only_SECA": {
-                    "distance": 1,
-                    "speed": "full",
-                    "wf": 1.0
-                }
-            }
-        ]
-    }
+        "leg_type": "laden",
+        "only_SECA": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
+        }
+      },
+      {
+        "total": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
+        },
+        "leg_type": "laden",
+        "only_SECA": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
+        }
+      },
+      {
+        "total": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
+        },
+        "leg_type": "laden",
+        "only_SECA": {
+          "distance": 1,
+          "speed": "full",
+          "wf": 1.0
+        }
+      }
+    ]
+  }
 ]

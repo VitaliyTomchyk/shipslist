@@ -43,7 +43,7 @@ def position_selector():
         else:
             print('Position not found')
 
-    # TODO recalculate vessel's hire in USD based on today's index
+    # TODO: recalculate vessel's hire in USD based on today's index
     return the_position
 
 

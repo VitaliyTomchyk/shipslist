@@ -9,7 +9,7 @@ from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file, append_JSON_file
 
 
-def add_consuption_calculation(calculations):
+def add_consumption_calculation(calculations):
     points, legs, ship = calculations['points'], calculations['legs'],\
         calculations['ship']
 
@@ -33,7 +33,6 @@ def add_consuption_calculation(calculations):
 
 def steaming_consumption_calculator(leg, ship):
 
-    print(ship['consumption'])
     # collecting distances
     duration_of_the_leg = calculate_duration_of_leg(leg, ship)
 
@@ -67,7 +66,7 @@ def consumption_in_SECA(leg, ship, duration, speed_type):
     # calculating additional consumption in SECA by multiplying duration of
     # the leg
     additional_consumption_rate = float(
-        ship['consumption']['additional_steaming_consumption'])
+        ship['consumption']['additional_consumption'])
     additional_consumption = duration['in_SECA'] * \
         additional_consumption_rate
 
@@ -90,7 +89,7 @@ def consumption_not_in_SECA(leg, ship, duration, speed_type):
     # calculating additional consumption not in SECA by multiplying duration
     # of the leg
     additional_consumption_rate = float(
-        ship['consumption']['additional_steaming_consumption'])
+        ship['consumption']['additional_consumption'])
     additional_consumption = duration['not_in_SECA'] * \
         additional_consumption_rate
 
@@ -173,7 +172,7 @@ def input_points_detailed(voyage_info):
             points.append(create_point())
         break
 
-    # # TODO checker for summ of cargo
+    # # TODO: checker for summ of cargo
     # checker_for_summ_of_cargo(points, voyage_info['cargo_quantity'])
 
     return points
