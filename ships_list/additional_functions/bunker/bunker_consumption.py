@@ -4,7 +4,9 @@ from ships_list.additional_functions.supporting_functions.json_functions \
 # from ships_list.additional_functions.optimal_speed \
 # import optimal_speed_calculation
 from ships_list.additional_functions.bunker.additional_bunker_functions \
-    import input_points_detailed, add_consumption_calculation
+    import add_consumption_calculation
+from ships_list.additional_functions.bunker.points_function \
+    import input_points_detailed
 from ships_list.additional_functions.bunker.distances_input \
     import add_distances
 from ships_list.additional_functions.supporting_functions.\
