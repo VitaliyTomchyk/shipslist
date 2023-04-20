@@ -86,7 +86,7 @@ def input_points_detailed(voyage_info):
             points.append(create_point())
         break
 
-    # # TODO: checker for summ of cargo
+    # # TODO: checker for summ of cargo loaded and discharged
     # checker_for_summ_of_cargo(points, voyage_info['cargo_quantity'])
 
     return points

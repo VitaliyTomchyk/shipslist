@@ -39,7 +39,6 @@ def sub_leg_generator(points, marker_SECA, dist_type):
         to_point['point_name'])
 
     distance = int(input(request))
-    # TODO: make algorythm for generating type of leg based on type of points
 
     speed = add_speed_type(distance)
     wf = add_weather_factor(distance, dist_type)
@@ -50,24 +49,42 @@ def sub_leg_generator(points, marker_SECA, dist_type):
 
 
 def add_leg_condition(point_from, point_to):
+    # Define dictionaries to store conditions and condition checkers.
+    laden_conditions = {
+        'Load port': True,
+        'Discharge port': False,
+        'Delivery point': False,
+        'Redelivery point': False
+    }
+    ballast_conditions = {
+        'Load port': False,
+        'Discharge port': False,
+        'Delivery point': True,
+        'Redelivery point': True
+    }
 
-    # TODO: add algorithm to calculate leg condition
-    text = 'Please put condition of vessel for leg \n' + \
-        '- from {} to {}\n'.format(point_from['point_name'],
-                                   point_to['point_name'])
+    # Check if leg is laden or ballast.
+    if laden_conditions.get(point_from['point_type'], False) or \
+            laden_conditions.get(point_to['point_type'], False):
+        return 'laden'
+    elif ballast_conditions.get(point_from['point_type'], False) or \
+            ballast_conditions.get(point_to['point_type'], False):
+        return 'ballast'
+
+    # Ask user to specify vessel condition for the leg.
+    text = "Please specify the condition of the vessel for the leg\n- " + \
+        f"from {point_from['point_name']} to {point_to['point_name']}\n"
     print(text)
-
-    condition = input_option_from_dict(SUPPORTING_FILE, 'vessel_condition',
-                                       'condition of vessel')
+    condition = input_option_from_dict(
+        SUPPORTING_FILE,
+        'vessel_condition',
+        'condition of vessel')
     return condition
 
 
 def add_speed_type(distance):
-    print('Please put speed type.')
-
     if distance == 0:
         return 'full'
 
-    speed_type = input_option_from_dict(
+    return input_option_from_dict(
         SUPPORTING_FILE, 'speed_types', 'speed type')
-    return speed_type

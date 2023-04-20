@@ -41,30 +41,26 @@ def booking_details_collector():
 
 def input_commissions_short():
     # input points
-    commissions = []
+    list_of_commissions = []
 
     quantity_of_points = input('Please input quantity of commissions\n')
 
     for i in range(int(quantity_of_points)):
         commission = {}
-        print(
-            'Please put type of commission type number {} from {}\n'.format(
-                i + 1, quantity_of_points))
+        print('Please put type of commission type number {} from {}\n'.format(
+              i + 1, quantity_of_points))
         commission['type'] = input_option_from_dict(SUPPORTING_FILE,
                                                     'commission_types',
                                                     'commission type')
 
         commission['value'] = float(
-            input(
-                'Please put % of {} '.format(
-                    commission['type']) +
-                "commission number {} of {}, in format \"2.5\"\n".format(
-                    i +
-                    1,
-                    quantity_of_points)))
-        commissions.append(commission)
+            input('Please put % of {} '.format(commission['type']) +
+                  "commission number {} of {}, in format \"2.5\"\n".format(
+                i + 1,
+                quantity_of_points)))
+        list_of_commissions.append(commission)
 
-    return commissions
+    return list_of_commissions
 
 
 def input_points_short():
@@ -148,7 +144,6 @@ def read_booking_details(booking_id=None):
 
 
 def reader_of_ports(ports):
-
     load_ports, discharge_ports = list(
         filter(
             lambda x: x[1] == 'Load port', ports)), list(

@@ -1,6 +1,8 @@
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
+from ships_list.additional_functions.bunker.additional_bunker_functions\
+    import vessel_info_extractor
 
 
 # calculating duration of the leg
@@ -17,12 +19,10 @@ def calculate_duration_of_leg(leg, ship):
     speed_type_not_in_SECA = leg['total']['speed']
 
     # collecting speed from ship's details
-    speed_in_SECA = float(
-        ship['speed'][leg['leg_type'] + "_" + speed_type_in_SECA + "_" +
-                      "speed"])
-    speed_not_in_SECA = float(
-        ship['speed'][leg['leg_type'] + "_" + speed_type_not_in_SECA + "_" +
-                      "speed"])
+    speed_in_SECA = vessel_info_extractor(
+        leg, ship, speed_type_in_SECA, 'speed')
+    speed_not_in_SECA = vessel_info_extractor(
+        leg, ship, speed_type_not_in_SECA, 'speed')
 
     # calculating duration of the leg
     duration_of_the_leg = {"in_SECA": distance_in_SECA * (1 + wf_in_SECA)

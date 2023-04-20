@@ -30,7 +30,11 @@ def input_option_from_dict(file, key, el_name):
     print('Choose number from options of {}.'.format(key))
     print(list_to_ol_string(options))
 
-    value = options[int(input('')) - 1]
+    user_input = input('')
+    if not user_input:
+        value = options[0]
+    else:
+        value = options[int(user_input) - 1]
 
     return value
 
