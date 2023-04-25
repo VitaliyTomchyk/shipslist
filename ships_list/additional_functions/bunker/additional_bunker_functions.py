@@ -9,9 +9,8 @@ def vessel_info_extractor(leg, ship, speed_type, value_type):
         ship[value_type][leg['leg_type'] + "_" + speed_type + "_" +
                          value_type])
 
+
 # adding bunker consumption to calculations
-
-
 def add_consumption_calculation(calculations):
     points, legs, ship = calculations['points'], calculations['legs'],\
         calculations['ship']

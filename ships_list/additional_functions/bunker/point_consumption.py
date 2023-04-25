@@ -9,8 +9,7 @@ def point_consumption_in_SECA(point, ship):
         ship['stay_consumption']['idle']
 
     # MGO additional consumption during port stay
-    MGO_additional_consumption = (point['idle_days'] + point['working']) * \
-        ship['additional_consumption']
+    MGO_additional_consumption = add_consumption_calculator(point, ship)
 
     # total MGO consumption
     MGO_consumption_total = MGO_consumption_working + \
@@ -37,12 +36,11 @@ def point_consumption_not_in_SECA(point, ship):
         ship['stay_consumption']['working']
 
     # MGO additional consumption during port stay
-    MGO_additional_consumption_idle = (
-        point['idle_days'] + point['working']) * ship['additional_consumption']
+    MGO_additional_consumption = add_consumption_calculator(point, ship)
 
     # total MGO consumption
     MGO_consumption_total = MGO_additional_consumption_working + \
-        MGO_additional_consumption_idle
+        MGO_additional_consumption
 
     # calculating IFO and MGO consumption in point
     consumption_at_point = {
@@ -52,9 +50,13 @@ def point_consumption_not_in_SECA(point, ship):
 
     return consumption_at_point
 
+
+def add_consumption_calculator(point, ship):
+    return (
+        point['idle_days'] + point['working']) * ship['additional_consumption']
+
+
 # point consumption
-
-
 def point_consumption(point, ship):
 
     # main consumption during working days
