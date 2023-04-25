@@ -4,7 +4,14 @@ from ships_list.additional_functions.bunker.duration import \
     calculate_duration_of_leg
 
 
+def vessel_info_extractor(leg, ship, speed_type, value_type):
+    return float(
+        ship[value_type][leg['leg_type'] + "_" + speed_type + "_" +
+                         value_type])
+
 # adding bunker consumption to calculations
+
+
 def add_consumption_calculation(calculations):
     points, legs, ship = calculations['points'], calculations['legs'],\
         calculations['ship']
@@ -22,9 +29,12 @@ def add_consumption_calculation(calculations):
         consumption_during_steaming[leg['leg_type']] = \
             steaming_consumption_calculator(leg, ship)
 
-    # return dict with consumption at points and during steaming
-    return {'consumption_at_points': consumption_at_points,
-            'consumption_during_steaming': consumption_during_steaming}
+    # # return dict with consumption at points and during steaming
+    # return {'consumption_at_points': consumption_at_points,
+    #         'consumption_during_steaming': consumption_during_steaming}
+
+    print({'consumption_at_points': consumption_at_points,
+           'consumption_during_steaming': consumption_during_steaming})
 
 
 def steaming_consumption_calculator(leg, ship):
@@ -104,9 +114,3 @@ def checker_for_summ_of_cargo(points, total_cargo_quantity):
               ' total cargo quantity.\n')
         return False
     return True
-
-
-def vessel_info_extractor(leg, ship, speed_type, value_type):
-    return float(
-        ship[value_type][leg['leg_type'] + "_" + speed_type + "_" +
-                         value_type])

@@ -12,11 +12,12 @@ from ships_list.additional_functions.templates.template_manager \
     import fill_template, remove_template
 from ships_list.additional_functions.templates.create_template.create_template\
     import create_template
-from ships_list.additional_functions.positions.positions import \
-    add_position, check_position_status
-from ships_list.additional_functions.indexes.indexes import \
+from ships_list.additional_functions.stratigic_tools.positions.positions \
+    import add_position, check_position_status
+from ships_list.additional_functions.stratigic_tools.indexes import \
     add_index
-from ships_list.additional_functions.classes import StoredElement
+from ships_list.additional_functions.default_module.classes \
+    import StoredElement
 from ships_list.lists.Standard.constants import PEOPLE_FILE, COMPANIES_FILE
 
 

@@ -35,19 +35,18 @@ def calculate_duration_of_leg(leg, ship):
 
 def adding_duration_of_stay(point, total_cargo_quantity):
 
-    # input quantity of working days
+    # input quantity of days in cargo operation
     if point['point_type'] in ['Load port', 'Discharge port']:
         question = 'Is point {} {} working with ship\'s cranes? (y/n)\n'
-        reply_if_working = input(question.format(point['point_type'],
-                                                 point['point_name']))
-
-        point = add_working_days(point,
-                                 total_cargo_quantity,
-                                 None if reply_if_working == 'y' else 0)
+        cranes_used = input(question.format(point['point_type'],
+                                            point['point_name']))
+        point['vessel_cranes_used'] = True if cranes_used == 'y' else False
+        point = add_duration_of_cargo_operations(point, total_cargo_quantity)
     else:
         point['working_days'] = 0
 
     # input quantity of idle days
+    # TODO: add refactoring summing idle and working days if needed
     idle_days = input(
         '\nPlease put quantity of idle days at {}\n'.format(
             point['point_name']))
@@ -58,12 +57,22 @@ def adding_duration_of_stay(point, total_cargo_quantity):
     return point
 
 
-def add_working_days(point, total_cargo_quantity, working_days=None):
+def add_duration_of_cargo_operations(
+        point,
+        total_cargo_quantity,
+        working_days=None):
 
+    # calculating duration of cargo operations
+    laytime_port_terms_multiplier = read_JSON_file(SUPPORTING_FILE)[
+        'laytime_port_terms'][point['laytime_port_terms']]
+    duration_of_cargo_operations = \
+        total_cargo_quantity / point['rate_of_handling'] \
+        * laytime_port_terms_multiplier
+
+    # if point is not working with ship's cranes
     if working_days is not None:
         point['working_days'] = 0
-        point['cargo_quantity_for_handling'] = 0
-        point['rate_of_handling'] = None
+        point['idle_days'] = point['idle_days'] + duration_of_cargo_operations
         return point
 
     # printing point_name and point_type
@@ -82,14 +91,21 @@ def add_working_days(point, total_cargo_quantity, working_days=None):
         'Please put rate of handling in {}, mt\n'.format(
             point['point_name'])))
 
+    # collecting laytime_port_terms_multiplier
     base_of_terms = read_JSON_file(SUPPORTING_FILE)['laytime_port_terms']
-
     multiplier = base_of_terms[point['laytime_port_terms']]
+
     # input quantity of working days
-    point['working_days'] = round(
+    duration_of_cargo_operations = round(
         point['cargo_quantity_for_handling'] /
         point['rate_of_handling'] *
         multiplier,
         2)
+
+    if point['vessel_cranes_used']:
+        point['working_days'] = duration_of_cargo_operations
+    else:
+        point['working_days'] = 0
+        point['idle_days'] = point['idle_days'] + duration_of_cargo_operations
 
     return point

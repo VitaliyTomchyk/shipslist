@@ -10,13 +10,13 @@
             "date_of_update": "2022-09-30"
         },
         "consumption": {
-            "laden_full_consumption": 1,
-            "laden_eco_consumption": 1,
-            "ballast_full_consumption": 1,
-            "ballast_eco_consumption": 1,
+            "laden_full_consumption": 32,
+            "laden_eco_consumption": 29,
+            "ballast_full_consumption": 32,
+            "ballast_eco_consumption": 39,
             "date_of_update": "2022-09-14"
         },
-        "additional_consumption": 1,
+        "additional_consumption": 0.2,
         "stay_consumption": {
             "idle": 1.5,
             "working": 3
