@@ -1,8 +1,8 @@
 from ships_list.lists.Standard.constants import BUNKERING_FILE
 from ships_list.additional_functions.supporting_functions.json_functions \
     import append_JSON_file
-# from ships_list.additional_functions.optimal_speed \
-# import optimal_speed_calculation
+from ships_list.additional_functions.voyage.optimal_speed \
+    import optimal_speed_selector
 from ships_list.additional_functions.bunker.additional_bunker_functions \
     import add_consumption_calculation
 from ships_list.additional_functions.bunker.points_function \
@@ -34,10 +34,9 @@ def calculate_bunkers_consumption(voyage_info):
     # input distance including SECA zone from each between points
     calculation['legs'] = add_distances(calculation['points'])
 
-    # # finding optimal speed
-    # TODO: add optimal speed calculation
-    # calculation['optimal_speed'] = optimal_speed_calculation(calculation,
-    #                                                          voyage_info)
+    # finding optimal speed
+    calculation['optimal_speed'] = optimal_speed_selector(calculation,
+                                                          voyage_info)
 
     # calculating consumption at points and steaming
     calculation['consumption'] = add_consumption_calculation(calculation)
