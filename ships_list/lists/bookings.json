@@ -1,187 +1,24 @@
 [
     {
-        "id": 242,
-        "account": "BMS",
+        "id": 314,
+        "account": "Dima",
         "name_of_cargo": "grain",
         "cargo_quantity": "1000",
-        "allowance_of_cargo": "10",
-        "points": [
-            {
-                "point_type": "Load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Load port",
-                "point_name": "Nikolayev",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Discharge port",
-                "point_name": "Alexandria",
-                "in_SECA": true,
-                "laytime_port_terms": "shex"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address",
-                "value": "3.75"
-            }
-        ],
-        "lay_can": "20.01.22"
-    },
-    {
-        "id": 243,
-        "account": "LMS",
-        "name_of_cargo": "coal",
-        "cargo_quantity": "10",
-        "allowance_of_cargo": "1",
-        "points": [
-            {
-                "point_type": "Load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Load port",
-                "point_name": "Nikolayev",
-                "in_SECA": false,
-                "laytime_port_terms": "shex"
-            },
-            {
-                "point_type": "Discharge port",
-                "point_name": "Cartahena",
-                "in_SECA": false,
-                "laytime_port_terms": "shex"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address commission",
-                "value": "3.75"
-            }
-        ],
-        "lay_can": "10.11.21"
-    },
-    {
-        "id": 244,
-        "name_of_cargo": "Grain",
-        "cargo_quantity": "10",
-        "allowance_of_cargo": "1",
-        "points": [
-            {
-                "point_type": "Load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Load port",
-                "point_name": "Nikolayev",
-                "in_SECA": false,
-                "laytime_port_terms": "shex"
-            },
-            {
-                "point_type": "Discharge port",
-                "point_name": "Algeciras",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address commission",
-                "value": 2.0
-            }
-        ],
-        "lay_can": "20.12.22",
-        "account": "Nike",
-        "comments": ""
-    },
-    {
-        "id": 246,
-        "name_of_cargo": "grain",
-        "cargo_quantity": "10000",
         "allowance_of_cargo": "2",
         "points": [
             {
-                "point_type": "Load port",
+                "point_type": "load port",
                 "point_name": "Odessa",
                 "in_SECA": false,
-                "laytime_port_terms": "shinc"
+                "laytime_port_terms": "shinc",
+                "rate_of_handling": 3000.0
             },
             {
-                "point_type": "Discharge port",
-                "point_name": "Istanbul",
+                "point_type": "discharge port",
+                "point_name": "Alexandria",
                 "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address",
-                "value": "3"
-            }
-        ],
-        "lay_can": "10.11.22",
-        "account": "Nike"
-    },
-    {
-        "id": 247,
-        "name_of_cargo": "grain",
-        "cargo_quantity": "20000",
-        "allowance_of_cargo": "10",
-        "points": [
-            {
-                "point_type": "Load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Load port",
-                "point_name": "Illichevsk",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Discharge port",
-                "point_name": "Algeciras",
-                "in_SECA": true,
-                "laytime_port_terms": "shinc"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address commission",
-                "value": 2.5
-            }
-        ],
-        "lay_can": "10.12.22",
-        "account": "Mobil",
-        "comments": ""
-    },
-    {
-        "id": 248,
-        "name_of_cargo": "grain",
-        "cargo_quantity": "35000",
-        "allowance_of_cargo": "5",
-        "points": [
-            {
-                "point_type": "Load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "Discharge port",
-                "point_name": "Nikolayev",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
+                "laytime_port_terms": "shinc",
+                "rate_of_handling": 2500.0
             }
         ],
         "commission": [
@@ -190,121 +27,35 @@
                 "value": 2.0
             }
         ],
-        "lay_can": "20.11.22",
-        "account": "Nike",
-        "comments": ""
+        "lay_can": "20.02.23",
+        "comments": "no comments"
     },
     {
-        "id": 249,
-        "account": "SOME account",
-        "name_of_cargo": "1",
-        "cargo_quantity": "1",
-        "allowance_of_cargo": "1",
+        "id": 315,
+        "account": "Dima",
+        "name_of_cargo": "Grain",
+        "cargo_quantity": "39",
+        "allowance_of_cargo": "3",
         "points": [
             {
-                "point_type": "load port",
-                "point_name": "1",
+                "point_type": "Load port",
+                "point_name": "Some port",
                 "in_SECA": false,
-                "laytime_port_terms": "shinc"
+                "laytime_port_terms": "shinc",
+                "rate_of_handling": 49.0
             },
             {
-                "point_type": "discharge port",
-                "point_name": "1",
+                "point_type": "Discharge port",
+                "point_name": "disch",
                 "in_SECA": false,
-                "laytime_port_terms": "shinc"
+                "laytime_port_terms": "shinc",
+                "rate_of_handling": 1.0
             }
         ],
         "commission": [
             {
                 "type": "address",
                 "value": 1.0
-            }
-        ],
-        "lay_can": "20.12.22",
-        "comments": ""
-    },
-    {
-        "id": 251,
-        "account": "Test_account",
-        "name_of_cargo": "grain",
-        "cargo_quantity": "1000",
-        "allowance_of_cargo": "1",
-        "points": [
-            {
-                "point_type": "load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "discharge port",
-                "point_name": "Nikolayev",
-                "in_SECA": false,
-                "laytime_port_terms": "shex"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address",
-                "value": 2.5
-            }
-        ],
-        "lay_can": "20.11.22",
-        "comments": "test comment"
-    },
-    {
-        "id": 272,
-        "account": "1",
-        "name_of_cargo": "1",
-        "cargo_quantity": "1",
-        "allowance_of_cargo": "1",
-        "points": [
-            {
-                "point_type": "load port",
-                "point_name": "Cartahena",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "discharge port",
-                "point_name": "Istanbul",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address",
-                "value": 1.0
-            }
-        ],
-        "lay_can": "1",
-        "comments": "1"
-    },
-    {
-        "id": 300,
-        "account": "Nike",
-        "name_of_cargo": "coal",
-        "cargo_quantity": "20000",
-        "allowance_of_cargo": "10",
-        "points": [
-            {
-                "point_type": "load port",
-                "point_name": "Odessa",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            },
-            {
-                "point_type": "discharge port",
-                "point_name": "Alexandria",
-                "in_SECA": false,
-                "laytime_port_terms": "shinc"
-            }
-        ],
-        "commission": [
-            {
-                "type": "address",
-                "value": 2.5
             }
         ],
         "lay_can": "20.12.22",

@@ -68,8 +68,8 @@ def input_points_short():
     return points
 
 
-def input_point_short(input_point_type):
-    point_type = input_point_type.lower()
+def input_point_short(point_type):
+
     points = []
 
     quantity_of_points = input(
@@ -92,6 +92,10 @@ def input_point_short(input_point_type):
         point['laytime_port_terms'] = input_option_from_dict(
             SUPPORTING_FILE, 'laytime_port_terms',
             'laytime port terms')
+
+        # adding rate of handling
+        point['rate_of_handling'] = float(
+            input('Please put rate of handling in mt per day\n'))
 
         points.append(point)
 

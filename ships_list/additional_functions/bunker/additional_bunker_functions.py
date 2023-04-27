@@ -1,13 +1,7 @@
 from ships_list.additional_functions.bunker.point_consumption import \
     point_consumption_in_SECA, point_consumption_not_in_SECA
 from ships_list.additional_functions.bunker.duration import \
-    calculate_duration_of_leg
-
-
-def vessel_info_extractor(leg, ship, speed_type, value_type):
-    return float(
-        ship[value_type][leg['leg_type'] + "_" + speed_type + "_" +
-                         value_type])
+    calculate_duration_of_leg, vessel_info_extractor
 
 
 # adding bunker consumption to calculations

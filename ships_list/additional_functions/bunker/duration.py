@@ -1,11 +1,16 @@
 from ships_list.additional_functions.supporting_functions.json_functions \
     import read_JSON_file
 from ships_list.lists.Standard.constants import SUPPORTING_FILE
-from ships_list.additional_functions.bunker.additional_bunker_functions\
-    import vessel_info_extractor
 
+
+def vessel_info_extractor(leg, ship, speed_type, value_type):
+    return float(
+        ship[value_type][leg['leg_type'] + "_" + speed_type + "_" +
+                         value_type])
 
 # calculating duration of the leg
+
+
 def calculate_duration_of_leg(leg, ship):
     distance_in_SECA = float(leg['only_SECA']['distance'])
     distance_not_in_SECA = float(leg['total']['distance'] - distance_in_SECA)
