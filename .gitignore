@@ -3,6 +3,7 @@
 .vscode
 .coverage
 .DS_Store
+.idea
 __pycache__
 dist
 position.DS_Store
